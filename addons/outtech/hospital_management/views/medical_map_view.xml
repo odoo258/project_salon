@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="medical_map_kanban_view">
+            <field name="name">medical.map.kanban</field>
+            <field name="model">medical.map</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="state"/>
+                    <field name="owner_id"/>
+                    <field name="patient_id"/>
+                    <field name="doctor_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_res_partner_kanban">
+                                <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('res.partner', 'image_small', record.owner_id.raw_value)"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="oe_partner_heading"><field name="name"/> - <t t-esc="record.code.value"/></strong>
+                                    <ul>
+                                        <li><field name="owner_id"/></li>
+                                        <li><small><field name="patient_id"/></small></li>
+                                        <li><i class="fa fa-user-md"></i> <field name="doctor_id"/></li>
+                                    </ul>
+                                    <div class="oe_kanban_partner_links"/>
+                                    <div class="col-xs-6">
+                                        <field name="state" widget="kanban_label_selection" options="{'classes': {'draft': 'default', 'canceled': 'default',
+                                                'done': 'success'}}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="medical_map_view_form" model="ir.ui.view">
+            <field name="name">medical.map.view.form</field>
+            <field name="model">medical.map</field>
+            <field name="arch" type="xml">
+                <form string="Map">
+                    <header>
+                        <button name="%(id_report_map_surgery)d" type="action" string="Print" attrs="{'invisible': [('sur_office_template_id', '=', False), ('name', 'not in', ['surgery'])]}"/>
+                        <!--<button name="action_open" string="Open" type="object" class="oe_highlight" states="draft"/>-->
+                        <!--<button name="action_schedule" string="Start" type="object" class="oe_highlight" states="open"/>-->
+                        <button name="action_start_attendance" string="Start" type="object" class="oe_highlight" states="schedule"/>
+                        <button name="action_pause_attendance" string="Pause" type="object" class="oe_highlight" states="start_attendance"/>
+                        <button name="action_unpause_attendance" string="Unpause" type="object" class="oe_highlight" states="pause_attendance"/>
+                        <button name="action_stop_attendance" string="Stop" type="object" class="oe_highlight" states="start_attendance"/>
+                        <button name="action_done" string="Done" type="object" class="oe_highlight" states="stop_attendance"/>
+                        <button name="schedule_appointment" string="Create Schedule" type="object" class="oe_highlight" states="draft"/>
+                        <!--button name="%(create_appointment_action)d" string="Start Attendance" type="action" class="oe_highlight" states="open" attrs="{'invisible': [('name', '=', 'hospitalization')]}" /-->
+
+                        <div class="oe_right">
+                            <!--<field name="state_hospitalization" widget="statusbar" attrs="{'invisible': [('name', '!=', 'hospitalization')]}"/>-->
+                            <!--<field name="state" widget="statusbar" statusbar_visible="open,approved" attrs="{'invisible': [('state', 'not in', ['open','approved'])]}"/>-->
+                            <!--<field name="state" widget="statusbar" attrs="{'invisible': [('state', 'not in', ['open_attendance','start_attendance','stop_attendance','pending_payment','done','closed'])]}" statusbar_visible="open_attendance,start_attendance,stop_attendance,closed" />-->
+                            <!--<field name="state" widget="statusbar" attrs="{'invisible': [('state', 'not in', ['open','hospitalized','closed']) ]}" statusbar_visible="open,hospitalized,closed" />-->
+                            <field name="state" widget="statusbar" statusbar_visible="canceled,closed" />
+                            <!--<field name="state" widget="statusbar" nolabel="1" />-->
+                        </div>
+                        <div class="oe_clear"/>
+                    </header>
+                    <sheet>
+                        <field name="sale_order_line_id" invisible="1"/>
+                        <field name="id" invisible="1"/>
+                        <div class="oe_button_box" name="button_box" attrs="{'invisible': [('sur_office_template_id', '=', False), ('name', 'not in', ['surgery', 'lab_test'])]}">
+                            <button name="%(id_report_map_exam_website)d" class="oe_stat_button" icon="fa-print" type="action" help="Print Exam Result" attrs="{'invisible': [('name', '!=', 'lab_test')]}">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">Resultado do Exame</span>
+                                 </div>
+                            </button>
+                            <button name="%(id_report_template_office)d" class="oe_stat_button" icon="fa-print" type="action" help="Print Clinical Authorizantion">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">Authorization</span>
+                                 </div>
+                            </button>
+                            <button name="%(id_report_map_lab_test_label)d" class="oe_stat_button" icon="fa-barcode" type="action" help="Print Lab Test Label">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">Etiqueta</span>
+                                 </div>
+                            </button>
+                        </div>
+                        <div class="oe_button_box" name="button_box" attrs="{'invisible': [('name', '!=', 'medical_appointment')], 'readonly': [('type_of_letter_id','=',False)]}">
+                            <button name="%(id_report_template_type_letter)d" class="oe_stat_button" icon="fa-print" type="action" help="Print Type of Letter">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">Tipo de Carta</span>
+                                 </div>
+                            </button>
+                        </div>
+                        <group colspan="4">
+                            <div class="oe_title">
+                                <!--<button name="action_done" class="oe_highlight" type="object" string="Set Done" attrs="{'invisible': [('state', 'not in', ['closed'])], 'readonly': [('state', 'not in', ['start_attendance', 'open'])]}"/>-->
+                                <h1><field name="code"/></h1>
+                            </div>
+                        </group>
+                        <group>
+                            <group colspan="4">
+                                <group>
+                                    <field name="sale_approved" readonly="1"/>
+                                    <field name="schedule_state" attrs="{'readonly': [('schedule_ok', '=', True)]}"/>
+                                    <field name="schedule_ok" invisible="1"/>
+                                    <field name="estimated_time" attrs="{'invisible': [['state', 'not in', ['done']]]   }" readonly="1"/>
+                                    <field name="name" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                                    <field name="start_date"
+                                           attrs="{'readonly': [('state', 'not in', ['start_attendance', 'open', 'stop_attendance', 'draft'])], 'required': [('schedule_state','!=','no_schedule')]}"/>
+                                    <field name="owner_id"
+                                           attrs="{'readonly': [('state', 'not in', ['draft', 'start_attendance', 'open', 'stop_attendance'])]}"/>
+                                    <field name="owner_id_invisible" invisible="1"/>
+                                    <field name="service_id"
+                                           attrs="{'readonly': [('state', 'not in', ['draft', 'start_attendance', 'open', 'stop_attendance'])]}" domain="[('medical_type', '=', name)]" required="1"/>
+                                    <field name="sur_document"
+                                           attrs="{'invisible': [('name', 'not in', ['surgery', 'lab_test'])], 'readonly': [('state', 'not in', ['start_attendance', 'open', 'stop_attendance', 'draft'])]}"/>
+                                    <field name="building_id"
+                                           attrs="{'readonly': [('state', 'not in', ['start_attendance', 'open', 'stop_attendance', 'draft'])], 'invisible': [('name', 'not in', ['medical_appointment', 'surgery', 'lab_test', 'specialty'])]}"/>
+                                </group>
+                                <group>
+                                    <!--INTERNAÇÃO-->
+                                    <field name="lab_test_type"
+                                           attrs="{'invisible': [('name', '!=', 'lab_test')], 'required': [('name', '=', 'lab_test')]}"/>
+                                    <field name="hospitalization_bed"
+                                           attrs="{'invisible': [('name', '!=', 'hospitalization')], 'readonly': [('state', 'not in', ['start_attendance', 'open', 'stop_attendance'])]}"/>
+                                    <field name="intensivist_veterinary"
+                                           attrs="{'invisible': [('name', '!=', 'hospitalization')], 'readonly': [('state', 'not in', ['start_attendance', 'open', 'stop_attendance'])]}"/>
+                                    <field name="doctor_id"
+                                           attrs="{'required': [('name', '=', 'hospitalization')], 'readonly': [('state', 'not in', ['start_attendance', 'open', 'stop_attendance','draft'])]}"/>
+                                    <field name="sur_anesthetist" context="{'search_default_especiality_anesthesiology': 1, 'default_especiality_anesthesiology': 1}"
+                                           attrs="{'invisible': [('name', '!=', 'surgery')], 'readonly': [('state', 'not in', ['start_attendance', 'open', 'stop_attendance'])]}"/>
+                                    <field name="end_date" readonly="1"
+                                           attrs="{'invisible': [('name', 'in', ['surgery', False])], 'required': [('name', 'in', ['open']),('state','in',['start_attendance'])]}"/>
+                                    <field name="patient_id"
+                                           attrs="{'readonly': [('state', 'not in', ['draft', 'start_attendance', 'open', 'stop_attendance'])]}"/>
+                                    <field name="patient_id_invisible" invisible="1"/>
+                                    <field name="sur_office_template_id"
+                                           attrs="{'invisible': [('name', 'not in', ['surgery', 'lab_test'])], 'required': [('name', '=', 'surgery'),('schedule_state','!=','no_schedule')], 'readonly': [('state', 'not in', ['draft', 'start_attendance', 'open', 'open_attendance', 'stop_attendance'])]}" widget="selection"/>
+                                    <field name="sur_pre_operator_id"
+                                           attrs="{'invisible': [('name', '!=', 'surgery')], 'required': [('name', '=', 'surgery'),('schedule_state','!=','no_schedule')], 'readonly': [('state', 'not in', ['draft', 'start_attendance', 'open', 'stop_attendance'])]}" widget="selection"/>
+                                    <!--<field name="sur_procedure_type_id"-->
+                                           <!--attrs="{'invisible': [('name', '!=', 'surgery')], 'required': [('name', '=', 'surgery')], 'readonly': [('state', 'not in', ['draft', 'start_attendance', 'open', 'stop_attendance'])]}" widget="selection"/>-->
+                                    <field name="sur_procedure_type_id"
+                                           attrs="{'invisible': [('name', '!=', 'surgery')], 'readonly': [('state', 'not in', ['draft', 'start_attendance', 'open', 'stop_attendance'])]}" widget="selection" invisible="1"/>
+                                    <!--<field name="sur_pos_operator_id"-->
+                                           <!--attrs="{'invisible': [('name', '!=', 'surgery')], 'required': [('name', '=', 'surgery')], 'readonly': [('state', 'not in', ['start_attendance', 'open', 'stop_attendance'])]}" widget="selection"/>-->
+                                    <field name="lab_preparatory_information_id" widget="selection"
+                                           attrs="{'invisible': [('name', '!=', 'lab_test')]}"/>
+                                </group>
+                            </group>
+                            <group string="Origem da solicitação" attrs="{'invisible': [('name', '!=', 'lab_test')]}" colspan="4">
+                                <group>
+                                    <field name="lab_requester_id"/>
+                                    <field name="lab_partner_clinic_id"
+                                           attrs="{'invisible': ['|', ('lab_requester_id', '=', False), ('lab_requester_external', '=', False)]}"/>
+                                    <field name="lab_external_request_issurance_id" widget="selection"
+                                           attrs="{'invisible': ['|', ('lab_requester_id', '=', False), ('lab_requester_external', '=', True)]}"/>
+                                </group>
+                                <group>
+                                    <field name="lab_requester_external" />
+                                </group>
+                            </group>
+                            <group colspan="4" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'open', 'stop_attendance'])]}">
+                                <group attrs="{'invisible': [('name', '!=', 'lab_test')]}">
+                                    <field name="lab_type_of_letters_id"/>
+                                </group>
+                            </group>
+                            <group colspan="4">
+                                <notebook attrs="{'invisible': [('name', '!=', 'surgery')]}">
+                                    <page string="Materials">
+                                        <field name="sur_material_ids" nolabel="1" colspan="4">
+                                            <tree editable="bottom">
+                                                <field name="product_id"/>
+                                                <field name="quantity" sum="quantity"/>
+                                            </tree>
+                                        </field>
+                                    </page>
+                                </notebook>
+                            </group>
+                        </group>
+                        <!--HOSPITALIZATION INFO-->
+                        <group attrs="{'invisible': [('name', '!=', 'hospitalization')]}">
+                            <group string="Monitoring Reports"  col="2" colspan="2">
+                                <field name="monitoring_report_ids" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'open', 'stop_attendance', 'draft'])]}">
+                                    <tree editable="bottom">
+                                        <field name="start_date"/>
+                                        <field name="monitoring_report_id" context="{'wizard_view': True, 'default_patient_id': parent.patient_id, 'default_doctor_id': parent.doctor_id}" domain="[('patient_id', '=', parent.patient_id),('included_in_admission','=',False)]" options='{"create": True}'/>
+                                        <field name="date_invisible" invisible="1"/>
+                                    </tree>
+                                </field>
+                                <button name="create_monitoring_report" string="Criar Ficha" class="oe_highlight" type="object" col="2" colspan="2"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <!-- SURGERY INFO -->
+                            <page string="Intercurrences"
+                                  attrs="{'readonly': [('state', 'not in', ['open'])], 'invisible': [('name', '!=', 'surgery')]}">
+                                <field name="sur_intercurrences" nolabel="1" colspan="4"
+                                       attrs="{'readonly': [('state', 'in', ['start_attendance', 'done', 'canceled'])]}"/>
+                            </page>
+                            <page string="Surgery Info" attrs="{'invisible': [('name', '!=', 'surgery')]}">
+                                <group>
+                                    <group>
+                                        <field name="sur_surgery_time" widget="float_time"
+                                               attrs="{'readonly': [('state', 'not in', ['open'])]}"/>
+                                        <field name="sur_prescription_id"
+                                               context="{'search_default_patient_id': patient_id, 'default_patient_id': patient_id}"
+                                               attrs="{'readonly': [('state', 'not in', ['open'])]}"/>
+                                        <field name="sur_pathology_id"
+                                               attrs="{'readonly': [('state', 'not in', ['open'])]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="sur_anesthesia_time" widget="float_time"
+                                               attrs="{'readonly': [('state', 'not in', ['open'])]}"/>
+                                        <field name="sur_classification"
+                                               attrs="{'readonly': [('state', 'not in', ['open'])]}"/>
+                                    </group>
+                                    <group colspan="4" col="6">
+                                        <field name="sur_internal"
+                                               attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                        <field name="sur_weight"
+                                               attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                        <field name="sur_asa"
+                                               attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                        <field name="sur_fc"
+                                               attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                        <field name="sur_fr"
+                                               attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                        <field name="sur_ms"
+                                               attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                        <field name="sur_hidr"
+                                               attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                        <field name="sur_tc"
+                                               attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                        <field name="sur_blood_glucose"
+                                               attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Anesthesys"
+                                  attrs="{'invisible': [('name', '!=', 'surgery')]}">
+                                <field name="sur_anesthesy_ids"
+                                       attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="service_id"/>
+                                        <field name="date"/>
+                                        <field name="dose"/>
+                                        <field name="via"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Records"
+                                  attrs="{'invisible': [('name', '!=', 'surgery')]}">
+                                <field name="sur_record_ids"
+                                       attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}">
+                                    <tree editable="bottom">
+                                        <field name="date"/>
+                                        <field name="service_id"/>
+                                        <field name="name"/>
+                                        <field name="fr"/>
+                                        <field name="spo2"/>
+                                        <field name="pa"/>
+                                        <field name="tc"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Intercurrences"
+                                  attrs="{'invisible': [('name', '!=', 'surgery')], 'readonly': [('state', 'not in', ['draft'])]}">
+                                <field name="sur_intercurrences" nolabel="1" colspan="4"
+                                       attrs="{'readonly': [('state', 'in', ['draft', 'done', 'canceled'])]}"/>
+                            </page>
+                            <!-- GROUP MEDICAL APPOINTMENT -->
+                            <page string="General Info" attrs="{'invisible': [('name', 'not in', ['medical_appointment', 'vaccines', 'attested', 'specialty'])]}">
+                                <group>
+                                    <field name="ma_anamnesis" attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                </group>
+
+                                <group>
+                                    <field name="ma_food" attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                </group>
+
+                                <group>
+                                    <field name="ma_main_complaint" attrs="{'readonly': [('state', 'not in', ['start_attendance'])]}"/>
+                                </group>
+                            </page>
+                            <page string="Physical Exam" attrs="{'invisible': [('name', 'not in', ['medical_appointment', 'vaccines', 'attested', 'specialty'])]}" autofocus="autofocus">
+                                <group colspan="4" col="6">
+                                    <field name="ma_weight" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_body_score" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_tc" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_fr" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_fc" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_tpc" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_pas" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_hydratation" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_ectoparasite" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                </group>
+                                <group colspan="8" col="8">
+                                    <field name="ma_castrated" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_lameness" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_animal_iris_2" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_patellar_dislocation" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <!--<field name="ma_suspected"/>-->
+                                    <!--<field name="ma_diagnostic_confirmation"/>-->
+                                </group>
+                                <group>
+                                    <field name="ma_mucous" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_mouth" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_lymph_nodes" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_skin" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_cardiopulmonary_auscultation" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="ma_abdominal_palpation" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                </group>
+                            </page>
+                            <page string="Other Info" attrs="{'invisible': [('name', 'not in', ['medical_appointment', 'vaccines', 'attested', 'specialty', 'hospitalization'])]}">
+                                <group>
+                                    <group col="2" colspan="2">
+                                        <field name="ma_vaccine_line_ids" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}">
+                                            <tree editable="bottom">
+                                                <field name="map_id" invisible="1" />
+                                                <field name="vaccine_id" />
+                                                <field name="application_date" />
+                                                <field name="dose" />
+                                                <field name="next_application_date" />
+                                            </tree>
+                                        </field>
+                                    </group>
+                                    <group string="Patologia" col="2" colspan="2">
+                                        <field name="medical_pathology_ids" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'open', 'stop_attendance', 'draft'])]}">
+                                            <tree editable="bottom">
+                                                <field name="pathology_id" />
+                                                <field name="suspicion" attrs="{'readonly': [('diagnostic', '=', True)]}"/>
+                                                <field name="diagnostic" attrs="{'readonly': [('suspicion', '=', True)]}"/>
+                                                <field name="protocol_suggestion" />
+                                                <field name="prescription" />
+
+                                            </tree>
+                                        </field>
+
+                                        <field name="medical_diseases_ids" string="Services">
+                                            <tree editable="bottom" create="false">
+                                                <field name="suggested_service" readonly="1"/>
+                                                <field name="suggested_bool" />
+                                                <field name="pathology_line_id" invisible="1"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                    <separator />
+                                    <group col="4" colspan="4">
+                                        <button name="refresh_map" string="Update" type="object" class="oe_highlight" />
+                                    </group>
+                                    <separator />
+                                </group>
+                                <group colspan="4" col="4">
+                                    <field name="next_activity_id" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <field name="activity_date" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])], 'required': [('next_activity_id', '!=', False)]}"/>
+                                    <field name="type_of_letter_id" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                                    <!--<field name="next_step_id" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>-->
+                                </group>
+                            </page>
+                            <!--<page string="Demanded Time" attrs="{'invisible': [('name', 'not in', ['medical_appointment'])]}">-->
+
+                            <!--</page>-->
+                            <!--<page string="Vaccines"-->
+                                  <!--attrs="{'readonly': [('state', 'not in', ['open'])], 'invisible': [('name', 'not in', ['medical_appointment', 'vaccines'])]}">-->
+                                <!--<field name="vaccine_ids" nolabel="1" >-->
+                                    <!--<tree editable="bottom">-->
+                                        <!--<field name="vaccine_id"/>-->
+                                        <!--<field name="application_date"/>-->
+                                        <!--<field name="dose"/>-->
+                                        <!--<field name="next_application_date"/>-->
+                                    <!--</tree>-->
+                                <!--</field>-->
+                            <!--</page>-->
+                            <!--<page string="Suggested Services"-->
+                                  <!--attrs="{'readonly': [('state', 'not in', ['open'])], 'invisible': [('name', '!=', 'medical_appointment')]}">-->
+                                <!--<field name="ma_suggested_product_ids" nolabel="1" >-->
+                                    <!--<tree editable="bottom">-->
+                                        <!--<field name="product_id"/>-->
+                                    <!--</tree>-->
+                                <!--</field>-->
+                            <!--</page>-->
+                            <!-- EXTRA INFO -->
+                            <page colspan="4" string="Extra Info" attrs="{'invisible': [('name', 'in', ['medical_appointment', 'specialty'])]}">
+                                <label for="extra_info" />
+                                <field name="extra_info" nolabel="1" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                            </page>
+                            <!-- LOG -->
+                            <!--<page string="Log" attrs="{'invisible': [('name', '=', 'medical_appointment')]}">-->
+                                <!--<field name="log_ids" nolabel="1" readonly="1">-->
+                                    <!--<tree>-->
+                                        <!--<field name="create_date"/>-->
+                                        <!--<field name="create_uid"/>-->
+                                    <!--</tree>-->
+                                    <!--<form>-->
+                                        <!--<group col="2" colspan="4">-->
+                                            <!--<field name="create_date"/>-->
+                                            <!--<field name="create_uid"/>-->
+                                            <!--<field name="map_id"/>-->
+                                        <!--</group>-->
+                                        <!--<group string="Info">-->
+                                            <!--<field name="info" colspan="4" nolabel="1" widget="html"/>-->
+                                        <!--</group>-->
+                                    <!--</form>-->
+                                <!--</field>-->
+                            <!--</page>-->
+                            <page string="Medical steps">
+                                <field name="step_ids" nolabel="1">
+                                    <tree delete="false" create="false">
+                                        <field name="start_date"/>
+                                        <field name="pause_date"/>
+                                        <field name="create_uid"/>
+                                        <field name="map_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <group col="2" colspan="4">
+                                            <field name="start_date" readonly="1"/>
+                                            <field name="pause_date" readonly="1"/>
+                                            <field name="create_uid" readonly="1"/>
+                                            <field name="admission_id" readonly="1"/>
+                                            <field name="map_id" invisible="1"/>
+                                        </group>
+                                        <group string="Info">
+                                            <field name="info" colspan="4" nolabel="1" widget="html"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                        <group string="Observations">
+                            <field name="observations" attrs="{'readonly': [('state', 'not in', ['start_attendance', 'stop_attendance'])]}"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_map_view_tree" model="ir.ui.view">
+            <field name="name">medical.map.view.tree</field>
+            <field name="model">medical.map</field>
+            <field name="arch" type="xml">
+                <tree string="Map" decoration-muted="state=='draft'" decoration-bf="state=='open'"
+                      decoration-info="state=='approved'" decoration-danger="state=='disapproved'"
+                      decoration-success="state=='closed'" delete="true" edit="false" create="false">
+                    <field name="start_date"/>
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="sale_order_line_id" invisible="1"/>
+                    <field name="order_id" />
+                    <field name="price" sum="price" invisible="context.get('admission_view')"/>
+                    <!--<button name="action_draft_quotation" type="object" string="Set Draft" icon="fa-check-square-o"-->
+                        <!--attrs="{'invisible': [('state', '!=', 'disapproved')]}"  invisible="context.get('admission_view')"/>-->
+                    <!--<button name="action_repprove_quotation" type="object" string="Reprove Quotation" icon="fa-minus-circle"-->
+                        <!--attrs="{'invisible': [('state', '!=', 'open')]}" invisible="context.get('admission_view')"/>-->
+                    <!--<button name="action_open_quotation" type="object" string="Open Quotation" icon="fa-list-alt"-->
+                        <!--attrs="{'invisible': [('sale_order_line_id', '=', False)]}" invisible="context.get('admission_view')"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_map_view_search" model="ir.ui.view">
+            <field name="name">medical.map.view.search</field>
+            <field name="model">medical.map</field>
+            <field name="arch" type="xml">
+                <search string="Map">
+                    <field name="doctor_id"/>
+                    <field name="owner_id"/>
+                    <field name="patient_id"/>
+                    <filter name="surgery" string="Surgery" domain="[('name', '=', 'surgery')]"/>
+                    <filter name="lab_test" string="Lab Test Laboratory" domain="[('name', '=', 'lab_test'), ('lab_test_type', '=', 'laboratory')]"/>
+                    <filter name="lab_test_image" string="Lab Test Image" domain="[('name', '=', 'lab_test'), ('lab_test_type', '=', 'image')]"/>
+                    <filter name="medical_appointment" string="medical_appointment"
+                            domain="[('name', '=', 'medical_appointment')]"/>
+                    <filter name="hospitalization" string="hospitalization" domain="[('name', '=', 'hospitalization')]"/>
+                    <filter name="specialty" string="Specialities" domain="['|','|',('name', '=', 'specialty'),('name','=','esthetics'),('name','=','medicament')]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- ACTION/MENU MEDICAL APPOINTMENT -->
+        <record id="action_medical_map_specialty" model="ir.actions.act_window">
+            <field name="name">Specialities Map</field>
+            <field name="res_model">medical.map</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="search_view_id" ref="medical_map_view_search"/>
+            <field name="view_id" ref="medical_map_view_tree"/>
+            <field name="context">{'default_name': 'specialty', 'search_default_specialty':
+                'specialty', 'admission_view': True}
+            </field>
+        </record>
+
+        <menuitem id="menu_map_specialty"
+                  action="action_medical_map_specialty"
+                  string="Specialities Map"
+                  parent="hospital_management.main_menu_laboratory"
+                  sequence="4"/>
+
+        <!-- ACTION/MENU HOSPITALIZATION -->
+        <record id="action_medical_map_hospitalization" model="ir.actions.act_window">
+            <field name="name">Hospitalization</field>
+            <field name="res_model">medical.map</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="search_view_id" ref="medical_map_view_search"/>
+            <field name="view_id" ref="medical_map_view_tree"/>
+            <field name="context">{'default_name': 'hospitalization', 'search_default_hospitalization':
+                'hospitalization', 'admission_view': True}
+            </field>
+        </record>
+
+        <menuitem id="menu_map_hospitalization"
+                  action="action_medical_map_hospitalization"
+                  string="Hospitalization"
+                  parent="hospital_management.main_menu_laboratory"
+                  sequence="1"/>
+
+        <!-- ACTION/MENU SURGERY -->
+        <record id="action_medical_map_surgery" model="ir.actions.act_window">
+            <field name="name">Surgery Map</field>
+            <field name="res_model">medical.map</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="search_view_id" ref="medical_map_view_search"/>
+            <field name="view_id" ref="medical_map_view_tree"/>
+            <field name="context">{'default_name': 'surgery', 'search_default_surgery': 'surgery', 'admission_view': True}</field>
+        </record>
+
+        <menuitem id="menu_map_surgery"
+                  action="action_medical_map_surgery"
+                  string="Surgery Map"
+                  parent="hospital_management.main_menu_laboratory"
+                  sequence="1"/>
+
+        <!-- ACTION/MENU LAB TEST -->
+        <record id="action_medical_map_lab_test" model="ir.actions.act_window">
+            <field name="name">Laboratory</field>
+            <field name="res_model">medical.map</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="search_view_id" ref="medical_map_view_search"/>
+            <field name="view_id" ref="medical_map_view_tree"/>
+            <field name="context">{
+                'default_name': 'lab_test',
+                'default_lab_test_type': 'laboratory',
+                'search_default_lab_test': 'lab_test',
+                'admission_view': True
+            }</field>
+        </record>
+        <!-- IMAGE -->
+        <record id="action_medical_map_lab_test_image" model="ir.actions.act_window">
+            <field name="name">Image</field>
+            <field name="res_model">medical.map</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="search_view_id" ref="medical_map_view_search"/>
+            <field name="view_id" ref="medical_map_view_tree"/>
+            <field name="context">{
+                'default_name': 'lab_test',
+                'default_lab_test_type': 'image',
+                'search_default_lab_test_image': 'lab_test_image',
+                'admission_view': True
+            }</field>
+        </record>
+
+        <menuitem id="menu_map_lab_test"
+                  string="Lab Test Map"
+                  parent="hospital_management.main_menu_laboratory"
+                  sequence="2"/>
+
+        <menuitem id="menu_map_lab_test_laboratory"
+                  action="action_medical_map_lab_test"
+                  string="Laboratory"
+                  parent="menu_map_lab_test"
+                  sequence="0"/>
+
+        <menuitem id="menu_map_lab_test_image"
+                  action="action_medical_map_lab_test_image"
+                  string="Image"
+                  parent="menu_map_lab_test"
+                  sequence="1"/>
+
+        <!-- ACTION/MENU MEDICAL APPOINTMENT -->
+        <record id="action_medical_map_medical_appointment" model="ir.actions.act_window">
+            <field name="name">Medical Appointment Map</field>
+            <field name="res_model">medical.map</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="search_view_id" ref="medical_map_view_search"/>
+            <field name="view_id" ref="medical_map_view_tree"/>
+            <field name="context">{'default_name': 'medical_appointment', 'search_default_medical_appointment':
+                'medical_appointment', 'admission_view': True}
+            </field>
+        </record>
+
+        <menuitem id="menu_map_medical_appointment"
+                  action="action_medical_map_medical_appointment"
+                  string="Madical Appointment Map"
+                  parent="hospital_management.main_menu_laboratory"
+                  sequence="2"/>
+        <!--
+        LOG VIEW, ACTION, MENU
+        -->
+        <record id="medical_map_log_view_form" model="ir.ui.view">
+            <field name="name">medical.map.log.form</field>
+            <field name="model">medical.map.log</field>
+            <field name="arch" type="xml">
+                <form string="Log" delete="false" create="false" edit="false">
+                    <group>
+                        <field name="create_date"/>
+                        <field name="admission_id"/>
+                        <field name="map_id"/>
+                        <field name="info" widget="html"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!-- LIST -->
+        <record id="medical_map_log_view_tree" model="ir.ui.view">
+            <field name="name">medical.map.log.tree</field>
+            <field name="model">medical.map.log</field>
+            <field name="arch" type="xml">
+                <tree string="Log" delete="false" create="false" edit="false">
+                    <field name="create_date"/>
+                    <field name="map_id"/>
+                </tree>
+            </field>
+        </record>
+        <!-- SEARCH -->
+        <record id="medical_map_log_search" model="ir.ui.view">
+            <field name="name">medical.map.log.search</field>
+            <field name="model">medical.map.log</field>
+            <field name="arch" type="xml">
+                <search string="Log">
+                    <field name="create_date"/>
+                    <field name="map_id"/>
+                    <field name="admission_id"/>
+                    <filter name="admission" string="Admission" domain="[]" context="{'group_by': 'admission_id'}"/>
+                    <filter name="map" string="Map" domain="[]" context="{'group_by': 'map_id'}"/>
+                    <filter name="date" string="Date" domain="[]" context="{'group_by': 'create_date:day'}"/>
+                </search>
+            </field>
+        </record>
+        <!-- ACTION -->
+        <record id="action_medical_map_log" model="ir.actions.act_window">
+            <field name="name">Log</field>
+            <field name="res_model">medical.map.log</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="medical_map_log_search"/>
+            <field name="view_id" ref="medical_map_log_view_tree"/>
+            <field name="context">{
+                'search_default_admission': 1,
+                'search_default_date': 1,
+                'search_default_map': 1
+            }</field>
+        </record>
+        <!-- MENU -->
+        <menuitem id="menu_map_lab_log"
+                  action="action_medical_map_log"
+                  string="Log"
+                  parent="hospital_management.main_menu_laboratory"
+                  sequence="7"/>
+
+	<!-- ACTION/MENU GENERAL -->
+        <record id="action_medical_map_general" model="ir.actions.act_window">
+            <field name="name">Medical Map General</field>
+            <field name="res_model">medical.map</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="search_view_id" ref="medical_map_view_search"/>
+            <field name="view_id" ref="medical_map_view_tree"/>
+            <field name="context">{'admission_view': True}
+            </field>
+        </record>
+
+        <menuitem id="menu_medical_map_general"
+                  string="Map General"
+                  action="action_medical_map_general"
+                  parent="hospital_management.main_menu_laboratory"
+                  sequence="0"/>
+
+        <!--
+        STEP VIEW, ACTION, MENU
+        -->
+        <record id="medical_map_step_view_form" model="ir.ui.view">
+            <field name="name">medical.map.step.form</field>
+            <field name="model">medical.map.step</field>
+            <field name="arch" type="xml">
+                <form string="Step" delete="false" create="false" edit="false">
+                    <group>
+                        <field name="start_date"/>
+                        <field name="pause_date"/>
+                        <field name="admission_id"/>
+                        <field name="map_id"/>
+                        <field name="info"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!-- LIST -->
+        <record id="medical_map_step_view_tree" model="ir.ui.view">
+            <field name="name">medical.map.step.tree</field>
+            <field name="model">medical.map.step</field>
+            <field name="arch" type="xml">
+                <tree string="Log" delete="false" create="false" edit="false">
+                    <field name="start_date"/>
+                    <field name="pause_date"/>
+                    <field name="map_id"/>
+                </tree>
+            </field>
+        </record>
+        <!-- SEARCH -->
+        <record id="medical_map_step_search" model="ir.ui.view">
+            <field name="name">medical.map.step.search</field>
+            <field name="model">medical.map.step</field>
+            <field name="arch" type="xml">
+                <search string="Step">
+                    <field name="start_date"/>
+                    <field name="pause_date"/>
+                    <field name="map_id"/>
+                    <field name="admission_id"/>
+                    <filter name="admission" string="Admission" domain="[]" context="{'group_by': 'admission_id'}"/>
+                    <filter name="map" string="Map" domain="[]" context="{'group_by': 'map_id'}"/>
+                    <filter name="date" string="Date" domain="[]" context="{'group_by': 'create_date:day'}"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

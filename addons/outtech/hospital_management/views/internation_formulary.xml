@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="internation_formulary_view" model="ir.ui.view">
+            <field name="name">internation</field>
+            <field name="model">internation.formulary</field>
+            <field name="arch" type="xml">
+                <form string="Internation Formulary">
+                    <header>
+                        <div invisible="context.get('admission_view')" colspan="2" class="oe_left">
+                            <button name="check_admission" string="Start Attendance" type="object" states="open"
+                                    class="oe_highlight"/>
+
+                        </div>
+                        <field name="state" widget="statusbar"/>
+                        </header>
+                        <group string="Internation">
+                        <group>
+                            <field name="type_id" />
+                            <field name="owner_id"/>
+                            <field name="patient"/>
+                            <field name="bed"/>
+                        </group>
+                        <group>
+                            <field name="attending_physician"/>
+                            <field name="operating_physician"/>
+                            <field name="service_id"/>
+                            <field name="hospitalization_date"/>
+                                    <field name="discharge_date"/>
+
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="medical_inpatient_registration_tree" model="ir.ui.view">
+            <field name="name">internation.formulary.tree</field>
+            <field name="model">internation.formulary</field>
+            <field name="arch" type="xml">
+                <tree string="Internation Formulary Info">
+                    <field name="type_id"/>
+                    <field name="owner_id"/>
+                    <field name="patient"/>
+                    <field name="hospitalization_date"/>
+                    <field name="discharge_date"/>
+                    <field name="bed"/>
+                    <field name="admission_type"/>
+                    <field name="state"/>
+                    <field name="service_id"/>
+                    <field name="attending_physician"/>
+                    <field name="operating_physician"/>
+                </tree>
+
+            </field>
+        </record>
+
+
+         <record id="action_internation_formulary_form" model="ir.actions.act_window">
+            <field name="name">Internation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">internation.formulary</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="filter" eval="True"/>
+        </record>
+
+
+         <menuitem id="menu_internation_formulary" name="Internation Formulary" string="Internation Formulary" parent="main_menu_configartion" action="action_internation_formulary_form"/>
+
+
+
+   </data>
+</odoo>

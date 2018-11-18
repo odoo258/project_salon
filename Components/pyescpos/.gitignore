@@ -1,0 +1,19 @@
+__pycache__/
+.cache/
+.tox/
+.coverage
+
+/build/
+/dist/
+/*.egg-info/
+/*.eggs/
+
+*.pyc
+*.pyo
+*.pyd
+*.egg
+*.sublime-workspace
+
+# a root `sandbox.py` can be used to write temporary essays and
+# other disposable code
+/sandbox.py

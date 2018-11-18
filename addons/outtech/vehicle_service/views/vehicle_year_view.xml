@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		    <!--Tree VehicleYear-->
+		<record id="vehicle_year_tree" model="ir.ui.view">
+		    <field name="name">Vehicle Year</field>
+		    <field name="model">vehicle.year</field>
+		    <field name="arch" type="xml">
+		        <tree string="Vehicle Year" editable="top">
+		            <field name="name"/>
+		        </tree>
+		    </field>
+		</record>
+
+		    <!--Search VehicleYear-->
+		<record id="vehicle_year_search" model="ir.ui.view">
+		    <field name="name">Vehicle Year</field>
+		    <field name="model">vehicle.year</field>
+		    <field name="arch" type="xml">
+		        <search string="Vehicle Year">
+			        <field name="name"/>
+		        </search>
+		    </field>
+		</record>
+
+		    <!--Action VehicleYear-->
+		<record id="vehicle_year_action" model="ir.actions.act_window">
+		    <field name="name">Vehicle Year</field>
+			<field name="type">ir.actions.act_window</field>
+		    <field name="res_model">vehicle.year</field>
+			<field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		</record>
+
+		    <!--Menu VehicleYear-->
+	    <menuitem id="vehicle_year_menu" name="Year" parent="vehicle_menu" action="vehicle_year_action" sequence="3"/>
+
+    </data>
+</odoo>

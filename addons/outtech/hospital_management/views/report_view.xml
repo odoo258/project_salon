@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- QWeb Reports -->
+
+        <report
+            id="report_print_prescription"
+            model="medical.prescription.order"
+            report_type="qweb-pdf"
+            string="Prescription"
+            name="hospital_management.prescription_demo_report"
+            file="hospital_management.prescription_demo_report"
+            />
+
+        <!--<report-->
+            <!--id="report_print_appointment"-->
+            <!--model="medical.appointment"-->
+            <!--report_type="qweb-pdf"-->
+            <!--string="Appointment Recipts New"-->
+            <!--name="health_care.appointment_recipts_report"-->
+            <!--file="health_care.appointment_recipts_report"-->
+            <!--/>-->
+
+
+        <report
+            id="report_print_patient_card"
+            model="medical.patient"
+            report_type="qweb-pdf"
+            string="Patient Card"
+            name="hospital_management.report_patient_card"
+            file="hospital_management.report_patient_card"
+            />
+
+
+        <report
+            id="report_print_newborn_card"
+            model="medical.newborn"
+            report_type="qweb-pdf"
+            string="Newborn Card"
+            name="hospital_management.report_newborn_card"
+            file="hospital_management.report_newborn_card"
+            />
+
+        <report
+            id="report_print_patient_medications_document"
+            model="medical.patient"
+            report_type="qweb-pdf"
+            string="Medication History New"
+            name="hospital_management.patient_medications_document"
+            file="hospital_management.patient_medications_document"
+            />
+        <report
+            id="report_print_patient_vaccinations_document"
+            model="medical.patient"
+            report_type="qweb-pdf"
+            string="Vaccinations History New"
+            name="hospital_management.patient_vaccinations"
+            file="hospital_management.patient_vaccinations"
+            />
+        <report
+            id="report_print_patient_diseases_document"
+            model="medical.patient"
+            report_type="qweb-pdf"
+            string="Diseases Report New"
+            name="hospital_management.patient_diseases_document"
+            file="hospital_management.patient_diseases_document"
+            />
+        <report
+            id="report_print_lab_result_demo"
+            model="medical.lab"
+            report_type="qweb-pdf"
+            string="Lab Record"
+            name="hospital_management.lab_result_demo"
+            file="hospital_management.lab_result_demo"
+            />
+        <report
+            id="report_print_lab_test_demo"
+            model="medical.patient"
+            report_type="qweb-pdf"
+            string="Lab Test"
+            name="hospital_management.lab_test_demo"
+            file="hospital_management.lab_test_demo"
+            />
+        <report
+            id="id_report_map_surgery"
+            model="medical.map"
+            string="Surgery Record"
+            report_type="qweb-html"
+            name="hospital_management.report_medical_map_surgery"
+            file="hospital_management.report_medical_map_surgery"
+            menu="False"
+        />
+
+        <!--Relatório Etiqueta-->
+        <report
+            id="id_report_map_lab_test_label"
+            model="medical.map"
+            string="Etiqueta"
+            report_type="qweb-html"
+            name="hospital_management.report_medical_map_label"
+            file="hospital_management.report_medical_map_label"
+            menu="False"
+        />
+
+        <!--Redimensionamento do formato do papel-->
+        <record id="id_report_page_laboratorial" model="report.paperformat">
+            <field name="name">Laboratorial</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">20</field>
+            <field name="page_width">62</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">3</field>
+            <field name="dpi">80</field>
+        </record>
+
+        <record id="hospital_management.id_report_map_lab_test_label" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="hospital_management.id_report_page_laboratorial" />
+        </record>
+        <!--Relatório Etiqueta-->
+
+        <report
+            id="id_report_template_office"
+            model="medical.map"
+            string="Template Office"
+            report_type="qweb-html"
+            name="hospital_management.report_template_office"
+            file="hospital_management.report_template_office"
+            menu="False"
+        />
+	    <report
+            id="id_report_template_type_letter"
+            model="medical.map"
+            string="Type of Letter"
+            report_type="qweb-html"
+            name="hospital_management.report_template_type_letter"
+            file="hospital_management.report_template_type_letter"
+            menu="False"
+        />
+        <report
+            id="id_report_map_monitoring_report"
+            model="medical.monitoring.report"
+            string="Monitoring Report Record"
+            report_type="qweb-html"
+            name="hospital_management.report_medical_monitoring_report"
+            file="hospital_management.report_medical_monitoring_report"
+            menu="True"
+        />
+
+        <report
+            id="id_report_map_exam_website"
+            model="medical.map"
+            string="Resultado do Exame"
+            report_type="qweb-pdf"
+            name="hospital_management.report_medical_exam_website"
+            file="hospital_management.report_medical_exam_website"
+            menu="False"
+        />
+    </data>
+</openerp>

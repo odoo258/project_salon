@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="report_patient_card_document">
+			<t t-call="report.html_container">
+				<t t-foreach="docs" t-as="o">
+					<div class="page">
+						<br></br>
+						<br></br>
+						<br></br>
+						<br></br>
+						<div class="center-block"
+							style="height: 300px; width: 430px; border: 1px solid black;">
+							<table>
+								<tbody>
+									<tr>
+										<td>
+										</td>
+										<td style="vertical-align: top;">
+											<!--<div-->
+												<!--style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; font-size:16px">-->
+												<!--<b>-->
+													<!--Nome:-->
+													<!--<span t-field='o.name' />-->
+												<!--</b>-->
+												<!--<br></br>-->
+												<b>PET</b>
+                                                <br></br>
+												<b>Nome:</b>
+													<span t-field='o.name' />
+												<br></br>
+												<b>Espécie:</b>
+													<span t-field='o.especie_id.name' />
+												<br></br>
+												<b>Raça:</b>
+													<span t-field='o.ethnic_group.name' />
+												<br></br>
+												<b>Pelagem:</b>
+													<span t-field='o.hair_id.name' />
+												<br></br>
+												<b>Data Nascimento:</b>
+													<span t-field='o.dob' t-options='{"widget": "date"}'/>
+												<br></br>
+												<b>Sexo:</b>
+												<t t-if="o.sex=='m'">
+													Masculino
+												</t>
+												<t t-if="o.sex=='f'">
+													Feminino
+												</t>
+												<br></br>
+												<b>Pelagem:</b>
+													<span t-field='o.color_id.name' />
+												<br></br>
+												<b>Tutor</b>
+                                                <br></br>
+												<b>Nome:</b>
+													<span t-field='o.owner_id.name' />
+												<br></br>
+												<b>CNPJ/CPF:</b>
+													<span t-field='o.owner_id.cnpj_cpf' />
+												<br></br>
+												<b>CEP:</b>
+													<span t-field='o.owner_id.zip' />
+												<br></br>
+												<b>Numero da residência:</b>
+													<span t-field='o.owner_id.number' />
+												<br></br>
+												<b>Email:</b>
+													<span t-field='o.owner_id.email' />
+												<br></br>
+												<b>Telefone:</b>
+													<span t-field='o.owner_id.phone' />
+												<br></br>
+											<!--</div>-->
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</t>
+			</t>
+		</template>
+
+		<template id="report_patient_card">
+			<t t-call="report.html_container">
+				<t t-foreach="docs" t-as="o">
+					<t t-call="hospital_management.report_patient_card_document"
+						t-lang="o.patient_id.lang" />
+					<span t-field='o.patient_id.title' />
+				</t>
+			</t>
+		</template>
+	</data>
+</openerp>

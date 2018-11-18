@@ -1,0 +1,831 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* bank_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-08 19:53+0000\n"
+"PO-Revision-Date: 2018-02-08 19:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_bank_event_action
+msgid "Action"
+msgstr "Ação"
+
+#. module: bank_payment
+#: selection:cnab.import,type:0
+msgid "Arquivo de Retorno Bancário"
+msgstr "Arquivo de Retorno Bancário"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_res_bank
+#: model:ir.model.fields,field_description:bank_payment.field_account_bank_event_bank_id
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file_bank_id
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_filter
+msgid "Bank"
+msgstr "Banco"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.action_bank_file
+#: model:ir.ui.menu,name:bank_payment.bank_file_menu
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_filter
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_tree
+msgid "Bank File"
+msgstr "Arquivos Bancários"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.action_bank_payment_form
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_bank_payment_id
+#: model:ir.ui.menu,name:bank_payment.menu_action_bank_payment
+msgid "Bank Payment"
+msgstr "Títulos Bancários"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_payment_form
+#: model:ir.ui.view,arch_db:bank_payment.bank_payment_tree
+#: model:ir.ui.view,arch_db:bank_payment.lot_payment_tree
+msgid "Bank Payments"
+msgstr "Títulos Bancários"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_bank_slip_bar_code
+msgid "Bank Slip Bar Code"
+msgstr "Código de Barras do Boleto"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_bank_slip_file
+msgid "Bank Slip File"
+msgstr "Arquivo de Boleto Bancário"
+
+#. module: bank_payment
+#: model:ir.ui.menu,name:bank_payment.menu_bank_transaction
+msgid "Bank Transactions"
+msgstr "Transações Bancárias"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.view_move_line_form_bank_payment
+msgid "Bar Code Bank Slip"
+msgstr "Código de Barras do Boleto"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file_cnab_file
+msgid "CNAB File"
+msgstr "Arquivo CNAB"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_payment_create_form
+#: model:ir.ui.view,arch_db:bank_payment.cnab_export_form
+#: model:ir.ui.view,arch_db:bank_payment.lot_payment_create_form
+#: model:ir.ui.view,arch_db:bank_payment.pagfor_export_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: bank_payment
+#: selection:bank.payment,status:0
+#: selection:lot.payment,status:0
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_name
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_name
+#: model:ir.ui.view,arch_db:bank_payment.bank_payment_form
+#: model:ir.ui.view,arch_db:bank_payment.lot_payment_form
+msgid "Code"
+msgstr "Código"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_bank_event_code_occurrence
+#: model:ir.ui.view,arch_db:bank_payment.view_res_bank_form_ext
+msgid "Code Occurrence"
+msgstr "Código da Ocorrência"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_res_bank_code_occurrence_ids
+msgid "Codes of Occurrence"
+msgstr "Códigos de Ocorrência"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.view_account_payment_mode_form_levys
+msgid "Collection"
+msgstr "Cobrança"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_company_id
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: bank_payment
+#: selection:account.bank.event,action:0
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: bank_payment
+#: selection:account.move.line,status:0
+#: selection:bank.payment,status:0
+#: selection:lot.payment,status:0
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/export_cnab.py:110
+#: code:addons/bank_payment/wizard/export_pagfor.py:109
+#: code:addons/bank_payment/wizard/import_cnab.py:196
+#, python-format
+msgid "Consult Bank File"
+msgstr "Consulta de Arquivo Bancário"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.act_window_bank_payment
+#: model:ir.actions.act_window,name:bank_payment.action_bank_payment_create
+#: model:ir.ui.view,arch_db:bank_payment.bank_payment_create_form
+msgid "Create Bank Payments"
+msgstr "Criar Títulos Bancários"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.act_window_lot_payment
+#: model:ir.actions.act_window,name:bank_payment.action_lot_payment_create
+#: model:ir.ui.view,arch_db:bank_payment.lot_payment_create_form
+msgid "Create Lot of Payments"
+msgstr "Criar Lote de Pagamentos"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_payment_create_form
+msgid "Create New Bank Payment"
+msgstr "Criar Novo Título Bancário"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.lot_payment_create_form
+msgid "Create New Lot of Payment"
+msgstr "Criar Novo Lote de Pagamento"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_bank_event_create_uid
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_bank_slip_create_uid
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file_create_uid
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_create_create_uid
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_create_uid
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_export_create_uid
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_import_create_uid
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_remessa_santander_create_uid
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_create_create_uid
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_create_uid
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_export_create_uid
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_remessa_santander_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_bank_event_create_date
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_bank_slip_create_date
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file_create_date
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_create_create_date
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_create_date
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_export_create_date
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_import_create_date
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_remessa_santander_create_date
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_create_create_date
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_create_date
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_export_create_date
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_remessa_santander_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_date_create
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_date_create
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_filter
+msgid "Date Create"
+msgstr "Data de Criação"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_date_maturity
+msgid "Date Maturity"
+msgstr "Data de Vencimento"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file_date_time
+msgid "Date/Time"
+msgstr "Data/Hora"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_payment_mode_writeoff_account_id
+msgid "Difference Account"
+msgstr "Conta da Diferença"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_bank_event_display_name
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_bank_slip_display_name
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file_display_name
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_create_display_name
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_display_name
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_export_display_name
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_import_display_name
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_remessa_santander_display_name
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_create_display_name
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_display_name
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_export_display_name
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_remessa_santander_display_name
+msgid "Display Name"
+msgstr "Nome para Mostrar"
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/import_cnab.py:149
+#, python-format
+msgid "Error! Do not exist bank occurrences registered for this bank"
+msgstr "Erro! Não existem ocorrências bancárias configuradas para o banco utilizado!"
+
+#. module: bank_payment
+#: code:addons/bank_payment/pagfor/pagfor_remessa_santander.py:37
+#, python-format
+msgid "Error! Exist installment(s) with barcode less or greater than 47 characters! Please check again!"
+msgstr "Erro! Existem parcela(s) com código de barras inferior ou superior a 47 caracteres! Por favor verifique os dados novamente!"
+
+#. module: bank_payment
+#: code:addons/bank_payment/pagfor/pagfor_remessa_santander.py:42
+#, python-format
+msgid "Error! Exist installment(s) with characters not numeric in barcode! Please check again!"
+msgstr "Erro! Existem parcela(s) com caracteres não numericos no campo código de barra! Por favor verifique os dados novamente!"
+
+#. module: bank_payment
+#: code:addons/bank_payment/pagfor/pagfor_remessa_santander.py:34
+#, python-format
+msgid "Error! Exist installment(s) without barcode number! Please check again!"
+msgstr "Erro! Existem parcela(s) sem código de barras cadastrado! Por favor verifique os dados novamente!"
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/bank_payment_create.py:100
+#: code:addons/bank_payment/wizard/bank_payment_create.py:120
+#, python-format
+msgid "Error! Exist installment(s), related already with a bank payment(s), please cancel the bank payment(s), to can generate new(s) bank payment(s)!"
+msgstr "Existem parcela(s) já relacionadas com um(s) título(s) bancário(s), por favor cancele o(s) título(s) bancário(s), para poder gerar novo(s) título(s) bancário(s)!"
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/lot_payment_create.py:72
+#, python-format
+msgid "Error! Exist installment(s), related already with a lot of payment(s), please cancel the lot of payment(s), to can generate new(s) lot of payment(s)!"
+msgstr "Error! Existem parcela(s), related already with a lot of payment(s), please cancel the lot of payment(s), to can generate new(s) lot of payment(s)!"
+
+#. module: bank_payment
+#: code:addons/bank_payment/models/bank_payment.py:33
+#: code:addons/bank_payment/models/lot_payment.py:33
+#, python-format
+msgid "Error! Is not possible delete bank payment(s) paid!"
+msgstr "Erro! Não é possível excluir título(s) bancário(s) pago(s)!"
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/import_cnab.py:130
+#, python-format
+msgid "Error! No layout of retorno registered in payment mode form!"
+msgstr "Erro! Nenhum layout de retorno configurado para o modo de pagamento utilizado!"
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/import_cnab.py:136
+#, python-format
+msgid "Error! Please configure bank journal"
+msgstr "Erro! Por favor configure o diário bancário"
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/import_cnab.py:51
+#, python-format
+msgid "Error! The currency \"BRL\" is not registered in currencies. Please register it."
+msgstr "Erro! A moeda \"BRL\" não está configurada em moedas. Por favor configure-a."
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/bank_payment_create.py:76
+#, python-format
+msgid "Error! The lines have different data to create a single bank payment"
+msgstr "Erro! As linhas possuem dados diferentes para criar um único título bancário!"
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/import_cnab.py:54
+#, python-format
+msgid "Error! The payment method \"Cnab File\" is not registered in payment methods. Please register it."
+msgstr "Erro! O método de pagamento \"Cnab File\" não está configurado em métodos de pagamento. Por favor configure-o."
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/bank_payment_create.py:81
+#, python-format
+msgid "Error! The payment type not have permission to create bank payments"
+msgstr "Erro! O modo de pagamento não tem permissão para criar títulos bancários"
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/export_cnab.py:42
+#, python-format
+msgid "Error: %s"
+msgstr "Erro: %s"
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/bank_payment_create.py:64
+#, python-format
+msgid "Error: Do not have our_number sequence for this bank!"
+msgstr "Erro: Não há sequencia de Nosso Número para este banco!"
+
+#. module: bank_payment
+#: selection:payment.mode,type_banking_billing:0
+msgid "Escritural"
+msgstr "Escritural"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.action_cnab_export
+msgid "Export CNAB"
+msgstr "Exportar CNAB"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.action_pagfor_export
+msgid "Export Pagfor"
+msgstr "Export Pagfor"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.cnab_export_form
+#: model:ir.ui.view,arch_db:bank_payment.pagfor_export_form
+msgid "Export and View Bank Files"
+msgstr "Exportar e Visualizar os Arquivos Bancários"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.cnab_export_form
+msgid "Exportar CNAB"
+msgstr "Exportar CNAB"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.pagfor_export_form
+msgid "Exportar Pagfor"
+msgstr "Exportar Pagfor"
+
+#. module: bank_payment
+#: selection:bank.file,file_type:0
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_filter
+msgid "Extrato"
+msgstr "Extrato"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_import_file
+msgid "File"
+msgstr "Arquivo"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file_file_type
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_import_type
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_filter
+msgid "File Type"
+msgstr "Tipo de Arquivo"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file_filename
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_filename
+msgid "Filename"
+msgstr "Nome de arquivo"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_payment_mode_generate_bank_payment
+msgid "Generate Bank Payment"
+msgstr "Gerar Título Bancário"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_payment_mode_generate_lot_payment
+msgid "Generate Lot of Payment"
+msgstr "Gerar Lote de Pagamento"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.cnab_export_form
+#: model:ir.ui.view,arch_db:bank_payment.pagfor_export_form
+msgid "Generate Remessa File"
+msgstr "Gerar Arquivo de Remessa"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.act_window_cnab_export
+msgid "Generation Bank Remessa"
+msgstr "Geração de Remessa Bancária"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.act_window_pagfor_export
+msgid "Generation Pagfor Remessa"
+msgstr "Gerar Remessa de Pagamento de Fornecedor"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_filter
+msgid "Group By..."
+msgstr "Agrupado por"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_bank_event_id
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_bank_slip_id
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file_id
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_create_id
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_id
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_export_id
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_import_id
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_remessa_santander_id
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_create_id
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_id
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_export_id
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_remessa_santander_id
+msgid "ID"
+msgstr "ID"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.cnab_import_form
+msgid "Import"
+msgstr "Importar"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.action_cnab_import
+#: model:ir.ui.menu,name:bank_payment.menu_cnab_import
+#: model:ir.ui.view,arch_db:bank_payment.cnab_import_form
+msgid "Import Retorno File"
+msgstr "Importar Arquivo de Retorno"
+
+#. module: bank_payment
+#: model:ir.ui.menu,name:bank_payment.menu_import_file
+msgid "Import and Files"
+msgstr "Importação e Arquivos"
+
+#. module: bank_payment
+#: code:addons/bank_payment/models/account_move_line.py:53
+#, python-format
+msgid "Include Bar Code"
+msgstr "Adicionar Código de Barras"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_account_invoice
+msgid "Invoice"
+msgstr "Fatura"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_invoice_installment_ids
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_invoice_installment_ids
+#: model:ir.ui.view,arch_db:bank_payment.bank_payment_form
+#: model:ir.ui.view,arch_db:bank_payment.lot_payment_form
+#: model:ir.ui.view,arch_db:bank_payment.payable_transaction_tree
+#: model:ir.ui.view,arch_db:bank_payment.receivable_transaction_tree
+msgid "Invoice Installments"
+msgstr "Parcelas da Fatura"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.view_res_bank_form_ext
+msgid "Items Template"
+msgstr "Modelo de Itens"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_create_join_installment
+msgid "Join Installments"
+msgstr "Unir Parcelas"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_account_move_line
+msgid "Journal Item"
+msgstr "Item de Diário"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_bank_event___last_update
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_bank_slip___last_update
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file___last_update
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment___last_update
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_create___last_update
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_export___last_update
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_import___last_update
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_remessa_santander___last_update
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment___last_update
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_create___last_update
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_export___last_update
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_remessa_santander___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_bank_event_write_uid
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_bank_slip_write_uid
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file_write_uid
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_create_write_uid
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_write_uid
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_export_write_uid
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_import_write_uid
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_remessa_santander_write_uid
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_create_write_uid
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_write_uid
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_export_write_uid
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_remessa_santander_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_bank_event_write_date
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_bank_slip_write_date
+#: model:ir.model.fields,field_description:bank_payment.field_bank_file_write_date
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_create_write_date
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_write_date
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_export_write_date
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_import_write_date
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_remessa_santander_write_date
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_create_write_date
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_write_date
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_export_write_date
+#: model:ir.model.fields,field_description:bank_payment.field_pagfor_remessa_santander_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_payment_mode_layout_remessa
+msgid "Layout of Remessa"
+msgstr "Layout de Remessa"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_payment_mode_layout_retorno
+msgid "Layout of Retorno"
+msgstr "Layout de Retorno"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.action_lot_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_lot_payment_id
+#: model:ir.ui.menu,name:bank_payment.menu_action_lot_payment
+msgid "Lot of Payment"
+msgstr "Lote de Pagamento"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.lot_payment_form
+msgid "Lot of Payments"
+msgstr "Lote de Pagamentos"
+
+#. module: bank_payment
+#: code:addons/bank_payment/wizard/bank_payment_create.py:122
+#: code:addons/bank_payment/wizard/lot_payment_create.py:76
+#, python-format
+msgid "New"
+msgstr "Novo"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_payment_create_form
+msgid "Note. For that uses the feature to unite installments in a single bank payment,\n"
+"                   it is necessary that the installments have the same payment type, date maturity,\n"
+"                   partner and in cases of multi-company the same company."
+msgstr "Nota. Para isso, usa o recurso para unir parcelas em um único pagamento bancário,\n"
+"                   é necessário que as parcelas tenham o mesmo tipo de pagamento, data de vencimento,\n"
+"                   cliente e em casos de multi-empresa da mesma empresa."
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.view_br_account_invoice_supplier_form_bank_payment
+msgid "Number Bank Slip"
+msgstr "Number Bank Slip"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_bank_slip_number
+msgid "Number Bar Code"
+msgstr "Código de Barras"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.cnab_export_form
+#: model:ir.ui.view,arch_db:bank_payment.pagfor_export_form
+msgid "Only Export"
+msgstr "Apenas Exportar"
+
+#. module: bank_payment
+#: selection:account.move.line,status:0
+#: selection:bank.payment,status:0
+#: selection:lot.payment,status:0
+msgid "Open"
+msgstr "Aberto"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_our_number
+msgid "Our Number"
+msgstr "Nosso Número"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_payment_form
+#: model:ir.ui.view,arch_db:bank_payment.lot_payment_form
+#: model:ir.ui.view,arch_db:bank_payment.view_br_account_invoice_supplier_form_bank_payment
+msgid "Pago"
+msgstr "Pago"
+
+#. module: bank_payment
+#: selection:account.move.line,status:0
+#: selection:bank.payment,status:0
+#: selection:lot.payment,status:0
+msgid "Paid"
+msgstr "Pago"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_partner_id
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: bank_payment
+#: selection:account.bank.event,action:0
+msgid "Pay"
+msgstr "Pagar"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_payment_mode_id
+#: model:ir.model.fields,field_description:bank_payment.field_cnab_import_payment_mode_id
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_payment_mode_id
+msgid "Payment Mode"
+msgstr "Forma de Pagamento"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_payment_mode
+msgid "Payment Modes"
+msgstr "Modos de Pagamento"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.action_payment_transaction
+#: model:ir.ui.menu,name:bank_payment.menu_payment_transaction
+msgid "Payment Transactions"
+msgstr "Transações de Pagamento"
+
+#. module: bank_payment
+#: model:ir.ui.menu,name:bank_payment.menu_payment
+msgid "Payments"
+msgstr "Pagamentos"
+
+#. module: bank_payment
+#: model:ir.ui.menu,name:bank_payment.menu_receipt
+msgid "Receipts"
+msgstr "Recebimentos"
+
+#. module: bank_payment
+#: model:ir.actions.act_window,name:bank_payment.action_receivable_transaction
+#: model:ir.ui.menu,name:bank_payment.menu_receivable_transaction
+msgid "Receivable Transactions"
+msgstr "Movimentações de Recebimento"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_reference_code
+msgid "Reference Code"
+msgstr "Código de Referência"
+
+#. module: bank_payment
+#: selection:payment.mode,type_banking_billing:0
+msgid "Registrada"
+msgstr "Registrada"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_filter
+msgid "Remessa"
+msgstr "Remessa"
+
+#. module: bank_payment
+#: selection:bank.file,file_type:0
+msgid "Remessa CNAB"
+msgstr "Remessa CNAB"
+
+#. module: bank_payment
+#: selection:bank.file,file_type:0
+msgid "Remessa PagFor"
+msgstr "Remessa PagFor"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_filter
+msgid "Retorno"
+msgstr "Retorno"
+
+#. module: bank_payment
+#: selection:bank.file,file_type:0
+msgid "Retorno CNAB"
+msgstr "Retorno CNAB"
+
+#. module: bank_payment
+#: selection:bank.file,file_type:0
+msgid "Retorno PagFor"
+msgstr "Retorno PagFor"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.view_move_line_form_bank_payment
+msgid "Save Number"
+msgstr "Salvar Número"
+
+#. module: bank_payment
+#: selection:payment.mode,type_banking_billing:0
+msgid "Sem Registro"
+msgstr "Sem Registro"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_filter
+msgid "Show Files Extrato"
+msgstr "Mostrar Arquivos de Extrato"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_filter
+msgid "Show Files Remessa"
+msgstr "Mostrar Arquivos de Remessa"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_file_filter
+msgid "Show Files Retorno"
+msgstr "Mostrar Arquivos de Retorno"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_status
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_status
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_status
+msgid "Status"
+msgstr "Situação"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_account_move_line_status_aux
+msgid "Status Auxiliary"
+msgstr "Status Auxiliar"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_payment_mode_transmission_code
+msgid "Transmission Code"
+msgstr "Código de Transmissão"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_payment_mode_type_banking_billing
+msgid "Type Banking Billing"
+msgstr "Tipo de Cobrança Bancária"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_value
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_value
+msgid "Value"
+msgstr "Valor"
+
+#. module: bank_payment
+#: model:ir.model.fields,field_description:bank_payment.field_bank_payment_value_paid
+#: model:ir.model.fields,field_description:bank_payment.field_lot_payment_value_paid
+msgid "Value Paid"
+msgstr "Valor Pago"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.view_br_account_invoice_supplier_form_bank_payment
+msgid "Vencimentos"
+msgstr "Vencimentos"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_account_bank_event
+msgid "account.bank.event"
+msgstr "account.bank.event"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_account_move_line_bank_slip
+msgid "account.move.line.bank.slip"
+msgstr "account.move.line.bank.slip"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_bank_file
+msgid "bank.file"
+msgstr "bank.file"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_bank_payment
+msgid "bank.payment"
+msgstr "bank.payment"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_bank_payment_create
+msgid "bank.payment.create"
+msgstr "bank.payment.create"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_cnab_export
+msgid "cnab.export"
+msgstr "cnab.export"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_cnab_import
+msgid "cnab.import"
+msgstr "cnab.import"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_cnab_remessa_santander
+msgid "cnab.remessa.santander"
+msgstr "cnab.remessa.santander"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_lot_payment
+msgid "lot.payment"
+msgstr "lot.payment"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_lot_payment_create
+msgid "lot.payment.create"
+msgstr "lot.payment.create"
+
+#. module: bank_payment
+#: model:ir.ui.view,arch_db:bank_payment.bank_payment_create_form
+#: model:ir.ui.view,arch_db:bank_payment.cnab_export_form
+#: model:ir.ui.view,arch_db:bank_payment.lot_payment_create_form
+#: model:ir.ui.view,arch_db:bank_payment.pagfor_export_form
+msgid "or"
+msgstr "ou"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_pagfor_export
+msgid "pagfor.export"
+msgstr "pagfor.export"
+
+#. module: bank_payment
+#: model:ir.model,name:bank_payment.model_pagfor_remessa_santander
+msgid "pagfor.remessa.santander"
+msgstr "pagfor.remessa.santander"
+

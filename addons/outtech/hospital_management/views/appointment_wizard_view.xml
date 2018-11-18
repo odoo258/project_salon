@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="appointment_wizard_view" model="ir.ui.view">
+            <field name="name">Appointment</field>
+            <field name="model">appointment.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Invoice Sales Order">
+                    <header>
+                        <button name="show_record" string="Show" type="object"/>
+                        <button name="cancel" string="cancel" type="object"/>
+                    </header>
+                    <group>
+                        <field name="phy_id"/>
+                        <field name="a_date"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_appointment_wizard" model="ir.actions.act_window">
+            <field name="name">Appointment Wizard</field>
+            <field name="res_model">appointment.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!--menuitem id="menu_appointment_wizard"
+                  action="action_appointment_wizard"
+                  string="Appointment Wizard"
+                  parent="hospital_management.menu_appointment"
+                  sequence="1"/-->
+
+        <!-- WIZARD DE CANCELAMENTO DE AGENDAMENTO -->
+        <record id="appointment_cancel_wizard_view" model="ir.ui.view">
+            <field name="name">Appointment Cancel</field>
+            <field name="model">appointment.cancel.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Apointment Cancel" create="false">
+                    <group>
+                        <group>
+                            <field name="reason_for_cancellation"/>
+                        </group>
+                        <group colspan="4">
+                            <field name="observation_cancellation" colspan="4"
+                                   attrs="{'required': [('reason_for_cancellation', '=', 'other')]}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string='Confirm' name="confirm" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_appointment_cancel_wizard" model="ir.actions.act_window">
+            <field name="name">Appointment Cancel</field>
+            <field name="res_model">appointment.cancel.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="appointment_cancel_wizard_view"/>
+            <field name="target">new</field>
+        </record>
+
+
+    </data>
+</openerp>

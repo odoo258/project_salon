@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record id="cnab_import_form" model="ir.ui.view">
+        <field name="name">Import Retorno File</field>
+        <field name="view_type">form</field>
+        <field name="model">cnab.import</field>
+        <field name="arch" type="xml">
+            <form string="Import Retorno File">
+                <group col="4">
+                    <field name="payment_mode_id"/>
+                    <field name="type"/>
+                </group>
+                <group col="2">
+                    <field name="file"/>
+                </group>
+                <footer>
+                    <button type="object" name="import_file" string="Import"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cnab_import" model="ir.actions.act_window">
+        <field name="name">Import Retorno File</field>
+        <field name="res_model">cnab.import</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="domain">[]</field>
+    </record>
+
+
+    <menuitem
+        id="menu_cnab_import"
+        name="Import Retorno File"
+        action="action_cnab_import"
+        parent="menu_import_file"
+        sequence="3" />
+
+    </data>
+</openerp>

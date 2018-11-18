@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+     <data noupdate="1">
+
+        <record id="inpatient_registration_code_seq" model="ir.sequence">
+            <field name="name">Patients</field>
+            <field name="code">medical.inpatient.registration</field>
+            <field name="prefix">F</field>
+            <field name="padding">4</field>
+        </record>
+        
+    </data>
+</openerp>
+

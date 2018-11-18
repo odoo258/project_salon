@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>		
+		<record id="medical_patient_ambulatory_care_form" model="ir.ui.view">
+            <field name="name">medical.patient.ambulatory_care.form</field>
+            <field name="model">medical.patient.ambulatory_care</field>
+            <field name="arch" type="xml">
+            		<form string="Patient Ambulatory Care" version="7.0">
+					<header>
+						<button name="done_button" states="draft" string="Done" icon="gtk-execute" type="object" modifiers="{'invisible': [['state', 'not in', ['draft']]]}"/>
+						<field name="state" readonly="1" widget="statusbar" statusbar_visible="draft" modifiers="{'readonly': true}"/>
+					</header>
+                
+					<sheet string="Basic Info">
+						<group colspan="4" col="4">
+                                <field name="name"/>
+                                <field name="health_professional"/>
+                                <field name="ordering_professional"/>
+                                <field name="patient"/>
+                                <field name="base_condition"/>
+                                <field name="evaluation"/>
+                                <field name="session_number"/>
+                                <field name="session_start"/>
+						</group>
+						<notebook colspan="4">
+							<page string="Main">
+            					<group colspan="4" string="Procedures">
+									<field name="procedures" colspan="4">
+									<tree string="Procedures">
+										<field name="procedure_id"/>
+										<field name="comments"/>
+									</tree>
+									</field>
+								</group>
+								<group colspan="4" string="Summary">
+									<field name="session_notes" colspan="4" nolabel="1"/>
+								</group>
+								<group colspan="4" col="6" id="ambulatory_care_finish">
+									<field name="warning"/>
+									<field name="session_end"/>
+									<field name="next_session"/>
+								</group>
+							</page>
+							<page string="Other">
+								<group colspan="6" col="6" string="Vital Signs">
+                                <field name="temperature"/>
+                                <field name="systolic"/>
+                                <field name="diastolic"/>
+                                <field name="bpm"/>
+                                <field name="respiratory_rate"/>
+                                <field name="osat"/>
+                            </group>
+							<group colspan="6" col="6" string="Other">
+                                <field name="glycemia"/>
+                                <field name="evolution"/>
+                            </group>
+				</page>
+
+				
+				<page string="Medication">
+				<group colspan="2" col="2">
+					<field name="care_location"/>
+				</group>
+				<form string=" Medicaments">
+					<field name="medicaments" nolabel="1" widget="one2many_list">
+						<tree string="Medicaments" editable="bottom">
+					    	<field name="medicament"/>
+                            <field name="quantity"/>
+                            <field name="lot"/>
+                            <field name="short_comment"/>
+                            <field name="product"/>
+                        </tree>
+                    </field>
+                    
+                    <field name="medical_supplies" nolabel="1" widget="one2many_list">
+						<tree string="Medical Supplies" editable="bottom">
+					    	<field name="product_id"/>
+                            <field name="short_comment"/>
+                            <field name="lot"/>
+                            <field name="short_comment"/>
+                        </tree>
+                    </field>
+                    
+                    <field name="vaccines" nolabel="1" widget="one2many_list">
+						<tree string="Vaccines" editable="bottom">
+					    	<field name="vaccines"/>
+                            <field name="quantity"/>
+                            <field name="lot"/>
+                            <field name="dose"/>
+                            <field name="next_dose_date"/>
+                            <field name="short_comment"/>
+                        </tree>
+                    </field>
+                 </form>
+			</page>
+			<page string="Stock Moves">
+				<field name="moves" string="Stock Moves"/>
+			</page>
+				
+						</notebook>
+					</sheet>
+				</form>
+            </field>
+        </record>
+        
+        <record id="medical_patient_ambulatory_care_tree" model="ir.ui.view">
+            <field name="name">medical.patient.ambulatory_care.tree</field>
+            <field name="model">medical.patient.ambulatory_care</field>
+            <field name="arch" type="xml">
+                <tree string="Patient Ambulatory Care">
+					<field name="warning"/>
+                    <field name="name"/>
+                    <field name="patient"/>                    
+                    <field name="session_start"/>
+                    <field name="health_professional"/>
+                    <field name="evolution"/>
+				</tree>
+            </field>
+        </record>
+        
+        <record id="medical_patient_ambulatory_care_action" model="ir.actions.act_window">
+            <field name="name">Patient Ambulatory Care</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.patient.ambulatory_care</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem id="menu_patient_ambulatory_care"
+         parent="menu_nursing" 
+         action="medical_patient_ambulatory_care_action" sequence="3" />
+        </data>
+</openerp>

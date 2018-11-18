@@ -1,0 +1,37 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_reports_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-15 13:35+0000\n"
+"PO-Revision-Date: 2017-08-15 13:35+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_reports_ext
+#: model:account.financial.html.report.line,name:account_reports_ext.account_financial_report_cashsummary_receivable_customers_projected0
+msgid "Amount receivable from customers"
+msgstr "Valor a receber de clientes"
+
+#. module: account_reports_ext
+#: model:account.financial.html.report.line,name:account_reports_ext.account_financial_report_cashsummary_amount_pay_projected0
+msgid "Amount to pay"
+msgstr "Valor a Pagar"
+
+#. module: account_reports_ext
+#: model:account.financial.html.report.line,name:account_reports_ext.account_financial_report_cashsummary_operating_projected0
+msgid "Cash flows from operating activities projected"
+msgstr "Fluxos de caixa das atividades operacionais projetadas"
+
+#. module: account_reports_ext
+#: model:account.financial.html.report.line,name:account_reports_ext.account_financial_report_cashsummary_cash_payment_supplier_projected0
+msgid "Projected payments from suppliers"
+msgstr "Pagamentos projetados para fornecedores"
+

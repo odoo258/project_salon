@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medical_monitoring_type_line_form" model="ir.ui.view">
+            <field name="name">monitoring.type.line.form</field>
+            <field name="model">monitoring.type.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string="Monitoring Type">
+					    <field name="monitoring_report_id" invisible="1"/>
+					    <field name="monitoring_type_id"/>
+					    <field name="register_option"/>
+					    <field name="included_hour"/>
+					    <field name="date_invisible" invisible="1"/>
+					</group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_monitoring_type_form" model="ir.ui.view">
+            <field name="name">medical.monitoring.type.form</field>
+            <field name="model">medical.monitoring.type</field>
+            <field name="arch" type="xml">
+                <form string="Monitoring Types">
+                    <group colspan="4" col="4">
+					    <field name="name"/>
+					    <field name="fill_automatic"/>
+					</group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_monitoring_type_tree" model="ir.ui.view">
+            <field name="name">medical.monitoring.type.tree</field>
+            <field name="model">medical.monitoring.type</field>
+            <field name="arch" type="xml">
+                <tree string="Monitoring Types">
+                    <field name="name"/>
+                    <field name="register_option"/>
+                    <field name="included_hour" invisible="1"/>
+                    <field name="fill_automatic"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_action_monitoring_type" model="ir.actions.act_window">
+            <field name="name">Monitoring Types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.monitoring.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_monitoring_type" action="medical_action_monitoring_type" parent="menu_hospitalization"/>
+    </data>
+</odoo>

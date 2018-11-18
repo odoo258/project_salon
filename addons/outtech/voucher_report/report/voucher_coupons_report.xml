@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="report_voucher"
+            string="Emissão de Voucher"
+            model="voucher.coupons"
+            report_type="qweb-pdf"
+            file="voucher_report.report_voucher_coupons"
+            name="voucher_report.report_voucher_coupons"
+        />
+
+        <!--<record id="paperformat_report_voucher_coupons" model="report.paperformat">-->
+            <!--<field name="name">Emitir Voucher</field>-->
+            <!--<field name="orientation">Landscape</field>-->
+        <!--</record>-->
+
+        <!--<record id="report_voucher_coupons" model="ir.actions.report.xml">-->
+            <!--<field name="paperformat_id" ref="paperformat_report_voucher_coupons" />-->
+        <!--</record>-->
+        <!---->
+    </data>
+</odoo>

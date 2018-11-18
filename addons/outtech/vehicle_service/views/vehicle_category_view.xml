@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+        	<!--Tree VehicleCategory-->
+		<record id="vehicle_category_tree" model="ir.ui.view">
+		    <field name="name">Vehicle Category</field>
+		    <field name="model">vehicle.category</field>
+		    <field name="arch" type="xml">
+		        <tree string="Vehicle Category" editable="top">
+		            <field name="name"/>
+		        </tree>
+		    </field>
+		</record>
+
+		    <!--Search VehicleCategory-->
+		<record id="vehicle_category_search" model="ir.ui.view">
+		    <field name="name">Vehicle Category</field>
+		    <field name="model">vehicle.category</field>
+		    <field name="arch" type="xml">
+		        <search string="Vehicle Category">
+			        <field name="name"/>
+		        </search>
+		    </field>
+		</record>
+
+            <!--Action VehicleCategory-->
+		<record id="vehicle_category_action" model="ir.actions.act_window">
+		    <field name="name">Vehicle Category</field>
+			<field name="type">ir.actions.act_window</field>
+		    <field name="res_model">vehicle.category</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree</field>
+		</record>
+
+            <!--Menu VehicleCategory-->
+	    <menuitem id="vehicle_category_menu" name="Category" parent="vehicle_menu" action="vehicle_category_action" sequence="1"/>
+
+    </data>
+</odoo>

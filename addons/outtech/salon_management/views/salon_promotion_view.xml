@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="salon_promotion_view" model="ir.ui.view">
+            <field name="name">salon.promotion.view</field>
+            <field name="model">salon.promotion</field>
+            <field name="arch" type="xml">
+                <form string="Promotion">
+                    <sheet>
+                        <group>
+                            <field name="service"/>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="term_start"/>
+                            <field name="term_end"/>
+                            <field name="voucher"/>
+                        </group>
+                        <group>
+                            <field name="info"/>
+                        </group>
+                        <notebook>
+                            <page string="Included">
+                                <field name="included_ids" widget="one2many_list" mode="tree" nolabel="1">
+                                    <tree editable="top">
+                                        <field name="group" required="1"/>
+                                        <field name="qt"/>
+                                        <field name="discount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                         </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="salon_promotion_view_search" model="ir.ui.view">
+            <field name="name">salon.promotion.view</field>
+            <field name="model">salon.promotion</field>
+            <field name="arch" type="xml">
+                <search string="Search Promotion">
+                    <separator orientation="vertical"/>
+                    <field name="service" select="1"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="salon_promotion_view_tree" model="ir.ui.view">
+            <field name="name">salon.promotion.tree</field>
+            <field name="model">salon.promotion</field>
+            <field name="arch" type="xml">
+                <tree string="Promotion Information">
+                    <field name="service"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="salon_promotion_action" model="ir.actions.act_window">
+            <field name="name">Promotion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">salon.promotion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="salon_promotionmenu_menu" string="Salon Promotion"/>
+        <menuitem id="salon_promotion_menu" parent="salon_promotionmenu_menu"
+                  string="Promotion" action="salon_promotion_action"  sequence="2"/>
+
+    </data>
+</openerp>

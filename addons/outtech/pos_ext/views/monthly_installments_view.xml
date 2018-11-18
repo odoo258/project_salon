@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_monthly_installment_form" model="ir.ui.view" >
+            <field name="name">Monthly Installment Form</field>
+            <field name="model">monthly.installments</field>
+            <field name="arch" type="xml">
+                <form string="Monthly Installment">
+                    <sheet>
+                        <div class="oe_title">
+                           <label for="name" class="oe_edit_only"/>
+                           <h1><field name="name"/></h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_monthly_installment_tree" model="ir.ui.view">
+            <field name="name">Monthly Installments Tree</field>
+            <field name="model">monthly.installments</field>
+            <field name="arch" type="xml">
+                <tree string="Monthly Installments">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_installments_form" model="ir.actions.act_window">
+            <field name="name">Monthly Installments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">monthly.installments</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to configure your monthly installments.
+              </p>
+            </field>
+        </record>
+
+        <menuitem parent="point_of_sale.menu_point_config_product" action="pos_ext.action_installments_form" id="menu_pos_monthly_installment"
+            sequence="34"/>
+    </data>
+</odoo>

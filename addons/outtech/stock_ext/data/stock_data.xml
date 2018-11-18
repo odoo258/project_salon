@@ -1,0 +1,13 @@
+<odoo>
+    <data noupdate="0">
+        <record forcecreate="True" id="decimal_procurement_order" model="decimal.precision">
+            <field name="name">Procurement Decimal</field>
+            <field name="digits">1</field>
+        </record>
+
+        <record forcecreate="True" id="decimal_generate_demand" model="decimal.precision">
+            <field name="name">Minimum Stock Precision</field>
+            <field name="digits">1</field>
+        </record>
+    </data>
+</odoo>

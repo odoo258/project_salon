@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="bank_payment_tree" model="ir.ui.view">
+        <field name="name">Bank Payments</field>
+        <field name="view_type">tree</field>
+        <field name="model">bank.payment</field>
+        <field name="arch" type="xml">
+            <tree string="Bank Payments" colors="gray:status == 'canceled'" create="false">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="date_create"/>
+                <field name="value"/>
+                <field name="payment_mode_id"/>
+                <field name="date_maturity"/>
+                <field name="value_paid"/>
+                <field name="status"/>
+                <!--<field name="filename" invisible="1"/>-->
+                <!--<field name="bank_slip_file" filename="filename"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="bank_payment_form" model="ir.ui.view">
+        <field name="name">Bank Payments</field>
+        <field name="model">bank.payment</field>
+        <field name="view_type">form</field>
+        <field name="arch" type="xml">
+            <form string="Bank Payments" create="false">
+                <header>
+                    <field name="status" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="eo_edit_only" string="Code"/>
+                        <h1>
+                            <field name="name" string="Code"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="payment_mode_id"/>
+                            <field name="our_number"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="date_create"/>
+                            <field name="date_maturity"/>
+                            <field name="value"/>
+                            <field name="value_paid"/>
+                        </group>
+                    </group>
+                    <group colspan="4">
+                        <field name="bank_slip_file" filename="filename"/>
+                        <field name="filename" invisible="1"/>
+                    </group>
+                    <separator string="Invoice Installments" colspan="4"/>
+                    <group>
+                        <field name="invoice_installment_ids" nolabel='1'>
+                            <tree name='account_move_line'>
+                                <field name="date_maturity"/>
+                                <field name="name"/>
+                                <field name="ref"/>
+                                <field name="debit"/>
+                                <field name="credit"/>
+                                <field name="reconciled" string="Pago" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_bank_payment_form" model="ir.actions.act_window">
+        <field name="name">Bank Payment</field>
+        <field name="res_model">bank.payment</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="bank_payment_tree"/>
+    </record>
+
+    <menuitem name="Bank Transactions"
+              sequence="40"
+              id="menu_bank_transaction"
+              parent="br_account_payment.menu_br_payments"/>
+
+    <menuitem name="Receipts"
+              sequence="1"
+              id="menu_receipt"
+              parent="menu_bank_transaction"/>
+
+    <menuitem name="Payments"
+              sequence="2"
+              id="menu_payment"
+              parent="menu_bank_transaction"/>
+
+    <menuitem name="Import and Files"
+              sequence="3"
+              id="menu_import_file"
+              parent="menu_bank_transaction"/>
+
+    <menuitem name="Bank Payment"
+              sequence="2"
+              id="menu_action_bank_payment"
+              action="action_bank_payment_form"
+              parent="menu_receipt"/>
+
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="change_credit_card_form" model="ir.ui.view">
+		    <field name="name">Change Credit Card</field>
+		    <field name="model">change.credit.card</field>
+		    <field name="arch" type="xml">
+				<form string="Change Credit Card">
+                    <group>
+                        <group>
+                            <field name="payment_acquirer_credit_card"/>
+                            <field name="number_credit_card"/>
+                            <field name="name_credit_card"/>
+                        </group>
+                        <group>
+                            <field name="security_code_credit_card"/>
+                            <field name="credit_card_month_expiration"/>
+                            <field name="credit_card_year_expiration"/>
+                        </group>
+                    </group>
+                    <footer position="replace">
+                        <button name='confirm_change' string="Confirm" type="object" class="btn btn-primary"/>
+						or
+						<button string="Cancel" class="btn btn-danger oe_link" special="cancel"/>
+                    </footer>
+				</form>
+		    </field>
+		</record>
+
+
+</odoo>

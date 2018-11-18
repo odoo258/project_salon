@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="email_template_vehicle_form" model="ir.ui.view">
+            <field name="name">email.template.form</field>
+            <field name="model">mail.template</field>
+            <field name="inherit_id" ref="mail.email_template_form" />
+            <field name="arch" type="xml">
+                <field name="scheduled_date" position="after">
+                    <field name="domain"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

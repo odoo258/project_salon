@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--sequence to Next Steps -->
+        <record id="next_steps_sequence" model="ir.sequence">
+            <field name="name">Next Steps Sequence</field>
+            <field name="code">next_steps_sequence</field>
+            <field eval="1" name="number_next_actual"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="5" name="padding"/>
+        </record>
+    </data>
+</odoo>

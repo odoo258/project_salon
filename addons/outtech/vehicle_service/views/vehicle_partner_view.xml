@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+			<!--Form VehiclePartner-->
+		<record id="vehicle_partner_form" model="ir.ui.view">
+		    <field name="name">Vehicle</field>
+		    <field name="model">vehicle.partner</field>
+		    <field name="arch" type="xml">
+		        <form string="Vehicle">
+		            <sheet>
+						<label for="partner_id" class="oe_edit_only"/>
+						<h1>
+							<field name="partner_id"/>
+						</h1>
+			            <group>
+			                <group>
+								<field name="owner_name"/>
+				                <field name="renavam"/>
+				                <field name="plate"/>
+				            </group>
+				            <group>
+								<field name="category_id"/>
+								<field name="manufacturer_id" domain="[('category_ids','=',category_id)]"/>
+				                <field name="model_id" domain="[('manufacturer_id','=',manufacturer_id),('category_id','=',category_id)]"/>
+					            <field name="year_id" context="{'model_id': model_id}"/>
+				            </group>
+			            </group>
+		            </sheet>
+		        </form>
+		    </field>
+		</record>
+
+			<!--Kanban VehiclePartner tirado do product-->
+		<record id="vehicle_partner_kanban_view" model="ir.ui.view">
+            <field name="name">Vehicle</field>
+            <field name="model">vehicle.partner</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="owner_name" string="Owner"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_tags_section">
+                                    <field name="model_id"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong><field name="owner_name"/></strong>
+                                    <ul>
+                                        <li>Partner: <field name="partner_id"></field></li>
+	                                    <li>Renavam: <field name="renavam"></field></li>
+	                                    <li>Plate: <field name="plate"></field></li>
+                                    </ul>
+                                    <div name="tags"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+			<!--Tree VehiclePartner-->
+		<record id="vehicle_partner_tree" model="ir.ui.view">
+		    <field name="name">Vehicle</field>
+		    <field name="model">vehicle.partner</field>
+		    <field name="arch" type="xml">
+		        <tree string="Vehicle">
+		            <field name="partner_id"/>
+			        <field name="owner_name"/>
+					<field name="model_id"/>
+					<field name="manufacturer_id"/>
+					<field name="plate"/>
+					<field name="category_id"/>
+					<field name="renavam"/>
+				</tree>
+		    </field>
+		</record>
+
+			<!--Search VehiclePartner-->
+		<record id="vehicle_partner_search" model="ir.ui.view">
+		    <field name="name">Vehicle</field>
+		    <field name="model">vehicle.partner</field>
+		    <field name="arch" type="xml">
+		        <search string="Vehicle">
+			        <field name="partner_id"/>
+	                <field name="renavam"/>
+	                <field name="plate"/>
+			        <group expand="0" string="Group By...">
+                        <filter string="Category" domain="[]" context="{'group_by':'category_id'}"/>
+				        <filter string="Manufacturer" domain="[]" context="{'group_by':'manufacturer_id'}"/>
+						<filter string="Model" domain="[]" context="{'group_by':'model_id'}"/>
+						<filter string="Year" domain="[]" context="{'group_by':'year_id'}"/>
+					</group>
+		        </search>
+		    </field>
+		</record>
+
+			<!--Action VehiclePartner-->
+		<record id="vehicle_partner_action" model="ir.actions.act_window">
+		    <field name="name">Vehicle</field>
+			<field name="type">ir.actions.act_window</field>
+		    <field name="res_model">vehicle.partner</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,kanban,form</field>
+			<field name="view_id" ref="vehicle_partner_tree"/>
+            <field name="search_view_id" ref="vehicle_partner_search"/>
+            <field name="context">{}</field>
+        </record>
+
+			<!--Menu VehiclePartner-->
+		<menuitem id="vehicle_partner_menu" name="Vehicle" parent="sales_team.menu_sales" action="vehicle_partner_action" sequence="15"/>
+
+	</data>
+</odoo>

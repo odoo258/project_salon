@@ -1,0 +1,102 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+,,,,,,,
+access_chemist,chemist.prescription,model_medical_prescription_order,base.group_chemist,1,0,0,0
+access_chemist_line,chemist.prescription.line,model_medical_prescription_line,base.group_chemist,1,0,0,0
+,,,,,,,
+access_medical_group_insurance,medical.group.medical_insurance,model_res_partner,base.group_medical_group,1,1,1,1
+access_medical_procedure,medical.group.procedure,model_medical_procedure,base.group_medical_group,1,1,1,1
+access_diseases_category,medical.group.diseases.category,model_medical_pathology_category,base.group_medical_group,1,1,1,1
+access_diseases,medical.group.diseases,model_medical_pathology,base.group_medical_group,1,1,1,1
+access_medical_medicament,medical.group.medicament,model_medical_medicament,base.group_medical_group,1,1,1,1
+access_vaccination,medical.group.vaccination,model_medical_vaccination,base.group_medical_group,1,1,1,1
+access_operational_area,medical.group.operational.area,model_medical_operational_area,base.group_medical_group,1,1,1,1
+access_operational_sector,medical.group.operational.sector,model_medical_operational_sector,base.group_medical_group,1,1,1,1
+access_family_code,medical.group.family.code,model_medical_family_code,base.group_medical_group,1,1,1,1
+access_medical_speciality,medical.group.speciality,model_medical_speciality,base.group_medical_group,1,1,1,1
+access_medical_diet_belief,access_medical_diet_belief,model_medical_diet_belief,,1,0,0,0
+access_medical_health_service_invoice,access_medical_health_service_invoice,model_medical_health_service_invoice,,1,0,0,0
+,,,,,,,
+access_medical_patient_doctor,medical.group.patient.doctor,model_medical_patient,,1,1,1,
+,,,,,,,
+access_medical_physician,medical.group.physician,model_medical_physician,base.group_medical_group,1,1,1,
+access_medical_physician_doctor,medical.group.physician.doctor,model_medical_physician,base.group_doctor,1,1,1,
+access_medical_ethnicity,medical.group.ethnicity,model_medical_ethnicity,base.group_medical_group,1,1,1,1
+access_dose_unit,medical.group.dose.unit,model_medical_dose_unit,base.group_medical_group,1,1,1,1
+access_medical_drug_route,medical.group.drug.route,model_medical_drug_route,base.group_medical_group,1,1,1,1
+access_medical_patient_medication,medical.group.patient.medication,model_medical_patient_medication,base.group_medical_group,1,1,1,1
+access_medical_patient_medication,medical.group.patient,model_medical_patient,base.group_medical_group,1,1,1,1
+access_medical_evaluation,medical.group.evaluation,model_medical_inpatient_evaluation,base.group_medical_group,1,1,1,1
+access_patient_diseases,medical.group.patient.diseases,model_medical_patient_diseases,base.group_medical_group,1,1,1,1
+access_medical_occupation,medical.group.occupation,model_medical_occupation,base.group_medical_group,1,1,1,1
+access_hospital_building,medical.group.hospital.building,model_medical_hospital_building,base.group_medical_group,1,1,1,1
+access_hospital_unit,medical.group.hospital.unit,model_medical_hospital_unit,base.group_medical_group,1,1,1,1
+access_hospital_ward,medical.group.hospital.ward,model_medical_hospital_ward,base.group_medical_group,1,1,1,1
+access_hospital_bed,medical.group.hospital.bed,model_medical_hospital_bed,base.group_medical_group,1,1,1,1
+access_medical_drug_form,medical.group.drug.form,model_medical_drug_form,base.group_medical_group,1,1,1,1
+access_medical_medication_dosage,medical.group.medication.dosage,model_medical_medication_dosage,base.group_medical_group,1,1,1,1
+access_medical_multiple_wizard,medical.group.multiple.wizard,model_wizard_multiple_test_request,base.group_medical_group,1,1,1,
+access_medical_physician,medical.group.medical.physician,model_medical_physician,base.group_medical_group,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_medical_inpatient_registration,medical.group.medical.inpatient.registration,model_medical_inpatient_registration,base.group_medical_group,1,1,1,1
+access_medical_lab,medical.group.medical.lab,model_medical_lab,base.group_medical_group,1,1,1,1
+access_medical_lab_test_units,medical.group.medical.lab.test.units,model_medical_lab_test_units,base.group_medical_group,1,1,1,1
+access_medical_lab_test_critearea,medical.group.medical.lab.test.critearea,model_medical_test_critearea,base.group_medical_group,1,1,1,1
+access_medical_test_type,medical.group.medical.test.type,model_medical_test_type,base.group_medical_group,1,1,1,1
+access_medical_patient_lab_test,medical.group.patient.lab.test,model_medical_patient_lab_test,base.group_medical_group,1,1,1,1
+access_medical_drugs_recreational,medical.group.drugs.recreational,model_medical_drugs_recreational,base.group_medical_group,1,1,1,1
+access_medical_surgery,medical.group.surgery,model_medical_surgery,base.group_medical_group,1,1,1,1
+,,,,,,,
+access_receptionist_appointment,medical.group.appointment,model_medical_appointment,base.group_receptionist,1,1,1,1
+access_receptionist_medical_physician,medical.group.physician,model_medical_physician,base.group_receptionist,0,0,0,0
+access_receptionist_prescription,receptionist.prescription,model_medical_prescription_order,base.group_receptionist,1,0,0,0
+access_receptionist_line,receptionist.prescription.line,model_medical_prescription_line,base.group_receptionist,1,0,0,0
+access_receptionist_medical_patient_medication,receptionist.group.patient,model_medical_patient,base.group_receptionist,1,1,1,0
+access_receptionist_physician,receptionist.group.physician,model_medical_physician,base.group_receptionist,1,1,1,0
+access_receptionist_speciality,receptionist.group.speciality,model_medical_speciality,base.group_receptionist,1,1,1,0
+,,,,,,,
+,,,,,,,
+access_doctor_appointment,medical.doctor.group.appointment,model_medical_appointment,base.group_doctor,1,1,1,1
+access_doctor_medical_inpatient_registration,medical.doctor.group.medical.inpatient.registration,model_medical_inpatient_registration,base.group_doctor,1,1,1,1
+access_doctor_medical_prescription_order,medical.doctor.group.medical.prescription.order,model_medical_prescription_order,base.group_doctor,1,1,1,1
+access_doctor_medical_patient_disease,medical.doctor.group.medical.patient.disease,model_medical_patient_disease,base.group_doctor,1,1,1,1
+access_doctor_medical_patient_disease_line,medical.doctor.group.medical.patient.disease.line,model_medical_prescription_line,base.group_doctor,1,1,1,1
+access_doctor_medical_medicament,medical.doctor.group.medical.medicament,model_medical_medicament,base.group_doctor,1,1,1,1
+access_doctor_medicament_category,medical.doctor.group.medicament.category,model_medicament_category,base.group_doctor,1,1,1,1
+access_doctor_medical_dose_unit,medical.doctor.group.medical_dose_unit,model_medical_dose_unit,base.group_doctor,1,1,1,1
+access_sale_order,sale.order,sale.model_sale_order,base.group_doctor,1,1,1,0
+access_sale_order_line,sale.order.line,sale.model_sale_order_line,base.group_doctor,1,1,1,1
+access_sale_order_line_accountant,sale.order.line accountant,sale.model_sale_order_line,base.group_doctor,1,1,0,0
+access_account_invoice_tax_salesman,account_invoice_tax salesman,account.model_account_invoice_tax,base.group_doctor,1,1,1,0
+access_account_invoice_salesman,account_invoice salesman,account.model_account_invoice,base.group_doctor,1,1,1,0
+access_account_invoice_manager,account_invoice manager,account.model_account_invoice,base.group_doctor,1,1,1,1
+access_account_invoice_line_salesman,account_invoice.line salesman,account.model_account_invoice_line,base.group_doctor,1,1,1,0
+access_account_payment_term_salesman,account_payment_term salesman,account.model_account_payment_term,base.group_doctor,1,0,0,0
+access_account_analytic_tag_sale_salesman,account.analytic.tag.sale.salesman,analytic.model_account_analytic_tag,base.group_doctor,1,0,0,0
+access_account_analytic_account_salesman,account_analytic_account salesman,analytic.model_account_analytic_account,base.group_doctor,1,1,1,0
+access_sale_order_manager,sale.order.manager,sale.model_sale_order,base.group_doctor,1,1,1,1
+access_sale_order_accountant,sale.order.accountant,sale.model_sale_order,base.group_doctor,1,1,0,0
+access_sale_report_salesman,sale.report,sale.model_sale_report,base.group_doctor,1,1,1,0
+access_sale_report_manager,sale.report,sale.model_sale_report,base.group_doctor,1,1,1,1
+access_ir_property_sales,ir.property.sales,base.model_ir_property,base.group_doctor,1,1,1,1
+access_sale_account_journal,account.journal sale order.user,account.model_account_journal,base.group_doctor,1,0,0,0
+access_res_partner_sale_user,res.partner.sale.user,base.model_res_partner,base.group_doctor,1,0,0,0
+access_res_partner_sale_manager,res.partner.sale.manager,base.model_res_partner,base.group_doctor,1,1,1,0
+access_product_template_sale_user,product.template sale use,product.model_product_template,base.group_doctor,1,0,0,0
+access_product_product_sale_user,product.product sale use,product.model_product_product,base.group_doctor,1,0,0,0
+access_account_tax_user,account.tax.user,account.model_account_tax,base.group_doctor,1,0,0,0
+access_ir_attachment_sales,ir.attachment.sales,base.model_ir_attachment,base.group_doctor,1,1,1,0
+access_ir_attachment_manager,ir.attachment.manager,base.model_ir_attachment,base.group_doctor,1,1,1,1
+access_product_uom_user,product.uom.user,product.model_product_uom,base.group_doctor,1,0,0,0
+access_product_pricelist_sale_user,product.pricelist.sale.user,product.model_product_pricelist,base.group_doctor,1,0,0,0
+access_account_account_salesman,account_account salesman,account.model_account_account,base.group_doctor,1,0,0,0
+access_product_uom_categ_sale_manager,product.uom.categ salemanager,product.model_product_uom_categ,base.group_doctor,1,1,1,1
+access_product_uom_sale_manager,product.uom salemanager,product.model_product_uom,base.group_doctor,1,1,1,1
+access_product_category_sale_manager,product.category salemanager,product.model_product_category,base.group_doctor,1,1,1,1
+access_product_supplierinfo_user,product.supplierinfo.user,product.model_product_supplierinfo,base.group_doctor,1,0,0,0
+access_product_supplierinfo_sale_manager,product.supplierinfo salemanager,product.model_product_supplierinfo,base.group_doctor,1,1,1,1
+access_product_pricelist_sale_manager,product.pricelist salemanager,product.model_product_pricelist,base.group_doctor,1,1,1,1
+access_product_group_res_partner_sale_manager,res_partner group_sale_manager,base.model_res_partner,base.group_doctor,1,1,1,0
+access_account_move_line_salesman,account.move.line invoice,account.model_account_move_line,base.group_doctor,1,0,0,0
+access_sale_order_invoicing_payments,sale.order,sale.model_sale_order,base.group_doctor,1,1,0,0
+access_sale_order_line_invoicing_payments,sale.order.line,sale.model_sale_order_line,base.group_doctor,1,1,0,0

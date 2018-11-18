@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_payment_invoice_form_inherit" model="ir.ui.view">
+            <field name="name">account.payment.invoice.form.inherit</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_invoice_form" />
+            <field name="arch" type="xml">
+                <field name="payment_difference_handling" position="replace">
+                    <field name="payment_difference_handling" widget="radio" nolabel="1" attrs="{'invisible': [('payment_installment','=',True)]}"/>
+                    <field name="payment_difference_handling_installment" widget="radio" nolabel="1" attrs="{'invisible': [('payment_installment','=',False)]}"/>
+                    <field name="payment_installment" invisible="1" />
+                </field>
+
+                <field name="writeoff_account_id" position="replace">
+                    <field name="writeoff_account_id" string="Post Difference In"
+                                    attrs="{'invisible': [('payment_difference_handling','=','open'),('payment_difference_handling_installment','=','open')], 'required': [('payment_difference_handling', '=', 'reconcile'),('payment_difference_handling_installment', '=', 'reconcile')]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

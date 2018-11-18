@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_inventory_verification">
+            <t t-call="report.external_layout">
+            <t t-foreach="docs" t-as="doc">
+            <div class="page">
+                <div id="informations" class="oe_structure">
+                    <div class="row" style="border-bottom:1px solid black; padding-bottom: 4px;">
+                        <div class="col-xs-3">
+                            <img t-if="doc.company_id.logo" t-att-src="'data:image/png;base64,%s' % doc.company_id.logo" style="max-height: 75px; padding-top: 2px; text-align:center"/>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="col-xs-6" style="text-align:center">
+                                <p style="font-size: 30px; margin:0px;">
+                                <strong>Stock Inventory with Verification</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="col-xs-4">
+                        <p style="font-size: 18px; margin:2px;">
+                            <strong>Inventory: </strong><span t-field="doc.name"></span><br/>
+                            <strong>Company: </strong><span t-field="doc.company_id.name"></span><br/>
+                            <strong>Location: </strong><span t-field="doc.location_id"></span><br/>
+                            <strong>Date Inventory: </strong><span t-field="doc.date"></span><br/>
+                            <strong>Date Report: </strong><t t-esc="datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')"/><br/>
+                            <strong>State: </strong><span t-field="doc.state"></span><br/>
+                        </p>
+                        <br />
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <table class="table table-condensed" style="padding-top: 10px">
+                        <thead>
+                            <tr style="font-size:18px">
+                                <th><strong>Barcode</strong></th>
+                                <th>    </th>
+                                <th><strong>Product</strong></th>
+                                <th>    </th>
+                                <th><strong>Production Lot</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody class="sale_tbody">
+                            <tr t-foreach="doc.line_ids" t-as="line" class="small">
+                                <t t-if="line.reconciled == False">
+                                    <td class="text-center"><span t-field="line.product_barcode"/></td>
+                                    <td class="text-center">    </td>
+                                    <td class="text-center"><span t-field="line.product_id.name"/></td>
+                                    <td class="text-center">    </td>
+                                    <td class="text-center"><span t-field="line.prod_lot_id.name"/></td>
+                                </t>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <br />
+
+
+                </div>
+            </div>
+            </t>
+        </t>
+        </template>
+    </data>
+</odoo>

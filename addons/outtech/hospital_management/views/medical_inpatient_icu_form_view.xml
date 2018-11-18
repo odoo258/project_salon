@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>		
+		<record id="medical_inpatient_icu_form" model="ir.ui.view">
+            <field name="name">medical.inpatient.icu.form</field>
+            <field name="model">medical.inpatient.icu</field>
+            <field name="arch" type="xml">
+                <form string="Patient ICU Info">
+					<group colspan="4" col="4">
+						<field name="name"/>    <!--on_change="onchange_patient(name)"/>-->
+						<field name="admitted"/>    <!--on_change="onchange_with_admitted(admitted,discharged_from_icu)"/>-->
+					</group>
+					<group colspan="8" col="8">
+						<field name="icu_admission_date"/>
+						<field name="icu_stay"/>
+						<field name="discharged_from_icu"/>     <!--on_change="onchange_with_descharge(admitted,discharged_from_icu)"/>-->
+						<!--<field name="icu_discharge_date" attrs="{'invisible': [('discharged_from_icu','=',False)], 'required':[('discharged_from_icu','=',True)]}"/>-->
+					</group>
+					<group colspan="4" col="4" string="Mechanical Ventilation History">
+					</group>
+					<notebook colspan="4">
+					        <page autofocus="autofocus">
+					            <form>
+					                <field name="mv_history">
+					                    <tree>
+					                        <field name="current_mv" />
+					                        <field name="mv_start"/>
+                                            <field name="mv_period"/>
+                                            <field name="ventilation"/>
+                                            <field name="remarks"/>
+                                        </tree>
+                                    </field>
+                                </form>
+					        </page>
+    			        </notebook>
+				</form>
+            </field>
+        </record>
+        
+        <record id="medical_inpatient_icu_tree" model="ir.ui.view">
+            <field name="name">medical.inpatient.icu.tree</field>
+            <field name="model">medical.inpatient.icu</field>
+            <field name="arch" type="xml">
+                <tree string="Patient ICU Info">
+					<field name="name"/>
+					<field name="admitted"/>
+					<field name="icu_admission_date"/>
+					<field name="icu_stay"/>
+					<field name="discharged_from_icu"/>
+					<!--<field name="icu_discharge_date"/>-->
+				</tree>
+            </field>
+        </record>
+        
+        <record id="medical_inpatient_icu_action" model="ir.actions.act_window">
+            <field name="name">Patient ICU Info</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.inpatient.icu</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem id="menu_intensive_care" name="Intensive Care" parent="menu_inpatient_administration"/>
+		<menuitem id="menu_medical_inpatient_icu_form" action="medical_inpatient_icu_action" sequence="4" parent="menu_intensive_care"/>
+
+        </data>
+</openerp>

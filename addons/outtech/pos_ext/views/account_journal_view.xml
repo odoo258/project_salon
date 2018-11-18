@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_pos_account_journal_form_ext" model="ir.ui.view">
+        <field name="name">view.br_account_journal.form.ext</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_authorized_diff']" position="after">
+                <field name="operation_code" attrs="{'invisible':[('journal_user', '=', False)]}"/>
+                <field name="payment_wallet" />
+                <field name="range_days_maturity_date_debit"/>
+                <field name="is_tef"/>
+                <field name="range_days_maturity_date_credit"/>
+                <field name="is_contingency"/>
+                <field name="range_days_maturity_date_credit_instalments"/>
+                <field name="accepts_return"/>
+                <field name="pay_installments" />
+
+                <field name="sat_payment_mode" attrs="{'required':[('journal_user','=', True)]}"/>
+                <field name="installments" attrs="{'invisible':[('pay_installments','=', False)]}"/>
+                <field name="card_banner_ids">
+                    <tree editable="top">
+                        <field name="name"/>
+                    </tree>
+                </field>
+                <field name="banner_name" attrs="{'invisible': [('is_contingency', '=', False)]}" />
+            </xpath>
+            <field name="bank_statements_source" position="after">
+                <field name="payment_mode_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

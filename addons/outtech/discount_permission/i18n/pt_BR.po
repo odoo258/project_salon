@@ -1,0 +1,224 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* discount_permission
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-17 17:16+0000\n"
+"PO-Revision-Date: 2017-05-17 17:16+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: discount_permission
+#: model:ir.ui.view,arch_db:discount_permission.view_discount_permission_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: discount_permission
+#: selection:discount.permission,state:0
+msgid "Canceled"
+msgstr "Cancelada"
+
+#. module: discount_permission
+#: model:ir.model.fields,help:discount_permission.field_res_users_indicador_ie_dest
+msgid "Caso não preencher este campo vai usar a         regra:\n"
+"9 - para pessoa física\n"
+"1 - para pessoa jurídica com IE         cadastrada\n"
+"2 - para pessoa jurídica sem IE cadastrada ou 9         caso o estado de destino for AM, BA, CE, GO, MG, MS, MT, PE, RN, SP"
+msgstr "Caso não preencher este campo vai usar a         regra:\n"
+"9 - para pessoa física\n"
+"1 - para pessoa jurídica com IE         cadastrada\n"
+"2 - para pessoa jurídica sem IE cadastrada ou 9         caso o estado de destino for AM, BA, CE, GO, MG, MS, MT, PE, RN, SP"
+
+#. module: discount_permission
+#: model:ir.ui.view,arch_db:discount_permission.view_discount_permission_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: discount_permission
+#: selection:discount.permission,state:0
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_create_uid
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_create_date
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_res_users_property_delivery_carrier_id
+msgid "Delivery Method"
+msgstr "Método de Entrega"
+
+#. module: discount_permission
+#: model:ir.actions.act_window,name:discount_permission.action_discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line_discount_permission_id
+#: model:ir.model.fields,field_description:discount_permission.field_res_users_discount_permission_id
+#: model:ir.ui.view,arch_db:discount_permission.view_discount_permission_form
+#: model:ir.ui.view,arch_db:discount_permission.view_discount_permission_tree
+msgid "Discount Permission"
+msgstr "Permitir desconto"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_discount_permission_lines
+msgid "Discount Permission Lines"
+msgstr "Linhas de Permição de Desconto"
+
+#. module: discount_permission
+#: model:ir.ui.menu,name:discount_permission.menu_discount_permission
+#: model:ir.ui.menu,name:discount_permission.menu_discount_permission_child
+msgid "Discount Permissions"
+msgstr "Permissões de Desconto"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_display_name
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line_display_name
+msgid "Display Name"
+msgstr "Nome para Exibição"
+
+#. module: discount_permission
+#: selection:discount.permission,state:0
+msgid "Draft"
+msgstr "Provisório"
+
+#. module: discount_permission
+#: constraint:discount.permission:0
+msgid "Exist other register confirmed!"
+msgstr "Já existe outro registro confirmado!"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_id
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_res_users_indicador_ie_dest
+msgid "Indicador IE"
+msgstr "Indicador IE"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_res_users_user_allowed
+msgid "Is Allowed"
+msgstr "É um Autorizador"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission___last_update
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_res_users_last_website_so_id
+msgid "Last Online Sale Order"
+msgstr "Último pedido de Venda Online"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line_write_uid
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line_write_date
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_res_users_loyalty_points
+msgid "Loyalty points"
+msgstr "Pontos de Fidelidade"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line_name
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: discount_permission
+#: code:addons/discount_permission/models/res_users.py:30
+#, python-format
+msgid "O campo Senha de Usuário deve conter apenas números"
+msgstr "O campo Senha de Usuário deve conter apenas números"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line_percent
+#: model:ir.model.fields,field_description:discount_permission.field_res_users_percent
+msgid "Percentage"
+msgstr "Porcentagem"
+
+#. module: discount_permission
+#: model:ir.ui.view,arch_db:discount_permission.view_discount_permission_form
+msgid "Permission Lines"
+msgstr "Linhas de Permissão"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line_user_id
+msgid "SalesPerson"
+msgstr "Vendedor"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_state
+msgid "State"
+msgstr "Estado"
+
+#. module: discount_permission
+#: model:ir.model.fields,help:discount_permission.field_res_users_loyalty_points
+msgid "The loyalty points the user won as part of a Loyalty Program"
+msgstr "Os pontos de fidelidade que o usuário ganhou fazem parte do Programa de Fidelidade"
+
+#. module: discount_permission
+#: model:ir.model.fields,help:discount_permission.field_res_users_property_delivery_carrier_id
+msgid "This delivery method will be used when invoicing from picking."
+msgstr "Este método de entrega será usado quando faturar a partir da separação."
+
+#. module: discount_permission
+#: model:ir.ui.view,arch_db:discount_permission.view_discount_permission_form
+msgid "Update"
+msgstr "Atualizar"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_res_users_user_password
+msgid "User Password"
+msgstr "Senha do Usuário"
+
+#. module: discount_permission
+#: model:ir.model,name:discount_permission.model_res_users
+msgid "Users"
+msgstr "Usuários"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_discount_permission_line_date_validate
+#: model:ir.model.fields,field_description:discount_permission.field_res_users_date_validate
+msgid "Validate Date"
+msgstr "Data de Validade"
+
+#. module: discount_permission
+#: model:ir.model.fields,field_description:discount_permission.field_res_users_website_tag_ids
+msgid "Website tags"
+msgstr "Etiquetas do Site"
+
+#. module: discount_permission
+#: model:ir.model,name:discount_permission.model_discount_permission
+msgid "discount.permission"
+msgstr "discount.permission"
+
+#. module: discount_permission
+#: model:ir.model,name:discount_permission.model_discount_permission_line
+msgid "discount.permission.line"
+msgstr "discount.permission.line"
+

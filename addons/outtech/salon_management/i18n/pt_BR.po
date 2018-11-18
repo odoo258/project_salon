@@ -1,0 +1,1232 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* salon_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-11 17:42+0000\n"
+"PO-Revision-Date: 2017-08-11 17:42+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: salon_management
+#: model:mail.template,body_html:salon_management.salon_email_template_rejected
+msgid "\n"
+"                    \n"
+"                  <p>Dear ${(object.name)},<br/><br/>\n"
+"                  Thank you for choosing ${(object.company_id.name)}, but your booking was rejected!<br/>\n"
+"                      there is no seats available for the time you chosen.<br/>\n"
+"                      better luck next time.<br/></p>\n"
+"                      Regards,<br/>\n"
+"                      ${(object.company_id.name)}\n"
+"                \n"
+"            "
+msgstr "\n"
+"                    \n"
+"                  <p>Dear ${(object.name)},<br/><br/>\n"
+"                  Thank you for choosing ${(object.company_id.name)}, but your booking was rejected!<br/>\n"
+"                      there is no seats available for the time you chosen.<br/>\n"
+"                      better luck next time.<br/></p>\n"
+"                      Regards,<br/>\n"
+"                      ${(object.company_id.name)}\n"
+"                \n"
+"            "
+
+#. module: salon_management
+#: model:mail.template,body_html:salon_management.salon_email_template_approved
+msgid "\n"
+"                    \n"
+"                  <p>Dear ${(object.name)},<br/><br/>\n"
+"                  Thank you for choosing ${(object.company_id.name)}, your booking was registered!<br/></p>\n"
+"                      Regards,<br/>\n"
+"                      ${(object.company_id.name)}\n"
+"                \n"
+"            "
+msgstr "\n"
+"                    \n"
+"                  <p>Dear ${(object.name)},<br/><br/>\n"
+"                  Thank you for choosing ${(object.company_id.name)}, your booking was registered!<br/></p>\n"
+"                      Regards,<br/>\n"
+"                      ${(object.company_id.name)}\n"
+"                \n"
+"            "
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_sale_order_count
+msgid "# of Sales Order"
+msgstr "# de Pedidos de Vendas"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "&amp;nbsp;"
+msgstr "&amp;nbsp;"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "( Select a date and time based on the availability of the chair )"
+msgstr "( Select a date and time based on the availability of the chair )"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "( Select the chair that free in the preferred time )"
+msgstr "( Select the chair that free in the preferred time )"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "( You can select multiple services or Remove a selection by pressing down on the Ctrl button )"
+msgstr "( You can select multiple services or Remove a selection by pressing down on the Ctrl button )"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_form
+msgid "(update)"
+msgstr "(atualizar)"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_management_kanban
+msgid "<span class=\" o_primary style_collection\" style=\"float: left;\">Free After (Hours) :</span>"
+msgstr "<span class=\" o_primary style_collection\" style=\"float: left;\">Free After (Hours) :</span>"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_management_kanban
+msgid "<span class=\" o_primary style_collection\" style=\"float: left;\">Today's Collection :</span>"
+msgstr "<span class=\" o_primary style_collection\" style=\"float: left;\">Today's Collection :</span>"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_management_kanban
+msgid "<span class=\" o_primary style_collection_booking\" style=\"float: left;\">Today's Collection :</span>"
+msgstr "<span class=\" o_primary style_collection_booking\" style=\"float: left;\">Today's Collection :</span>"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_management_kanban
+msgid "<span class=\" o_primary style_collection_booking\">\n"
+"                                            <span class=\" o_primary style_collection_booking\" style=\"float: center;\">Reserved For Booking</span>\n"
+"                                        </span>"
+msgstr "<span class=\" o_primary style_collection_booking\">\n"
+"                                            <span class=\" o_primary style_collection_booking\" style=\"float: center;\">Reserved For Booking</span>\n"
+"                                        </span>"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_property_account_payable_id
+msgid "Account Payable"
+msgstr "Conta de Pagamento"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_property_account_receivable_id
+msgid "Account Receivable"
+msgstr "Conta de Recebimento"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_management_kanban
+msgid "Active Orders"
+msgstr "Ordens Ativas"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_user_salon_active
+msgid "Active Salon Users"
+msgstr "Usuários ativos da estética"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_active_booking_chairs
+msgid "Active booking chairs"
+msgstr "Reservas Ativas"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_amount
+msgid "Amount"
+msgstr "Montante"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_kanban
+msgid "Amount :"
+msgstr "Montante :"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_config_settings_view
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salons_booking_form
+msgid "Approve"
+msgstr "Aprovar"
+
+#. module: salon_management
+#: selection:salon.booking,state:0
+msgid "Approved"
+msgstr "Aprovado"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Available Chairs and Details"
+msgstr "Vagas e detalhes disponíveis"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_bank_account_count
+msgid "Bank"
+msgstr "Banco"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Book Your Chair"
+msgstr "Reserve sua vaga"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_config_settings_salon_booking_chairs
+msgid "Booking Chairs"
+msgstr "Vagas Reservadas"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_config_settings_view
+msgid "Booking Chairs(Choose the chair when its free)"
+msgstr "Vagas reservadas (Escolha sua vaga quando for gratuita)"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_booking_identifier
+msgid "Booking Identifier"
+msgstr "Identificação da Vaga"
+
+#. module: salon_management
+#: model:ir.ui.menu,name:salon_management.salon_management_bookings
+#: model:website.menu,name:salon_management.website_menu_salon_booking
+msgid "Bookings"
+msgstr "Reservas"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "CHAIR*"
+msgstr "CHAIR*"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_config_settings_view
+#: model:ir.ui.view,arch_db:salon_management.salon_order_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: salon_management
+#: model:salon.stages,name:salon_management.salon_stage_04
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: salon_management
+#: model:ir.actions.act_window,name:salon_management.salon_chair_action
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_chair_id
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_salon_chair
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_chair_id
+#: model:ir.ui.menu,name:salon_management.salon_management_chair
+msgid "Chair"
+msgstr "Vaga"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_kanban
+msgid "Chair :"
+msgstr "Vaga :"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_chair_user
+msgid "Chair User"
+msgstr "Vaga do usuário"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Check"
+msgstr "Verificar"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_read_only_checker
+msgid "Checker"
+msgstr "Verificador"
+
+#. module: salon_management
+#: model:ir.actions.act_window,help:salon_management.salon_product_normal_action
+msgid "Click to define a new product."
+msgstr "Clique para definir um novo produto."
+
+#. module: salon_management
+#: model:ir.actions.act_window,help:salon_management.salon_dashboard_action
+msgid "Clique no menu <strong>Estética -&gt; Estética -&gt; Vaga</strong>"
+msgstr "Clique no menu <strong>Estética -&gt; Estética -&gt; Vaga</strong>"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_form
+msgid "Close"
+msgstr "Fechar"
+
+#. module: salon_management
+#: model:salon.stages,name:salon_management.salon_stage_03
+msgid "Closed"
+msgstr "Fechado"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_working_hours_to_time
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Closing Time"
+msgstr "Horário de Encerramento"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_name
+msgid "Code"
+msgstr "Código"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_color
+msgid "Colour"
+msgstr "Cor"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_ref_company_ids
+msgid "Companies that refers to partner"
+msgstr "Empresas que referenciam o parceiro"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: salon_management
+#: model:ir.ui.menu,name:salon_management.salon_config_settings_menu
+msgid "Configuration"
+msgstr "Configuração"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_config_settings_view
+msgid "Configure Salon"
+msgstr "Configurar Estética"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: salon_management
+#: model:mail.template,subject:salon_management.salon_email_template_approved
+msgid "Congratz ${object.name}"
+msgstr "Congratz ${object.name}"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_contract_ids
+#: model:ir.model.fields,field_description:salon_management.field_res_users_contracts_count
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_payment_token_count
+msgid "Count Payment Token"
+msgstr "Count Payment Token"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_form
+msgid "Create Invoice"
+msgstr "Criar Fatura"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_create_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_create_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_create_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_config_settings_create_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_holiday_create_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_create_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines_create_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_sequence_updater_create_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_stages_create_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_working_hours_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_create_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_create_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_create_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_config_settings_create_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_holiday_create_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_create_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines_create_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_sequence_updater_create_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_stages_create_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_working_hours_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: salon_management
+#: model:ir.actions.act_window,help:salon_management.salon_order_action
+msgid "Crie uma nova <strong>Ordem de Serviço</strong>.\n"
+"                    <br>"
+msgstr "Crie uma nova <strong>Ordem de Serviço</strong>.\n"
+"                    <br>"
+
+#. module: salon_management
+#: model:ir.actions.act_window,help:salon_management.salon_order_action
+msgid "Crie uma nova ordem de serviço para exibir informações nesse painel"
+msgstr "Crie uma nova ordem de serviço para exibir informações nesse painel"
+
+#. module: salon_management
+#: model:ir.actions.act_window,help:salon_management.salon_dashboard_action
+msgid "Crie uma vaga para exibir informações nesse painel."
+msgstr "Crie uma vaga para exibir informações nesse painel."
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_currency_id
+msgid "Currency"
+msgstr "Moeda"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_kanban
+msgid "Customer :"
+msgstr "Cliente :"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_property_stock_customer
+msgid "Customer Location"
+msgstr "Local do Cliente"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_property_payment_term_id
+msgid "Customer Payment Terms"
+msgstr "Termos de Pagamento do Cliente"
+
+#. module: salon_management
+#: model:ir.actions.act_window,name:salon_management.salon_dashboard_action
+#: model:ir.ui.menu,name:salon_management.salon_management_dashboard
+msgid "Dashboard"
+msgstr "Painel"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_time
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_date
+msgid "Date"
+msgstr "Data"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+#: model:ir.ui.view,arch_db:salon_management.salon_order_kanban
+msgid "Date :"
+msgstr "Date :"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_start_date_only
+msgid "Date Only"
+msgstr "Data Apenas"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Day"
+msgstr "Dia"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_trust
+msgid "Degree of trust you have in this debtor"
+msgstr "Grau de confiança que você tem neste devedor"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_kanban
+msgid "Delete"
+msgstr "Excluir"
+
+#. module: salon_management
+#: model:ir.actions.act_window,help:salon_management.salon_dashboard_action
+msgid "Depois clique no botão <strong>Criar</strong>"
+msgstr "Depois clique no botão <strong>Criar</strong>"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_display_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_display_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_display_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_config_settings_display_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_holiday_display_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_display_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines_display_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_sequence_updater_display_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_stages_display_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_working_hours_display_name
+msgid "Display Name"
+msgstr "Nome para Exibição"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_is_doctor
+msgid "Doctor"
+msgstr "veterinário"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_domiciliary_id
+msgid "Domiciliary id"
+msgstr "Domiciliary id"
+
+#. module: salon_management
+#: selection:salon.booking,state:0
+#: model:salon.stages,name:salon_management.salon_stage_00
+msgid "Draft"
+msgstr "Projeto"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "E-MAIL*"
+msgstr "E-MAIL*"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_email
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_kanban
+msgid "Edit"
+msgstr "Editar"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_end_date
+msgid "End Date"
+msgstr "Data Final"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "End Time"
+msgstr "Tempo Final"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_end_time_only
+msgid "End Time Only"
+msgstr "Tempo de término apenas"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_end_time
+msgid "End time"
+msgstr "Tempo Final"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Enter your E-Mail Address(eg:avinashnk916@gmail.com)"
+msgstr "Entrar no seu E-Mail:(eg:avinashnk916@gmail.com)"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Enter your Name"
+msgstr "Digite seu nome :"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Enter your Phone number(eg:999**12345)"
+msgstr "Digite seu numero de celular:(eg:999**12345)"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_property_account_position_id
+msgid "Fiscal Position"
+msgstr "Posição Fiscal"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "HH:MM"
+msgstr "HH:MM"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_has_unreconciled_entries
+msgid "Has unreconciled entries"
+msgstr "Possui entradas não reconciliadas"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_holiday_holiday
+msgid "Holiday"
+msgstr "Feriado"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_config_settings_salon_holidays
+#: model:ir.ui.view,arch_db:salon_management.salon_config_settings_view
+msgid "Holidays"
+msgstr "Feriados"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Holidays :"
+msgstr "Feriados :"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_id
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_id
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_id
+#: model:ir.model.fields,field_description:salon_management.field_salon_config_settings_id
+#: model:ir.model.fields,field_description:salon_management.field_salon_holiday_id
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_id
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines_id
+#: model:ir.model.fields,field_description:salon_management.field_salon_sequence_updater_id
+#: model:ir.model.fields,field_description:salon_management.field_salon_stages_id
+#: model:ir.model.fields,field_description:salon_management.field_salon_working_hours_id
+msgid "ID"
+msgstr "ID"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_salon_order_partner_id
+msgid "If the customer is a regular customer, then you can add the customer in your database"
+msgstr "Se o cliente for um cliente regular , você pode adicionar no seu banco de dados. module: salon_managemen: model:ir.model.fields,field_description:salon_management.field_res_users_is_institutiosgid \"Institutionsgstr \"Instituição"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_is_institution
+msgid "Institution"
+msgstr "Institution"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_insurance
+#: model:ir.model.fields,field_description:salon_management.field_res_users_insurance_ids
+msgid "Insurance"
+msgstr "Seguro"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_is_insurance_company
+msgid "Insurance Company"
+msgstr "Seguro Compania"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_invoice_warn
+#: model:ir.ui.view,arch_db:salon_management.salon_order_form
+msgid "Invoice"
+msgstr "Fatura"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_invoice_number
+msgid "Invoice Number"
+msgstr "Invoice Number"
+
+#. module: salon_management
+#: model:salon.stages,name:salon_management.salon_stage_02
+msgid "Invoiced"
+msgstr "Faturado"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_invoice_ids
+msgid "Invoices"
+msgstr "Faturas"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_partner_partner_salon
+#: model:ir.model.fields,field_description:salon_management.field_res_users_partner_salon
+msgid "Is a Salon Partner"
+msgstr "É um parceiro da estética"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_issued_total
+#: model:ir.model.fields,field_description:salon_management.field_res_users_journal_item_count
+msgid "Journal Items"
+msgstr "Itens do Diário"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_lang
+msgid "Language"
+msgstr "Idioma"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking___last_update
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair___last_update
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user___last_update
+#: model:ir.model.fields,field_description:salon_management.field_salon_config_settings___last_update
+#: model:ir.model.fields,field_description:salon_management.field_salon_holiday___last_update
+#: model:ir.model.fields,field_description:salon_management.field_salon_order___last_update
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines___last_update
+#: model:ir.model.fields,field_description:salon_management.field_salon_sequence_updater___last_update
+#: model:ir.model.fields,field_description:salon_management.field_salon_stages___last_update
+#: model:ir.model.fields,field_description:salon_management.field_salon_working_hours___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_write_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_write_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_write_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_config_settings_write_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_holiday_write_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines_write_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_write_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_sequence_updater_write_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_stages_write_uid
+#: model:ir.model.fields,field_description:salon_management.field_salon_working_hours_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_write_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_write_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_write_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_config_settings_write_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_holiday_write_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines_write_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_write_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_sequence_updater_write_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_stages_write_date
+#: model:ir.model.fields,field_description:salon_management.field_salon_working_hours_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_last_time_entries_checked
+msgid "Last time the invoices & payments matching was performed for this partner. It is set either if there's not at least an unreconciled debit and an unreconciled credit or if you click the \"Done\" button."
+msgstr "A última vez em que a correspondência de faturas e pagamentos foi realizada para este parceiro. Ele é definido se não houver pelo menos um débito não reconciliado e um crédito não reconciliado ou se você clicar no botão \"Concluído\"."
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_last_time_entries_checked
+msgid "Latest Invoices & Payments Matching Date"
+msgstr "Últimos Pedidos & Pagamentos em Data Equivalente"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_invoice_warn_msg
+msgid "Message for Invoice"
+msgstr "Mensagem para Fatura"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_sale_warn_msg
+msgid "Message for Sales Order"
+msgstr "Mensagem para o Pedido de Vendas"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_picking_warn_msg
+msgid "Message for Stock Picking"
+msgstr "Mensagem para Separação de Estoque"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "NAME*"
+msgstr "NAME*"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_holiday_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_stages_name
+#: model:ir.model.fields,field_description:salon_management.field_salon_working_hours_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_number_of_orders
+msgid "No.of Orders"
+msgstr "No.of Orders"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_name
+msgid "Number"
+msgstr "Número"
+
+#. module: salon_management
+#: model:salon.stages,name:salon_management.salon_stage_01
+msgid "Open"
+msgstr "Abrir"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Order Details"
+msgstr "Order Details"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_order_line
+#: model:ir.ui.view,arch_db:salon_management.salon_order_form
+msgid "Order Lines"
+msgstr "Itens do Pedido"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Order No."
+msgstr "Order No."
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "PHONE*"
+msgstr "PHONE*"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_res_partner
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_partner_id
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_is_patient
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_patient_id
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_patient_id
+msgid "Patient"
+msgstr "Pet"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_debit_limit
+msgid "Payable Limit"
+msgstr "Limite pagável"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_payment_token_ids
+msgid "Payment Tokens"
+msgstr "Payment Tokens"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_is_person
+msgid "Person"
+msgstr "Pessoa"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_is_pharmacy
+msgid "Pharmacy"
+msgstr "Farmacia"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_phone
+msgid "Phone"
+msgstr "Telefone"
+
+#. module: salon_management
+#: code:addons/salon_management/models/salon_management.py:330
+#, python-format
+msgid "Please define income account for this product: \"%s\" (id:%d)."
+msgstr "Please define income account for this product: \"%s\" (id:%d)."
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines_price
+msgid "Price"
+msgstr "Preço"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_product_template
+msgid "Product Template"
+msgstr "Modelo de Produto"
+
+#. module: salon_management
+#: model:ir.actions.act_window,name:salon_management.salon_product_normal_action
+msgid "Product Variants"
+msgstr "Variantes de Produto"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salons_booking_form
+msgid "Reject"
+msgstr "Rejeitar"
+
+#. module: salon_management
+#: selection:salon.booking,state:0
+msgid "Rejected"
+msgstr "Cancelado"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_relationship
+msgid "Relationship"
+msgstr "Relação"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_relative_id
+msgid "Relative_id"
+msgstr "Relative_id"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "SERVICE*"
+msgstr "SERVICE*"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_sale_order_ids
+#: model:ir.model.fields,field_description:salon_management.field_res_users_sale_warn
+msgid "Sales Order"
+msgstr "Ordem de Venda"
+
+#. module: salon_management
+#: model:ir.actions.act_window,name:salon_management.salon_order_action
+#: model:ir.ui.menu,name:salon_management.salon_management_menu
+#: model:ir.ui.menu,name:salon_management.salon_management_salon
+msgid "Salon"
+msgstr "Estética"
+
+#. module: salon_management
+#: model:ir.actions.act_window,name:salon_management.salon_booking_action
+msgid "Salon Bookings"
+msgstr "Reserva na Estética"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_chair_created_user
+msgid "Salon Chair Created User"
+msgstr "usuario de vaga na estética criado"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines_salon_order
+#: model:ir.ui.view,arch_db:salon_management.salons_booking_form
+msgid "Salon Order"
+msgstr "Ordem de Serviço"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_salon_order_created_user
+msgid "Salon Order Created User"
+msgstr "Usuario criado por ordem de serviço "
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_form
+msgid "Salon Order Lines"
+msgstr "Linha de ordem de serviço"
+
+#. module: salon_management
+#: model:ir.actions.act_window,name:salon_management.salon_active_orders_action_dashboard
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_filtered_orders
+#: model:ir.ui.menu,name:salon_management.salon_order
+msgid "Salon Orders"
+msgstr "Ordem de Serviço"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_sequence_updater_sequence_salon
+msgid "Salon Sequence"
+msgstr "Sequêcia da Estética"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_chair_form
+msgid "Salon User Lines"
+msgstr "Linhas de usuario da estética"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Select a date"
+msgstr "Selecione uma Data"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_invoice_warn
+#: model:ir.model.fields,help:salon_management.field_res_users_picking_warn
+#: model:ir.model.fields,help:salon_management.field_res_users_sale_warn
+msgid "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
+msgstr "Selecionando a opção de \"Aviso\" irá notificar o usuário com a mensagem, marcar \"Mensagem de Bloqueio\" irá lançar uma exceção com a mensagem e bloquear o fluxo. A mensagem tem de ser escrita no campo a seguir."
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Send"
+msgstr "Enviar"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines_service_id
+msgid "Service"
+msgstr "Serviço"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_services
+#: model:ir.ui.menu,name:salon_management.menu_product_services
+msgid "Services"
+msgstr "Serviços"
+
+#. module: salon_management
+#: model:ir.actions.act_window,name:salon_management.salon_config_settings_action
+#: model:ir.ui.menu,name:salon_management.salon_settings_menu
+#: model:ir.ui.view,arch_db:salon_management.salon_management_kanban
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_form
+msgid "Setup default terms and conditions in your company settings."
+msgstr "Configurar termos e condições padrão nos ajustes da empresa."
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_inv_stage_identifier
+msgid "Stage Identifier"
+msgstr "Identificação de Etapas"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_stage_id
+msgid "Stages"
+msgstr "Etapas"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_start_date
+msgid "Start Date"
+msgstr "Data de Início"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Start Time"
+msgstr "Hora de Inicio"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_start_time_only
+msgid "Start Time Only"
+msgstr "Hora de inicio apenas"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_start_time
+msgid "Start time"
+msgstr "Hora de Inicio"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_working_hours_from_time
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Starting Time"
+msgstr "Hora de inicio"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_booking_state
+msgid "State"
+msgstr "Estado"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_picking_warn
+msgid "Stock Picking"
+msgstr "Separação de Estoque"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines_price_subtotal
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "TIME"
+msgstr "Tempo"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "TIME*"
+msgstr "TIME*"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_note
+msgid "Terms and conditions"
+msgstr "Termos e condições"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_thank_you
+msgid "Thank you"
+msgstr "Obrigado"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_property_account_position_id
+msgid "The fiscal position will determine taxes and accounts used for the partner."
+msgstr "A posição fiscal irá determinar os impostos e contas usadas para o parceiro."
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_has_unreconciled_entries
+msgid "The partner has at least one unreconciled debit and credit since last time the invoices & payments matching was performed."
+msgstr "O parceiro tem pelo menos um débito e crédito não reconciliado desde última vez que a correspondência de faturas e pagamentos foi realizada."
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_property_account_payable_id
+msgid "This account will be used instead of the default one as the payable account for the current partner"
+msgstr "Esta conta será usada em vez da padrão como a conta de pagamento para o parceiro atual"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_property_account_receivable_id
+msgid "This account will be used instead of the default one as the receivable account for the current partner"
+msgstr "Esta conta será usada em vez da conta padrão,  como conta de recebimento para o parceiro atual"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_property_supplier_payment_term_id
+msgid "This payment term will be used instead of the default one for purchase orders and vendor bills"
+msgstr "Este prazo de pagamento será usado em vez do padrão de ordens de compra"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_property_payment_term_id
+msgid "This payment term will be used instead of the default one for sale orders and customer invoices"
+msgstr "Este prazo de pagamento será usado em vez do padrão nos pedidos de venda e faturas dos clientes"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_property_stock_customer
+msgid "This stock location will be used, instead of the default one, as the destination location for goods you send to this partner"
+msgstr "Esta localização do estoque será usada ao invés da padrão, como a localização de destino para ítens que você envia para este parceiro"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_property_stock_supplier
+msgid "This stock location will be used, instead of the default one, as the source location for goods you receive from the current partner"
+msgstr "Este local de estoque será usado ao invés do padrão, como o local de origem das mercadorias que você recebe do parceiro atual"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_total_time_taken_chair
+msgid "Time Reserved(Hrs)"
+msgstr "Hora Reservada(Hrs)"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_product_template_time_taken
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_lines_time_taken
+msgid "Time Taken"
+msgstr "Tempo Tomado"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_collection_today
+msgid "Today's Collection"
+msgstr "Coleção de Hoje"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_price_subtotal
+msgid "Total"
+msgstr "Total"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_total_invoiced
+msgid "Total Invoiced"
+msgstr "Total Faturado"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_debit
+msgid "Total Payable"
+msgstr "Total a pagar"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_credit
+msgid "Total Receivable"
+msgstr "Total Recebível"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_credit
+msgid "Total amount this customer owes you."
+msgstr "Valor total que este cliente deve a você."
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_debit
+msgid "Total amount you have to pay to this vendor."
+msgstr "Valor total a ser pago para este fornecedor."
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_time_taken_total
+msgid "Total time taken"
+msgstr "Total do Tempo que foi gasto"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_kanban
+msgid "Total time taken :"
+msgstr "Total do Tempo que foi gasto:"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_of_chair
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_user_id
+msgid "User"
+msgstr "Usuário"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_res_users
+#: model:ir.model.fields,field_description:salon_management.field_salon_chair_user_line
+#: model:ir.ui.view,arch_db:salon_management.salon_chair_form
+msgid "Users"
+msgstr "Usuários"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_res_users_currency_id
+msgid "Utility field to express amount currency"
+msgstr "Campo utilitário para expressar total em moeda"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_order_form
+msgid "Validate"
+msgstr "Validar"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_salon_order_validation_controller
+msgid "Validation controller"
+msgstr "Validar Controlador"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_property_stock_supplier
+msgid "Vendor Location"
+msgstr "Localização de Fornecedor"
+
+#. module: salon_management
+#: model:ir.model.fields,field_description:salon_management.field_res_users_property_supplier_payment_term_id
+msgid "Vendor Payment Terms"
+msgstr "Termos de Pagamento do Fornecedor"
+
+#. module: salon_management
+#: model:mail.template,subject:salon_management.salon_email_template_rejected
+msgid "We are Sorry ${object.name}"
+msgstr "We are Sorry ${object.name}"
+
+#. module: salon_management
+#: model:ir.actions.act_window,name:salon_management.salon_config_working_action
+#: model:ir.ui.menu,name:salon_management.salon_working_hours_menu
+msgid "Working Hours"
+msgstr "Horas de Trabalho"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "Working Time"
+msgstr "Expediente"
+
+#. module: salon_management
+#: model:ir.model.fields,help:salon_management.field_salon_chair_user_of_chair
+msgid "You can select the user from the Users Tab.Last user from the Users Tab will be selected as the Current User."
+msgstr "Você pode selecionar o usuários. O usuario mais rapido da guia de usuario será selecionado como usuario atual."
+
+#. module: salon_management
+#: code:addons/salon_management/models/salon_management.py:384
+#, python-format
+msgid "You can't delete an invoiced salon order!"
+msgstr "Você não pode excluir uma ordem de venda!"
+
+#. module: salon_management
+#: code:addons/salon_management/models/salon_management.py:244
+#, python-format
+msgid "You can't move a salon order from cancel stage !"
+msgstr "Você não pode mover um estágio de cancelamento do formulário de pedido da estética !"
+
+#. module: salon_management
+#: code:addons/salon_management/models/salon_management.py:242
+#, python-format
+msgid "You can't move a salon order from closed stage !"
+msgstr "Você não pode mover uma ordem de estética para um estágio fechado!"
+
+#. module: salon_management
+#: code:addons/salon_management/models/salon_management.py:238
+#: code:addons/salon_management/models/salon_management.py:246
+#, python-format
+msgid "You can't perform that move !"
+msgstr "Você não pode executar esse movimento!"
+
+#. module: salon_management
+#: code:addons/salon_management/models/salon_management.py:240
+#, python-format
+msgid "You can't perform that move!"
+msgstr "Você não pode executar esse movimento!"
+
+#. module: salon_management
+#: model:ir.ui.view,arch_db:salon_management.salon_booking_form
+msgid "dd/mm/yyyy"
+msgstr "dd/mm/yyyy"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_salon_booking
+msgid "salon.booking"
+msgstr "salon.booking"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_salon_chair
+msgid "salon.chair"
+msgstr "salon.chair"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_salon_chair_user
+msgid "salon.chair.user"
+msgstr "salon.chair.user"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_salon_config_settings
+msgid "salon.config.settings"
+msgstr "salon.config.settings"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_salon_holiday
+msgid "salon.holiday"
+msgstr "salon.holiday"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_salon_order
+msgid "salon.order"
+msgstr "salon.order"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_salon_order_lines
+msgid "salon.order.lines"
+msgstr "salon.order.lines"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_salon_sequence_updater
+msgid "salon.sequence.updater"
+msgstr "salon.sequence.updater"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_salon_stages
+msgid "salon.stages"
+msgstr "salon.stages"
+
+#. module: salon_management
+#: model:ir.model,name:salon_management.model_salon_working_hours
+msgid "salon.working.hours"
+msgstr "salon.working.hours"
+

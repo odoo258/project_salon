@@ -1,0 +1,112 @@
+<odoo>
+    <data>
+
+        <template id="credit_card_register_portal">
+            <t t-call="website.layout">
+                <script type="text/javascript" src="/vehicle_service/static/src/js/website-validate-card.js" />
+                <t t-set="title">Cadastre Seu Cartão</t>
+                <div class="oe_structure">
+                    <xpath expr="//div[@id='wrapwrap']/main/div" position="after">
+                        <div class="container">
+                            <h1 class="mb32">Cartão de Crédito</h1>
+
+                            <div class="col-lg-5 col-sm-6" style="background-color: #d9d9d9; margin: 20px; border-radius: 20px; padding: 20px;">
+
+                                <form class="checkout_autoformat center" action="/shop/credit-card" id="card_submit_id" method="POST" role="form" enctype="multipart/form-data">
+
+                                    <h4>Cadastrar Cartão de Crédito</h4>
+                                    <div class="form-group">
+                                        <label for="credit_card_payment_acquirer">Bandeira:</label>
+                                        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="credit_card_payment_acquirer" name="credit_card_payment_acquirer" required="required">
+                                                <option value="visa">Visa</option>
+                                                <option value="mastercard">Master Card</option>
+                                                <option value="amex">American Express</option>
+                                                <option value="elo">Elo</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                      <label for="credit_card_display_number">Número do Cartão:</label>
+                                      <input type="text" class="form-control" id="credit_card_display_number" name="credit_card_display_number" maxlength="16" required="required" placeholder="Digite apenas números" />
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="credit_card_name">Nome do Dono do Cartão:</label>
+                                      <input type="text" class="form-control" id="credit_card_name" name="credit_card_name" maxlength="60"/>
+                                    </div>
+
+                                    <div id="part_2" style="margin-top: 40px;" class="form-group">
+                                        <label for="expiration_date" style="padding-left: 20px;">Data de Expiração</label>
+                                        <div class="form-group" style="width: 25%; float: left; margin-top: 25px;">
+                                          <label for="credit_card_security_code">Código de Segurança:</label>
+                                          <input type="text" class="form-control" id="credit_card_security_code" name="credit_card_security_code" maxlength="3" required="required" placeholder="XXX"/>
+                                        </div>
+
+                                        <div class="form-group" id="expiration_date">
+                                            <div id="month" style="width: 25%; float: left; margin: 20px;">
+                                                <label for="credit_card_month_expiration">Mês:</label>
+                                                <input type="text" class="form-control" id="credit_card_month_expiration" name="credit_card_month_expiration" maxlength="2" required="required" placeholder="XX"/>
+                                            </div>
+
+                                            <div id="day" style="width: 25%; float: left; margin: 20px 20px 20px 1px;" class="form-group">
+                                                <label for="credit_card_year_expiration">Ano:</label>
+                                                <input type="text" class="form-control" id="credit_card_year_expiration" name="credit_card_year_expiration" maxlength="4" required="required" placeholder="XXXX"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button id="btn_submit_card" width="100px" class="btn btn-default btn-primary pull-left mb32 a-submit">Confirmar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <t t-if="partner_id">
+                            <t t-if="partner_id.credit_card_display_number">
+                                <div class="col-lg-5 col-sm-6" style="margin: 20px 20px 180px; border-radius: 20px; padding: 20px; border-style: solid; float: right;">
+                                    <h2>Cartão Já Cadastrado</h2>
+                                    <br/>
+                                    <h4>
+                                        Bandeira: <t t-esc="partner_id.credit_card_payment_acquirer.name" name="card_flag"/>
+                                    </h4>
+                                    <h4>
+                                        Nome: <t t-esc="partner_id.credit_card_name" name="card_name"/>
+                                    </h4>
+
+                                    <p></p>
+
+                                    <h4>
+                                        Número do Cartão: <t t-esc="partner_id.credit_card_display_number" name="card_display_number"/>
+                                    </h4>
+
+                                    <br />
+
+                                    <h4 style="float: left;">CSV: XXX</h4>
+
+
+
+                                    <div id="month_year" name="month_year" style="float: right; margin-right: 65px;">
+                                        <h4 style="float: left;">
+                                            Mês: <t t-esc="partner_id.credit_card_month_expiration" name="card_month"/>
+                                        </h4>
+
+                                        <h4 style="float: right; margin-left: 15px;">
+                                            Ano: <t t-esc="partner_id.credit_card_year_expiration" name="card_year" />
+                                        </h4>
+                                    </div>
+                                </div>
+                            </t>
+                            </t>
+
+                            <div style="float: left; margin-left: 495px; height: auto; width: auto;">
+                                    <a class="btn btn-default btn-primary pull-right mb32" href="/my/home"><span class="fa fa-long-arrow-left" /> Voltar</a>
+                            </div>
+                        </div>
+                    </xpath>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

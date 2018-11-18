@@ -1,0 +1,232 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* voucher_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-22 17:27+0000\n"
+"PO-Revision-Date: 2017-08-22 17:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: voucher_report
+#: model:ir.ui.view,arch_db:voucher_report.report_voucher_coupons
+msgid "<b style=\"font-size: 12px;\"> Regra de Utilização</b>"
+msgstr "<b style=\"font-size: 12px;\"> Regra de Utilização</b>"
+
+#. module: voucher_report
+#: model:ir.ui.view,arch_db:voucher_report.report_voucher_coupons
+msgid "<b>____________________________________</b><br/>\n"
+"                                            Assinatura de Cliente"
+msgstr "<b>____________________________________</b><br/>\n"
+"                                            Assinatura de Cliente"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_config_active
+msgid "Active"
+msgstr "Ativo"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_amount
+msgid "Amount"
+msgstr "Valor"
+
+#. module: voucher_report
+#: model:ir.ui.view,arch_db:voucher_report.report_voucher_coupons
+msgid "CNPJ:"
+msgstr "CNPJ:"
+
+#. module: voucher_report
+#: model:ir.ui.view,arch_db:voucher_report.report_voucher_coupons
+msgid "CPF:"
+msgstr "CPF:"
+
+#. module: voucher_report
+#: model:ir.ui.view,arch_db:voucher_report.report_voucher_coupons
+msgid "Cliente:"
+msgstr "Cliente:"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: voucher_report
+#: model:ir.ui.menu,name:voucher_report.menu_voucher_coupons_config_action
+msgid "Configuration"
+msgstr "Configuração"
+
+#. module: voucher_report
+#: model:ir.ui.view,arch_db:voucher_report.voucher_coupons_view
+msgid "Confirm Voucher Used"
+msgstr "Confirmar Uso de Voucher"
+
+#. module: voucher_report
+#: model:ir.ui.menu,name:voucher_report.menu_voucher_coupons_action
+msgid "Coupons"
+msgstr "Cupons"
+
+#. module: voucher_report
+#: selection:voucher.coupons,state:0
+msgid "Created"
+msgstr "Criado Aguardando Uso"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_config_create_uid
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_config_create_date
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: voucher_report
+#: model:ir.ui.view,arch_db:voucher_report.report_voucher_coupons
+msgid "Data Limite:"
+msgstr "Data Limite:"
+
+#. module: voucher_report
+#: model:ir.ui.view,arch_db:voucher_report.report_voucher_coupons
+msgid "Data de Emissão:"
+msgstr "Data de Emissão:"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_date
+msgid "Date"
+msgstr "Data"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_date_limit
+msgid "Date Limit"
+msgstr "Data Limite"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_config_display_name
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_display_name
+msgid "Display Name"
+msgstr "Nome para Mostrar"
+
+#. module: voucher_report
+#: model:ir.actions.report.xml,name:voucher_report.report_voucher
+msgid "Emissão de Voucher"
+msgstr "Emissão de Voucher"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_config_id
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_id
+msgid "ID"
+msgstr "ID"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons___last_update
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_config___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_config_write_uid
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_config_write_date
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: voucher_report
+#: sql_constraint:voucher.coupons.config:0
+msgid "Only one rule for voucher"
+msgstr "Somente um Regra para Voucher"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_name
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_protocol
+msgid "Protocol"
+msgstr "Protocolo"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_config_name
+msgid "Regra"
+msgstr "Regra"
+
+#. module: voucher_report
+#: model:ir.ui.view,arch_db:voucher_report.report_voucher_coupons
+msgid "Responsavel:"
+msgstr "Responsavel:"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_rule
+msgid "Rules"
+msgstr "Regras"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_state
+msgid "State"
+msgstr "Estado"
+
+#. module: voucher_report
+#: selection:voucher.coupons,state:0
+msgid "Used"
+msgstr "Usado"
+
+#. module: voucher_report
+#: model:ir.model.fields,field_description:voucher_report.field_voucher_coupons_user_id
+msgid "User"
+msgstr "Usuário"
+
+#. module: voucher_report
+#: model:ir.ui.view,arch_db:voucher_report.report_voucher_coupons
+msgid "Valor:"
+msgstr "Valor:"
+
+#. module: voucher_report
+#: model:ir.ui.menu,name:voucher_report.menu_voucher_coupons_sub
+msgid "Voucher"
+msgstr "Voucher"
+
+#. module: voucher_report
+#: model:ir.ui.menu,name:voucher_report.menu_voucher_coupons_config_sub
+msgid "Voucher Configuration"
+msgstr "Configuração de Voucher"
+
+#. module: voucher_report
+#: model:ir.actions.act_window,name:voucher_report.action_voucher_coupons
+#: model:ir.ui.menu,name:voucher_report.menu_voucher_coupons_main
+#: model:ir.ui.view,arch_db:voucher_report.voucher_coupons_config_view
+#: model:ir.ui.view,arch_db:voucher_report.voucher_coupons_view
+#: model:ir.ui.view,arch_db:voucher_report.voucher_coupons_view_tree
+msgid "Voucher Coupons"
+msgstr "Voucher"
+
+#. module: voucher_report
+#: model:ir.actions.act_window,name:voucher_report.action_voucher_coupons_config
+#: model:ir.ui.view,arch_db:voucher_report.voucher_coupons_config_view_tree
+msgid "Voucher Coupons Configuration"
+msgstr "Configuração de Cupom Voucher"
+
+#. module: voucher_report
+#: model:ir.model,name:voucher_report.model_voucher_coupons
+msgid "voucher.coupons"
+msgstr "voucher.coupons"
+
+#. module: voucher_report
+#: model:ir.model,name:voucher_report.model_voucher_coupons_config
+msgid "voucher.coupons.config"
+msgstr "voucher.coupons.config"
+

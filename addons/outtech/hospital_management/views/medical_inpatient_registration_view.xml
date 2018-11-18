@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="bed_transfer_wizard_view" model="ir.ui.view">
+            <field name="name">Bed Transfer</field>
+            <field name="model">medical.bed.transfer.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Bed Transfer">
+                    <header>
+                        <button name="bed_transfer" string="Transfe" type="object"/>
+                        <button name="cancel" string="cancel" type="object" special="cancel"/>
+                    </header>
+                    <h2>
+                        Plz choose the new bed to allocate
+                    </h2>
+                    <group>
+                        <field name="newbed"/>
+                        <field name="reason"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="medical_inpatient_registration_view" model="ir.ui.view">
+            <field name="name">medical.inpatient.registration.form</field>
+            <field name="model">medical.inpatient.registration</field>
+            <field name="arch" type="xml">
+                <form string="Inpatient Registration Information" create="false">
+                    <header>
+                        <div invisible="context.get('admission_view')" colspan="2" class="oe_left">
+                            <button name="btn_start_admission" string="Start Admission" type="object" states="open"
+                                    class="oe_highlight"/>
+                            <button name="%(admission_reactivate_wizard_action)d" string="Reactivate Admission" type="action"
+                                    states="done"/>
+                            <button name="btn_done_admission" string="Done" type="object" states="schedule"
+                                    class="oe_highlight"/>
+                        </div>
+                        <field name="state" widget="statusbar" statusbar_visible="open,pending_payment,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" class="oe_inline" readonly="1"/>
+                            </h1>
+                            <field name="start_admission_date" readonly="1"/>
+                        </div>
+                        <group string="Administrative Data">
+                            <group>
+                                <field name="owner_id" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                                <field name="patient" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                                <field name="hospitalization_date" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                                <field name="discharge_date"/>
+                            </group>
+                            <group>
+                                <field name="bed" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                                <field name="attending_physician" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                                <field name="admission_type" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Services">
+                                <field name="map_ids" nolabel="1" context="{'default_doctor_id': attending_physician, 'default_owner_id': owner_id,'default_owner_id_invisible': owner_id, 'default_patient_id': patient, 'default_patient_id_invisible': patient,'admission_view': context.get('admission_view')}">
+                                    <tree>
+                                        <field name="start_date" />
+                                        <field name="code" />
+                                        <field name="name" />
+                                        <field name="state" />
+                                        <field name="sale_order_line_id" invisible="1"/>
+                                        <field name="order_id" />
+                                        <field name="price" />
+                                        <button name="action_draft_quotation" type="object" string="Set Draft" icon="fa-check-square-o"
+                                            attrs="{'invisible': [('state', '!=', 'disapproved')]}"  />
+                                        <button name="action_repprove_quotation" type="object" string="Reprove Quotation" icon="fa-minus-circle"
+                                            attrs="{'invisible': [('state', '!=', 'open')]}" />
+                                        <button name="action_open_quotation" type="object" string="Open Quotation" icon="fa-list-alt"
+                                            attrs="{'invisible': [('sale_order_line_id', '=', False)]}" />
+                                    </tree>
+                                </field>
+                                <group>
+                                    <group class="oe_left" colspan="2" invisible="context.get('admission_view')">
+                                        <button name="open_wizard" string="Make Quotation" type="object" class="oe_highlight" states="open" />
+                                    </group>
+                                    <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                        <field name="amount_gross" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="amount_approved" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="amount_draft" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="amount_open" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="amount_disapproved" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                            <label for="amount_total"/>
+                                            <button name="button_dummy" string="(update)" type="object" class="oe_link"/>
+                                        </div>
+                                        <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Sale Order">
+                                <field name="sale_order_ids" nolabel="1" readonly="1"/>
+                                <group class="oe_left" colspan="2" invisible="context.get('admission_view')">
+                                    <button name="btn_join_quotation" string="Merge Quotation's" type="object"
+                                            class="oe_highlight" states="schedule"></button>
+                                </group>
+                            </page>
+                            <page string="Reactivate Log">
+                                <field name="admission_reactivate_ids" nolabel="1" readonly="1">
+                                    <tree>
+                                        <field name="create_date"/>
+                                        <field name="create_uid"/>
+                                        <field name="name"/>
+                                        <field name="observation"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="create_date"/>
+                                            <field name="create_uid"/>
+                                            <field name="name"/>
+                                        </group>
+                                        <group string="Observation">
+                                            <field name="observation" colspan="4" nolabel="1"/>
+                                        </group>
+                                    </form>
+                                </field>
+
+                            </page>
+                            <page string="Medical records">
+                                <field name="log_ids" nolabel="1" readonly="1">
+                                    <tree>
+                                        <field name="create_date"/>
+                                        <field name="create_uid"/>
+                                        <field name="map_id"/>
+                                    </tree>
+                                    <form>
+                                        <group col="2" colspan="4">
+                                            <field name="create_date"/>
+                                            <field name="create_uid"/>
+                                            <field name="map_id"/>
+                                        </group>
+                                        <group string="Info">
+                                            <field name="info" colspan="4" nolabel="1" widget="html"/>
+                                        </group>
+                                    </form>
+                                </field>
+                                <group class="oe_left" colspan="2" invisible="context.get('admission_view')">
+                                    <button name="view_log" string="View Log" type="object" class="oe_highlight"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_inpatient_registration_tree" model="ir.ui.view">
+            <field name="name">medical.inpatient.registration.tree</field>
+            <field name="model">medical.inpatient.registration</field>
+            <field name="arch" type="xml">
+                <tree colors="red:admission_type=='emergency';blue:admission_type=='maternity'"
+                      string="Inpatient Registration Info" create="false" edit="false">
+                    <field name="name"/>
+                    <field name="owner_id"/>
+                    <field name="patient"/>
+                    <field name="hospitalization_date"/>
+                    <field name="discharge_date"/>
+                    <field name="bed"/>
+                    <field name="admission_type"/>
+                    <field name="state"/>
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="medical_action_form_inpatient" model="ir.actions.act_window">
+            <field name="name">Admission</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.inpatient.registration</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="medical_action_form_inpatient_wait" model="ir.actions.act_window">
+            <field name="name">Admission Waiting</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.inpatient.registration</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'filter': 'wait'}</field>
+        </record>
+
+        <menuitem id="menu_medical_management" name="Medical"/>
+
+        <menuitem id="menu_inpatient_administration"
+                  name="Inpatient Administration"
+                  parent="main_menu_health_care"
+                  sequence='2'/>
+
+        <menuitem id="menu_patient_hospitalization_administration"
+                  parent="menu_inpatient_administration"
+                  action="medical_action_form_inpatient"
+                  sequence="0"/>
+
+        <menuitem id="menu_patient_hospitalization_administration_wait"
+                  parent="menu_inpatient_administration"
+                  action="medical_action_form_inpatient_wait"
+                  sequence="1"
+                  name="Admission Waiting"/>
+    </data>
+</odoo>

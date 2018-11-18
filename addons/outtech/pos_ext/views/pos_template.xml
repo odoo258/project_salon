@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+
+        <template id="pos_ext_frontend" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/pos_ext/static/src/js/pos_ext.js"></script>
+            </xpath>
+            <xpath expr="//link[@id='pos-stylesheet']" position="after">
+                <link rel="stylesheet" href="/pos_ext/static/src/css/pos_ext.css"
+                      id="pos_password_protected"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

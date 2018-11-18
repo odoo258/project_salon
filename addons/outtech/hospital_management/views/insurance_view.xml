@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- Tree view -->
+		<record id="view_insurance_tree" model="ir.ui.view">
+			<field name="name">Insurances</field>
+			<field name="model">medical.insurance</field>
+			<field name="priority">2</field>
+			<field name="arch" type="xml">
+				<tree string="Insurance List">
+				     <field name="number"/>
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="insurance_compnay_id"/>
+                    <field name="category"/>
+                    <field name="member_since"/>
+                    <field name="member_exp"/></tree>
+			</field>
+		</record>
+
+		<!-- Form view -->
+		<record id="view_insurance_form" model="ir.ui.view">
+			<field name="name">Insurances</field>
+			<field name="model">medical.insurance</field>
+			<field name="arch" type="xml">
+			<form string="Insurances">
+                        <sheet>
+                            <group>
+                                <group>
+                                    <field name="number" required="1"/>
+                                    <field name="type"/>
+                                    <field name="member_since"/>
+                                    <field name="category"/>
+
+                                </group>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="insurance_compnay_id" required="1"/>
+                                    <field name="member_exp"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="notes"/>
+                            </group>
+                        </sheet>
+                    </form>
+
+			</field>
+		</record>
+
+		<!-- Search View -->
+		<record id="view_insurance_search" model="ir.ui.view">
+			<field name="name">Insurances</field>
+			<field name="model">medical.insurance</field>
+			<field name="type">search</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Search Insurances">
+					<separator orientation="vertical" />
+					<field name="number" />
+					<field name="insurance_compnay_id" />
+					<newline />
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_open_insurance">
+			<field name="name">Insurances</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.insurance</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_insurance_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="act_res_partner">
+			<field name="name">Insurances Company</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('is_insurance_company','=',1)]</field>
+			<field name="context">{"default_is_insurance_company":1,"search_default_is_insurance_company":1}
+			</field>
+		</record>
+
+
+
+
+		<!-- Tree view -->
+		<record id="view_insurance_plan_tree" model="ir.ui.view">
+			<field name="name">Insurances Plan</field>
+			<field name="model">medical.insurance.plan</field>
+			<field name="priority">2</field>
+			<field name="arch" type="xml">
+				<tree string="Insurance Plans">
+					<field name="plan_id" />
+					<field name="is_default" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Form view -->
+		<record id="view_insurance_plan_form" model="ir.ui.view">
+			<field name="name">Insurances Plan</field>
+			<field name="model">medical.insurance.plan</field>
+			<field name="arch" type="xml">
+				<form string="Insurance Plans">
+					<group colspan="4" col="4">
+						<field name="plan_id" required = "1"
+							context="{'search_default_type': 'service','default_type': 'service'}" />
+						<newline />
+						<field name="company_id"  required = "1"
+							context="{'default_is_insurance_company': 1, 'search_default_is_insurance_company': 1}" />
+						<field name="is_default" />
+						<newline />
+						<field name="notes" colspan="4" />
+					</group>
+				</form>
+			</field>
+		</record>
+        <!--
+		<menuitem id="menu_insurance" 
+				name="Insurances" 
+				parent="main_menu_configuration"
+				sequence='9'/>
+		<menuitem id="menu_insurance_company"
+				action="act_res_partner"
+				 sequence="0" parent="menu_insurance"/>
+		<menuitem id="menu_sub_insurance" 
+			action="act_open_insurance" 
+			sequence="1" parent="menu_insurance"/>
+        -->
+	</data>
+</openerp>

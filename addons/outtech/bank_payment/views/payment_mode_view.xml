@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_payment_mode_form_levys" model="ir.ui.view">
+        <field name="name">view.br.boleto.payment.mode.form</field>
+        <field name="model">payment.mode</field>
+        <field name="inherit_id" ref="br_boleto.view_br_boleto_account_payment_mode_form" />
+        <field name="arch" type="xml">
+            <field name="active">
+                <field name="boleto" />
+            </field>
+            <group name="boletos" position="before">
+                <group name="collection" string="Collection">
+                    <group>
+                        <field name="generate_bank_payment"/>
+                        <field name="layout_remessa"/>
+                        <field name="writeoff_account_id"/>
+                    </group>
+                    <group>
+                        <field name="generate_lot_payment"/>
+                        <field name="type_banking_billing"/>
+                        <field name="layout_retorno"/>
+                    </group>
+                </group>
+            </group>
+            <field name="boleto_carteira" position="before">
+                <field name="transmission_code"/>
+            </field>
+        </field>
+    </record>
+</odoo>

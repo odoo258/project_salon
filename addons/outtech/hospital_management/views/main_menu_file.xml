@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem 
+        	id="main_menu_health_care"
+        	name="Hospital Management"
+            web_icon="hospital_management,static/description/icon_home.png"
+           />
+
+        
+    </data>
+</openerp>

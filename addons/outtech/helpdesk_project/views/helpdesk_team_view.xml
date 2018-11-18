@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_helpdesk_team_inherit_form" model="ir.ui.view">
+            <field name="name">helpdesk.team.inherit.form</field>
+            <field name="model">helpdesk.team</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_team_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/div[@id='productivity']" position="after">
+                    <div class="row mt16" id="project_management">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <field name="use_project" style="padding: 12px; margin: 0"/>
+                                </span>
+                                <div class="form-control" style="float: none;">
+                                    <span class="fa fa-3x fa-puzzle-piece pull-right"/>
+                                    <label for="use_project"/>
+                                    <div class="text-muted">
+                                        Member of the team can assign task to project management.
+                                    </div>
+                                    <div>
+                                        <hr class="mt8 mb8"/>
+                                        <field name="use_communication"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

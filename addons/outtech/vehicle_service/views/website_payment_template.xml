@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+    <template inherit_id="website_sale.total" id="total_payment">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/vehicle_service/static/src/js/website_sale_payment.js"></script>
+        </xpath>
+        <div class="row" id="order_total" position="after">
+            <div class="row">
+                <!--<p align="center"><b>Pagamento em:</b></p>-->
+                <select class="row" id="sel1" name="installments" required="required" style="width:100%;">
+                    <option value="1" style="display: 1;">À Vista</option>
+                    <option value="2">2 Vezes</option>
+                    <option value="3">3 Vezes</option>
+                    <option value="4">4 Vezes</option>
+                    <option value="5">5 Vezes</option>
+                    <option value="6">6 Vezes</option>
+                </select>
+            </div>
+            <div class="js_payment mb64 row" t-if="not website_sale_order.amount_total" id="payment_method" position="replace">
+
+                <div class="js_payment mb64 row" t-if="not website_sale_order.amount_total" id="payment_method">
+                    <div class="col-sm-12">
+                        <form target="_self" action="/shop/payment/validate" method="post" class="pull-right">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                            <a style="width:127px;" class="btn btn-primary a-submit">
+                                <span t-if="order.amount_total &gt; 0">Pay Now <span class="fa fa-long-arrow-right"></span></span>
+                                <span t-if="order.amount_total == 0">Confirm Order <span class="fa fa-long-arrow-right"></span></span>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    </data>
+</odoo>

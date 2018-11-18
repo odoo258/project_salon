@@ -1,0 +1,484 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* discounts_in_pos
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-04 17:47+0000\n"
+"PO-Revision-Date: 2017-08-04 17:47+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+msgid "<br/>\n"
+"                        Date:"
+msgstr "<br/>\n"
+"                        Data:"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "<strong>Comment:</strong>"
+msgstr "<strong>Comentário:</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+msgid "<strong>Company</strong>:\n"
+"                            <br/>"
+msgstr "<strong>Empresa</strong>:\n"
+"                            <br/>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>Company</strong>:<br/>"
+msgstr "<strong>Empresa</strong>:<br/>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "<strong>Customer Code:</strong>"
+msgstr "<strong>Código de Cliente:</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "<strong>Description:</strong>"
+msgstr "<strong>Descrição:</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>Description</strong>"
+msgstr "<strong>Descrição</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>Disc. (%)</strong>"
+msgstr "<strong>Desc. (%)</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+msgid "<strong>Disc.(%)</strong>"
+msgstr "<strong>Desc.(%)</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>Disc.Fixed</strong>"
+msgstr "<strong>Desc. Valor</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+msgid "<strong>Discount Fixed(Total)</strong>"
+msgstr "<strong>Desc. Valor(Total)</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+msgid "<strong>Discount Percent(Total)</strong>"
+msgstr "<strong>Desc(%). (Total)</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "<strong>Due Date:</strong>"
+msgstr "<strong>Data de Vencimento:</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "<strong>Fiscal Position Remark:</strong>"
+msgstr "<strong>Observação de Fiscal Posição:</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "<strong>Invoice Date:</strong>"
+msgstr "<strong>Data de Fatura:</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+msgid "<strong>Net Total</strong>"
+msgstr "<strong>Total Líquido</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>No. Of Articles</strong>:<br/>"
+msgstr "<strong>Nr. de Artigos</strong>:<br/>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>Price</strong>"
+msgstr "<strong>Preço</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+msgid "<strong>Print date</strong>:\n"
+"                            <br/>"
+msgstr "<strong>Data de impressão</strong>:\n"
+"                            <br/>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>Print date</strong>:<br/>"
+msgstr "<strong>Data de impressão</strong>:<br/>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+msgid "<strong>Product</strong>"
+msgstr "<strong>Produto</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+msgid "<strong>Qty</strong>"
+msgstr "<strong>Qtd</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>Quantity</strong>"
+msgstr "<strong>Quantidade</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Referência:</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "<strong>Source:</strong>"
+msgstr "<strong>Fonte:</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Subtotal</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>Tax</strong>"
+msgstr "<strong>Imposto</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+msgid "<strong>Taxes</strong>"
+msgstr "<strong>Impostos</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>Total Without Taxes</strong>"
+msgstr "<strong>Total Sem Taxas</strong>"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>Total</strong>"
+msgstr "Total"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "<strong>Unit Price</strong>"
+msgstr "Preço Unitário"
+
+#. module: discounts_in_pos
+#: model:ir.model,name:discounts_in_pos.model_account_move
+msgid "Account Entry"
+msgstr "Lançamento Contábil"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+msgid "Amount"
+msgstr "Montante"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "Base"
+msgstr "Base"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "Cancelled Invoice"
+msgstr "Fatura Cancelada"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+msgid "Description"
+msgstr "Descrição"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "Disc.(%)"
+msgstr "Desc. (%)"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "Disc.Fixed"
+msgstr "Desc. Valor"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+msgid "Discount"
+msgstr "Desconto"
+
+#. module: discounts_in_pos
+#: model:ir.model.fields,field_description:discounts_in_pos.field_pos_config_discount_account
+msgid "Discount Account"
+msgstr "Conta de Desconto"
+
+#. module: discounts_in_pos
+#: model:ir.model.fields,field_description:discounts_in_pos.field_pos_order_line_discount_fixed
+msgid "Discount Fixed"
+msgstr "Desconto Valor"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "Discount Fixed(Total)"
+msgstr "Desconto Valor(Total)"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "Discount Percent(Total)"
+msgstr "Desconto(%)(Total)"
+
+#. module: discounts_in_pos
+#: model:ir.model.fields,field_description:discounts_in_pos.field_account_invoice_line_discount_fixed
+msgid "Discount.Fixed"
+msgstr "Desc. Valor por Produto"
+
+#. module: discounts_in_pos
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_invoice_display_name
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_payment_display_name
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_receipt_display_name
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_saleslines_display_name
+msgid "Display Name"
+msgstr "Nome para Exibição"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "Draft Invoice"
+msgstr "Fatura Provisória"
+
+#. module: discounts_in_pos
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_invoice_id_14258
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_payment_id_14252
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_receipt_id_14265
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_saleslines_id_14255
+msgid "ID"
+msgstr "ID"
+
+#. module: discounts_in_pos
+#: model:ir.actions.report.xml,name:discounts_in_pos.pos_invoice_report
+#: model:ir.model,name:discounts_in_pos.model_account_invoice
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "Invoice"
+msgstr "Fatura"
+
+#. module: discounts_in_pos
+#: model:ir.model,name:discounts_in_pos.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Linha da Fatura"
+
+#. module: discounts_in_pos
+#: model:ir.actions.report.xml,name:discounts_in_pos.account_invoices
+msgid "Invoices"
+msgstr "Faturas"
+
+#. module: discounts_in_pos
+#: model:ir.model,name:discounts_in_pos.model_account_move_line
+msgid "Journal Item"
+msgstr "Item de Diário"
+
+#. module: discounts_in_pos
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_invoice___last_update
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_payment___last_update
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_receipt___last_update
+#: model:ir.model.fields,field_description:discounts_in_pos.field_report_discounts_in_pos_report_saleslines___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: discounts_in_pos
+#: model:ir.model,name:discounts_in_pos.model_pos_order_line
+msgid "Lines of Point of Sale"
+msgstr "Linhas do Ponto de Venda"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "POS Lines"
+msgstr "Linhas POS"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "PRO-FORMA"
+msgstr "Pro-forma"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+msgid "Payment Mode"
+msgstr "Modo de Pagamento"
+
+#. module: discounts_in_pos
+#: model:ir.model,name:discounts_in_pos.model_pos_order
+msgid "Point of Sale"
+msgstr "Ponto de Venda"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+msgid "Price"
+msgstr "Preço"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+msgid "Quantity"
+msgstr "Quantidade"
+
+#. module: discounts_in_pos
+#: model:ir.actions.report.xml,name:discounts_in_pos.action_report_pos_receipt
+msgid "Receipt"
+msgstr "Recibo"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "Refund"
+msgstr "Devolução"
+
+#. module: discounts_in_pos
+#: model:ir.actions.report.xml,name:discounts_in_pos.pos_lines_report
+msgid "Sales Lines"
+msgstr "Linhas de Venda"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "TIN:"
+msgstr "TIN:"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "Tax"
+msgstr "Imposto"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_saleslines
+msgid "Taxes"
+msgstr "Impostos"
+
+#. module: discounts_in_pos
+#: model:ir.actions.report.xml,name:discounts_in_pos.pos_payment_report
+msgid "Today's Payment"
+msgstr "Pagamentos de Hoje"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_payment
+msgid "Today's Payments"
+msgstr "Pagamentos de Hoje"
+
+#. module: discounts_in_pos
+#: model:ir.model.fields,field_description:discounts_in_pos.field_account_invoice_discount_total
+msgid "Total Discount"
+msgstr "Desconto Total"
+
+#. module: discounts_in_pos
+#: model:ir.model.fields,field_description:discounts_in_pos.field_account_invoice_discount_percent
+#: model:ir.model.fields,field_description:discounts_in_pos.field_pos_order_discount_percent
+msgid "Total Discount(%)"
+msgstr "Total Desconto(%)"
+
+#. module: discounts_in_pos
+#: model:ir.model.fields,field_description:discounts_in_pos.field_pos_order_discount_total
+msgid "Total Discount(Fixed)"
+msgstr "Total Desconto(Fixed)"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "Unit Price"
+msgstr "Preço Unitário"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_receipt
+msgid "User:"
+msgstr "Usuário:"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "Vendor Bill"
+msgstr "Fatura de Fornecedor"
+
+#. module: discounts_in_pos
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document
+#: model:ir.ui.view,arch_db:discounts_in_pos.report_invoice_document_new
+msgid "Vendor Refund"
+msgstr "Reembolso de Fornecedor"
+
+#. module: discounts_in_pos
+#: sql_constraint:account.move.line:0
+msgid "Wrong credit or debit value in accounting entry !"
+msgstr "Valor de Crédito ou Débito incorreto no lançamento contábil!"
+
+#. module: discounts_in_pos
+#: model:ir.model.fields,field_description:discounts_in_pos.field_pos_order_line_discountStr
+msgid "discountStr"
+msgstr "discountStr"
+
+#. module: discounts_in_pos
+#: model:ir.model,name:discounts_in_pos.model_pos_config
+msgid "pos.config"
+msgstr "pos.config"
+
+#. module: discounts_in_pos
+#: model:ir.model,name:discounts_in_pos.model_report_discounts_in_pos_report_invoice
+msgid "report.discounts_in_pos.report_invoice"
+msgstr "report.discounts_in_pos.report_invoice"
+
+#. module: discounts_in_pos
+#: model:ir.model,name:discounts_in_pos.model_report_discounts_in_pos_report_payment
+msgid "report.discounts_in_pos.report_payment"
+msgstr "report.discounts_in_pos.report_payment"
+
+#. module: discounts_in_pos
+#: model:ir.model,name:discounts_in_pos.model_report_discounts_in_pos_report_receipt
+msgid "report.discounts_in_pos.report_receipt"
+msgstr "report.discounts_in_pos.report_receipt"
+
+#. module: discounts_in_pos
+#: model:ir.model,name:discounts_in_pos.model_report_discounts_in_pos_report_saleslines
+msgid "report.discounts_in_pos.report_saleslines"
+msgstr "report.discounts_in_pos.report_saleslines"
+

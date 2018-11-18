@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="action_lab_to_invoice" model="ir.actions.act_window">
+            <field name="name">Lab Requests to be invoiced</field>
+            <field name="res_model">medical.patient.lab.test</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('is_invoied','=', False)]</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_today_lab_req" model="ir.actions.act_window">
+            <field name="name">Lab Test Requests</field>
+            <field name="res_model">medical.patient.lab.test</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="action_app_to_invoice" model="ir.actions.act_window">
+            <field name="name">Appointments to be invoiced</field>
+            <field name="res_model">medical.appointment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_invoiced','=',False)]</field>
+        </record>
+
+        <record id="action_pre_to_invoice" model="ir.actions.act_window">
+            <field name="name">Prescriptions to be invoiced</field>
+            <field name="res_model">medical.prescription.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--
+        <menuitem
+                id="Invoice"
+               string="Invoice"
+                parent="hospital_management.main_menu_health_care"
+                 sequence = '8'
+
+             />
+       <menuitem id="lab_to_invoice"
+             action="action_lab_to_invoice"
+             string="Lab Request to be Invoiced"
+             parent="Invoice"
+             sequence="1"/>
+       <menuitem id="today_lab_req"
+             action="action_today_lab_req"
+             string="Today's Lab Request"
+             parent="Invoice"
+             sequence="2"/>
+       <menuitem id="app_to_invoice"
+             action="action_app_to_invoice"
+             string="Appointment To Be Invoice"
+             parent="Invoice"
+             sequence="3"/>
+       <menuitem id="prescription_to_be_invoice"
+             action="action_pre_to_invoice"
+             string="Prescription To Be Invoice"
+             parent="Invoice"
+             sequence="4"/>
+        -->
+    </data>
+</openerp>
+

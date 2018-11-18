@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_medical_exam_website">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <t t-if="res_company.logo">
+                                <img class="image" t-att-src="'data:image/png;base64,%s' % res_company.logo" style="max-height: 75px; padding-top: 2px; text-align:left;"/>
+                            </t>
+                            <div class="row">
+                                <div class="col-xs-9">
+                                    <h2>Ficha #<t t-esc="o.code"/></h2>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="col-xs-9">
+                                        <h4>
+                                            <strong>Pet: </strong><t t-esc="o.patient_id.name" />
+                                        </h4>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <strong>Serviço:</strong>
+                                        <p><t t-esc="o.service_id.name" /></p>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <strong>Tutor:</strong>
+                                        <p><t t-esc="o.owner_id.name" /></p>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <strong>Veterinário:</strong>
+                                        <p><t t-esc="o.doctor_id.name.name" /></p>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <strong>Data Inicial e Final</strong>
+                                        <p><t t-esc="o.start_date"/> - <t t-esc="o.end_date"/></p>
+                                    </div>
+
+                                    <!--<div class="col-xs-9">-->
+                                        <!--<strong>Data de Início/Data Final:</strong>-->
+                                        <!--<p><t t-esc="o.start_date" />/<t t-esc="o.end_date"/></p>-->
+                                    <!--</div>-->
+                                </div>
+                                <div class="col-xs-6">
+                                    <br />
+                                    <br />
+                                    <div class="col-xs-9">
+                                        <strong>Autorização Clínica: </strong>
+                                        <t t-if="o.sur_office_template_id">
+                                            <p><t t-esc="o.sur_office_template_id.name"/></p>
+                                        </t>
+                                        <t t-if="not o.sur_office_template_id">
+                                            <p>N/A</p>
+                                        </t>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <strong>Informações Preparatórias: </strong>
+                                        <t t-if="o.lab_preparatory_information_id">
+                                            <p><t t-esc="o.lab_preparatory_information_id.name"/></p>
+                                        </t>
+                                        <t t-if="not o.lab_preparatory_information_id">
+                                            <p>N/A</p>
+                                        </t>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <t t-if="o.lab_requester_id">
+                                            <strong>Solicitante:</strong>
+                                            <p><t t-esc="o.lab_requester_id.name.name" /></p>
+                                        </t>
+                                        <t t-if="not o.lab_requester_id">
+                                            <strong>Solicitante:</strong>
+                                            <p>N/A</p>
+                                        </t>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <t t-if="o.building_id">
+                                            <strong>Sala: </strong>
+                                            <p><t t-esc="o.building_id.name" /></p>
+                                        </t>
+                                        <t t-if="not o.building_id">
+                                            <strong>Sala: </strong>
+                                            <p>N/A</p>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

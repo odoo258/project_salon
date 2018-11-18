@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="quick_sale_form" model="ir.ui.view">
+		    <field name="name">Quick Sale</field>
+		    <field name="model">quick.sale</field>
+		    <field name="arch" type="xml">
+				<form string="Quick Sale">
+                    <header>
+                        <button name="confirm_button" string="Confirm" type="object" states="draft" class="oe_highlight"/>
+                        <button name="change_credit_card" string="Change Credit Card" type="object" states="payment_error" class="oe_highlight"/>
+                        <button name="try_payment" string="Try Payment" type="object" states="payment_error" class="oe_highlight"/>
+                        <!--<button name="force_confirm_button" string="Force Confirm" type="object" states="waiting_confirmation" class="oe_highlight"/>-->
+                        <button name="schedule_installation_button" string="Schedule Installation" type="object" states="paid" class="oe_highlight"/>
+                        <button name="button_user" string="Register User" type="object" states="user_error" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,paid,scheduled,done"/>
+                    </header>
+                    <sheet>
+
+						<h1>
+							<field name="name"/>
+						</h1>
+                        <field name="date"/>
+                        <group>
+                            <field name="user_id" readonly="1"/>
+                            <field name="resale_id" readonly="1"/>
+                        </group>
+                        <separator string="Vehicle"/>
+                        <group>
+                            <group>
+                                <field name="category_id_vehicle" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="manufacturer_id_vehicle" domain="[('category_ids','=',category_id_vehicle)]" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="model_id_vehicle" domain="[('manufacturer_id','=',manufacturer_id_vehicle),('category_id','=',category_id_vehicle)]" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="year_id_vehicle" context="{'model_id': model_id_vehicle}" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                            </group>
+                            <group>
+                                 <field name="owner_name_vehicle" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                 <field name="plate_vehicle" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                 <field name="renavam_vehicle" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                            </group>
+                        </group>
+                        <separator string="Product"/>
+                        <group>
+                            <group>
+                                <field name="product_id_product"/>
+                                <field name="plan_id_product" context="{'model_id': model_id_vehicle}" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="qty_plots" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                            </group>
+                            <group>
+                                 <field name="price_product"/>
+                                 <field name="monthly_payment"/>
+                            </group>
+                        </group>
+                        <separator string="Customer"/>
+                        <field name="is_company_partner" class="oe_inline" attrs="{'readonly': [('state','not in',('draft'))]}"/><label for="is_company_partner" string="Is a Company?"/>
+						<h1>
+							<field name="cnpj_cpf_partner" placeholder="CNPJ/CPF" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+						</h1>
+                        <group>
+                            <group>
+                                <field name="name_partner" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="zip_code_partner" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="street_partner" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="number_partner" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="street2_partner" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="district_partner" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="birthdate" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                            </group>
+                            <group>
+                                 <field name="country_id_partner" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                 <field name="state_id_partner" domain="[('country_id','=',country_id_partner)]" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                 <field name="city_id_partner" domain="[('state_id','=',state_id_partner)]" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                 <field name="phone_partner" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                 <field name="mobile_partner" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                 <field name="gender" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                 <field name="email_partner" attrs="{'readonly': [('state','not in',('draft','user_error'))]}"/>
+                                 <field name="register" invisible="1"/>
+                                 <field name="password" password="True" attrs="{'readonly': [('state','not in',('draft'))],'required': [('register','=',False)],'invisible':[('register','=',True)]}"/>
+                                 <field name="confirmpassword" password="True" attrs="{'readonly': [('state','not in',('draft'))],'required': [('register','=',False)],'invisible':[('register','=',True)]}"/>
+                            </group>
+                        </group>
+                        <separator string="Credit Card"/>
+                        <group>
+                            <group>
+                                <field name="payment_acquirer_credit_card" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="display_number_credit_card" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="name_credit_card" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="number_credit_card" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="security_code_credit_card" password="True" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="credit_card_month_expiration" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="credit_card_year_expiration" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                            </group>
+                        </group>
+                        <group attrs="{'invisible': [('state','in',('draft','waiting_confirmation'))]}">
+                            <separator string="Logs Payments" colspan="4"/>
+                                <field name="log_ids" nolabel="1" readonly="1">
+                                    <tree string="Logs Payments">
+                                        <field name="log" nolabel="1"/>
+                                    </tree>
+                                </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="quick_sale_tree" model="ir.ui.view">
+		    <field name="name">Quick Sale</field>
+		    <field name="model">quick.sale</field>
+		    <field name="arch" type="xml">
+		        <tree string="Quick Sale">
+                    <field name="date"/>
+		            <field name="name"/>
+			        <field name="name_partner"/>
+			        <field name="cnpj_cpf_partner"/>
+	                <field name="manufacturer_id_vehicle"/>
+                    <field name="model_id_vehicle"/>
+                    <field name="plate_vehicle"/>
+                    <field name="state"/>
+                </tree>
+		    </field>
+		</record>
+
+        <record id="quick_sale_action" model="ir.actions.act_window">
+		    <field name="name">Quick Sale</field>
+			<field name="type">ir.actions.act_window</field>
+		    <field name="res_model">quick.sale</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="quick_sale_tree"/>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="quick_sale_root_menu" name="Quick Sale" sequence="20"/>
+        <menuitem id="quick_sale_group_menu" name="Quick Sale" parent="quick_sale_root_menu" sequence="1" />
+        <menuitem id="quick_sale_menu" name="Quick Sale" parent="quick_sale_group_menu" action="quick_sale_action" sequence="3"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<odoo>
+    <record id="product_form_view_ext" model="ir.ui.view">
+        <field name="name">product_form_view_ext</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <group name="group_standard_price" position="inside">
+                    <field name="cost_value"/>
+                    <field name="percent_sale_value"/>
+                    <field name="suggested_sale_value" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                    <field name="suggested_sale_value_invible" invisible="1"/>
+            </group>
+
+            <field name="company_id" position="before">
+                <field name="promotional_price" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+            </field>
+            <page name="invoicing" position="attributes">
+                <attribute name="groups">account.group_account_invoice,stock.group_stock_user,purchase.group_purchase_user</attribute>
+            </page>
+            <notebook position="inside">
+                <page string="Sat Configuration" name="sat_configuration">
+                    <div>
+                        <group>
+                            <field name="cfop_sat_id" attrs="{'required': [('type', '!=', 'service')]}"/>
+                            <field name="icms_sat_csosn" attrs="{'required': [('type', '!=', 'service')]}"/>
+                            <field name="icms_sat_cst" attrs="{'required': [('type', '!=', 'service')]}"/>
+                            <field name="ipi_sat_cst" attrs="{'required': [('type', '!=', 'service')]}"/>
+                            <field name="pis_sat_cst" attrs="{'required': [('type', '!=', 'service')]}"/>
+                            <field name="cofins_sat_cst" attrs="{'required': [('type', '!=', 'service')]}"/>
+                        </group>
+                    </div>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="product_template_form_view_ext" model="ir.ui.view">
+        <field name="name">product_template_form_view_ext</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product_email_template.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="email_template_id" position="after">
+                <field name="days_of_coverage"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="product_form_view_stock_ext" model="ir.ui.view">
+        <field name="name">product_form_stock_view_ext</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.view_template_property_form"/>
+        <field name="arch" type="xml">
+            <field name="categ_id" position="after">
+                <field name="manufacturer_id" colspan="4" nolabel="4"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_stock_product_template_tree_ext" model="ir.ui.view">
+        <field name="name">product.template.stock.tree.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.view_stock_product_template_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="/tree" position="attributes">
+                <attribute name="colors">#00CC00:suggested_sale_value &gt; list_price</attribute>
+            </xpath>
+            <field name="list_price" position="after">
+                <field name="suggested_sale_value"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="menu_reseller" name="Reseller"/>
+        <menuitem id="menu_reseller_title" name="Sale" parent="menu_reseller"/>
+        <menuitem id="menu_reseller_sale" name="Sale Order" parent="menu_reseller_title" action="sale.action_orders" sequence="1" />
+
+    </data>
+</odoo>

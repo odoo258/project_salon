@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="sale_subscription_template_view_form_inherit_sale_contract_ext">
+        <field name="name">sale.subscription.template.form</field>
+        <field name="model">sale.subscription.template</field>
+        <field name="inherit_id" ref="website_contract.sale_subscription_template_view_form_inherit_sale_contract"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="CSTs">
+                    <group>
+                        <field name="cst_icms"/>
+                        <field name="csosn_icms"/>
+                        <field name="cst_pis"/>
+                        <field name="cst_cofins"/>
+                        <field name="cst_ipi"/>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		    <!--Tree Installation Type-->
+		<record id="installation_type_tree" model="ir.ui.view">
+		    <field name="name">Installation Type</field>
+		    <field name="model">installation.schedule.type</field>
+		    <field name="arch" type="xml">
+		        <tree string="Installation Type">
+		            <field name="name"/>
+		            <field name="type"/>
+		        </tree>
+		    </field>
+		</record>
+
+		    <!--Search Installation Type-->
+		<record id="installation_type_search" model="ir.ui.view">
+		    <field name="name">Installation Type</field>
+		    <field name="model">installation.schedule.type</field>
+		    <field name="arch" type="xml">
+		        <search string="Installation Type">
+			        <field name="name"/>
+			        <field name="type"/>
+		        </search>
+		    </field>
+		</record>
+
+		    <!--Action Installation Type-->
+		<record id="installation_type_action" model="ir.actions.act_window">
+		    <field name="name">Installation Type</field>
+			<field name="type">ir.actions.act_window</field>
+		    <field name="res_model">installation.schedule.type</field>
+			<field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		</record>
+
+		    <!--Menu VehicleYear-->
+	    <menuitem id="installation_type_menu" name="Installation Type" parent="vehicle_menu" action="installation_type_action" sequence="3"/>
+
+    </data>
+</odoo>

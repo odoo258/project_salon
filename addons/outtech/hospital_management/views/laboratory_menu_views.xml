@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+				
+		<record id="view_lab_test_unit_form" model="ir.ui.view">
+			<field name="name">view.multiple.wizard</field>
+            <field name="model">wizard.multiple.test.request</field>
+            <field name="arch" type="xml">
+            	
+                    <form string="Multiple Request Wizard" >
+                    	<header>
+                        		<button name="create_lab_test"  type="object" string="Create lab Test"/>
+                        	 	<button special="cancel" string="Cancel"/>  
+                		</header>
+                	
+                    <sheet>
+					<group colspan="4" col="4">
+	                   	<field name="r_date"/>
+	                    <field name="phy_id"/>
+	                    <field name="patient_id"/>
+	                    <field name="urgent"/>
+	                    <!--<field name="owner_id"/>-->
+	               
+	                    	
+					</group>
+					<field name="tests_ids">
+	                    	<tree>
+	                    		<field name ="name"/>
+	                    		<field name="code"/>
+	                    	</tree>
+					</field>
+					</sheet>
+						
+					
+                </form>
+             </field>
+          </record>
+            
+            
+            
+        <record id="action_view_multiple_test_request_wizard" model="ir.actions.act_window">
+            <field name="name">Multiple Tests Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.multiple.test.request</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+           
+
+           
+ 		<!--<menuitem name="Multiple Tests Wizard"-->
+            <!--id="menu_multiple_tests_wizard"-->
+            <!--parent = "main_menu_laboratory"-->
+            <!--action = "action_view_multiple_test_request_wizard"-->
+            <!--/>-->
+    	
+    </data>
+</openerp>

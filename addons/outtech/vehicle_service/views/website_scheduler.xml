@@ -1,0 +1,125 @@
+<odoo>
+    <data>
+
+        <template id="portal_scheduler" name="portal_scheduler" inherit_id="website_portal.portal_my_home" priority="25">
+            <xpath expr="//a[@href='/my/quotes']" position="replace">
+                <a href="/page/schedule_service">Seus Agendamentos</a>
+                <h3 class="page-header">
+                    <a href="/shop/edit_credit_card_portal">Editar Cartão</a>
+                </h3>
+            </xpath>
+        </template>
+
+        <template id="issues_replace" name="issues_replace" inherit_id="website_project_issue.portal_layout">
+            <xpath expr="//a[@href='/my/issues']" position="replace">
+            </xpath>
+        </template>
+
+        <template id="issues_replace2" name="issues_replace2" inherit_id="website_project_issue.portal_my_home">
+            <xpath expr="//a[@href='/my/issues']" position="replace">
+            </xpath>
+        </template>
+
+        <template id="page_agendamento_instalacao">
+            <t t-call="website.layout">
+                <script type="text/javascript" src="/vehicle_service/static/src/js/website-tracknme.js" />
+
+                <t t-set="title">Agendamento Instalação</t>
+                <div class="oe_structure">
+                    <xpath expr="//div[@id='wrapwrap']/main/div" position="after">
+                        <div class="container">
+                            <t t-call="vehicle_service.wizard_checkout_inherit">
+                                <t t-set="step" t-value="45" />
+                            </t>
+
+                            <h1 class="mb32">Agendamento</h1>
+                            <div class="row">
+                                <div style="background-color: rgb(217, 217, 217); width: 50%; padding: 20px 20px 60px; margin-bottom: 20px; border-radius: 20px;">
+                                    <form class="checkout_autoformat center" action="/shop/confirm-schedule" id="schedule_submit_id" method="POST" role="form" enctype="multipart/form-data">
+                                        <h4>Agendamento</h4>
+                                        <div class="form-group center">
+                                            <label class="control-label" for="nome_proprietario" align="left">Nome do Proprietário</label>
+                                            <div id="nome_proprietario" class="input-append">
+                                                <t t-if="vehicle_website.owner_name">
+                                                    <t t-esc="vehicle_website.owner_name" name="owner_name"/>
+                                                </t>
+                                            </div>
+
+                                            <label class="control-label" for="placa" align="left">Placa</label>
+                                            <div id="placa" class="input-append">
+                                                <t t-if="vehicle_website.plate">
+                                                    <t t-esc="vehicle_website.plate" name="plate"/>
+                                                </t>
+                                            </div>
+
+                                            <label class="control-label" for="renavam" align="left">Renavam</label>
+                                            <div id="renavam" class="input-append">
+                                                <t t-if="vehicle_website.renavam">
+                                                    <t t-esc="vehicle_website.renavam" name="renavam"/>
+                                                </t>
+                                            </div>
+
+                                            <label class="control-label" for="search" align="left">Dados para busca de Revenda</label>
+                                            <div id="search" class="input-append">
+                                              <input type="text" name="location" id="location" class="form-control" placeholder="CEP" required="true"/>
+                                            </div>
+
+                                            <label class="control-label" for="reseller_ids" align="left">Revendedor</label>
+                                            <select id="reseller_ids" name="reseller_ids" class="form-control" required="True">
+                                                <option value="">Revendedor...</option>
+                                                <t t-foreach="reseller_ids or []" t-as="reseller">
+                                                    <option>
+                                                        <t t-esc="reseller.name" name="reseller_final"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label" for="datetimepicker4" align="left">Data de Agendamento</label>
+                                            <div id="datetimepicker4" class="input-append">
+                                                <input data-format="dd-mm-yyyy" type="text" id="date_schedule" name="date_schedule" required="required"/>
+                                                <span class="add-on">
+                                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar" />
+                                                </span>
+                                            </div>
+                                        <!--<script type="text/javascript">-->
+                                                    <!---->
+                                        <!--</script>-->
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label" for="radio_buttons" align="left">Horários</label>
+                                            <div id="radio_buttons">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio" value="dia" checked="True">Manhã</input>
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio" value="tarde">Tarde</input>
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio" value="noite">Noite</input>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <p font-color="red"><b>Apenas Peridos Disponiveis!</b></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button id="btn_submit_schedule" width="100px" class="btn btn-default btn-primary pull-left mb32 a-submit">Confirmar</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </xpath>
+                </div>
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt4sdZlAlI5MfkpMQ2Dq7ZtAUfH3SD7bk&amp;libraries=places"/>
+                <script type="text/javascript" src="/vehicle_service/static/src/js/search.js" />
+            </t>
+        </template>
+    </data>
+</odoo>

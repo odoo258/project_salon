@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<t t-name="payment_paypal.paypal_acquirer_button">
+
+    <form t-if="acquirer.paypal_email_account" t-att-action="tx_url" method="post" target="_self">
+
+        <input type="hidden" name="cmd" t-att-value="tx_values['cmd']"/>
+        <input type="hidden" name="business" t-att-value="tx_values['business']"/>
+        <input type="hidden" name="item_name" t-att-value="tx_values['item_name']"/>
+        <input type="hidden" name="item_number" t-att-value="tx_values['item_number']"/>
+        <input type="hidden" name="amount" id="amount" t-att-value="tx_values['amount'] or '0.0'"/>
+        <input t-if="'handling' in tx_values" type="hidden" name="handling" t-att-value="tx_values.get('handling')"/>
+        <input type="hidden" name="currency_code" t-att-value="tx_values['currency_code']"/>
+
+        <!-- partner / address data -->
+        <input type="hidden" name="address1" t-att-value="tx_values['address1']"/>
+        <input type="hidden" name="city" t-att-value="tx_values['city']"/>
+        <input type="hidden" name="country" t-att-value="tx_values['country']"/>
+        <input type="hidden" name="email" id="email"  t-att-value="tx_values['email']"/>
+        <input type="hidden" name="cnpj_cpf" id="cnpj_cpf" t-att-value="tx_values['cnpj_cpf']"/>
+        <input type="hidden" name="first_name" id="first_name" t-att-value="tx_values['first_name']"/>
+        <input type="hidden" name="last_name" id="last_name" t-att-value="tx_values['last_name']"/>
+        <input type="hidden" name="zip" id="zip" t-att-value="tx_values['zip']"/>
+
+        <!-- after payment parameters -->
+        <input t-if="tx_values.get(&quot;custom&quot;)" type="hidden" name="custom" t-att-value="tx_values.get(&quot;custom&quot;)"/>
+
+        <!-- URLs -->
+        <input t-if="tx_values.get('return')" type="hidden" name="return" t-att-value="tx_values.get('return')"/>
+        <input t-if="acquirer.paypal_use_ipn" type="hidden" name="notify_url" t-att-value="tx_values.get('notify_url')"/>
+        <input t-if="tx_values.get('cancel_return')" type="hidden" name="cancel_return" t-att-value="tx_values.get('cancel_return')"/>
+
+        <!-- submit -->
+        <a data-toggle="modal" href="http://35.160.234.137/api/cc-payment/index.php" data-target="#myModal" t-att-class="submit_class">
+            <img t-if="not submit_txt" src="/web/static/src/img/TracknME_Logo_Pequeno.png"/>
+            <span t-if="submit_txt"><t t-esc="submit_txt"/> <span class="fa fa-long-arrow-right"/></span>
+        </a>
+        </form>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
+                    <h4 class="modal-title">Track'n Me Pagamentos &#160;&#160;&#160;<i class="fa fa-lock"/></h4>
+
+                </div>
+                <div class="modal-body"><div class="te">&#160;</div></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Enviar dados</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+</t>

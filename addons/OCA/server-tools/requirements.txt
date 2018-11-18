@@ -1,0 +1,8 @@
+python-ldap
+unidecode
+acme_tiny
+IPy
+validate_email
+pysftp
+fdb
+sqlalchemy

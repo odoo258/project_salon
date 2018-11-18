@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="medical_map_code_seq" model="ir.sequence">
+            <field name="name">Map Sequence</field>
+            <field name="code">medical.map_code</field>
+            <field name="prefix"></field>
+            <field name="padding">4</field>
+        </record>
+
+        <record id="medical_monitoring_report_seq" model="ir.sequence">
+            <field name="name">Monitoring Report</field>
+            <field name="code">medical.monitoring.report</field>
+            <field name="prefix">Ficha de Acompanhamento </field>
+            <field name="padding">5</field>
+        </record>
+
+        <record id="hospital_bed_sequence" model="ir.sequence">
+            <field name="name">Hospital Bed Sequence</field>
+            <field name="code">hospital_bed_seq</field>
+            <field name="prefix">BED</field>
+            <field name="padding">5</field>
+        </record>
+    </data>
+</openerp>

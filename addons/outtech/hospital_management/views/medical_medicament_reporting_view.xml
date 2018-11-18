@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<record id="medical_medicament_tree" model="ir.ui.view">
+            <field name="name">medical.medicament.tree</field>
+            <field name="model">medical.medicament</field>
+            <field name="arch" type="xml">
+                <tree string="medicament">
+					<field name="product_id"/>
+					<field name="active_component"/>
+					<field name="category_id"/>
+				</tree>
+			</field>
+        </record>
+
+		<record id="medical_action_tree_medicament_reporting" model="ir.actions.act_window">
+            <field name="name">Medicament List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.medicament</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+
+        </data>
+</openerp>

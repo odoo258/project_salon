@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_medical_monitoring_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                    <div class="page">
+                        <!--<div class="row">-->
+                            <!--<div class="col-xs-12" style="padding:5px; text-align:left; margin-bottom: 10px; border-bottom:1px solid black;" >-->
+                                <!--<t t-if="res_company.logo">-->
+                                    <!--<img class="image" t-att-src="'data:image/png;base64,%s' % res_company.logo" style="max-height: 75px; padding-top: 2px; text-align:left;"/>-->
+                                <!--</t>-->
+                                <!--<strong><span t-field="res_company.name" /></strong>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <t t-if="res_company.logo">
+                            <img class="image" t-att-src="'data:image/png;base64,%s' % res_company.logo" style="max-height: 75px; padding-top: 2px; text-align:left;"/>
+                        </t>
+                        <div class="row">
+                            <div>
+                                <h4><strong>Pet: </strong><t t-esc="o.patient_id.name" /></h4>
+                                <h2>Ficha #<t t-esc="o.name[18:]"/></h2>
+                            </div>
+                            <div class="row mt10">
+                                <div class="col-xs-9">
+                                    <strong>Peso:</strong>
+                                    <p><t t-esc="o.pet_weight" /> kg</p>
+                                </div>
+                                <div class="col-xs-9">
+                                    <strong>Data:</strong>
+                                    <p t-field="o.start_date"/>
+                                </div>
+                                <div class="col-xs-9">
+                                    <strong>Diagnóstico:</strong>
+                                    <p t-field="o.diagnostic"/>
+                                </div>
+                                <div class="col-xs-9">
+                                    <strong>Prognóstico:</strong>
+                                    <p t-field="o.prognostic"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <table class="table table-condensed" style="padding-top: 10px">
+                                    <caption><p style="font-size: 18px; margin:0px;">Fichas de Acompanhamento</p></caption>
+                                    <thead>
+                                        <tr style="font-size:11px">
+                                            <th class="text-left">Item</th>
+                                            <th class="text-left">Registro</th>
+                                            <th class="text-left">Horário</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="o.monitoring_register_ids" t-as="monitoring_register">
+                                            <td class="text-left">
+                                                <span t-field="monitoring_register.monitoring_type_id.name" />
+                                            </td>
+                                            <td class="text-left">
+                                                <span t-field="monitoring_register.register_option" />
+                                            </td>
+                                            <td class="text-left">
+                                                <span t-field="monitoring_register.included_hour" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row mt10">
+                                <table class="table table-condensed" style="padding-top: 10px">
+                                    <caption><p style="font-size: 18px; margin:0px;">Medicamentos</p></caption>
+                                    <thead>
+                                        <tr style="font-size:11px">
+                                            <th class="text-left" style="font-size:11px">Medicamento</th>
+                                            <th class="text-left" style="font-size:11px">Permitir a Substituição</th>
+                                            <th class="text-left" style="font-size:11px">Formato</th>
+                                            <th class="text-left" style="font-size:11px">Indicação</th>
+                                            <th class="text-left" style="font-size:11px">Início do Tratamento</th>
+                                            <th class="text-left" style="font-size:11px">Fim do Tratamento</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="sale_tbody">
+                                        <tr t-foreach="o.prescription_line_ids" t-as="prescription_line">
+                                            <td class="text-left">
+                                                <t t-esc="prescription_line.medicament_id.product_id.name" />
+                                            </td>
+                                            <td class="text-left">
+                                                <t t-esc="prescription_line.allow_substitution" />
+                                            </td>
+                                            <td class="text-left">
+                                                <t t-esc="prescription_line.form_id" />
+                                            </td>
+                                            <td class="text-left">
+                                                <t t-esc="prescription_line.indication_id" />
+                                            </td>
+                                            <td class="text-left">
+                                                <t t-esc="prescription_line.start_treatment" />
+                                            </td>
+                                            <td class="text-left">
+                                                <t t-esc="prescription_line.end_treatment" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row" style="position: fixed; top:1000px; left: 100px;">
+                            <div class="col-xs-4 text-center" style="width: 300px;"><strong>Liberado por:</strong><p /><p>_________________________</p></div>
+                            <div class="col-xs-4 text-center" style="width: 300px;">
+                                <strong>Veterinário:</strong>
+                                <p /><strong t-field="o.doctor_id"/>
+                                <strong><h5>CRM: <t t-esc="o.doctor_id.crmv" /> - <t t-esc="o.doctor_id.state_crm_id.code"/></h5></strong>
+                            </div>
+                        </div>
+                    </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

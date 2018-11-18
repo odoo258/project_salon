@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="pet_type_view" model="ir.ui.view">
+            <field name="name">pet.type.form</field>
+            <field name="model">pet.type</field>
+            <field name="arch" type="xml">
+                <form string="Pet Type" version="7.0">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pet_type_tree" model="ir.ui.view">
+            <field name="name">pet.type.tree</field>
+            <field name="model">pet.type</field>
+            <field name="arch" type="xml">
+                <tree string="Breed">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_pet_type" model="ir.actions.act_window">
+            <field name="name">Pet Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pet.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- PET ESPECIE -->
+        <record id="pet_especie_view" model="ir.ui.view">
+            <field name="name">pet.especie.form</field>
+            <field name="model">pet.especie</field>
+            <field name="arch" type="xml">
+                <form string="Especie">
+                    <sheet>
+                        <group colspan="4">
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pet_especie_tree" model="ir.ui.view">
+            <field name="name">pet.especie.tree</field>
+            <field name="model">pet.especie</field>
+            <field name="arch" type="xml">
+                <tree string="Especie">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_pet_especie" model="ir.actions.act_window">
+            <field name="name">Especie</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pet.especie</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- PET COLOR -->
+        <record id="pet_color_view" model="ir.ui.view">
+            <field name="name">pet.color.form</field>
+            <field name="model">pet.color</field>
+            <field name="arch" type="xml">
+                <form string="Color">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="hex_code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pet_color_tree" model="ir.ui.view">
+            <field name="name">pet.color.tree</field>
+            <field name="model">pet.color</field>
+            <field name="arch" type="xml">
+                <tree string="Color">
+                    <field name="name"/>
+                    <field name="hex_code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_pet_color" model="ir.actions.act_window">
+            <field name="name">Color</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pet.color</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- PET HAIR -->
+        <record id="pet_hair_view" model="ir.ui.view">
+            <field name="name">pet.hair.form</field>
+            <field name="model">pet.hair</field>
+            <field name="arch" type="xml">
+                <form string="Hair">
+                    <sheet>
+                        <group colspan="4">
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pet_hair_tree" model="ir.ui.view">
+            <field name="name">pet.hair.tree</field>
+            <field name="model">pet.hair</field>
+            <field name="arch" type="xml">
+                <tree string="Hair">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_pet_hair" model="ir.actions.act_window">
+            <field name="name">Hair</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pet.hair</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_general_information" name="General Information" parent="main_menu_configuration"/>
+        <menuitem id="menu_pet_especie" string="Especie" action="action_pet_especie" sequence="3" parent="menu_misc"/>
+        <menuitem id="menu_type_color" string="Color" action="action_pet_color" sequence="4" parent="menu_misc"/>
+        <menuitem id="menu_type_hair" string="Hair" action="action_pet_hair" sequence="5" parent="menu_misc"/>
+    </data>
+</openerp>

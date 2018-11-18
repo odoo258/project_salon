@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="report_discount_allowed_wizard" model="ir.ui.view">
+            <field name="name">pos.order.wizard</field>
+            <field name="model">pos.order.report</field>
+            <field name="arch" type="xml">
+                <form string="Relatório Desconto Concedido">
+                    <p>
+                        Gerar relatório de desconto concedido.
+                    </p>
+                    <group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="product_id"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="check_report" string="Relatório" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_report_discount" model="ir.actions.act_window">
+            <field name="name">Desconto Concedido</field>
+            <field name="res_model">pos.order.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_report_discount" name="Desconto Concedido" action="action_report_discount" parent="point_of_sale.menu_point_rep" sequence="4"/>
+
+        <!-- Ranking Desconto -->
+
+        <record id="report_discount_ranking_wizard" model="ir.ui.view">
+            <field name="name">pos.order.wizard.ranking</field>
+            <field name="model">pos.order.report.ranking</field>
+            <field name="arch" type="xml">
+                <form string="Relatório Ranking Desconto">
+                    <p>
+                        Gerar relatório de Ranking de Descontos.
+                    </p>
+                    <group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="print_report" string="Relatório" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_report_discount_ranking" model="ir.actions.act_window">
+            <field name="name">Ranking de Descontos</field>
+            <field name="res_model">pos.order.report.ranking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_report_discount_ranking" name="Ranking de Descontos" action="action_report_discount_ranking" parent="point_of_sale.menu_point_rep" sequence="5"/>
+
+    </data>
+</odoo>

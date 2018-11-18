@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!--
+    Budgets Ext
+    -->
+    <record model="ir.ui.view" id="crossovered_budget_view_form_ext">
+        <field name="name">crossovered.budget.form.ext</field>
+        <field name="model">crossovered.budget</field>
+        <field name="inherit_id" ref="account_budget.crossovered_budget_view_form"/>
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='crossovered_budget_line']/tree//field[@name='practical_amount']" position="after">
+                <field name="residual_amount"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="report_product_barcode"
+            string="Barcode"
+            model="product.template"
+            report_type="qweb-pdf"
+            name="product_ext.report_productbarcode"
+            file="product_ext.report_productbarcode"/>
+
+        <report
+            id="report_product_discount"
+            string="Product Discount"
+            model="product.template"
+            report_type="qweb-pdf"
+            name="product_ext.report_productdiscount"
+            file="product_ext.report_productdiscount"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_discount_permission_form" model="ir.ui.view">
+            <field name="name">discount.permission.form</field>
+            <field name="model">discount.permission</field>
+            <field name="arch" type="xml">
+                <form string="Discount Permission">
+                    <header>
+                        <button name="confirm" string="Confirm" states='draft' type="object"/>
+                        <button name="update_data" string="Update" states='confirmed' type="object"/>
+                        <button name="cancel" string="Cancel" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" colspan="4" required="1"/>
+                        </group>
+                        <group>
+                            <div>
+                                <group>
+                                    <field name="create_uid" readonly="1"/>
+                                    <field name="create_date" readonly="1"/>
+                                </group>
+                            </div>
+                            <div>
+                                <group>
+                                    <field name="write_uid" readonly="1"/>
+                                    <field name="write_date" readonly="1"/>
+                                </group>
+                            </div>
+                        </group>
+                        <field name="discount_permission_lines" nolabel="1" colspan="4" attrs="{'readonly':[('state','=','cancel')]}">
+                            <tree string="Permission Lines" editable="bottom">
+                                <field name="user_id"/>
+                                <field name="percent"/>
+                                <field name="value"/>
+                                <field name="date_validate"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_discount_permission_tree" model="ir.ui.view">
+            <field name="name">discount.permission.tree</field>
+            <field name="model">discount.permission</field>
+            <field name="arch" type="xml">
+                <tree string="Discount Permission">
+                    <field name="state"/>
+                    <field name="create_uid" readonly="1"/>
+                    <field name="create_date" readonly="1"/>
+                    <field name="write_uid" readonly="1"/>
+                    <field name="write_date" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_discount_permission" model="ir.actions.act_window">
+            <field name="name">Discount Permission</field>
+            <field name="res_model">discount.permission</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_discount_permission_tree"/>
+        </record>
+
+        <menuitem id="menu_discount_permission" name="Discount Permissions" parent="sales_team.menu_sale_config" sequence="16"/>
+
+        <menuitem id="menu_discount_permission_child" name="Discount Permissions" parent="menu_discount_permission"
+                action="action_discount_permission" sequence="16"/>
+    </data>
+</odoo>

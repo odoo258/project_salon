@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_pos_closing">
+        <t t-call="report.external_layout">
+            <t t-foreach="docs" t-as="doc">
+
+            <div class="page">
+                <div id="informations" class="oe_structure">
+                    <div class="row" style="border-bottom:1px solid black; padding-bottom: 4px;">
+                        <div class="col-xs-3">
+                            <img t-if="doc.config_id.company_id.logo" t-att-src="'data:image/png;base64,%s' % doc.config_id.company_id.logo" style="max-height: 75px; padding-top: 2px; text-align:center"/>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="row">
+                                <div class="col-xs-6" style="text-align:center">
+                                    <p style="font-size: 18px; margin:0px;">
+                                    Relatório de Fechamento do PDV
+                                    </p>
+                                    <strong>do </strong><span t-field="doc.name" /> <br />
+                                </div>
+
+                                <div class="col-xs-6">
+                                    <strong>Responsável: </strong><span t-field="doc.user_id.name" />
+                                    <br />
+                                    <strong>PDV: </strong><span t-field="doc.config_id.name" />
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="col-xs-4">
+                        <strong>Saldo de Abertura: </strong><span t-field="doc.cash_register_balance_start"></span>	<br />
+                        <strong>Saldo de Fechamento Real: </strong><span t-field="doc.cash_register_balance_end_real"></span>	<br />
+                        <strong>Caixa Fechado por: </strong><span t-field="doc.user_closed.name"></span>	<br />
+                        <strong>Diferença Dinheiro: </strong><span t-field="doc.cash_register_difference"></span> <br />
+                        <strong>Situação: </strong><span t-field="doc.state"></span> <br />
+                        <strong>Total de Vendas: </strong><span t-field="doc.sales_total" t-options="{'widget': 'float', 'decimal_precision': 'Product Price'}"></span> <br />
+                        <br />
+                    </div>
+
+
+                    <table class="table table-condensed" style="padding-top: 10px">
+                        <caption><p style="font-size: 18px; margin:0px;">Saldo por Métodos de Pagamento</p></caption>
+                        <thead>
+                            <tr style="font-size:11px">
+                                <th class="text-left">Diário</th>
+                                <th class="text-left">Data</th>
+                                <th class="text-left">Saldo inicial</th>
+                                <th class="text-left">Saldo final</th>
+                                <th class="text-left">Diferença</th>
+                            </tr>
+                        </thead>
+                        <tbody class="sale_tbody">
+                            <tr t-foreach="doc.statement_ids" t-as="statement" class="small">
+                                <td class="text-left">
+                                    <span t-field="statement.journal_id" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="statement.date" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="statement.balance_start" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="statement.balance_end_real" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="statement.value_difference_box" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <br />
+
+                    <p style="font-size: 18px; margin:0px;">Transações por Métodos de Pagamento</p>
+                    <t t-foreach="doc.statement_ids" t-as="statement" class="small">
+                        <b><span t-field="statement.journal_id" /></b>
+                            <table class="table table-condensed" style="padding-top: 10px">
+                            <thead>
+                                <tr style="font-size:11px">
+                                    <th class="text-left">Rótulo</th>
+                                    <th class="text-left">Data</th>
+                                    <th class="text-left">Parceiro</th>
+                                    <th class="text-left">Montante</th>
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+                                <tr t-foreach="statement.line_ids" t-as="line" class="small">
+                                    <td class="text-left">
+                                        <span t-field="line.name" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="line.date" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="line.partner_id" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="line.amount" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+
+                    <!--<div class="row" style="border-bottom:1px solid black">-->
+                        <!--<t t-set="partner_invoice" t-value="doc.partner_invoice_id.parent_id or doc.partner_invoice_id" />-->
+                        <!--<t t-set="partner_shipping" t-value="doc.partner_shipping_id.parent_id or doc.partner_shipping_id" />-->
+
+                        <!--<t t-if="doc.partner_shipping_id != doc.partner_invoice_id">-->
+                            <!--<div class="col-xs-4">-->
+                                <!--<strong>Cliente: </strong><span t-field="doc.partner_id.parent_id or doc.partner_id.name"></span>	<br />-->
+                                <!--<strong>Contato: </strong><span t-field="doc.partner_id.name"></span>	<br />-->
+                                <!--<strong>Cargo: </strong><span t-field="doc.partner_id.function"></span> <br />-->
+                                <!--<strong>Telefone: </strong><span t-field="doc.partner_id.phone"></span> <br />-->
+                                <!--<strong>E-mail: </strong><span t-field="doc.partner_id.email"></span> <br />-->
+                            <!--</div>-->
+                            <!--<div class="col-xs-4">-->
+                                <!--<strong class="small">Dados para Faturamento:</strong><br />-->
+                                <!--<span t-field="doc.partner_invoice_id" style="text-transform: uppercase"></span>-->
+                                <!--<br />-->
+                                <!--<span t-field="partner_invoice.street"></span><span>,</span>-->
+                                <!--<span t-field="partner_invoice.number"></span>-->
+                                <!--<span t-field="partner_invoice.district"></span>-->
+                                <!--<span t-field="partner_invoice.city_id">&#45;&#45;</span><span>/</span>-->
+                                <!--<span t-field="partner_invoice.state_id.code"></span><span> - </span>-->
+                                <!--<span t-field="partner_invoice.zip"></span><br />-->
+                                <!--<strong class="small">Cnpj: </strong><span t-field="partner_invoice.cnpj_cpf"></span><br />-->
+                                <!--<strong class="small">IE: </strong><span t-field="partner_invoice.inscr_est"></span>-->
+                            <!--</div>-->
+                            <!--<div class="col-xs-4">-->
+                                <!--<strong class="small">Endereço de Entrega:</strong><br />-->
+                                <!--<span t-field="doc.partner_shipping_id" style="text-transform: uppercase"></span>-->
+                                <!--<br />-->
+                                <!--<span t-field="partner_shipping.street"></span><span>,</span>-->
+                                <!--<span t-field="partner_shipping.number"></span>-->
+                                <!--<span t-field="partner_shipping.district"></span>-->
+                                <!--<span t-field="partner_shipping.city_id">&#45;&#45;</span><span>/</span>-->
+                                <!--<span t-field="partner_shipping.state_id.code"></span><span> - </span>-->
+                                <!--<span t-field="partner_shipping.zip"></span>-->
+                            <!--</div>-->
+                        <!--</t>-->
+                        <!--<t t-if="doc.partner_shipping_id == doc.partner_invoice_id">-->
+                            <!--<div class="col-xs-6">-->
+                                <!--<strong>Cliente: </strong><span  t-field="doc.partner_id.parent_id or doc.partner_id.name"></span>	<br />-->
+                                <!--<strong>Contato: </strong><span t-field="doc.partner_id.name"></span>	<br />-->
+                                <!--<strong>Cargo: </strong><span t-field="doc.partner_id.function"></span> <br />-->
+                                <!--<strong>Telefone: </strong><span t-field="doc.partner_id.phone"></span> <br />-->
+                                <!--<strong>e-mail: </strong><span t-field="doc.partner_id.email"></span> <br />-->
+                            <!--</div>-->
+                            <!--<div class="col-xs-6">-->
+                                <!--<strong class="small">Faturamento e endereço de entrega:</strong><br />-->
+                                <!--<span t-field="doc.partner_invoice_id" style="text-transform: uppercase"/>-->
+                                <!--<br/>-->
+                                <!--<span t-field="partner_invoice.street"/><span>,</span>-->
+                                <!--<span t-field="partner_invoice.number"/>-->
+                                <!--<span t-field="partner_invoice.district"/>-->
+                                <!--<span t-field="partner_invoice.city_id">&#45;&#45;</span><span>/</span>-->
+                                <!--<span t-field="partner_invoice.state_id.code"/><span> - </span>-->
+                                <!--<span t-field="partner_invoice.zip"/><br/>-->
+                                <!--<strong class="small">Cnpj: </strong><span t-field="partner_invoice.cnpj_cpf"/><br/>-->
+                                <!--<strong class="small">IE: </strong><span t-field="partner_invoice.inscr_est"/>-->
+                            <!--</div>-->
+                        <!--</t>-->
+                    <!--</div>-->
+                    <!--<div class="row" style="padding-bottom: 10px; padding-top: 10px;">-->
+                        <!--<div id="sale_information" class="col-xs-4">-->
+                            <!--<strong class="small">Condição Pagamento: </strong><span style="font-size:11px" t-field="doc.payment_term_id"></span> <br />-->
+                            <!--<strong class="small">Validade Proposta: </strong><span style="font-size:11px" t-field="doc.validity_date"></span> <br />-->
+                            <!--<strong class="small">Moeda: </strong> <span style="font-size:11px" t-field="doc.currency_id"></span> <br />-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-8">-->
+                            <!--<div class="col-xs-12">-->
+                                <!--<strong class="small">Características da Proposta:</strong><br></br>-->
+                                <!--<ul class="small">-->
+                                    <!--<p t-field="doc.note" />-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-xs-4 pull-right">-->
+                            <!--<table class="table table-condensed">-->
+                                <!--<tr class="border-black" name="total_bruto">-->
+                                    <!--<td><strong>Total Bruto</strong></td>-->
+                                    <!--<td class="text-right">-->
+                                        <!--<span t-field="doc.total_bruto"-->
+                                            <!--t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                                <!--<tr name="total_desconto">-->
+                                    <!--<td>Total Descontos</td>-->
+                                    <!--<td class="text-right">-->
+                                        <!--<span t-field="doc.total_desconto"-->
+                                            <!--t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                                <!--<tr name="total_tax">-->
+                                    <!--<td>Impostos (IPI + ST)</td>-->
+                                    <!--<td class="text-right">-->
+                                        <!--<span t-field="doc.total_tax"-->
+                                            <!--t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                                <!--<tr class="border-black">-->
+                                    <!--<div name="total">-->
+                                        <!--<td><strong>Total</strong></td>-->
+                                        <!--<td class="text-right">-->
+                                            <!--<span t-field="doc.amount_total"-->
+                                                <!--t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>-->
+                                        <!--</td>-->
+                                    <!--</div>-->
+                                <!--</tr>-->
+                            <!--</table>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            </t>
+        </t>
+    </template>
+</odoo>

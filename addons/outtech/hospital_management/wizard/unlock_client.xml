@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="unlock_client_wizard">
+        <field name="name">unlock_client_wizard</field>
+        <field name="model">unlock.client.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Unlock Client">
+                <group>
+                    <div class="oe_title">
+                        <h1><field name="owner_id"/></h1>
+                    </div>
+                    <group>
+                        <field name="move_line_ids" nolabel="1" readonly="1" colspan="4" invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="user"/>
+                        <field name="password" password="True"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_unlock" type="object" string="Unlock" class="oe_highlight"/>
+                        or
+                    <button special="cancel" string="Cancelar"/>
+                </footer>
+            </form>
+        </field>
+    </record>,,,
+
+    <act_window id="unlock_client_wizard_action"
+        name="Unlock Client"
+        src_model="medical.appointment"
+        res_model="unlock.client.wizard"
+        view_mode="form"
+        target="new"
+        key2="client_action_multi"/>
+</odoo>

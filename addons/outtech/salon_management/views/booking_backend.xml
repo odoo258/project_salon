@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="salon_cancel_booking_view" model="ir.ui.view">
+            <field name="name">Booking Cancel</field>
+            <field name="model">salon.cancel.booking</field>
+            <field name="arch" type="xml">
+                <form string="Booking Cancel" create="false">
+                    <group>
+                        <group>
+                            <field name="reason_for_cancellation"/>
+                        </group>
+                        <group colspan="4">
+                            <field name="observation_cancellation" colspan="4"
+                                   attrs="{'required': [('reason_for_cancellation', '=', 'other')]}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string='Confirm' name="confirm" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_salon_cancel_booking_wizard" model="ir.actions.act_window">
+            <field name="name">Booking Cancel</field>
+            <field name="res_model">salon.cancel.booking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="salon_cancel_booking_view"/>
+            <field name="target">new</field>
+        </record>
+        <record id="salons_booking_form" model="ir.ui.view">
+            <field name="name">salon_booking_form.form</field>
+            <field name="model">salon.booking</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                       <button name="booking_approve" states="draft" string="Approve" class="oe_highlight" type="object"/>
+                       <button name="booking_reject" states="draft" string="Reject" class="oe_highlight" type="object"/>
+                        <button name="%(action_salon_cancel_booking_wizard)d" string="Cancel Schedule"
+                            states="draft,approved" type="action" />
+                       <field name="state" widget="statusbar" statusbar_visible="draft,approved,rejected"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" readonly="1"/>
+                                <field name="partner_id"/>
+                                <field name="phone"/>
+                                <field name="services" widget="many2many_tags"/>
+                            </group>
+                            <group>
+                                <field name="time"/>
+                                <field name="end_date"/>
+                                <field name="email"/>
+                                <field name="chair_id"/>
+                                <field name="professional_id"/>
+                            </group>
+                            <group>
+                                <!--<field name="lang" invisible="1"/>-->
+                                <field name="company_id" invisible="1"/>
+                                <field name="state" invisible="0"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Salon Order">
+                                <field name="filtered_orders"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="salons_booking_tree" model="ir.ui.view">
+            <field name="name">salon_booking_tree.tree</field>
+            <field name="model">salon.booking</field>
+            <field name="arch" type="xml">
+                <tree colors="#046a8c:state=='draft';#f20b07:state=='rejected';#01471f:state=='approved'">
+                    <field name="name"/>
+                    <field name="time"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="salon_booking_action" model="ir.actions.act_window">
+            <field name="name">Salon Bookings</field>
+            <field name="res_model">salon.booking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+        </record>
+        <!-- CALENDAR -->
+        <record id="salons_book_calendar" model="ir.ui.view">
+            <field name="name">salons.book.calendar</field>
+            <field name="model">salon.booking</field>
+            <field name="arch" type="xml">
+				<calendar string="Bookings" color="state" quick_add="False" date_start="time" date_stop="end_date">
+					<field name="partner_id"/>
+					<field name="chair_id"/>
+				</calendar>
+			</field>
+		</record>
+        <record id="action_salon_cancel_booking_wizard" model="ir.actions.act_window">
+            <field name="name">Booking Cancel</field>
+            <field name="res_model">salon.cancel.booking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="salon_cancel_booking_view"/>
+            <field name="target">new</field>
+        </record>
+        <record id="salons_book_calendar_action" model="ir.actions.act_window">
+            <field name="name">Calendar Bookings</field>
+            <field name="res_model">salon.booking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_id" ref="salons_book_calendar"/>
+        </record>
+        <menuitem id="salon_calendar_bookings"
+                  name="Calendar Bookings"
+                  parent="salon_management_menu"
+                  action="salons_book_calendar_action"
+                  sequence="0"/>
+
+        <menuitem id="salon_management_bookings"
+                  name="Bookings"
+                  parent="salon_management_salon"
+                  action="salon_booking_action"/>
+    </data>
+</odoo>

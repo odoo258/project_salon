@@ -1,0 +1,489 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-15 21:29+0000\n"
+"PO-Revision-Date: 2017-12-15 21:29+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_ext
+#: code:addons/product_ext/models/product.py:40
+#, python-format
+msgid "\"Default Code\" Should be unique"
+msgstr "\"Referência Interna\" deve ser única."
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "00 - Entrada com Recuperação de Crédito"
+msgstr "00 - Entrada com Recuperação de Crédito"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_cst:0
+msgid "00 - Tributada Integralmente"
+msgstr "00 - Tributada Integralmente"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "01 - Entrada Tributável com Alíquota Zero"
+msgstr "01 - Entrada Tributável com Alíquota Zero"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "01 - Operação Tributável com Alíquota Básica"
+msgstr "01 - Operação Tributável com Alíquota Básica"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "02 - Entrada Isenta"
+msgstr "02 - Entrada Isenta"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "02 - Operação Tributável com Alíquota Diferenciada"
+msgstr "02 - Operação Tributável com Alíquota Diferenciada"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "03 - Entrada Não-Tributada"
+msgstr "03 - Entrada Não-Tributada"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "03 - Operação Tributável com Alíquota por Unidade de Medida de Produto"
+msgstr "03 - Operação Tributável com Alíquota por Unidade de Medida de Produto"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "04 - Entrada Imune"
+msgstr "04 - Entrada Imune"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "04 - Operação Tributável Monofásica - Revenda a Alíquota Zero"
+msgstr "04 - Operação Tributável Monofásica - Revenda a Alíquota Zero"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "05 - Entrada com Suspensão"
+msgstr "05 - Entrada com Suspensão"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "05 - Operação Tributável por Substituição Tributária"
+msgstr "05 - Operação Tributável por Substituição Tributária"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "06 - Operação Tributável a Alíquota Zero"
+msgstr "06 - Operação Tributável a Alíquota Zero"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "07 - Operação Isenta da Contribuição"
+msgstr "07 - Operação Isenta da Contribuição"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "08 - Operação sem Incidência da Contribuição"
+msgstr "08 - Operação sem Incidência da Contribuição"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "09 - Operação com Suspensão da Contribuiçã"
+msgstr "09 - Operação com Suspensão da Contribuiçã"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_cst:0
+msgid "10 - Tributada e com cobrança do ICMS por substituição tributária"
+msgstr "10 - Tributada e com cobrança do ICMS por substituição tributária"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_csosn:0
+msgid "101 - Tributada pelo Simples Nacional com permissão de crédito"
+msgstr "101 - Tributada pelo Simples Nacional com permissão de crédito"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_csosn:0
+msgid "102 - Tributada pelo Simples Nacional sem permissão de crédito"
+msgstr "102 - Tributada pelo Simples Nacional sem permissão de crédito"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_csosn:0
+msgid "103 -Isenção do ICMS no Simples Nacional para faixa de receita bruta"
+msgstr "103 -Isenção do ICMS no Simples Nacional para faixa de receita bruta"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_cst:0
+msgid "20 - Com redução de base de cálculo"
+msgstr "20 - Com redução de base de cálculo"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_csosn:0
+msgid "201 - Tributada pelo Simples Nacional com permissão de crédito e com cobrança do ICMS por substituição tributária"
+msgstr "201 - Tributada pelo Simples Nacional com permissão de crédito e com cobrança do ICMS por substituição tributária"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_csosn:0
+msgid "202 - Tributada pelo Simples Nacional sem permissão de crédito e com cobrança do ICMS por substituição tributária"
+msgstr "202 - Tributada pelo Simples Nacional sem permissão de crédito e com cobrança do ICMS por substituição tributária"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_csosn:0
+msgid "203 - Isenção do ICMS no Simples Nacional para faixa de receita bruta e com cobrança do ICMS por substituição tributária"
+msgstr "203 - Isenção do ICMS no Simples Nacional para faixa de receita bruta e com cobrança do ICMS por substituição tributária"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_cst:0
+msgid "30 - Isenta ou não tributada e com cobrança do ICMS por substituição tributária"
+msgstr "30 - Isenta ou não tributada e com cobrança do ICMS por substituição tributária"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_csosn:0
+msgid "300 - Imune"
+msgstr "300 - Imune"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_cst:0
+msgid "40 - Isenta"
+msgstr "40 - Isenta"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_csosn:0
+msgid "400 - Não tributada pelo Simples Nacional"
+msgstr "400 - Não tributada pelo Simples Nacional"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_cst:0
+msgid "41 - Não tributada"
+msgstr "41 - Não tributada"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "49 - Outras Entradas"
+msgstr "49 - Outras Entradas"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "49 - Outras Operações de Saída"
+msgstr "49 - Outras Operações de Saída"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "50 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Tributada no Mercado Interno"
+msgstr "50 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Tributada no Mercado Interno"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "50 - Saída Tributada"
+msgstr "50 - Saída Tributada"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_cst:0
+msgid "50 - Suspensão"
+msgstr "50 - Suspensão"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_csosn:0
+msgid "500 - ICMS cobrado anteriormente por substituição tributária (substituído) ou por antecipação"
+msgstr "500 - ICMS cobrado anteriormente por substituição tributária (substituído) ou por antecipação"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_cst:0
+msgid "51 - Diferimento"
+msgstr "51 - Diferimento"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "51 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno"
+msgstr "51 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "51 - Saída Tributável com Alíquota Zero"
+msgstr "51 - Saída Tributável com Alíquota Zero"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "52 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita de Exportação"
+msgstr "52 - Operação com Direito a Crédito - Vinculada Exclusivamente a Receita de Exportação"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "52 - Saída Isenta"
+msgstr "52 - Saída Isenta"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "53 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno"
+msgstr "53 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "53 - Saída Não-Tributada"
+msgstr "53 - Saída Não-Tributada"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "54 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas no Mercado Interno e de Exportação"
+msgstr "54 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas no Mercado Interno e de Exportação"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "54 - Saída Imune"
+msgstr "54 - Saída Imune"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "55 - Operação com Direito a Crédito - Vinculada a Receitas Não Tributadas no Mercado Interno e de Exportação"
+msgstr "55 - Operação com Direito a Crédito - Vinculada a Receitas Não Tributadas no Mercado Interno e de Exportação"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "55 - Saída com Suspensão"
+msgstr "55 - Saída com Suspensão"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "56 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação"
+msgstr "56 - Operação com Direito a Crédito - Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "60 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Tributada no Mercado Interno"
+msgstr "60 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Tributada no Mercado Interno"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_cst:0
+msgid "60 - ICMS cobrado anteriormente por substituição tributária"
+msgstr "60 - ICMS cobrado anteriormente por substituição tributária"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "61 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno"
+msgstr "61 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita Não-Tributada no Mercado Interno"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "62 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita de Exportação"
+msgstr "62 - Crédito Presumido - Operação de Aquisição Vinculada Exclusivamente a Receita de Exportação"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "63 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno"
+msgstr "63 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "64 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas no Mercado Interno e de Exportação"
+msgstr "64 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas no Mercado Interno e de Exportação"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "65 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação"
+msgstr "65 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "66 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação"
+msgstr "66 - Crédito Presumido - Operação de Aquisição Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno e de Exportação"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "67 - Crédito Presumido - Outras Operações"
+msgstr "67 - Crédito Presumido - Outras Operações"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_cst:0
+msgid "70 - Com redução de base de cálculo e cobrança do ICMS por substituição tributária"
+msgstr "70 - Com redução de base de cálculo e cobrança do ICMS por substituição tributária"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "70 - Operação de Aquisição sem Direito a Crédito"
+msgstr "70 - Operação de Aquisição sem Direito a Crédito"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "71 - Operação de Aquisição com Isenção"
+msgstr "71 - Operação de Aquisição com Isenção"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "72 - Operação de Aquisição com Suspensão"
+msgstr "72 - Operação de Aquisição com Suspensão"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "73 - Operação de Aquisição a Alíquota Zero"
+msgstr "73 - Operação de Aquisição a Alíquota Zero"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "74 - Operação de Aquisição sem Incidência da Contribuição"
+msgstr "74 - Operação de Aquisição sem Incidência da Contribuição"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "75 - Operação de Aquisição por Substituição Tributária"
+msgstr "75 - Operação de Aquisição por Substituição Tributária"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_cst:0
+msgid "90 - Outras"
+msgstr "90 - Outras"
+
+#. module: product_ext
+#: selection:product.template,icms_sat_csosn:0
+msgid "900 - Outros"
+msgstr "900 - Outros"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "98 - Outras Operações de Entrada"
+msgstr "98 - Outras Operações de Entrada"
+
+#. module: product_ext
+#: selection:product.template,cofins_sat_cst:0
+#: selection:product.template,pis_sat_cst:0
+msgid "99 - Outras Operações"
+msgstr "99 - Outras Operações"
+
+#. module: product_ext
+#: selection:product.template,ipi_sat_cst:0
+msgid "99 - Outras Saídas"
+msgstr "99 - Outras Saídas"
+
+#. module: product_ext
+#: model:ir.actions.report.xml,name:product_ext.report_product_barcode
+msgid "Barcode"
+msgstr "Código de Barras"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_product_cfop_sat_id
+#: model:ir.model.fields,field_description:product_ext.field_product_template_cfop_sat_id
+msgid "CFOP Cupom Fiscal"
+msgstr "CFOP Cupom Fiscal"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_product_icms_sat_csosn
+#: model:ir.model.fields,field_description:product_ext.field_product_template_icms_sat_csosn
+msgid "CSOSN ICMS"
+msgstr "CSOSN ICMS"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_product_cofins_sat_cst
+#: model:ir.model.fields,field_description:product_ext.field_product_template_cofins_sat_cst
+msgid "CST COFINS"
+msgstr "CST COFINS"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_product_icms_sat_cst
+#: model:ir.model.fields,field_description:product_ext.field_product_template_icms_sat_cst
+msgid "CST ICMS"
+msgstr "CST ICMS"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_product_ipi_sat_cst
+#: model:ir.model.fields,field_description:product_ext.field_product_template_ipi_sat_cst
+msgid "CST IPI"
+msgstr "CST IPI"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_product_pis_sat_cst
+#: model:ir.model.fields,field_description:product_ext.field_product_template_pis_sat_cst
+msgid "CST PIS"
+msgstr "CST PIS"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_product_cost_value
+#: model:ir.model.fields,field_description:product_ext.field_product_template_cost_value
+msgid "Cost for value calculation for sale(%)"
+msgstr "Preço de reposição informado"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_template_days_of_coverage
+msgid "Days of Coverage"
+msgstr "Dias de Cobertura"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_template_manufacturer_id
+msgid "Manufacturer"
+msgstr "Fabricante"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_template_percent_sale_value
+msgid "Percent for value calculation for sale(%)"
+msgstr "Percentual de valor de cálculo para venda(%)"
+
+#. module: product_ext
+#: model:ir.model,name:product_ext.model_product_product
+msgid "Product"
+msgstr "Produto"
+
+#. module: product_ext
+#: model:ir.actions.report.xml,name:product_ext.report_product_discount
+msgid "Product Discount"
+msgstr "Desconto de Produto"
+
+#. module: product_ext
+#: model:ir.model,name:product_ext.model_product_template
+msgid "Product Template"
+msgstr "Modelo de Produto"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_template_promotional_price
+msgid "Promotional Price"
+msgstr "Preço Promocional"
+
+#. module: product_ext
+#: model:ir.ui.view,arch_db:product_ext.product_form_view_ext
+msgid "Sat Configuration"
+msgstr "Configuração de Sat"
+
+#. module: product_ext
+#: model:ir.model.fields,field_description:product_ext.field_product_template_suggested_sale_value
+#: model:ir.model.fields,field_description:product_ext.field_product_template_suggested_sale_value_invible
+msgid "Suggested for Sale"
+msgstr "Valor de venda sugerido"
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+			<!--Sub-menu for all menu Vehicle-->
+		<menuitem id="vehicle_menu" name="Vehicle" parent="sales_team.menu_sale_config" sequence="2"/>
+
+	</data>
+</odoo>

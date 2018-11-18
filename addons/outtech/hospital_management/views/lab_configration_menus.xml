@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_lab_test_unit_tree" model="ir.ui.view">
+            <field name="name">view.medical.lab.unit.test.tree</field>
+            <field name="model">medical.lab.test.units</field>
+            <field name="arch" type="xml">
+                <tree string="Test Unit">
+                    <field name="name" required="1"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_lab_test_unit_form" model="ir.ui.view">
+            <field name="name">view.medical.lab.unit.test</field>
+            <field name="model">medical.lab.test.units</field>
+            <field name="arch" type="xml">
+                <form string="Test Unit">
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="code"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_lab_test_criteria_form" model="ir.ui.view">
+            <field name="name">view_lab_test_criteria_form_view</field>
+            <field name="model">medical_test.critearea</field>
+            <field name="arch" type="xml">
+                <form string="Test Cases">
+                    <group colspan="4" col="4">
+                        <field name="seq"/>
+                        <field name="test_id" invisible="1"/>
+                        <field name="test_name"/>
+                        <field name="warning"/>
+                        <field name="excluded"/>
+                        <field name="lower_limit"/>
+                        <field name="upper_limit"/>
+                        <field name="units_id"/>
+                        <field name="result_text"/>
+                        <field name="result"/>
+                        <field name="remark"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_lab_test_criteria_tree" model="ir.ui.view">
+            <field name="name">view_lab_test_criteria_tree_view</field>
+            <field name="model">medical_test.critearea</field>
+            <field name="arch" type="xml">
+                <tree string="Test Cases">
+                    <field name="seq"/>
+                    <field name="warning"/>
+                    <field name="excluded"/>
+                    <field name="test_id" invisible="1"/>
+                    <field name="test_name"/>
+                    <field name="lower_limit"/>
+                    <field name="upper_limit"/>
+                    <field name="units_id"/>
+                    <field name="remark"/>
+                    <field name="result"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_lab_test_unit" model="ir.actions.act_window">
+            <field name="name">Lab Testing Units</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.lab.test.units</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_tree_new_lab_test" model="ir.ui.view">
+            <field name="name">tree.new.lab.test</field>
+            <field name="model">medical.test_type</field>
+            <field name="arch" type="xml">
+                <tree string="Lab test type">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_tree_new_lab_test" model="ir.ui.view">
+            <field name="name">form.new.lab.test</field>
+            <field name="model">medical.test_type</field>
+            <field name="arch" type="xml">
+                <tree string="Lab test type">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_new_lab_test" model="ir.ui.view">
+            <field name="name">form.new.lab.test</field>
+            <field name="model">medical.test_type</field>
+            <field name="arch" type="xml">
+                <form string="Lab Test">
+                    <sheet>
+                        <notebook>
+                            <page string="Main Info">
+                                <group colspan="4" col="4">
+                                    <field name="name" required="1"/>
+                                    <field name="code"/>
+                                    <field name="critearea_ids" colspan="4" nolabel="1">
+                                        <tree editable="top" string="Test Cases">
+                                            <field name="seq"/>
+                                            <field name="test_name"/>
+
+                                            <field name="normal_range"/>
+                                            <field name="units_id"/>
+                                        </tree>
+                                        <form string="Test Cases">
+                                            <field name="test_name"/>
+                                            <field name="seq"/>
+                                            <field name="units_id"/>
+                                            <field name="normal_range"/>
+                                        </form>
+
+                                    </field>
+                                    <field name="service"/>
+                                </group>
+                            </page>
+                            <page string="Extra Info">
+                                <field name="info"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+
+        <record id="action_view_lab_new_test" model="ir.actions.act_window">
+            <field name="name">Lab Test Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.test_type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="action_view_medical_test_critearea" model="ir.actions.act_window">
+            <field name="name">Test Cases</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical_test.critearea</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Configuration"
+                  id="main_menu_configuration"
+                  parent="main_menu_health_care"
+                  sequence='13'/>
+
+        <!--<menuitem name="Laboratory"-->
+                  <!--id="main_menu_conf_laboratory"-->
+                  <!--parent="main_menu_configuration"-->
+                  <!--sequence='0'/>-->
+
+        <!--<menuitem name="Lab Testing Units"-->
+                  <!--id="menu_lab_testing_units"-->
+                  <!--parent="main_menu_conf_laboratory"-->
+                  <!--action="action_view_lab_test_unit"/>-->
+
+        <!--<menuitem name="Lab Test Type"-->
+                  <!--id="menu_lab_new_type_lab_test"-->
+                  <!--parent="main_menu_conf_laboratory"-->
+                  <!--action="action_view_lab_new_test"/>-->
+    </data>
+</openerp>

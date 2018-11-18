@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="customer_statement.statement_document">
+        <t t-call="report.external_layout">
+            <div class="page">
+                <div class="row">
+                    <div >
+                        <!--<p class="text-right"><span t-field="o.name"/><br/></p>-->
+                        <!--<span t-raw="o._display_address()[o.id].replace('\n\n', '\n').replace('\n', '&lt;br&gt;')"/>-->
+                        <div class="col-xs-3">
+                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 75px; padding-top: 2px; text-align:left"/>
+                        </div>
+                        <!--<span t-field="o.vat"/>-->
+
+                    <h4 style="padding-center:20em" class="text-center"><b>
+                        Extrato do Cliente <br/>
+                        De: <span t-esc="Date_start[o.id]" /> - Até: <span t-esc="Date_end[o.id]" /></b>
+                    </h4>
+                    </div>
+                    <p class="text-center">
+                        Data: <span t-esc="Date[o.id]" /><br/>
+                        Cliente: <span t-field="o.name"/><br/>
+                    </p>
+                    <br/>
+                    <h4 style="padding-center:20em" class="text-center"><b>
+                        Vendas</b>
+                    </h4>
+                    <t t-if="Lines">
+                        <br/>
+                            <br t-if="not currency_first" />
+                            <table class="table table-striped" style="border: 1px solid black; border-collapse: collapse;">
+                                <thead>
+                                    <tr>
+                                        <th style="border-right: 1px solid black;">Data</th>
+                                        <th class="text-center" style="border-right: 1px solid black;">OS</th>
+                                        <th style="border-right: 1px solid black;">Animal</th>
+                                        <th class="text-right" style="border-right: 1px solid black;">Fatura</th>
+                                        <th class="text-right" style="border-right: 1px solid black;">Produtos</th>
+                                        <th class="text-right" style="border-right: 1px solid black;">Valor</th>
+                                    </tr>
+                                </thead>
+                                <!--<tr>-->
+                                    <!--<td style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="Date_start[o.id]"/>-->
+                                    <!--</td>-->
+                                    <!--<td style="border-right: 1px solid black;"></td>-->
+                                    <!--<td style="border-right: 1px solid black;"></td>-->
+                                    <!--<td style="border-right: 1px solid black;"></td>-->
+                                    <!--<td style="border-right: 1px solid black; background-color: grey;">Saldo Inicial</td>-->
+                                    <!--<td><span t-esc="0.0" /></td>-->
+                                <!--</tr>-->
+                                <tr t-foreach="Lines" t-as="line">
+                                    <td style="border-right: 1px solid black;">
+                                        <span t-esc="line['date']"/>
+                                    </td>
+                                    <td style="border-right: 1px solid black;">
+                                        <span t-esc="line['OS']"/>
+                                    </td>
+                                    <td style="border-right: 1px solid black;">
+                                        <span t-esc="line['pet']"/>
+                                    </td>
+                                    <td style="border-right: 1px solid black;">
+                                        <span t-esc="line['fatura']"/>
+                                    </td>
+                                    <td style="border-right: 1px solid black;">
+                                        <span t-esc="line['produto']"/>
+                                    </td>
+                                    <td style="border-right: 1px solid black;">
+                                        R$ <span t-esc="line['valor']"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p style="padding-center:20em" class="text-right"><b>
+                                Total de Vendas: R$ <span t-esc="total_venda"/></b>
+                            </p>
+                            <br/>
+                            <h4 style="padding-center:20em" class="text-center"><b>
+                                Pagamentos Efetuados</b> <br/>
+                            </h4>
+                            <table class="table table-striped" style="border: 1px solid black; border-collapse: collapse;">
+                                <thead>
+                                    <tr>
+                                        <th style="border-right: 1px solid black;">Data</th>
+                                        <th class="text-center" style="border-right: 1px solid black;">Descrição</th>
+                                        <th style="border-right: 1px solid black;">Valor</th>
+                                    </tr>
+                                </thead>
+                                <tr t-foreach="Payments" t-as="payments">
+                                    <td style="border-right: 1px solid black;">
+                                        <span t-esc="payments['date']"/>
+                                    </td>
+                                    <td style="border-right: 1px solid black;">
+                                        Pagamento Efetuado
+                                    </td>
+                                    <td style="border-right: 1px solid black;">
+                                        R$ <span t-esc="payments['valor']"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p style="padding-center:20em" class="text-right"><b>
+                                Total de Pagamentos: R$ <span t-esc="total_pago"/></b>
+
+                            </p>
+                            <p class="text-right" style="font-size:36px;">
+                                <b>Total em aberto: R$ <span t-esc="total_saldo"/></b>
+                            </p>
+                            <!--<table class="table table-hover" t-if="Show_Buckets" style="border: 1px solid black; border-collapse: collapse;">-->
+                                <!--<thead>-->
+                                    <!--<tr>-->
+                                        <!--<th class="text-center" style="border-right: 1px solid black;">Atual Vencimento</th>-->
+                                        <!--<th class="text-center" style="border-right: 1px solid black;">1-30 Dia(s) de Vencimento</th>-->
+                                        <!--<th class="text-center" style="border-right: 1px solid black;">30-60 Dias de Vencimento</th>-->
+                                        <!--<th class="text-center" style="border-right: 1px solid black;">60-90 Dias de Vencimento</th>-->
+                                        <!--<th class="text-center" style="border-right: 1px solid black;">90-120 Dias de Vencimento</th>-->
+                                        <!--<th class="text-center" style="border-right: 1px solid black;">+120 Dias de Vencimento</th>-->
+                                        <!--<th class="text-right" style="border-right: 1px solid black;">Saldo de Vencimento</th>-->
+                                    <!--</tr>-->
+                                <!--</thead>-->
+                                <!--<tr t-if="currency in Buckets[o.id]">-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="Buckets[o.id][currency]['current']" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="Buckets[o.id][currency]['b_1_30']" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="Buckets[o.id][currency]['b_30_60']" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="Buckets[o.id][currency]['b_60_90']" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="Buckets[o.id][currency]['b_90_120']" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="Buckets[o.id][currency]['b_over_120']" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="Buckets[o.id][currency]['balance']" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                                <!--<tr t-if="currency not in Buckets[o.id]">-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="0.0" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="0.0" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="0.0" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="0.0" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="0.0" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="0.0" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                    <!--<td class="text-right" style="border-right: 1px solid black;">-->
+                                        <!--<span t-esc="0.0" t-esc-options='{"widget": "monetary", "display_currency": "currency"}'/>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                            <!--</table>-->
+                        </t>
+                    <p t-if="not Lines">
+                        <strong>O Cliente não tem entradas de vencimento.</strong>
+                    </p>
+                </div>
+            </div>
+       </t>
+    </template>
+
+    <template id="statement">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-if="not (Filter_non_due_partners and (not Lines) and (len(doc_ids) > 1))">
+                    <t t-call="customer_statement.statement_document" t-lang="o.lang"/>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report id="action_print_customer_vendor_statement"
+        model="res.partner"
+        report_type="qweb-pdf"
+        menu="False"
+        string="Extrato do Cliente"
+        name="customer_statement.statement"
+        file="customer_statement.statement"
+    />
+</odoo>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		
+			<act_window
+        id="action_create_prescription_invoice1"
+        name="Create Prescription Invoice"
+        res_model="create.prescription.invoice"
+        src_model="medical.prescription.order"
+        view_mode="form"
+        target = "new"
+        key2="client_action_multi"
+        
+        />
+	<!--  Sequence -->
+		<record id="seq_prescription_order" model="ir.sequence">
+            <field name="name">Prescriptions</field>
+            <field name="code">medical.prescription.order</field>
+            <field name="prefix">PRES%(year)s/</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+		<!-- Tree view -->
+		<record id="view_prescription_order_tree" model="ir.ui.view">
+			<field name="name">Prescription Order</field>
+			<field name="model">medical.prescription.order</field>
+			<field name="priority">2</field>
+			<field name="arch" type="xml">
+				<tree string="Prescription">
+					<field name="name"/>
+					<field name="patient_id"/>
+					<field name="medical_physician_id"/>
+					<field name="prescription_date"/>
+
+				</tree>
+			</field>
+		</record>
+
+
+
+		<record id="view_prescription_invice_wizard_view" model="ir.ui.view">
+			<field name="name">Create Prescription Order</field>
+			<field name="model">create.prescription.invoice</field>
+			<field name="arch" type="xml">
+				<form string="Create prescription invoices">
+                    <separator colspan="4"  class="oe_highlight" string="Do you want to create the prescription invoice(s) ?"/>
+                    <newline/>
+                    <separator string="                  " colspan="6"/>
+                    <button special="cancel" string="Cancel" class="oe_highlight"/>
+                    	or
+                    <button name="create_prescription_invoice" class="oe_highlight" string="Create Prescription Invoices" type="object" />
+               </form>
+
+			</field>
+		</record>
+
+		<record id="view_prescription_shipment_wizard_view" model="ir.ui.view">
+			<field name="name">Create Prescription Shipment</field>
+			<field name="model">create.prescription.shipment</field>
+			<field name="arch" type="xml">
+				<form string="Create prescription invoices">
+                    <separator colspan="4"  class="oe_highlight" string="Do you want to create the prescription Shipment ?"/>
+                    <newline/>
+                    <separator string="                  " colspan="6"/>
+                    <button special="cancel" string="Cancel" />
+                    	or
+                    <button name="create_prescription_shipment" class="oe_highlight" string="Create Prescription Shipment" type="object" />
+               </form>
+
+			</field>
+		</record>
+
+
+		<record id="view_prescription_order_form" model="ir.ui.view">
+			<field name="name">Patient And Doctor Information</field>
+			<field name="model">medical.prescription.order</field>
+			<field name="arch" type="xml">
+			<form string="Prescription" >
+					<header>
+                        <div class="oe_left" colspan="2" invisible="context.get('admission_view')">
+                            <button name="prescription_report" type="object" string="Print Prescription" class="oe_highlight"/>
+                            <button name="%(action_create_prescription_invoice1)d"  type="action" string="Create Invoice" class="oe_highlight"/>
+                        </div>
+					</header>
+					<sheet>
+						<group string="Patient and Doctor Information">
+							<group>
+								<field name="patient_id" required="1"  options="{&quot;always_reload&quot;: True}"/>
+								<field name="prescription_date" required="1"/>
+							</group>
+							<group>
+								<field name="name"  readonly="1"/>
+								<field name="medical_physician_id" required="1"/>
+							</group>
+						</group>
+						<group string="Prescription Detail">
+							<field name="prescription_line_ids" nolabel="1" widget="one2many_list"/>
+						</group>
+						<group string="Notes">
+							<field name="notes" nolabel="1"/>
+						</group>
+					</sheet>
+				</form>
+
+			</field>
+		</record>
+
+		<!-- Search View -->
+		<record id="view_prescription_order_search" model="ir.ui.view">
+			<field name="name">Prescription Order</field>
+			<field name="model">medical.prescription.order</field>
+			<field name="type">search</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Search Patient Prescriptions">
+					<separator orientation="vertical" />
+					<field name="name" />
+					<field name="patient_id" />
+					<field name="prescription_date" />
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_open_prescription_order">
+			<field name="name">Prescription Order</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.prescription.order</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_prescription_order_search" />
+			<field name="domain">[]</field>
+			<!--field name="domain">[('is_patient','=',1)]</field-->
+			<field name="context">{}</field>
+		</record>
+
+
+
+
+
+
+		<!-- Tree view -->
+		<record id="view_prescription_order_line_tree" model="ir.ui.view">
+			<field name="name">Prescription Order Line</field>
+			<field name="model">medical.prescription.line</field>
+			<field name="priority">2</field>
+			<field name="arch" type="xml">
+				<tree string="Prescription lines">
+					<field name="prnt" />
+					<field name="medicament_id" />
+					<field name="indication_id" />
+					<field name="dose" />
+					<field name="dose_unit_id" />
+					<field name="form_id" />
+					<field name="common_dosage_id" />
+					<field name="quantity" />
+					<field name="duration" />
+					<field name="duration_period" />
+					<field name="allow_substitution" />
+					<field name="short_comment" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_prescription_order_line_form" model="ir.ui.view">
+			<field name="name">Prescription Order Line</field>
+			<field name="model">medical.prescription.line</field>
+			<field name="arch" type="xml">
+				<form string="Prescription">
+					<group colspan="4" col="4">
+						<field name="medicament_id" required="1" />
+						<field name="indication_id" />
+						<field name="allow_substitution" />
+						<field name="prnt" />
+						<field name="form_id" />
+						<field name="route_id" />
+						<field name="start_treatment" />
+						<field name="end_treatment" />
+					</group>
+					<group colspan="4" string="Dosage">
+						<group colspan="6" col="6">
+							<field name="dose" />
+							<field name="dose_unit_id" />
+
+							<field name="qty" />
+						</group>
+						<separator string="Common Dosage" />
+						<group colspan="4" col="4">
+							<field name="common_dosage_id" />
+							<field name="admin_times" />
+						</group>
+						<separator string="Specific Dosage" />
+						<group colspan="4" col="4">
+							<field name="frequency" />
+							<field name="frequency_unit" />
+						</group>
+					</group>
+					<group colspan="4" col="4">
+						<field name="duration" />
+						<field name="duration_period" />
+						<field name="review" />
+						<field name="quantity" />
+						<field name="refills" />
+						<field name="short_comment" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+
+
+		<act_window
+        id="action_create_prescription_invoice"
+        name="Create Prescription Invoice"
+        res_model="create.prescription.invoice"
+        src_model="medical.prescription.order"
+        view_mode="form"
+        target = "new"
+        />
+	 <!--<act_window-->
+        <!--id="action_create_prescription_shipment1"-->
+        <!--name="Create Prescription Shipment"-->
+        <!--res_model="create.prescription.shipment"-->
+        <!--src_model="medical.prescription.order"-->
+        <!--view_mode="form"-->
+        <!--target = "new"-->
+        <!--/>-->
+
+	 
+
+	<!--<menuitem id="dental_prescription"-->
+			 <!--name="Prescriptions"-->
+			<!--parent="health_care.main_menu_health_care" -->
+			<!--sequence="3" />-->
+
+		<menuitem id="dental_prescription_child" 
+		action="act_open_prescription_order"
+			name="Prescriptions" 
+			parent="menu_patients"
+			sequence="2"/>
+			
+		
+	</data>
+</openerp>
+			

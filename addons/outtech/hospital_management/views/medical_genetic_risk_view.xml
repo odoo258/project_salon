@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>	
+        <record id="medical_genetic_risk_view" model="ir.ui.view">
+            <field name="name">medical.genetic.risk.form</field>
+            <field name="model">medical.genetic.risk</field>
+            <field name="arch" type="xml">
+            <form string="Medical Genetic Risks">
+            	<sheet>
+            <group>
+								<field name="name"/>
+								<field name="long_name"/>
+								<newline/>
+								<field name="chromosome"/>
+								<field name="dominance"/>
+								<field name="location"/>
+								<field name="gene_id"/>
+								<newline/>
+								<field colspan="4" name="info"/>	
+								</group>			
+								</sheet>	
+			</form>
+			</field>
+        </record>
+        	
+        <record id="medical_genetic_risk_view_tree" model="ir.ui.view">
+            <field name="name">medical.genetic.risk.tree</field>
+            <field name="model">medical.genetic.risk</field>
+            <field name="arch" type="xml">
+                <tree string="Genetic Risks">
+                    <field name="name"/>
+                                        <field name="long_name"/>
+                                        <field name="chromosome"/>
+                                        <field name="dominance"/>
+                   
+                </tree>
+            </field>
+        </record>
+        
+        <record id="medical_genetic_risk_action" model="ir.actions.act_window">
+            <field name="name">Genetic Risks</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.genetic.risk</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+  		<!--<menuitem id="menu_genetic"-->
+  				  <!--name="Genetics" -->
+  				  <!--parent="main_menu_configuration"-->
+  				  <!--sequence='10'/>-->
+  				  <!---->
+		<!--<menuitem id="menu_sub_genetic" -->
+			<!--action="medical_genetic_risk_action"-->
+			 <!--sequence="1" parent="menu_genetic"/>-->
+      <!---->
+        </data>
+</openerp>

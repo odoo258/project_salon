@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_voucher_coupons">
+        <t t-call="report.external_layout">
+        <t t-set="cont" t-value="0"/>
+        <t t-set="cont2" t-value="0"/>
+
+            <div class="page">
+
+                <div id="informations" class="oe_structure">
+                    <t t-foreach="docs" t-as="doc">
+                        <t t-if="cont != 1"><t t-set="cont" t-value="1"/>
+                        <div class="row" style="border-bottom:1px solid black; padding-bottom: 4px;">
+                            <div class="col-xs-3">
+                                <img t-if="doc.company_id.logo" t-att-src="'data:image/png;base64,%s' % doc.company_id.logo" style="max-height: 75px; padding-top: 2px; text-align:center"/>
+                            </div>
+                            <div class="col-xs-9" style="text-align:center">
+                                <div class="row">
+                                    <div class="col-xs-6" style="text-align:center">
+                                        <p style="font-size: 18px; margin:0px; text-align:center;">
+                                            CNPJ: <span t-esc="doc.company_id.cnpj_cpf"/><br/>
+                                            <b><span t-esc="doc.name"/></b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                    <table class="table" style="padding-top: 10px">
+                        <tr>
+                            <td>
+                                <b style="font-size: 12px;"> Responsavel: <span t-esc="doc.user_id.name"/></b>
+                            </td>
+                            <td>
+                                <b style="font-size: 12px;"> Data de Emissão: <span t-esc="doc.date" t-options='{"widget": "date"}'/></b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b style="font-size: 12px;"> Cliente: <span t-esc="doc.partner_id.name"/></b>
+                            </td>
+                            <td>
+                                <b style="font-size: 12px;"> CPF: <span t-esc="doc.partner_id.cnpj_cpf"/></b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b style="font-size: 12px;"> Data Limite: <span t-esc="doc.date_limit" t-options='{"widget": "date"}'/></b>
+                            </td>
+                            <td>
+                                <b style="font-size: 24px;"> Valor: <span t-esc="doc.amount" t-options="{'widget': 'monetary', 'display_currency': doc.company_id.currency_id}"/></b>
+                            </td>
+                        </tr>
+                        <br/>
+                        <tr>
+                            <td>
+                                <b style="font-size: 12px;"> Regra de Utilização</b>
+                            </td>
+                        </tr>
+                        <br/>
+                        <tr>
+                            <td><span style="font-size: 12px;" t-esc="doc.rule"/></td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <tr style="text-align:right">
+                            <td></td>
+                            <span t-if="doc.state != 'created'">
+                                <td style="text-align:right">
+                                    <b style="font-size: 22px;">USADO</b>
+                                </td>
+                            </span>
+                            <span t-if="doc.state == 'created'">
+                                <td style="text-align:right">
+                                    <b>____________________________________</b><br/>
+                                                Assinatura de Cliente
+                                </td>
+                            </span>
+                        </tr>
+                    </table>
+                    </div>
+                    </t>
+                    </t>
+                    <br />
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

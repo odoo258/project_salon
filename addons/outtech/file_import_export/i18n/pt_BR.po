@@ -1,0 +1,640 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* file_import_export
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-06 05:03+0000\n"
+"PO-Revision-Date: 2017-09-06 05:03+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_accent_marks
+msgid "Accent Marks"
+msgstr "Acentos"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_active
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_active
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_active
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_active
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_active
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_active
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail_active
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer_active
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header_active
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_active
+msgid "Active"
+msgstr "Ativo"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_break_line
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_break_line
+msgid "Break Line"
+msgstr "Quebra de Linha"
+
+#. module: file_import_export
+#: selection:file.export.layout,file_export_type:0
+#: selection:file.import.layout,file_import_type:0
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_line_form
+msgid "CSV"
+msgstr "CSV"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_csv_separator
+msgid "CSV Separator"
+msgstr "CSV Separador"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,data_type:0
+msgid "Character"
+msgstr "Carácter"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_code
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_code
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_code
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_code
+msgid "Code"
+msgstr "Código"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_condition
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_condition
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_condition
+msgid "Condition"
+msgstr "Condição"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_create_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_create_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_create_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_create_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_create_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_create_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail_create_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer_create_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header_create_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_create_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_create_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_create_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_create_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_create_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_create_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail_create_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer_create_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header_create_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_data_type
+msgid "Data Type"
+msgstr "Tipo de Valor"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,data_type:0
+msgid "Date"
+msgstr "Data"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_date_format
+msgid "Date Format"
+msgstr "Formato da Data"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_decimal_precision
+msgid "Decimal Precision"
+msgstr "Precisão Decimal"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_decimal_separator
+msgid "Decimal Separator"
+msgstr "Separador decimal"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,xml_field_type:0
+msgid "Declaration"
+msgstr "Declaração"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_description
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_description
+msgid "Description"
+msgstr "Descrição"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_file_export_layout_detail_ids
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_file_import_layout_detail_ids
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_form
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_form
+msgid "Detail"
+msgstr "Detalhe"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_display_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_display_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_display_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_display_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_display_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail_display_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_display_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer_display_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header_display_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_display_name
+msgid "Display Name"
+msgstr "Nome para Exibição"
+
+#. module: file_import_export
+#: code:addons/file_import_export/models/file_export_layout.py:122
+#: code:addons/file_import_export/models/file_import_layout.py:119
+#, python-format
+msgid "Error! Extension file not avaliable! Use Only XML, CSV and TXT"
+msgstr "Erro! Extenção de arquivo não disponivel! Use apenas XML, CSV e TXT"
+
+#. module: file_import_export
+#: code:addons/file_import_export/models/file_export_layout.py:50
+#, python-format
+msgid "Error! Have more one layout registered with the same name!"
+msgstr "Erro! Tem mais de um layout configurado com o mesmo nome!"
+
+#. module: file_import_export
+#: code:addons/file_import_export/models/file_export_layout.py:47
+#, python-format
+msgid "Error! Layout not found!"
+msgstr "Erro! Layout não encontrado!"
+
+#. module: file_import_export
+#: code:addons/file_import_export/models/file_import_layout.py:107
+#, python-format
+msgid "Error! The import layout was not found!"
+msgstr "Erro! O layout de importação não encontrado!"
+
+#. module: file_import_export
+#: code:addons/file_import_export/models/file_import_layout.py:50
+#, python-format
+msgid "Error! The register type was not found!"
+msgstr "Erro! O tipo de linha não foi encontrado!"
+
+#. module: file_import_export
+#: model:ir.actions.act_window,name:file_import_export.action_export_layout
+#: model:ir.ui.menu,name:file_import_export.menu_export_layout
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_form
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_tree
+msgid "Export Layout"
+msgstr "Exportação de Layout"
+
+#. module: file_import_export
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_detail_form
+msgid "Export Layout Detail"
+msgstr "Exportação de Layout do Detalhe"
+
+#. module: file_import_export
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_footer_form
+msgid "Export Layout Footer"
+msgstr "Exportação de Layout do Rodapé"
+
+#. module: file_import_export
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_header_form
+msgid "Export Layout Header"
+msgstr "Exportação de Layout do Cabeçalho"
+
+#. module: file_import_export
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_line_form
+msgid "Export Layout Line"
+msgstr "Exportação da Linha do Layout"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_field_identifier
+msgid "Field Identifier"
+msgstr "Campo Identificador"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_file_export_layout_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_file_export_layout_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_file_export_layout_id
+msgid "File Export Layout"
+msgstr "Arquivo de Exportação do Layout"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_file_export_layout_detail_id
+msgid "File Export Layout Detail"
+msgstr "Arquivo de Exportação do Layout de Detalhe"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_file_export_layout_footer_id
+msgid "File Export Layout Footer"
+msgstr "Arquivo de Exportação do Layout de Rodapé"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_file_export_layout_header_id
+msgid "File Export Layout Header"
+msgstr "Arquivo de Exportação do Layout de Cabeçalho"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_file_export_layout_line_ids
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_file_export_layout_line_ids
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_file_export_layout_line_ids
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_detail_form
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_footer_form
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_header_form
+msgid "File Export Layout Lines"
+msgstr "Arquivo de Exportação do Layout de Linhas"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail_file_import_layout_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer_file_import_layout_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header_file_import_layout_id
+msgid "File Import Layout"
+msgstr "Arquivo de Importação do Layout"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_file_import_layout_detail_id
+msgid "File Import Layout Detail"
+msgstr "Arquivo de Importação do Layout de Detalhe"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_file_import_layout_footer_id
+msgid "File Import Layout Footer"
+msgstr "Arquivo de Importação do Layout de Rodapé"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_file_import_layout_header_id
+msgid "File Import Layout Header"
+msgstr "Arquivo de Importação do Layout de Cabeçalho"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail_file_import_layout_line_ids
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer_file_import_layout_line_ids
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header_file_import_layout_line_ids
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_detail_form
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_footer_form
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_header_form
+msgid "File Import Layout Lines"
+msgstr "Arquivo de Importação do Layout de Linhas"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_fixed_value
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_fixed_value
+msgid "Fixed Value"
+msgstr "Valor Fixo"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,data_type:0
+msgid "Float"
+msgstr "Decimal"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_file_export_layout_footer_ids
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_file_import_layout_footer_ids
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_form
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_form
+msgid "Footer"
+msgstr "Rodapé"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_file_export_layout_header_ids
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_file_import_layout_header_ids
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_form
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_form
+msgid "Header"
+msgstr "Cabeçalho"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_hide_if_empty
+msgid "Hide If Empty"
+msgstr "Esconder se Vazio"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: file_import_export
+#: model:ir.actions.act_window,name:file_import_export.action_import_layout
+#: model:ir.ui.menu,name:file_import_export.menu_import_layout
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_form
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_tree
+msgid "Import Layout"
+msgstr "Importação de Layout"
+
+#. module: file_import_export
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_detail_form
+msgid "Import Layout Detail"
+msgstr "Importação de Layout do Detalhe"
+
+#. module: file_import_export
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_footer_form
+msgid "Import Layout Footer"
+msgstr "Importação do Layout de Rodapé"
+
+#. module: file_import_export
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_header_form
+msgid "Import Layout Header"
+msgstr "Importação do Layout de Cabeçalho"
+
+#. module: file_import_export
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_line_form
+msgid "Import Layout Line"
+msgstr "Importação do Layout de Linha"
+
+#. module: file_import_export
+#: model:ir.ui.menu,name:file_import_export.menu_import_export_file
+msgid "Import/Export File"
+msgstr "Arquivos Importação/Exportação"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,data_type:0
+msgid "Integer"
+msgstr "Inteiro"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout___last_update
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail___last_update
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer___last_update
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header___last_update
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line___last_update
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout___last_update
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail___last_update
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer___last_update
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header___last_update
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_write_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_write_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_write_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_write_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_write_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail_write_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer_write_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header_write_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_write_uid
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_write_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_write_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_write_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_write_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_write_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail_write_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer_write_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header_write_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_write_date
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_left_padding
+msgid "Left Padding"
+msgstr "Preenchimento à Esquerda"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_length
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_length
+msgid "Length"
+msgstr "Comprimento"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_letter_case
+msgid "Letter Case"
+msgstr "Tipo de Letra"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,letter_case:0
+msgid "Lower Case"
+msgstr "Minúsculo"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_name
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_parent_id
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_parent_id
+msgid "Parent"
+msgstr "Superior (Conta-pai)"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_prefix
+msgid "Prefix"
+msgstr "Prefixo"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_record_separator
+msgid "Record Separator"
+msgstr "Separador de Registro"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_right_padding
+msgid "Right Padding"
+msgstr "Preenchimento à Direita"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,xml_field_type:0
+msgid "Section CDATA"
+msgstr "Seção CDATA"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_detail_sequence
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_footer_sequence
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_header_sequence
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_sequence
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_detail_sequence
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_footer_sequence
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_header_sequence
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_line_sequence
+msgid "Sequence"
+msgstr "Seqüência"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_special_character
+msgid "Special Character"
+msgstr "Caracter Especial"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_suffix
+msgid "Suffix"
+msgstr "Sufixo"
+
+#. module: file_import_export
+#: selection:file.export.layout,file_export_type:0
+#: selection:file.import.layout,file_import_type:0
+msgid "TXT"
+msgstr "TXT"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,xml_field_type:0
+msgid "Tag"
+msgstr "Tag"
+
+#. module: file_import_export
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_detail_form
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_footer_form
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_header_form
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_detail_form
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_footer_form
+#: model:ir.ui.view,arch_db:file_import_export.import_layout_header_form
+msgid "Total"
+msgstr "Total"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_file_export_type
+msgid "Type of Export File"
+msgstr "Tipo de Arquivo de Exportação"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_import_layout_file_import_type
+msgid "Type of Import File"
+msgstr "Tipo de Arquivo de Importação"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,letter_case:0
+msgid "Upper Case"
+msgstr "Maiúsculo"
+
+#. module: file_import_export
+#: selection:file.export.layout,file_export_type:0
+#: selection:file.import.layout,file_import_type:0
+#: model:ir.ui.view,arch_db:file_import_export.export_layout_line_form
+msgid "XML"
+msgstr "XML"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_xml_field_type
+msgid "XML Field Type"
+msgstr "Tipo de campo XML"
+
+#. module: file_import_export
+#: model:ir.model.fields,field_description:file_import_export.field_file_export_layout_line_xml_tag
+msgid "XML Tag"
+msgstr "XML Tag"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,date_format:0
+msgid "dd-mm-yy"
+msgstr "dd-mm-aa"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,date_format:0
+msgid "dd-mm-yyyy"
+msgstr "dd-mm-aaaa"
+
+#. module: file_import_export
+#: model:ir.model,name:file_import_export.model_file_export_layout
+msgid "file.export.layout"
+msgstr "file.export.layout"
+
+#. module: file_import_export
+#: model:ir.model,name:file_import_export.model_file_export_layout_detail
+msgid "file.export.layout.detail"
+msgstr "file.export.layout.detail"
+
+#. module: file_import_export
+#: model:ir.model,name:file_import_export.model_file_export_layout_footer
+msgid "file.export.layout.footer"
+msgstr "file.export.layout.footer"
+
+#. module: file_import_export
+#: model:ir.model,name:file_import_export.model_file_export_layout_header
+msgid "file.export.layout.header"
+msgstr "file.export.layout.header"
+
+#. module: file_import_export
+#: model:ir.model,name:file_import_export.model_file_export_layout_line
+msgid "file.export.layout.line"
+msgstr "file.export.layout.line"
+
+#. module: file_import_export
+#: model:ir.model,name:file_import_export.model_file_import_layout
+msgid "file.import.layout"
+msgstr "file.import.layout"
+
+#. module: file_import_export
+#: model:ir.model,name:file_import_export.model_file_import_layout_detail
+msgid "file.import.layout.detail"
+msgstr "file.import.layout.detail"
+
+#. module: file_import_export
+#: model:ir.model,name:file_import_export.model_file_import_layout_footer
+msgid "file.import.layout.footer"
+msgstr "file.import.layout.footer"
+
+#. module: file_import_export
+#: model:ir.model,name:file_import_export.model_file_import_layout_header
+msgid "file.import.layout.header"
+msgstr "file.import.layout.header"
+
+#. module: file_import_export
+#: model:ir.model,name:file_import_export.model_file_import_layout_line
+msgid "file.import.layout.line"
+msgstr "file.import.layout.line"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,date_format:0
+msgid "mm-dd-yy"
+msgstr "mm-dd-aa"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,date_format:0
+msgid "mm-dd-yyyy"
+msgstr "mm-dd-aaaa"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,date_format:0
+msgid "yy-dd-mm"
+msgstr "aa-dd-mm"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,date_format:0
+msgid "yy-mm-dd"
+msgstr "aa-mm-dd"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,date_format:0
+msgid "yyyy-dd-mm"
+msgstr "aaaa-dd-mm"
+
+#. module: file_import_export
+#: selection:file.export.layout.line,date_format:0
+msgid "yyyy-mm-dd"
+msgstr "aaaa-mm-dd"
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>		
+		<record id="medical_dose_view" model="ir.ui.view">
+            <field name="name">medical.dose.unit.form</field>
+            <field name="model">medical.dose.unit</field>
+            <field name="arch" type="xml">
+                <form string="Medicament Units">
+                    <group colspan="4" col="4">
+                        <field name="name" required="1"/>
+                        <field name="desc"/>
+					</group>
+                </form>
+            </field>
+        </record>
+        
+        <record id="medical_dose_tree" model="ir.ui.view">
+            <field name="name">medical.dose.unit.tree</field>
+            <field name="model">medical.dose.unit</field>
+            <field name="arch" type="xml">
+                <tree string="Medicament Units">
+                    <field name="name"/>
+                    <field name="desc"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="medical_action_dose" model="ir.actions.act_window">
+            <field name="name">Medicament Units</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.dose.unit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+		<!--<menuitem id="menu_medication_dose_unit" action="medical_action_dose" sequence="3" parent="menu_misc"/>-->
+
+        </data>
+</openerp>

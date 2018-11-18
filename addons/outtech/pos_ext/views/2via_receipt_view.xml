@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<template id="report_receipt_2via">
+    <t t-name="PosTicket">
+        <t t-call="report.html_container">
+        <div class="page">
+        <div class="pos-sale-ticket-ext">
+        <div class="pos-center-align-ext"> <t t-esc="order.pos_reference"/></div>
+            <br />
+            <t t-esc="order.company_id.name"/><br />
+            <br />
+            <br />
+            <t t-if="order.cpf_nfse">
+                <t t-if="order.cpf_nfse.length == 14">
+                    CPF: <t t-esc="order.cpf_nfse"/><br />
+                </t>
+                <t t-if="order.cpf_nfse.length == 18">
+                    CNPJ: <t t-esc="receipt.pos_ext.cpf_nfse"/><br />
+                </t>
+            </t>
+            </div>
+            </div>
+        </t>
+    </t>
+</template>
+</data>
+</odoo>

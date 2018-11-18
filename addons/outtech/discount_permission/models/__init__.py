@@ -1,0 +1,2 @@
+import discount_permission
+import res_users

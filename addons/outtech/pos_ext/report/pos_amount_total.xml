@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_pos_order_pivot_ext" model="ir.ui.view">
+        <field name="name">pos.order.pivot.amount.ext</field>
+        <field name="model">report.pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_report_pos_order_pivot"/>
+        <field name="arch" type="xml">
+            <field name="price_total" position="before">
+                    <field name="liquid_total" string="Total Liquido" type="measure"/>
+            </field>
+        </field>
+    </record>
+</odoo>

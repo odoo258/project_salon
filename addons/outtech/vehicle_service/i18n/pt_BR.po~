@@ -1,0 +1,1689 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* vehicle_service
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-13 19:36+0000\n"
+"PO-Revision-Date: 2017-02-13 19:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: vehicle_service
+#: model:mail.template,body_html:vehicle_service.email_template_quick_sale_mail
+msgid "\n"
+"            <p>Hello ${object.name_partner or ''},</p>\n"
+"            <p>Click on link to confirm your purchase.</p>\n"
+"            <p>Link: @link</p>\n"
+"            </p><p>Thank you!</p>\n"
+"            \n"
+"        "
+msgstr "\n"
+"            <p>Olá ${object.name_partner or ''},</p>\n"
+"            <p>Clique no link abaixo para confirmar sua compra.</p>\n"
+"            <p>Link: @link</p>\n"
+"            </p><p>Obrigado!</p>\n"
+"            \n"
+"        "
+
+#. module: vehicle_service
+#: model:mail.template,body_html:vehicle_service.email_template_sale_order_mail
+msgid "\n"
+"            <p>Hello ${object.partner_id.name or ''},</p>\n"
+"            <p>Click on link to confirm your purchase.</p>\n"
+"            <p>Link: @link</p>\n"
+"            </p><p>Thank you!</p>\n"
+"            \n"
+"        "
+msgstr "\n"
+"            <p>Olá ${object.name_partner or ''},</p>\n"
+"            <p>Clique no link abaixo para confirmar sua compra.</p>\n"
+"            <p>Link: @link</p>\n"
+"            </p><p>Obrigado!</p>\n"
+"            \n"
+"        "
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.view_activate_contract_dialog_form
+msgid "<i class=\"fa fa-refresh\"/> Carregando..."
+msgstr "<i class=\"fa fa-refresh\"/> Carregando..."
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+#: model:ir.ui.view,arch_db:vehicle_service.remove_title_terms
+#: model:ir.ui.view,arch_db:vehicle_service.schedule_service
+msgid "<span class=\"fa fa-long-arrow-left\"/> Voltar"
+msgstr "<span class=\"fa fa-long-arrow-left\"/> Voltar"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_sim_apn
+msgid "APN"
+msgstr "APN"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/installation_schedule.py:149
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_form
+#, python-format
+msgid "Activate"
+msgstr "Ativar"
+
+#. module: vehicle_service
+#: selection:installation.schedule,state:0
+msgid "Activated"
+msgstr "Ativado"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_data_site_active
+#: model:ir.ui.view,arch_db:vehicle_service.view_activate_contract_dialog_form
+msgid "Active"
+msgstr "Ativo"
+
+#. module: vehicle_service
+#: selection:installation.schedule,period:0
+#: selection:installation.website,period:0
+msgid "Afternoon"
+msgstr "Tarde"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+msgid "Agendamento"
+msgstr "Agendamento"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+msgid "Agendamento Instalação"
+msgstr "Agendamento Instalação"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.wizard_checkout_inherit
+msgid "Agendamento<span class=\"chevron\"/>"
+msgstr "Agendamento<span class=\"chevron\"/>"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.edit_card
+msgid "Agendamentos"
+msgstr "Agendamentos"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "American Express"
+msgstr "American Express"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_choose_plan
+msgid "Ano"
+msgstr "Ano"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_choose_plan
+msgid "Ano..."
+msgstr "Ano..."
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Ano:"
+msgstr "Ano:"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.view_activate_contract_dialog_form
+msgid "Ativação"
+msgstr "Ativação"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Bandeira:"
+msgstr "Bandeira:"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_birthdate
+msgid "Birthdate"
+msgstr "Birthdate"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_choose_plan
+msgid "Buscar"
+msgstr "Buscar"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:108
+#: code:addons/vehicle_service/wizard/change_credit_card.py:36
+#, python-format
+msgid "CNPJ do not have 14 characters."
+msgstr "CNPJ não possui 14 caracteres."
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:285
+#, python-format
+msgid "CNPJ is not valid!"
+msgstr "CNPJ não é valido!"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_cnpj_cpf_partner
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+msgid "CNPJ/CPF"
+msgstr "CNPJ/CPF"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:281
+#, python-format
+msgid "CNPJ/CPF not found! This field is required!"
+msgstr "CNPJ/CPF não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:114
+#: code:addons/vehicle_service/wizard/change_credit_card.py:42
+#, python-format
+msgid "CPF do not have 11 characters."
+msgstr "CPF não possui 11 caracteres."
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:287
+#, python-format
+msgid "CPF is not valid!"
+msgstr "CPF não é valido!"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "CSV: XXX"
+msgstr "CSV: XXX"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Cadastrar Cartão de Crédito"
+msgstr "Cadastrar Cartão de Crédito"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Cadastre Seu Cartão"
+msgstr "Cadastre Seu Cartão"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.change_credit_card_form
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_form
+#: model:ir.ui.view,arch_db:vehicle_service.view_activate_contract_dialog_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: vehicle_service
+#: selection:installation.schedule,state:0
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Cartão Já Cadastrado"
+msgstr "Cartão Já Cadastrado"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Cartão de Crédito"
+msgstr "Cartão de Crédito"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.wizard_checkout_inherit
+msgid "Cartão de Crédito<span class=\"chevron\"/>"
+msgstr "Cartão de Crédito<span class=\"chevron\"/>"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_choose_plan
+msgid "Categoria"
+msgstr "Categoria"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_choose_plan
+msgid "Categoria..."
+msgstr "Categoria..."
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_category_id_vehicle
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_manufacturer_category_ids
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_category_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_category_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_category_id
+#: model:ir.ui.menu,name:vehicle_service.vehicle_category_menu
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_model_search
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_search
+msgid "Category"
+msgstr "Categoria"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:311
+#, python-format
+msgid "Category Vehicle not found! This field is required!"
+msgstr "Categoria do veículo não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:397
+#: model:ir.ui.view,arch_db:vehicle_service.change_credit_card_form
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+#, python-format
+msgid "Change Credit Card"
+msgstr "Alterar Cartão de Crédito"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_choose_plan
+msgid "Choose Your Plan"
+msgstr "Escolha seu Plano"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_city_id_partner
+msgid "City"
+msgstr "Cidade"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.wizard_checkout_inherit
+msgid "Cobrança<span class=\"chevron\"/>"
+msgstr "Cobrança<span class=\"chevron\"/>"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_name
+msgid "Code"
+msgstr "Código"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.change_credit_card_form
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_form
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+msgid "Confirmar"
+msgstr "Confirmar"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.wizard_checkout_inherit
+msgid "Confirmação<span class=\"chevron\"/>"
+msgstr "Confirmação<span class=\"chevron\"/>"
+
+#. module: vehicle_service
+#: selection:installation.schedule,state:0
+#: selection:quick.sale,state:0
+#: selection:vehicle.partner.website,state:0
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.payment_credit_card
+msgid "Continuar <span class=\"fa fa-long-arrow-right\"/>"
+msgstr "Confirmar<span class=\"fa fa-long-arrow-right\"/>"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_contract_id
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/installation_schedule.py:214
+#, python-format
+msgid "Contrato ja Ativo!"
+msgstr "Contrato ja Ativo!"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_country_id_partner
+msgid "Country"
+msgstr "País"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_log_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_data_site_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_active_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_website_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_schedule_process_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_category_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_manufacturer_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_create_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_year_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_log_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_data_site_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_active_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_website_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_schedule_process_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_category_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_manufacturer_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_create_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_year_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+#: model:ir.ui.view,arch_db:vehicle_service.view_partner_form_inherit
+msgid "Credit Card"
+msgstr "Cartão de Crédito"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Código de Segurança:"
+msgstr "Código de Segurança:"
+
+#. module: vehicle_service
+#: model:ir.actions.act_window,name:vehicle_service.act_data_site_view
+#: model:ir.ui.view,arch_db:vehicle_service.view_data_site_form
+#: model:ir.ui.view,arch_db:vehicle_service.view_data_site_tree
+msgid "Data Site"
+msgstr "Data Site"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+msgid "Data de Agendamento"
+msgstr "Data de Agendamento"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Data de Expiração"
+msgstr "Data de Expiração"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.schedule_service
+msgid "Data do Agendamento"
+msgstr "Data do Agendamento"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_date
+msgid "Date"
+msgstr "Data"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_date_end
+msgid "Date End"
+msgstr "Data de término"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_date_scheduler
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_website_date_scheduler
+msgid "Date Scheduler"
+msgstr "Data do Agendamento"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/installation_schedule.py:96
+#, python-format
+msgid "Date Scheduler not found! This field is required!"
+msgstr "Data de Agendamento não preenchida! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_date_start
+msgid "Date Start"
+msgstr "Data de Início"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_log_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_data_site_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_active_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_website_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_schedule_process_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_category_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_manufacturer_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_display_name
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_year_display_name
+msgid "Display Name"
+msgstr "Nome para Exibição"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_district_partner
+msgid "District"
+msgstr "Bairro"
+
+#. module: vehicle_service
+#: selection:quick.sale,state:0
+msgid "Done"
+msgstr "Encerrado"
+
+#. module: vehicle_service
+#: selection:installation.schedule,state:0
+#: selection:quick.sale,state:0
+#: selection:vehicle.partner.website,state:0
+msgid "Draft"
+msgstr "Provisório"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_email_partner
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.edit_card
+#: model:ir.ui.view,arch_db:vehicle_service.portal_scheduler
+msgid "Editar Cartão"
+msgstr "Editar Cartão"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Elo"
+msgstr "Elo"
+
+#. module: vehicle_service
+#: model:mail.template,subject:vehicle_service.email_template_quick_sale_mail
+#: model:mail.template,subject:vehicle_service.email_template_sale_order_mail
+msgid "Email confirm"
+msgstr "Email de confirmação"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:293
+#, python-format
+msgid "Email not found! This field is required!"
+msgstr "Email não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_equipment_draft_id
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_equipment_id
+msgid "Equipment"
+msgstr "Equipamento"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/installation_schedule.py:249
+#: code:addons/vehicle_service/models/res_partner.py:107
+#, python-format
+msgid "Error in Create"
+msgstr "Erro ao Criar"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.remove_title_terms
+msgid "Este é apenas um modelo de Termo de Uso. Para preencher o texto dos termos de acordo com a sua necessidade, abra o sistema, vá em Administrador de Site, vá em Configurações e entre em Termos de Uso."
+msgstr "Este é apenas um modelo de Termo de Uso. Para preencher o texto dos termos de acordo com a sua necessidade, abra o sistema, vá em Administrador de Site, vá em Configurações e entre em Termos de Uso."
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.select_accept_terms
+msgid "Eu li e concordo com estes"
+msgstr "Eu li e concordo com estes"
+
+#. module: vehicle_service
+#: selection:res.partner,gender:0
+msgid "FEMALE"
+msgstr "FEMALE"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_payment_acquirer_credit_card
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_payment_acquirer_credit_card
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_credit_card_payment_acquirer
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_payment_acquirer
+msgid "Flag"
+msgstr "Bandeira"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_gender
+msgid "Gender"
+msgstr "Sexo"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_model_search
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_search
+msgid "Group By..."
+msgstr "Grupo por.."
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+msgid "Horários"
+msgstr "Horários"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_sim_iccid
+msgid "ICCID"
+msgstr "ICCID"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_log_id
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_id
+#: model:ir.model.fields,field_description:vehicle_service.field_data_site_id
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_active_id
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_id
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_website_id
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_id
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_id
+#: model:ir.model.fields,field_description:vehicle_service.field_schedule_process_id
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_identifier
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_category_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_manufacturer_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_year_id
+msgid "ID"
+msgstr "ID"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_imei
+msgid "IMEI"
+msgstr "IMEI"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_sim_imsi
+msgid "IMSI"
+msgstr "IMSI"
+
+#. module: vehicle_service
+#: model:ir.model.fields,help:vehicle_service.field_product_product_recurring_invoice
+msgid "If set, confirming a sale order with this product will create a subscription"
+msgstr "Se definido, confirmando uma ordem de venda com este produto irá criar uma assinatura"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.remove_product_price
+#: model:ir.ui.view,arch_db:vehicle_service.remove_product_price_cart
+msgid "Instalação: R$"
+msgstr "Instalação: R$"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_installation_id
+#: model:ir.ui.menu,name:vehicle_service.installation_group_menu
+msgid "Installation"
+msgstr "Instalação"
+
+#. module: vehicle_service
+#: model:ir.actions.act_window,name:vehicle_service.installation_schedule_action
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_calendar
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_form
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_search
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_tree
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_wizard_form
+msgid "Installation Schedule"
+msgstr "Agendamento da Instalação"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_qty_installers
+msgid "Installers"
+msgstr "Instaladores"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:251
+#: code:addons/vehicle_service/models/quick_sale.py:515
+#: code:addons/vehicle_service/models/quick_sale.py:536
+#: code:addons/vehicle_service/models/res_partner.py:52
+#: code:addons/vehicle_service/models/res_partner.py:66
+#: code:addons/vehicle_service/models/res_partner.py:83
+#, python-format
+msgid "Invalid Number Credit Card!"
+msgstr "Número do Cartão de Crédito é inválido!"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:205
+#: code:addons/vehicle_service/models/quick_sale.py:209
+#: code:addons/vehicle_service/models/quick_sale.py:215
+#: code:addons/vehicle_service/models/vehicle_partner.py:53
+#: code:addons/vehicle_service/models/vehicle_partner.py:57
+#: code:addons/vehicle_service/models/vehicle_partner.py:63
+#, python-format
+msgid "Invalid Plate"
+msgstr "Placa Invalida"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_account_invoice
+msgid "Invoice"
+msgstr "Fatura"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_is_company_partner
+msgid "Is Company"
+msgstr "É uma Empresa"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+msgid "Is a Company?"
+msgstr "É uma Empresa?"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_resale
+msgid "Is a Reseller"
+msgstr "É um Revendedor"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_log___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_data_site___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_active___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_website___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_schedule_process___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_category___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_manufacturer___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website___last_update
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_year___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_log_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_data_site_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_active_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_website_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_schedule_process_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_category_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_manufacturer_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_write_uid
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_year_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_log_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_data_site_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_active_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_website_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_schedule_process_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_category_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_manufacturer_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_write_date
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_year_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_sim_length_plan
+msgid "Length Plan"
+msgstr "Duração do Plano"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_log_ids
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_log_invoice_id
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_log_log
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_log_quick_sale_id
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_log_ids
+msgid "Logs"
+msgstr "Logs"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.view_tracknme_account_invoice_form
+msgid "Logs Payment"
+msgstr "Histórico de Pagamentos"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+#: model:ir.ui.view,arch_db:vehicle_service.view_tracknme_account_invoice_form
+msgid "Logs Payments"
+msgstr "Histórico de Pagamentos"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr "Lote/Serie"
+
+#. module: vehicle_service
+#: selection:res.partner,gender:0
+msgid "MALE"
+msgstr "MALE"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_sim_msisdn
+msgid "MSISDN"
+msgstr "MSISDN"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+#: model:ir.ui.view,arch_db:vehicle_service.schedule_service
+msgid "Manhã"
+msgstr "Manhã"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_manufacturer_id
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_manufacturer_id_vehicle
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_manufacturer_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_manufacturer_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_manufacturer_id
+#: model:ir.ui.menu,name:vehicle_service.vehicle_manufacturer_menu
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_model_search
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_search
+msgid "Manufacturer"
+msgstr "Marca"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:314
+#, python-format
+msgid "Manufacturer Vehicle not found! This field is required!"
+msgstr "Marca do veículo não preenchida! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_choose_plan
+msgid "Marca"
+msgstr "Marca"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_choose_plan
+msgid "Marca..."
+msgstr "Marca..."
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Master Card"
+msgstr "Master Card"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_mobile_partner
+msgid "Mobile"
+msgstr "Celular"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_model_id
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_model_id_vehicle
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_model
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_model_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_model_id
+#: model:ir.ui.menu,name:vehicle_service.vehicle_model_menu
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_search
+msgid "Model"
+msgstr "Modelo"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:317
+#, python-format
+msgid "Model Vehicle not found! This field is required!"
+msgstr "Modelo do veículo não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_choose_plan
+#: model:ir.ui.view,arch_db:vehicle_service.schedule_service
+msgid "Modelo"
+msgstr "Modelo"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_choose_plan
+msgid "Modelo..."
+msgstr "Modelo..."
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_credit_card_month_expiration
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_credit_card_month_expiration
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_credit_card_month_expiration
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_month_expiration
+msgid "Month Expiration"
+msgstr "Mês de Expiração"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_monthly_payment
+msgid "Monthly Payment"
+msgstr "Pagamento Mensal"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:344
+#, python-format
+msgid "Monthly Payment not found! This field is required!"
+msgstr "Pagamento Mensal não preenchido! Este campo é obrigatório"
+
+#. module: vehicle_service
+#: selection:installation.schedule,period:0
+#: selection:installation.website,period:0
+msgid "Morning"
+msgstr "Manhã"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Mês:"
+msgstr "Mês:"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_name_credit_card
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_name
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_name_credit_card
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_name_partner
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_credit_card_name
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_name
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_category_name
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_manufacturer_name
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:296
+#, python-format
+msgid "Name Credit Card not found! This field is required!"
+msgstr "None do cartão de crédito não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/controllers/website_controller.py:799
+#, python-format
+msgid "Nenhum CEP encontrado"
+msgstr "Nenhum CEP encontrado"
+
+#. module: vehicle_service
+#: selection:installation.schedule,period:0
+#: selection:installation.website,period:0
+msgid "Night"
+msgstr "Noite"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:497
+#: code:addons/vehicle_service/models/quick_sale.py:500
+#, python-format
+msgid "No scheduling linked to this sale"
+msgstr "Não há Agendamento atribuído a esta Venda"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+#: model:ir.ui.view,arch_db:vehicle_service.schedule_service
+msgid "Noite"
+msgstr "Noite"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Nome do Dono do Cartão:"
+msgstr "Nome do Dono do Cartão:"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+msgid "Nome do Proprietário"
+msgstr "Nome do Proprietário"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Nome:"
+msgstr "Nome:"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_number_credit_card
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_display_number_credit_card
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_number_credit_card
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_number_partner
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_credit_card_number
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_display_number
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_number
+msgid "Number"
+msgstr "Número"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:299
+#, python-format
+msgid "Number Credit Card not found! This field is required!"
+msgstr "Numero do cartão de crédito não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Número do Cartão:"
+msgstr "Número do Cartão:"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/controllers/website_controller.py:394
+#, python-format
+msgid "O seu modelo carro não possui plano ou instalação disponíveis."
+msgstr "O seu modelo carro não possui plano ou instalação disponíveis."
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_observation
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_form
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_wizard_form
+msgid "Observation"
+msgstr "Observação"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_sim_operator
+msgid "Operator"
+msgstr "Operadora"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_product_product_optional_product_ids
+msgid "Optional Products"
+msgstr "Produtos Opcionais"
+
+#. module: vehicle_service
+#: model:ir.model.fields,help:vehicle_service.field_product_product_optional_product_ids
+msgid "Optional Products are suggested whenever the customer hits *Add to Cart* (cross-sell strategy, e.g. for computers: warranty, software, etc.)."
+msgstr "Produtos opcionais são sugeridos sempre que o cliente clica em * Adicionar ao carrinho * (estratégia de venda cruzada, por exemplo, para computadores: garantia, software, etc.)."
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.remove_title_terms
+msgid "Os termos de uso são necessários para informar ao usuários os termos de contrato da sua empresa, para evitar qualquer tipo de problema legal"
+msgstr "Os termos de uso são necessários para informar ao usuários os termos de contrato da sua empresa, para evitar qualquer tipo de problema legal"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_kanban_view
+msgid "Owner"
+msgstr "Proprietário"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_owner_name_vehicle
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_owner_name
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_owner_name
+msgid "Owner Name"
+msgstr "Nome do Proprietário"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:323
+#, python-format
+msgid "Owner Name Vehicle not found! This field is required!"
+msgstr "Proprietário do veículo não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:383
+#, python-format
+msgid "Pagamento Confirmado com Sucesso!"
+msgstr "Pagamento Confirmado com Sucesso!"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:388
+#, python-format
+msgid "Pagamento não confirmado (%s)!"
+msgstr "Pagamento não confirmado (%s)!"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.wizard_checkout_inherit
+msgid "Pagamento<span class=\"chevron\"/>"
+msgstr "Pagamento<span class=\"chevron\"/>"
+
+#. module: vehicle_service
+#: selection:quick.sale,state:0
+msgid "Paid"
+msgstr "Pago"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_choose_plan
+msgid "Para Iniciar"
+msgstr "Para Iniciar"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_res_partner
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_partner_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_partner_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_partner_id
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:290
+#, python-format
+msgid "Partner Name not found! This field is required!"
+msgstr "Nome do cliente não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_kanban_view
+msgid "Partner:"
+msgstr "Cliente:"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_password
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_sim_password
+msgid "Password"
+msgstr "Senha"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/controllers/website_controller.py:280
+#, python-format
+msgid "Pay Now"
+msgstr "Pagar Agora"
+
+#. module: vehicle_service
+#: selection:quick.sale,state:0
+msgid "Payment Error"
+msgstr "Erro de Pagamento"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_period
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_website_period
+msgid "Period"
+msgstr "Período"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/installation_schedule.py:99
+#, python-format
+msgid "Period not found! This field is required!"
+msgstr "Período não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.schedule_service
+msgid "Período"
+msgstr "Período"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_phone_partner
+msgid "Phone"
+msgstr "Telefone"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+#: model:ir.ui.view,arch_db:vehicle_service.schedule_service
+msgid "Placa"
+msgstr "Placa"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_plan_id_product
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_plan_id
+msgid "Plan"
+msgstr "Plano"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:341
+#, python-format
+msgid "Plan not found! This field is required!"
+msgstr "Plano não preenchido! Este campo é obrigatório"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.remove_product_price
+msgid "Plano:"
+msgstr "Plano:"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_plan_ids
+msgid "Plans"
+msgstr "Planos"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_plate
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_plate_vehicle
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_plate
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_plate
+msgid "Plate"
+msgstr "Placa"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:326
+#, python-format
+msgid "Plate Vehicle not found! This field is required!"
+msgstr "Placa do veículo não preenchido! Este campo é obrigatório"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:329
+#: code:addons/vehicle_service/models/vehicle_partner.py:40
+#: sql_constraint:vehicle.partner:0
+#, python-format
+msgid "Plate already registered!"
+msgstr "Placa já cadastrada!"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_kanban_view
+msgid "Plate:"
+msgstr "Placa:"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/sale_subscription.py:46
+#, python-format
+msgid "Please define a sale journal for the company \"%s\"."
+msgstr "Por favor defina um diário de vendas para a empresa \"%s\"."
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/sale.py:86
+#, python-format
+msgid "Please define an accounting sale journal for this company."
+msgstr "Por favor defina um diário de venda contábil para esta empresa."
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_price_product
+msgid "Price"
+msgstr "Preço"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:338
+#, python-format
+msgid "Price not found! This field is required!"
+msgstr "Preço não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_automatic_process
+msgid "Process Automatic"
+msgstr "Processo Automática"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.wizard_checkout_inherit
+msgid "Procurar Plano<span class=\"chevron\"/>"
+msgstr "Procurar Plano<span class=\"chevron\"/>"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_product_product
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_product_id_product
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_product_id
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_model_search
+msgid "Product"
+msgstr "Produto"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_product_template
+msgid "Product Template"
+msgstr "Modelo de Produto"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:335
+#, python-format
+msgid "Product not found! This field is required!"
+msgstr "Produto não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.schedule_service
+msgid "Protocolo"
+msgstr "Protocolo"
+
+#. module: vehicle_service
+#: model:ir.actions.act_window,name:vehicle_service.quick_sale_action
+#: model:ir.model.fields,field_description:vehicle_service.field_sale_order_quick_sale_id
+#: model:ir.ui.menu,name:vehicle_service.quick_sale_menu
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_tree
+msgid "Quick Sale"
+msgstr "Venda Rápida"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_renavam_vehicle
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_renavam
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_renavam
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+msgid "Renavam"
+msgstr "Renavam"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:332
+#, python-format
+msgid "Renavam Vehicle not found! This field is required!"
+msgstr "Renavam do veículo não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_kanban_view
+msgid "Renavam:"
+msgstr "Renavam:"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.view_partner_form_inherit
+msgid "Resale"
+msgstr "Revenda"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_resale_location
+msgid "Resale Location"
+msgstr "Local Revenda"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_reseller_id
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_website_reseller_id
+msgid "Reseller"
+msgstr "Revendedor"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/installation_schedule.py:102
+#, python-format
+msgid "Reseller not found! This field is required!"
+msgstr "Revendedor não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_form
+msgid "Return to Draft"
+msgstr "Retornar para Provisório"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+msgid "Revendedor"
+msgstr "Revendedor"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+msgid "Revendedor..."
+msgstr "Revendedor..."
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.wizard_checkout_inherit
+msgid "Revisar Pedido<span class=\"chevron\"/>"
+msgstr "Revisar Pedido<span class=\"chevron\"/>"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.view_production_lot_form_inherit
+msgid "SIM"
+msgstr "SIM"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_account_invoice_sale_id
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_sale_order_id
+msgid "Sale Order"
+msgstr "Pedido de Venda"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_sale_subscription
+msgid "Sale Subscription"
+msgstr "Subscrição de Venda"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_sale_order
+msgid "Sales Order"
+msgstr "Ordem de Venda"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_wizard_form
+msgid "Schedule"
+msgstr "Agendar"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+msgid "Schedule Installation"
+msgstr "Agendar Instalação"
+
+#. module: vehicle_service
+#: selection:quick.sale,state:0
+msgid "Scheduled"
+msgstr "Agendado"
+
+#. module: vehicle_service
+#: model:ir.ui.menu,name:vehicle_service.scheduling_menu
+msgid "Scheduling"
+msgstr "Agendamento"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_security_code_credit_card
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_security_code_credit_card
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_credit_card_security_code
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_security_code
+msgid "Security Code"
+msgstr "Código de Segurança"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:308
+#, python-format
+msgid "Security Code Credit Card not found! This field is required!"
+msgstr "Código de segurança do cartão de crédito não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/installation_schedule.py:227
+#, python-format
+msgid "Sem Contrato Cadastrado!"
+msgstr "Sem Contrato Cadastrado!"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/installation_schedule.py:174
+#, python-format
+msgid "Sem Equipamento Cadastrado!"
+msgstr "Sem Equipamento Cadastrado!"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/installation_schedule.py:210
+#, python-format
+msgid "Sem Revendedor Cadastrado!"
+msgstr "Sem Revendedor Cadastrado!"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_active_serial_number
+msgid "Serial Number"
+msgstr "Número de Série"
+
+#. module: vehicle_service
+#: model:ir.ui.menu,name:vehicle_service.service_root_menu
+msgid "Service"
+msgstr "Serviço"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.portal_scheduler
+msgid "Seus Agendamentos"
+msgstr "Seus Agendamentos"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_data_site
+msgid "Site Data"
+msgstr "Site Data"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_state
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_state
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_state_id_partner
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_state
+msgid "State"
+msgstr "Estado"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_street_partner
+msgid "Street"
+msgstr "Endereço"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_street2_partner
+msgid "Street2"
+msgstr "Complemento"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_product_product_recurring_invoice
+msgid "Subscription Product"
+msgstr "Produto de Assinatura"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.page_agendamento_instalacao
+#: model:ir.ui.view,arch_db:vehicle_service.schedule_service
+msgid "Tarde"
+msgstr "Tarde"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_product_product_template_subscription_id
+#: model:ir.model.fields,field_description:vehicle_service.field_product_template_template_subscription_id
+msgid "Template Subscription"
+msgstr "Template de Assinatura"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_data_site_term_user
+#: model:ir.ui.view,arch_db:vehicle_service.view_data_site_form
+msgid "Term Add User"
+msgstr "Term Add User"
+
+#. module: vehicle_service
+#: model:ir.ui.menu,name:vehicle_service.data_site_menu
+#: model:ir.ui.view,arch_db:vehicle_service.remove_title_terms
+msgid "Termos de Uso"
+msgstr "Termos de Uso"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:447
+#, python-format
+msgid "There is no email template for sale confirmation"
+msgstr "Não existe um modelo de email para a confirmação da venda."
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/sale_subscription.py:63
+#, python-format
+msgid "This invoice covers the following period: %s - %s"
+msgstr "A fatura cobre os seguintes períodos: %s - %s"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+msgid "Try Payment"
+msgstr "Pagar "
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_sim_user
+msgid "User"
+msgstr "Usuário"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_user_plataforma
+msgid "User Plataform"
+msgstr "Plataforma de Usuário"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+msgid "Utilizar Cartão Cadastrado <span class=\"fa fa-long-arrow-right\"/>"
+msgstr "Utilizar Cartão Cadastrado <span class=\"fa fa-long-arrow-right\"/>"
+
+#. module: vehicle_service
+#: model:ir.actions.act_window,name:vehicle_service.vehicle_partner_action
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_vehicle_id
+#: model:ir.ui.menu,name:vehicle_service.vehicle_menu
+#: model:ir.ui.menu,name:vehicle_service.vehicle_partner_menu
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_form
+#: model:ir.ui.view,arch_db:vehicle_service.installation_schedule_wizard_form
+#: model:ir.ui.view,arch_db:vehicle_service.quick_sale_form
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_form
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_search
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_tree
+msgid "Vehicle"
+msgstr "Veículo"
+
+#. module: vehicle_service
+#: model:ir.actions.act_window,name:vehicle_service.vehicle_category_action
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_category_search
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_category_tree
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_manufacturer_form
+msgid "Vehicle Category"
+msgstr "Categotia do Veículo"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_vehicle_data
+msgid "Vehicle Data"
+msgstr "Ano do Veículo"
+
+#. module: vehicle_service
+#: model:ir.actions.act_window,name:vehicle_service.vehicle_manufacturer_action
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_manufacturer_form
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_manufacturer_search
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_manufacturer_tree
+msgid "Vehicle Manufacturer"
+msgstr "Marca do Veículo"
+
+#. module: vehicle_service
+#: model:ir.actions.act_window,name:vehicle_service.vehicle_model_action
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_model_form
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_model_search
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_model_tree
+msgid "Vehicle Model"
+msgstr "Modelo do Veículo"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_vehicle_partner
+msgid "Vehicle Partner"
+msgstr "Veículo de Clientes"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_vehicle_partner_website
+msgid "Vehicle Partner to WebSite"
+msgstr "Vehicle Partner to WebSite"
+
+#. module: vehicle_service
+#: model:ir.actions.act_window,name:vehicle_service.vehicle_year_action
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_year_name
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_year_search
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_year_tree
+msgid "Vehicle Year"
+msgstr "Ano do Veículo"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_stock_production_lot_version
+msgid "Version"
+msgstr "Versão"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register
+#: model:ir.ui.view,arch_db:vehicle_service.credit_card_register_portal
+msgid "Visa"
+msgstr "Visa"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:205
+#: code:addons/vehicle_service/models/quick_sale.py:209
+#: code:addons/vehicle_service/models/quick_sale.py:215
+#: code:addons/vehicle_service/models/quick_sale.py:251
+#: code:addons/vehicle_service/models/quick_sale.py:515
+#: code:addons/vehicle_service/models/quick_sale.py:536
+#: code:addons/vehicle_service/models/res_partner.py:52
+#: code:addons/vehicle_service/models/res_partner.py:66
+#: code:addons/vehicle_service/models/res_partner.py:83
+#: code:addons/vehicle_service/models/vehicle_partner.py:53
+#: code:addons/vehicle_service/models/vehicle_partner.py:57
+#: code:addons/vehicle_service/models/vehicle_partner.py:63
+#, python-format
+msgid "WARNING"
+msgstr "Aviso"
+
+#. module: vehicle_service
+#: selection:quick.sale,state:0
+msgid "Waiting Confirmation"
+msgstr "Aguardando Confirmação"
+
+#. module: vehicle_service
+#: selection:quick.sale,state:0
+msgid "Waiting Payment"
+msgstr "Aguardando Pagamento"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:108
+#: code:addons/vehicle_service/models/quick_sale.py:114
+#: code:addons/vehicle_service/wizard/change_credit_card.py:36
+#: code:addons/vehicle_service/wizard/change_credit_card.py:42
+#, python-format
+msgid "Warning"
+msgstr "Aviso"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_installation_schedule_year_id
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_year_id_vehicle
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_website_year_id
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_partner_year_id
+#: model:ir.ui.menu,name:vehicle_service.vehicle_year_menu
+#: model:ir.ui.view,arch_db:vehicle_service.vehicle_partner_search
+msgid "Year"
+msgstr "Ano"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_change_credit_card_credit_card_year_expiration
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_credit_card_year_expiration
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_credit_card_year_expiration
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_credit_card_year_expiration
+msgid "Year Expiration"
+msgstr "Ano de Expiração"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/quick_sale.py:320
+#, python-format
+msgid "Year Vehicle not found! This field is required!"
+msgstr "Ano do veículo não preenchido! Este campo é obrigatório!"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_vehicle_model_year_ids
+msgid "Years"
+msgstr "Anos"
+
+#. module: vehicle_service
+#: code:addons/vehicle_service/models/sale_subscription.py:35
+#, python-format
+msgid "You must first select a Customer for Subscription %s!"
+msgstr "Você precisa primeiro selecionar um Cliente para a Assinatura %s!"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_quick_sale_zip_code_partner
+msgid "Zip Code"
+msgstr "CEP"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_account_invoice_log
+msgid "account.invoice.log"
+msgstr "account.invoice.log"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_change_credit_card
+msgid "change.credit.card"
+msgstr "change.credit.card"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_installation_active
+msgid "installation.active"
+msgstr "Instalação Ativa"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_installation_schedule
+msgid "installation.schedule"
+msgstr "installation.schedule"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_installation_website
+msgid "installation.website"
+msgstr "installation.website"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_instantBuyKey
+msgid "instantBuyKey"
+msgstr "instantBuyKey"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.change_credit_card_form
+#: model:ir.ui.view,arch_db:vehicle_service.view_activate_contract_dialog_form
+msgid "or"
+msgstr "ou"
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_orderKey
+msgid "orderKey"
+msgstr "orderKey"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_quick_sale
+msgid "quick.sale"
+msgstr "Venda Rápida"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_res_partner_credit_card
+msgid "res.partner.credit.card"
+msgstr "res.partner.credit.card"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_schedule_process
+msgid "schedule.process"
+msgstr "Processo de Agendamento"
+
+#. module: vehicle_service
+#: model:ir.ui.view,arch_db:vehicle_service.select_accept_terms
+msgid "termos e condições."
+msgstr "termos e condições."
+
+#. module: vehicle_service
+#: model:ir.model.fields,field_description:vehicle_service.field_res_partner_transactionKey
+msgid "transactionKey"
+msgstr "transactionKey"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_vehicle_category
+msgid "vehicle.category"
+msgstr "vehicle.category"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_vehicle_manufacturer
+msgid "vehicle.manufacturer"
+msgstr "Marca do Veículo"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_vehicle_model
+msgid "vehicle.model"
+msgstr "Modelo do Veículo"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_vehicle_type
+msgid "vehicle.type"
+msgstr "Tipo do Veículo"
+
+#. module: vehicle_service
+#: model:ir.model,name:vehicle_service.model_vehicle_year
+msgid "vehicle.year"
+msgstr "Ano do Veículo"
+

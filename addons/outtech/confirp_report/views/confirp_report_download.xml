@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="confirp_report_download_form" model="ir.ui.view">
+            <field name="name">confirp.report.download.form</field>
+            <field name="model">confirp.report.download</field>
+            <field name="arch" type="xml">
+                <form string="Download Confirp Report">
+                    <p>Confirp Report</p>
+                    <field name="filename" invisible="1" />
+                    <field name="data" filename="filename" />
+                    <footer>
+                        <button string="Fechar" class="oe_highlight" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

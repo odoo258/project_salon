@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="account_financial_report_cashsummary_operating_projected0" model="account.financial.html.report.line">
+            <field name="name">Cash flows from operating activities projected</field>
+            <field name="code">OPP</field>
+            <field name="sequence" eval="1"/>
+            <field name="parent_id" ref='account_reports.account_financial_report_cashsummary_net_increase0'/>
+            <field name="formulas">balance = RCP.balance + PS.balance</field>
+            <field name="level" eval="1" />
+            <field name="special_date_changer">strict_range</field>
+        </record>
+
+        <record id="account_financial_report_cashsummary_receivable_customers_projected0" model="account.financial.html.report.line">
+            <field name="name">Amount receivable from customers</field>
+            <field name="code">RCP</field>
+            <field name="sequence" eval="1"/>
+            <field name="parent_id" ref='account_financial_report_cashsummary_operating_projected0'/>
+            <field name="domain" eval="[('account_id.user_type_id.type', '=', 'receivable'), ('credit', '=', 0)]" />
+            <field name="formulas">balance = sum.debit</field>
+            <field name="level" eval="2" />
+            <field name="groupby"></field>
+            <field name="special_date_changer">strict_range</field>
+        </record>
+        <record id="account_financial_report_cashsummary_cash_payment_supplier_projected0" model="account.financial.html.report.line">
+            <field name="name">Projected payments from suppliers</field>
+            <field name="code">PS</field>
+            <field name="sequence" eval="2"/>
+            <field name="parent_id" ref='account_financial_report_cashsummary_operating_projected0'/>
+            <field name="domain" eval="[('account_id.user_type_id.type', '=', 'payable'), ('debit', '=', 0), ('reconciled', '&lt;&gt;', True)]" />
+            <field name="formulas">balance = -sum.credit</field>
+            <field name="level" eval="2" />
+            <field name="groupby"></field>
+            <field name="special_date_changer">strict_range</field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="salon_promotiongroup_view" model="ir.ui.view">
+            <field name="name">salon.promotiongroup.view</field>
+            <field name="model">salon.promotiongroup</field>
+            <field name="arch" type="xml">
+                <form string="Promotion Group">
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="info"/>
+                        </group>
+                        <notebook>
+                            <page string="Services Included">
+                                <field name="service_ids" widget="one2many_list" mode="tree" nolabel="1">
+                                    <tree editable="top">
+                                        <field name="services"/>
+                                    </tree>
+                                </field>
+                            </page>
+                         </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="salon_promotiongroup_view_search" model="ir.ui.view">
+            <field name="name">salon.promotiongroup.view</field>
+            <field name="model">salon.promotiongroup</field>
+            <field name="arch" type="xml">
+                <search string="Search Promotion Group">
+                    <separator orientation="vertical"/>
+                    <field name="name" select="1"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="salon_promotiongroup_view_tree" model="ir.ui.view">
+            <field name="name">salon.promotiongroup.tree</field>
+            <field name="model">salon.promotiongroup</field>
+            <field name="arch" type="xml">
+                <tree string="Promotion Group Information">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="salon_promotiongroup_action" model="ir.actions.act_window">
+            <field name="name">Promotion Group</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">salon.promotiongroup</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="salon_promotionmenu_menu" parent="salon_config_settings_menu" name="Promotions" sequence="4"/>
+
+        <menuitem id="salon_promotiongroup_menu" parent="salon_promotionmenu_menu"
+                  string="Groups" action="salon_promotiongroup_action"  sequence="1"/>
+
+    </data>
+</openerp>

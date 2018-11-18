@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    	<record id="view_bank_statement_form_ext" model="ir.ui.view">
+            <field name="name">account.bank.statement.form.ext</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_form"/>
+            <field name="arch" type="xml">
+            	<field name="company_id" position="after">
+                    <field name="amount_declared"/>
+                    <field name="value_difference_box" readonly="1"/>
+                </field>
+            </field>
+        </record>
+
+
+</odoo>

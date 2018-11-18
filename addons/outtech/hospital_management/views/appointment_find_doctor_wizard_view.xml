@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="appointment_find_doctor_wizard_view" model="ir.ui.view">
+            <field name="name">Appointment Find Doctor</field>
+            <field name="model">appointment.find.doctor.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Find Doctor for appointment">
+                    <group>
+                        <field name="phy_id"/>
+                    </group>
+                    <group colspan="4" col="4">
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                    </group>
+                    <footer>
+						   <button name="show_record" string="Show" type="object" class="btn-primary"/>
+                           <button name="cancel" string="Cancel" type="object" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_appointment_find_doctor_wizard" model="ir.actions.act_window">
+            <field name="name">Appointment Find Doctor</field>
+            <field name="res_model">appointment.find.doctor.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+   <!--<menuitem id="menu_reporting"-->
+                  <!--string="Reporting"-->
+                  <!--name ='Reporting'-->
+                  <!--parent="hospital_management.main_menu_health_care"-->
+                  <!--sequence="12"/>-->
+        <!--&lt;!&ndash;<menuitem id="menu_medical_medicament_reporting"&ndash;&gt;-->
+                  <!--&lt;!&ndash;action="medical_action_tree_medicament_reporting"&ndash;&gt;-->
+                  <!--&lt;!&ndash;parent="menu_reporting"&ndash;&gt;-->
+                  <!--&lt;!&ndash;sequence="0"/>&ndash;&gt;-->
+        <!--<menuitem id="menu_medical_evaluation_reporting"-->
+                  <!--action="action_medical_patient_evaluation_reporting"-->
+                  <!--parent="menu_reporting"-->
+                  <!--sequence="1"/>-->
+         <!--<menuitem id="menu_appointment_evaluation_health_wizard"-->
+                  <!--action="action_appointment_evaluation_health_wizard"-->
+                  <!--parent="menu_reporting"-->
+                  <!--sequence="2"/>-->
+        <!--<menuitem id="menu_appointment_find_doctor_wizard"-->
+                  <!--action="action_appointment_find_doctor_wizard"-->
+                  <!--parent="menu_reporting"-->
+                  <!--sequence="3"/>-->
+         <!--<menuitem id="menu_appointment_evaluation_per_prescription_wizard"-->
+                  <!--action="action_appointment_evaluation_per_prescription_wizard"-->
+                  <!--parent="menu_reporting"-->
+                  <!--sequence="4"/>-->
+         <!--<menuitem id="menu_appointment_evaluation_per_speciality_wizard"-->
+                  <!--action="action_appointment_evaluation_per_speciality_wizard"-->
+                  <!--parent="menu_reporting"-->
+                  <!--sequence="5"/>-->
+      
+
+    </data>
+</openerp>

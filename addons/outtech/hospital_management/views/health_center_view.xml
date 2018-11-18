@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="health_center_view_form" model="ir.ui.view">
+            <field name="name">health.center.view.</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//div[@name="div_address"]' position='after'>
+                    <field name="cnpj_cpf" required='0' placeholder="CPF/CNPJ" attrs="{'required' : [('type', '=', 'billing')]}"/>
+                </xpath>
+                <field name="function" position="after">
+                    <field name="relationship"/>
+                    <field name="relative_id"/>
+                </field>
+                <notebook>
+                    <page string="Medical">
+                        <group colspan="6" col="6">
+                            <field name="is_owner"/>
+                            <field name="is_doctor"/>
+                            <!--<field name="is_professional"/>-->
+                            <field name="is_institution"/>
+                            <field name="is_person" invisible="1"/>
+                            <field name="is_insurance_company" invisible="1"/>
+                        </group>
+                        <field name="insurance" colspan="4" widget="one2many_list" invisible="1"/>
+                    </page>
+                    <page string="Pets" attrs="{'invisible': [('is_owner', '==', False)]}">
+                        <field name="patient_ids" mode="kanban" context="{'default_owner_id': active_id}">
+                            <kanban>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div t-att-class="'oe_kanban_color_alert oe_kanban_global_click'">
+                                            <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"/>
+                                            <div class="o_kanban_image">
+                                                <img t-att-src="kanban_image('medical.patient', 'photo', record.id.value)"
+                                                     t-att-title="record.name.value"/>
+                                            </div>
+                                            <div class="oe_kanban_details">
+                                                <strong>
+                                                    <field name="name"/>
+                                                </strong>
+                                                <ul>
+                                                    <li t-if="record.ethnic_group.value">
+                                                        <field name="ethnic_group"/>
+                                                    </li>
+                                                    <li t-if="!record.ethnic_group.value">N/A</li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                    </page>
+                    <page attrs="{'invisible': [('is_owner', '=', False)]}" string="Survey">
+                        <group col="4">
+                            <field name="contact_method"/>
+                            <field name="contact_method_obs" attrs="{'required': [('contact_method', '=', 'other')]}"/>
+                        </group>
+                        <group col="4">
+                            <field name="how_did_find"/>
+                            <field name="how_did_find_obs" attrs="{'required': [('how_did_find', '=', 'other')]}"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+
+        <record id="action_health_center_owners_code" model="ir.actions.act_window">
+            <field name="name">Health Center</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_health_centers1" name="Health Centers" parent="main_menu_configuration"/>
+
+        <!--<menuitem id="health_center_main"-->
+                  <!--action="action_health_center_owners_code"-->
+                  <!--string="Health Center"-->
+                  <!--parent="menu_health_centers"-->
+                  <!--sequence="2"/>-->
+    </data>
+</openerp>
+

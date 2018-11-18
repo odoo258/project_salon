@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="map_quotation_form_view_wizard">
+        <field name="name">map_quotation_wizard</field>
+        <field name="model">map.quotation.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Make Quotation">
+                <group>
+                    <group>
+                        <field name="order_id" domain="[('id', 'in', context.get('order_ids'))]"
+                               invisible="context.get('invisible')"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Services">
+                            <field name="service_ids" nolabel="True"
+                                   domain="[('sale_order_line_id', '=', False), ('state', '=', 'draft'), ('admission_id', 'in', context.get('admission_ids'))]">
+                                <tree string="Map" decoration-muted="state=='draft'" decoration-bf="state=='schedule'"
+                                      decoration-info="state=='approved'" decoration-danger="state=='disapproved'"
+                                      decoration-success="state=='done'">
+                                    <field name="start_date"/>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="state"/>
+                                    <field name="sale_order_line_id" invisible="1"/>
+                                    <field name="order_id"/>
+                                    <field name="price" sum="price"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </group>
+                <footer>
+                    <button name="make_quotation" type="object" string="Make Quotation" class="oe_highlight"/>
+                        or
+                    <button special="cancel" string="Cancelar"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="map_quotation_wizard_action"
+        name="Make Quotation"
+        src_model="medical.inpatient.registration"
+        res_model="map.quotation.wizard"
+        view_mode="form"
+        target="new"
+        key2="client_action_multi"/>
+</odoo>

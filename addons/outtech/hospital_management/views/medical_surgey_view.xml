@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="medical_surgery_view_form" model="ir.ui.view">
+            <field name="name">medical.surgery.view.form</field>
+            <field name="model">medical.surgery</field>
+            <field name="arch" type="xml">
+                <form string="Surgery">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="description" required="1"/>
+                                <field name="pathology_id"/>
+                                <field name="classification"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <field name="age"/>
+                                <field name="surgeon_id"/>
+                                <field name="extra_info"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_surgery_view_tree" model="ir.ui.view">
+            <field name="name">medical.surgery.view.tree</field>
+            <field name="model">medical.surgery</field>
+            <field name="arch" type="xml">
+                <tree string="Surgery">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="pathology_id"/>
+                    <field name="classification"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_surgery" model="ir.actions.act_window">
+            <field name="name">Surgery Lists</field>
+            <field name="res_model">medical.surgery</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_appointments_invoice_wizard" model="ir.actions.act_window">
+            <field name="name">Create Invoice</field>
+            <field name="res_model">medical.appointments.invoice.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_medical_surgery"
+                  string="Surgery"
+                  name='Surgery'
+                  parent="hospital_management.main_menu_health_care"
+                  sequence="9"/>
+        <!--
+        Mapa / Mapa de Cirurgias
+        -->
+        <!--menuitem id="menu_surgery"
+                  action="action_medical_surgery"
+                  string="Surgery"
+                  parent="hospital_management.main_menu_laboratory"
+                  sequence="0"/-->
+    </data>
+</openerp>
+

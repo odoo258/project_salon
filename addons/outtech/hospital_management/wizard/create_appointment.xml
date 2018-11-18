@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="create_appointment_wizard">
+        <field name="name">create_appointment_wizard</field>
+        <field name="model">create.appointment.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Appointment">
+                <group>
+                    <group>
+                        <field name="owner_id" readonly="1"/>
+                        <field name="doctor_id" readonly="1"/>
+                        <field name="appointment_date" required="1" attrs="{'readonly': [('medical_procedure_id', '=', False)]}"/>
+                        <field name="building_id" required="1"/>
+                    </group>
+                    <group>
+                        <field name="patient_id" readonly="1"/>
+                        <field name="medical_procedure_id" required="1" />
+                        <field name="appointment_end" readonly="1"/>
+                        <field name="type" invisible="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_create_appointment" type="object" string="Create Appointment" class="oe_highlight"/>
+                        or
+                    <button special="cancel" string="Cancelar"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="create_appointment_action"
+        name="Create Appointment"
+        src_model="medical.map"
+        res_model="create.appointment.wizard"
+        view_mode="form"
+        target="new"
+    />
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_helpdesk_ticket_inherit_form" model="ir.ui.view">
+            <field name="name">helpdesk.ticket.inherit.form</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group/field[@name='tag_ids']" position="after">
+                    <field name="project_checked" invisible="1"/>
+                    <field name="project_id" attrs="{'invisible': [('project_checked', '=', False)]}" domain="[('partner_id', '=', partner_id)]"/>
+                </xpath>
+                <xpath expr="//form/header" position="inside">
+                    <button string="Create Task" name="create_task" type="object" class="oe_highlight" attrs="{'invisible': [('project_id', '=', False)]}"/>
+                </xpath>
+                <xpath expr="//form/sheet/field[@name='description']" position="after">
+                    <notebook>
+                        <page name="helpdesk_timesheet_page" string="Helpdesk Timesheet">
+                            <field name="helpdesk_timesheet_ids" context="{'default_project_id': project_id}">
+                                <tree editable="top">
+                                    <field name="date"/>
+                                    <field name="user_id"/>
+                                    <field name="name"/>
+                                    <field name="project_id"/>
+                                    <field name="unit_amount" sum="Total Time" string="Duration" widget="float_time"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="task_timesheet_page" string="Task Timesheet">
+                            <field name="task_timesheet_ids">
+                                <tree>
+                                    <field name="date"/>
+                                    <field name="user_id"/>
+                                    <field name="name"/>
+                                    <field name="unit_amount" string="Duration" widget="float_time"/>
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="hours_spent" widget="float_time"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+                <xpath expr="//form/sheet/div[@name='button_box']" position="inside">
+                    <field name="task_ids" invisible="1"/>
+                    <button class="oe_stat_button" type="object" name="show_ticket_tasks" icon="fa-tasks">
+                        <field name="task_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

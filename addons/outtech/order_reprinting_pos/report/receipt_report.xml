@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="receipt_report_document">
+            <t t-call="report.external_layout">
+                <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+                <div class="page">
+                    <div class="row">
+                    </div>
+
+                    <h2>
+                        <span >Receipt</span>
+                    </h2>
+
+                    <div class="row mb4 mt32">
+                        <div class="col-xs-6" t-if="o.pos_reference">
+                            <strong>Ref: </strong>
+                            <span t-esc="o.pos_reference"/>
+                        </div>
+                        <div class="col-xs-6" t-if="o.partner_id">
+                            <strong>Customer: </strong>
+                            <span t-field="o.partner_id.name"/>
+                        </div>
+                    </div>
+                    <div class="row mb4 mt4">
+                        <div class="col-xs-6" t-if="o.date_order">
+                            <strong>Date: </strong>
+                            <span t-esc="o.date_order"/>
+                        </div>
+                        <div class="col-xs-6" t-if="o.partner_id">
+                            <strong>Document: </strong>
+                            <span t-field="o.partner_id.cnpj_cpf"/>
+                        </div>
+                    </div>
+                    <div class="row mb4 mt4">
+                        <div class="col-xs-6">
+                            <strong>Date 2nd Document Path: </strong>
+                            <span t-esc="datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+                        </div>
+                    </div>
+                    <div class="row mb32 mt4">
+                        <div class="col-xs-6" t-if="o.user_id">
+                            <strong>User: </strong>
+                            <span t-esc="o.user_id.name"/>
+                        </div>
+                    </div>
+
+                    <!-- Is there a discount on at least one line? -->
+                    <t t-set="display_discount" t-value="any([l.discount for l in o.lines])"/>
+                    <t t-set="display_value_discount" t-value="any([l.valor_desconto for l in o.lines])"/>
+
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th class="text-right">Quantity</th>
+                                <th class="text-right">Unit Price</th>
+                                <th class="text-right">Disc.(%)</th>
+                                <th class="text-right">Disc.($)</th>
+                                <th class="text-right">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody class="invoice_tbody">
+                            <tr t-foreach="o.lines" t-as="l">
+                                <td><span t-field="l.product_id.name"/></td>
+                                <td class="text-right">
+                                    <span t-field="l.qty"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="l.price_unit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="l.discount"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="l.valor_desconto" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="l.price_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row">
+                        <div class="col-xs-4 pull-right">
+                            <table class="table table-condensed">
+                                <tr class="border-black">
+                                    <td><strong>Subtotal</strong></td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black">
+                                    <td><strong>Discount (R$)</strong></td>
+                                    <td class="text-right">
+                                        <span t-field="o.discount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black">
+                                    <td><strong>Discount (%)</strong></td>
+                                    <td class="text-right">
+                                        <span t-field="o.discount_percent"/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black">
+                                    <td><strong>Total</strong></td>
+                                    <td class="text-right">
+                                         <span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-4 pull-right mt16">
+                            <table class="table table-condensed">
+                                <tr t-foreach="o.statement_ids" t-as="s">
+                                    <t t-if="s.amount > 0">
+                                        <td ><strong><span t-field="s.journal_id.name"/></strong></td>
+                                        <td class="text-right" >
+                                            <span t-field="s.amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr t-foreach="o.statement_ids" t-as="s">
+                                    <t t-if="0 > s.amount">
+                                        <td ><strong>Change</strong></td>
+                                        <td class="text-right">
+                                            <span t-field="s.amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Discount</strong></td>
+                                    <td class="text-right">
+                                         <span t-field="o.total_discount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row" t-if="o.partner_id">
+                        <div class="col-xs-4 pull-right mt16">
+                            <h3>
+                                <strong>
+                                    Loyalty <span t-field="o.company_id.name"/>
+                                </strong>
+                            </h3>
+
+                            <h3>
+                                <span t-field="o.partner_id.name"/>
+                            </h3>
+                            <table class="table table-condensed">
+                                <tr>
+                                    <td><strong>Earned Points</strong></td>
+                                    <td class="text-right" >
+                                            <span t-field="o.points_won"/>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td ><strong>Spending Points</strong></td>
+                                    <td class="text-right">
+                                            <span t-field="o.points_spend"/>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Points</strong></td>
+                                    <td class="text-right">
+                                         <span t-field="o.partner_id.loyalty_points"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="receipt_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="order_reprinting_pos.receipt_report_document" t-lang="o.user_id.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

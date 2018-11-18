@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <record id="view_account_cash_flow_wizard_form_ext" model="ir.ui.view">
+            <field name="name">View Cash Flow Wizard Ext</field>
+            <field name="model">account.cash.flow.wizard</field>
+            <field name="inherit_id" ref="account_cash_flow.view_account_cash_flow_wizard_form"/>
+            <field name="arch" type="xml">
+                <field name="end_date" position="before">
+                    <field name="start_date"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

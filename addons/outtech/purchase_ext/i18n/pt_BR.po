@@ -1,0 +1,68 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* purchase_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-07 13:53+0000\n"
+"PO-Revision-Date: 2017-08-07 13:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_ext
+#: model:ir.actions.act_window,help:purchase_ext.action_partner_manufacturer_form
+msgid "Click to add a contact in your address book."
+msgstr "Clique para adicionar um contato no catálogo de endereços."
+
+#. module: purchase_ext
+#: model:ir.actions.act_window,name:purchase_ext.action_partner_manufacturer_form
+#: model:ir.ui.menu,name:purchase_ext.menu_procurement_management_manufacturer_name
+msgid "Manufacturer"
+msgstr "Fabricante"
+
+#. module: purchase_ext
+#: selection:purchase.order,picking_status:0
+msgid "Not Picking"
+msgstr "Não Recebido"
+
+#. module: purchase_ext
+#: model:ir.actions.act_window,help:purchase_ext.action_partner_manufacturer_form
+msgid "Odoo helps you easily track all activities related to\n"
+"                a manufacturer: discussions, history of purchases,\n"
+"                documents, etc."
+msgstr "Odoo ajuda você a acompanhar facilmente todas as atividades relacionadas\n"
+"                um fabricante: discussões, histórico de compras,\n"
+"                documentos, etc."
+
+#. module: purchase_ext
+#: selection:purchase.order,picking_status:0
+msgid "Parcial Picking"
+msgstr "Recebimento Parcial"
+
+#. module: purchase_ext
+#: selection:purchase.order,picking_status:0
+msgid "Picking"
+msgstr "Recebimento Completo"
+
+#. module: purchase_ext
+#: model:ir.model.fields,field_description:purchase_ext.field_purchase_order_picking_status
+msgid "Picking Status"
+msgstr "Situação de Recebimento"
+
+#. module: purchase_ext
+#: model:ir.model,name:purchase_ext.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de Compra"
+
+#. module: purchase_ext
+#: code:addons/purchase_ext/models/purchase.py:19
+#, python-format
+msgid "You cannot confirm a quotation with total price equal or lower than 0."
+msgstr "Você não pode confirmar uma compra com preço total menor ou igual a 0."
+

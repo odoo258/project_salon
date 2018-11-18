@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="report_posclosing"
+            string="Relatório Fechamento"
+            model="pos.session"
+            report_type="qweb-pdf"
+            file="pos_ext.report_pos_closing"
+            name="pos_ext.report_pos_closing"
+        />
+    </data>
+</odoo>

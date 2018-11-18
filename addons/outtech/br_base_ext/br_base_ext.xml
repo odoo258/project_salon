@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="outtech_menu_secondary" name="" inherit_id="br_base.trust_menu_secondary">
+             <xpath expr="div[@class='o_sub_menu_footer']" position="replace">
+                 <div class="o_sub_menu_footer"/>
+             </xpath>
+
+     </template>
+
+
+</odoo>

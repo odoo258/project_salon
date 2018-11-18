@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<odoo>
+
+    <record id="voucher_coupons_view_tree" model="ir.ui.view">
+        <field name="name">voucher.coupons.tree</field>
+        <field name="model">voucher.coupons</field>
+        <field name="arch" type="xml">
+            <tree string="Voucher Coupons">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="company_id" readonly="1"/>
+                <field name="user_id" readonly="1"/>
+                <field name="date" readonly="1"/>
+                <field name="date_limit"/>
+                <field name="partner_id"/>
+                <field name="amount"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="voucher_coupons_view" model="ir.ui.view">
+        <field name="name">voucher.coupons.form</field>
+        <field name="model">voucher.coupons</field>
+        <field name="arch" type="xml">
+            <form string="Voucher Coupons">
+                <sheet>
+                    <header>
+                        <button name="button_confirm"  string="Confirm Voucher Used" states="created" type="object" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="created,used"/>
+                    </header>
+                    <group>
+                        <field name="name" readonly="1" colspan="4"/>
+                        <field name="protocol" invisible="1" colspan="4"/>
+                    </group>
+                    <div>
+                        <group>
+                            <field name="company_id" readonly="1"/>
+                            <field name="user_id" readonly="1"/>
+                            <field name="date" readonly="1"/>
+                            <field name="date_limit" attrs="{'readonly': [('state', '=', 'used')]}"/>
+                        </group>
+                    </div>
+                    <div>
+                        <group>
+                            <field name="partner_id" attrs="{'readonly': [('state', '=', 'used')]}"/>
+                            <field name="amount" attrs="{'readonly': [('state', '=', 'used')]}"/>
+                        </group>
+                    </div>
+                    <div>
+                        <group>
+                            <field name="rule" colspan="4"/>
+                        </group>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_voucher_coupons" model="ir.actions.act_window">
+        <field name="name">Voucher Coupons</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">voucher.coupons</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_voucher_coupons_main" name="Voucher Coupons"/>
+    <menuitem id="menu_voucher_coupons_sub" parent="menu_voucher_coupons_main" name="Nota de Crédito"/>
+    <menuitem id="menu_voucher_coupons_action" action="action_voucher_coupons" parent="menu_voucher_coupons_sub" name="Coupons"/>
+
+
+     <record id="voucher_coupons_config_view_tree" model="ir.ui.view">
+        <field name="name">voucher.coupons.tree</field>
+        <field name="model">voucher.coupons.config</field>
+        <field name="arch" type="xml">
+            <tree string="Voucher Coupons Configuration">
+                <field name="name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="voucher_coupons_config_view" model="ir.ui.view">
+        <field name="name">voucher.coupons.config.form</field>
+        <field name="model">voucher.coupons.config</field>
+        <field name="arch" type="xml">
+            <form string="Voucher Coupons">
+                <sheet>
+                    <group>
+                        <field name="active"/>
+                        <field name="name" colspan="4"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_voucher_coupons_config" model="ir.actions.act_window">
+        <field name="name">Voucher Coupons Configuration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">voucher.coupons.config</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_voucher_coupons_config_sub" name="Voucher Configuration" parent="menu_voucher_coupons_main"/>
+    <menuitem id="menu_voucher_coupons_config_action" name="Configuration" action="action_voucher_coupons_config" parent="menu_voucher_coupons_config_sub"/>
+
+
+</odoo>

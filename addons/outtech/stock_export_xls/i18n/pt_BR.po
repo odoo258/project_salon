@@ -1,0 +1,179 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_export_xls
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-14 11:58+0000\n"
+"PO-Revision-Date: 2017-09-14 11:58+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_export_xls
+#: model:ir.ui.view,arch_db:stock_export_xls.wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: stock_export_xls
+#: model:ir.ui.view,arch_db:stock_export_xls.wizard_form
+msgid "Category"
+msgstr "Categoria"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_wizard_stock_history_create_uid_14836
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_wizard_stock_history_create_date_14842
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: stock_export_xls
+#: model:ir.model,name:stock_export_xls.model_wizard_stock_history
+msgid "Current Stock History"
+msgstr "Quantidade em Estoque por Local"
+
+#. module: stock_export_xls
+#: model:ir.ui.menu,name:stock_export_xls.export_excel
+msgid "Current stock in Excel"
+msgstr "Quantidade em Estoque por Local em Excel"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_wizard_stock_history_display_name
+msgid "Display Name"
+msgstr "Nome para Mostrar"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,help:stock_export_xls.field_product_product_split_method
+msgid "Equal : Cost will be equally divided.\n"
+"By Quantity : Cost will be divided according to product's quantity.\n"
+"By Current cost : Cost will be divided according to product's current cost.\n"
+"By Weight : Cost will be divided depending on its weight.\n"
+"By Volume : Cost will be divided depending on its volume."
+msgstr "Igual: O custo será dividido igualmente.\n"
+"Por Quantidade: O custo será dividido de acordo com a quantidade do produto.\n"
+"Por custo atual: O custo será dividido de acordo com o custo atual do produto.\n"
+"Por Peso: O custo será dividido dependendo do seu peso.\n"
+"Por Volume: O custo será dividido dependendo do seu volume."
+
+#. module: stock_export_xls
+#: model:ir.ui.view,arch_db:stock_export_xls.wizard_form
+msgid "Export Product with Stock Info"
+msgstr "Exportar Produtos com Informaçao de Estoque"
+
+#. module: stock_export_xls
+#: model:ir.actions.act_window,name:stock_export_xls.wizard_act
+msgid "Export product stock in Excel"
+msgstr "Quantidade de Produtos por Local em Excel"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_product_product_hs_code
+msgid "HS Code"
+msgstr "HS Code"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_wizard_stock_history_id_14844
+msgid "ID"
+msgstr "ID"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_product_product_landed_cost_ok
+msgid "Landed Costs"
+msgstr "Custos Adicionais"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_wizard_stock_history___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_wizard_stock_history_write_uid_14839
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_wizard_stock_history_write_date_14840
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_wizard_stock_history_location_id
+msgid "Location"
+msgstr "Local de Estoque"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_product_category_obj
+#: model:ir.model.fields,field_description:stock_export_xls.field_stock_warehouse_obj
+msgid "Obj"
+msgstr "Obj"
+
+#. module: stock_export_xls
+#: model:ir.model,name:stock_export_xls.model_res_partner
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_product_product_purchase_requisition
+msgid "Procurement"
+msgstr "Aquisição"
+
+#. module: stock_export_xls
+#: model:ir.model,name:stock_export_xls.model_product_product
+msgid "Product"
+msgstr "Produto"
+
+#. module: stock_export_xls
+#: model:ir.model,name:stock_export_xls.model_product_category
+msgid "Product Category"
+msgstr "Categoria de Produtos"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_product_product_warehouse_quantity
+msgid "Quantity per warehouse"
+msgstr "Quantity per warehouse"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_product_product_split_method
+msgid "Split Method"
+msgstr "Método de Separação"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,help:stock_export_xls.field_product_product_hs_code
+msgid "Standardized code for international shipping and goods declaration"
+msgstr "Standardized code for international shipping and goods declaration"
+
+#. module: stock_export_xls
+#: model:ir.model.fields,field_description:stock_export_xls.field_res_partner_supplier_id
+msgid "Supplier id"
+msgstr "Fornecedor id"
+
+#. module: stock_export_xls
+#: model:ir.model,name:stock_export_xls.model_stock_warehouse
+#: model:ir.model.fields,field_description:stock_export_xls.field_wizard_stock_history_category
+#: model:ir.model.fields,field_description:stock_export_xls.field_wizard_stock_history_warehouse
+#: model:ir.ui.view,arch_db:stock_export_xls.wizard_form
+msgid "Warehouse"
+msgstr "Armazém"
+
+#. module: stock_export_xls
+#: model:ir.ui.view,arch_db:stock_export_xls.wizard_form
+msgid "Wizard"
+msgstr "Wizard"
+
+#. module: stock_export_xls
+#: model:ir.model,name:stock_export_xls.model_ir_actions_report_xml
+msgid "ir.actions.report.xml"
+msgstr "ir.actions.report.xml"
+
+#. module: stock_export_xls
+#: model:ir.ui.view,arch_db:stock_export_xls.wizard_form
+msgid "or"
+msgstr "ou"
+

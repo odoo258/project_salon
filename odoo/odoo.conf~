@@ -1,0 +1,9 @@
+[options]
+; This is the password that allows database operations:
+; admin_passwd = admin
+db_host = localhost
+db_port = 5432
+db_user = odoo
+db_password = admin
+addons_path = /home/outtech/odoo10/addons,/home/outtech/odoo10/odoo/addons,/home/outtech/odoo10/addons_extra,/home/outtech/odoo10/addons_oca,/home/outtech/odoo10/addons_br
+xmlrpc_port = 8070

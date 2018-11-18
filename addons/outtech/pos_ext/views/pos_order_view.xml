@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_pos_payment_ext" model="ir.actions.act_window">
+        <field name="name">Payment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pos.make.payment</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="br_pos_order_form_view_ext" model="ir.ui.view">
+        <field name="name">br_pos_order.form.view</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="br_point_sale.br_pos_order_form_view"/>
+        <field name="arch" type="xml">
+                <button name="action_view_edocs" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </button>
+        </field>
+    </record>
+
+    <record id="view_pos_payment_inherit_ext" model="ir.ui.view">
+        <field name="name">view.pos.payment.inherit.ext</field>
+        <field name="model">pos.make.payment</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_payment"/>
+        <field name="arch" type="xml">
+              <field name="journal_id" position="attributes">
+                  <attribute name="context">{'refund_id':refund_id}</attribute>
+              </field>
+              <field name="journal_id" position="after">
+                  <field name="refund_id" invisible="1"/>
+              </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_pos_session_form_ext">
+            <field name="name">pos.session.form.view.ext</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+                <button name="action_pos_session_closing_control" position="after">
+                    <button name="change_value_declared" type="object" string="Change Values Declared"
+                        attrs="{'invisible' : ['|', ('user_pos_manager','=', False),('state', '!=', 'closing_control')]}"
+                        class="oe_highlight"/>
+                </button>
+                <button name="action_pos_session_closing_control" position="attributes">
+                    <attribute name="confirm">Confirmar Fechamento de Sessão?</attribute>
+                </button>
+                <xpath expr="//field[@name='statement_ids']/tree/field[@name='journal_id']" position="after">
+                    <field name="amount_declared"/>
+                    <field name="value_difference_box"/>
+                </xpath>
+                <field name="stop_at" position="after">
+                    <field name="user_closed" readonly="1"/>
+                    <field name="user_pos_manager" invisible="1"/>
+                    <field name="sales_total"/>
+                </field>
+                <field name="statement_ids" position="after">
+                    <separator string="Note" colspan="4"/>
+                    <field name="note" colspan="4" nolabel="1" attrs="{'readonly' : [('state', '=', 'closed')]}"/>
+                </field>
+
+            </field>
+        </record>
+
+    <record id="view_pos_pos_form_inherit" model="ir.ui.view">
+        <field name="name">pos.order.form.inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+
+            <header position="replace">
+                <header>
+                    <button name="%(action_pos_payment_ext)d" string="Pagamento" class="oe_highlight" type="action" states="draft" context="{'pos_session_id' : session_id, 'default_refund_id': refund_id}"/>
+                    <button name="action_pos_order_invoice" string="Invoice" type="object" states="paid" attrs="{'readonly': [('partner_id','=',False)]}"/>
+                    <button name="refund" string="Devolver Produtos" type="object"
+                        attrs="{'invisible':[('state','=','draft')]}"/>
+                    <button name="reprint_received_tef" type="object" string="Reprint Received TEF"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,paid,done" />
+                </header>
+            </header>
+            <button name="action_pos_order_invoice" position="replace"/>
+
+            <field name="fiscal_position_id" position="replace">
+                <field name="fiscal_position_id" options="{'no_create': True}" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                <field name="cpf_nfse" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+            </field>
+            <field name="pos_reference" position="after">
+                <field name="refund_id" readonly="1"/>
+            </field>
+
+            <field name="partner_id" position="replace">
+                <field name="partner_id" domain="[('customer', '=', True)]" context="{'search_default_customer':1}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            </field>
+
+            <field name="user_id" position="replace">
+                <field name="user_id" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                <field name="authorizer_user_id" />
+            </field>
+
+            <field name="location_id" position="replace">
+                <field name="location_id" widget="selection" groups="stock.group_stock_multi_locations" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            </field>
+
+            <field name="loyalty_points" position="replace">
+                <field name="loyalty_points" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                <field name="points_won" readonly="1"/>
+                <field name="points_spend" readonly="1"/>
+            </field>
+
+            <field name="statement_ids" position="replace">
+                <field name="statement_ids" colspan="4" nolabel="1">
+                    <tree editable="bottom" string="Statement lines">
+                        <field name="journal_id" attrs="{'readonly' : [('state_pos', '!=', 'draft')]}"/>
+                        <field name="statement_id" attrs="{'readonly' : [('state_pos', '!=', 'draft')]}"/>
+                        <field name="number_card" attrs="{'readonly' : [('state_pos', '!=', 'draft')]}"/>
+                        <field name="flag_card" attrs="{'readonly' : [('state_pos', '!=', 'draft')]}"/>
+                        <field name="number_installments" attrs="{'readonly' : [('state_pos', '!=', 'draft')]}"/>
+                        <field name="authorization_number" attrs="{'readonly' : [('state_pos', 'not in', ('draft','paid'))]}"/>
+                        <field name="amount" attrs="{'readonly' : [('state_pos', '!=', 'draft')]}"/>
+                        <field name="state_pos" invisible="1"/>
+                    </tree>
+                </field>
+            </field>
+
+            <notebook position="inside">
+                <page string="CFe SAT">
+                    <group colspan="4">
+                        <field name="chave_cfe" readonly="1"/>
+                        <field name="chave_cfe_can" readonly="1"/>
+                        <field name="num_sessao_cfe" readonly="1"/>
+                        <field name="xml_cfe_retorn" readonly="1"/>
+                        <field name="xml_cfe_cancel" readonly="1"/>
+                        <field name="log_sat" readonly="1">
+                            <tree string="Log Sat">
+                                <field name="log"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+
+    <!--<report-->
+            <!--id="action_report_pos_receipt_2via"-->
+            <!--string="Receipt 2via"-->
+            <!--model="pos.order"-->
+            <!--report_type="qweb-pdf"-->
+            <!--name="pos_ext.report_receipt_2via"-->
+            <!--file="pos_ext.report_receipt_2via"-->
+            <!--paperformat="discounts_in_pos.paperformat_posreceipt"-->
+        <!--/>-->
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical.model_medical_patient" model="ir.model">
+        <field name="website_form_label">Create a Patient</field>
+        <field name="website_form_access">False</field>
+    </record>
+
+    <function model="ir.model.fields" name="formbuilder_whitelist">
+        <value>medical.patient</value>
+        <value eval="[
+            'birthdate_date',
+            'gender',
+            'parent_id',
+            'id',
+            'name',
+            'email',
+            'phone',
+            'street',
+            'street2',
+            'city',
+            'zip',
+            'state_id',
+            'country_id',
+            'weight',
+            'weight_uom',
+        ]"/>
+    </function>
+
+    <function model="ir.model.fields" name="formbuilder_whitelist">
+        <value>res.partner</value>
+        <value eval="[
+            'parent_id',
+            'id',
+            'name',
+            'email',
+            'phone',
+            'street',
+            'street2',
+            'city',
+            'zip',
+            'state_id',
+            'country_id',
+            'birthdate_date',
+            'gender',
+            'weight',
+            'weight_uom',
+        ]"/>
+    </function>
+
+</odoo>

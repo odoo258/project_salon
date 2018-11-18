@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+        	<!--Form VehicleManufacturer-->
+		<record id="vehicle_manufacturer_form" model="ir.ui.view">
+		    <field name="name">Vehicle Manufacturer</field>
+		    <field name="model">vehicle.manufacturer</field>
+		    <field name="arch" type="xml">
+		        <form string="Vehicle Manufacturer">
+		            <sheet>
+			            <label for="name" class="oe_edit_only"/>
+						<h1>
+                        	<field name="name"/>
+                        </h1>
+			            <group string="Vehicle Category" col="2" colspan="2">
+				            <field name="category_ids"  nolabel="1"/>
+			            </group>
+		            </sheet>
+		        </form>
+		    </field>
+		</record>
+
+
+		    <!--Tree VehicleManufacturer-->
+		<record id="vehicle_manufacturer_tree" model="ir.ui.view">
+		    <field name="name">Vehicle Manufacturer</field>
+		    <field name="model">vehicle.manufacturer</field>
+		    <field name="arch" type="xml">
+		        <tree string="Vehicle Manufacturer">
+		            <field name="name"/>
+			        <field name="category_ids"/>
+		        </tree>
+		    </field>
+		</record>
+
+		    <!--Search VehicleManufacturer-->
+		<record id="vehicle_manufacturer_search" model="ir.ui.view">
+		    <field name="name">Vehicle Manufacturer</field>
+		    <field name="model">vehicle.manufacturer</field>
+		    <field name="arch" type="xml">
+		        <search string="Vehicle Manufacturer">
+			        <field name="name"/>
+		        </search>
+		    </field>
+		</record>
+
+    	    <!--Action VehicleManufacturer-->
+		<record id="vehicle_manufacturer_action" model="ir.actions.act_window">
+		    <field name="name">Vehicle Manufacturer</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">vehicle.manufacturer</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		</record>
+
+            <!--Menu VehicleManufacturer-->
+	    <menuitem id="vehicle_manufacturer_menu" name="Manufacturer" parent="vehicle_menu" action="vehicle_manufacturer_action" sequence="2"/>
+
+    </data>
+</odoo>

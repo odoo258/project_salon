@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>		
+		<record id="medical_drug_form" model="ir.ui.view">
+            <field name="name">medical.drug.form.form</field>
+            <field name="model">medical.drug.form</field>
+            <field name="arch" type="xml">
+                <form string="Medicament Form">
+                            <group colspan="4" col="4">
+								<field name="name"/>
+								<field name="code"/>
+								</group>
+                            </form>
+            </field>
+        </record>
+        
+        <record id="medical_drug_form_tree" model="ir.ui.view">
+            <field name="name">medical.drug.form.tree</field>
+            <field name="model">medical.drug.form</field>
+            <field name="arch" type="xml">
+                <tree string="Medicament Form">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                </tree>
+            </field>
+        </record>
+        
+        <record id="view_medical_drug_form_action" model="ir.actions.act_window">
+            <field name="name">Medicament Form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.drug.form</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+		<menuitem id="menu_medication_drug_form" action="view_medical_drug_form_action" sequence="5"
+		 parent="menu_medicament"/>
+
+        </data>
+</openerp>

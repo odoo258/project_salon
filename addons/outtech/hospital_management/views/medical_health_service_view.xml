@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+		<record id="medical_health_service_line_view_form" model="ir.ui.view">
+            <field name="name">medical.health_service.line.view.form</field>
+            <field name="model">medical.health_service.line</field>
+            <field name="arch" type="xml">
+                <form string = "Medical Service Line">
+            					<group>
+            					<field name="to_invoice"/>
+								<field name="desc"/>
+								<field name="product_id"/>
+								<field name="qty"/>
+								<field name="from_date"/>
+								<field name="to_date"/>
+								</group>
+			     </form>
+			</field>
+		</record>
+
+        <record id="medical_health_service_view_form" model="ir.ui.view">
+            <field name="name">medical.health_service.view.form</field>
+            <field name="model">medical.health_service</field>
+            <field name="arch" type="xml">
+				<form string="Service" version="7.0">
+					<header>
+						<button name="button_set_to_confirm" string="Confirm" states="draft" type="object"/>
+						<field name="state" widget="statusbar" statusbar_visible="draft,confirmed"/>
+					</header>
+					<group colspan="8" col="8">
+						<field name="name"/>
+						<field name="desc"/>
+						<field name="patient_id"/>
+						<field name="service_date"/>
+						<field name="service_line_ids" nolabel="1" colspan="8">
+							<tree>
+								<field name="to_invoice"/>
+								<field name="desc"/>
+								<field name="product_id"/>
+								<field name="qty"/>
+								<field name="from_date"/>
+								<field name="to_date"/>
+							</tree>
+                        </field>
+					</group>
+				</form>
+            </field>
+        </record>
+
+
+
+
+		<record id="medical_health_service_view_tree" model="ir.ui.view">
+            <field name="name">medical.health_service.line.view.tree</field>
+            <field name="model">medical.health_service.line</field>
+            <field name="arch" type="xml">
+              	<tree string="Service Line">
+					<field name="to_invoice"/>
+					<field name="desc"/>
+					<field name="product_id"/>
+					<field name="qty"/>
+					<field name="from_date"/>
+					<field name="to_date"/>
+				</tree>
+            </field>
+        </record>
+
+
+		<record id="medical_health_service_view_tree" model="ir.ui.view">
+            <field name="name">medical.health_service.view.tree</field>
+            <field name="model">medical.health_service</field>
+            <field name="arch" type="xml">
+              <tree string="Service">
+					<field name="name"/>
+					<field name="desc"/>
+					<field name="patient_id"/>
+					<field name="service_date"/>
+					<field name="state"/>
+			  </tree>
+            </field>
+        </record>
+
+		<record id="view_medical_service_ceate_invoie_view" model="ir.ui.view">
+				<field name="name">view.medical.service.create.invoice</field>
+            <field name="model">medical.health.service.invoice</field>
+            <field name="arch" type="xml">
+            	<form string="Create Invoice">
+            		<separator colspan="4" string="Do you want to generate the Invoice(s) ?"/>
+                    <newline/>
+                    <separator string="Create Invoice" colspan="6"/>
+                    <button special="cancel" string="Cancel" class="oe_highlight" />
+                       or 
+                    <button name="create_medical_service_invoice" string="Create Invoice" type="object" class="oe_highlight" />
+				</form>
+			</field>
+		</record>
+
+
+	<act_window
+        id="action_create_medical_service_invoice"
+        name="Create Invoice"
+        res_model="medical.health.service.invoice"
+        src_model="medical.health_service"
+        view_mode="form"
+        target= "new"
+        />
+    
+
+		<record id="action_medical_health_service" model="ir.actions.act_window">
+            <field name="name">Medical Service</field>
+            <field name="res_model">medical.health_service</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+		<menuitem id="menu_medical_health_service"
+                  string="Medical Service"
+                  name ='Medical Service'
+                  parent="hospital_management.main_menu_health_care"
+                  sequence="11"/>
+                  
+		<menuitem id="menu_health_service"
+                  action="action_medical_health_service"
+                  string="Medical Service"
+                  parent="menu_medical_health_service"
+                  sequence="1"/>
+    </data>
+</openerp>
+

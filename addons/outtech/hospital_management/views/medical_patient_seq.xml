@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="patient_registration_seq" model="ir.sequence">
+            <field name="name">Patient Seq</field>
+            <field name="code">medical.patient</field>
+            <field name="prefix">PAC</field>
+            <field name="padding">2</field>
+        </record>
+
+        <record id="admission_service_seq" model="ir.sequence">
+            <field name="name">Admission Service Seq</field>
+            <field name="code">medical.inpatient.service.seq</field>
+            <field name="prefix">OS</field>
+            <field name="padding">5</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,1981 @@
+	# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-09 21:20+0000\n"
+"PO-Revision-Date: 2018-01-09 21:20+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_supplier_invoice_count
+msgid "# Vendor Bills"
+msgstr "# Contas de Fornecedor"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_purchase_order_count
+msgid "# of Purchase Order"
+msgstr "# de Ordem de Compra"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:90
+#, python-format
+msgid "% discount"
+msgstr "% desconto"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount_ranking
+msgid "<b>Total de Decontos</b>"
+msgstr "<b>Total de Decontos</b>"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount_ranking
+msgid "<b>Total de Desconto em (%)</b>"
+msgstr "<b>Total de Desconto em (%)</b>"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount_ranking
+msgid "<b>Total de Desconto em Valor</b>"
+msgstr "<b>Total de Desconto em Valor</b>"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount_ranking
+msgid "<b>Vendedor</b>"
+msgstr "<b>Vendedor</b>"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "<br/>\n"
+"                                    <strong>PDV: </strong>"
+msgstr "<br/>\n"
+"                                    <strong>PDV: </strong>"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "<br/>\n"
+"                        <strong>Caixa Fechado por: </strong>"
+msgstr "<br/>\n"
+"                        <strong>Caixa Fechado por: </strong>"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "<br/>\n"
+"                        <strong>Diferença Dinheiro: </strong>"
+msgstr "<br/>\n"
+"                        <strong>Diferença Dinheiro: </strong>"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "<br/>\n"
+"                        <strong>Saldo de Fechamento Real: </strong>"
+msgstr "<br/>\n"
+"                        <strong>Saldo de Fechamento Real: </strong>"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "<br/>\n"
+"                        <strong>Situação: </strong>"
+msgstr "<br/>\n"
+"                        <strong>Situação: </strong>"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "<strong>Responsável: </strong>"
+msgstr "<strong>Responsável: </strong>"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "<strong>Saldo de Abertura: </strong>"
+msgstr "<strong>Saldo de Abertura: </strong>"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "<strong>do </strong>"
+msgstr "<strong>do </strong>"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2330
+#, python-format
+msgid "A password is not configured for this type of authorization. Please call the Manager."
+msgstr "Uma senha não está configurada para este tipo de autorização. Por favor chamar o Gerente."
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/account_bank_statement.py:102
+#: code:addons/pos_ext/models/account_bank_statement.py:105
+#, python-format
+msgid "A selected move line was already reconciled."
+msgstr "A linha de movimento já foi reconciliada."
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_account_move
+msgid "Account Entry"
+msgstr "Lançamento Contábil"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_active_code_sat
+msgid "Active Code Sat"
+msgstr "Ativar código SAT"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_active_sat
+msgid "Active SAT"
+msgstr "SAT Ativo"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/cliente_pos.xml:42
+#, python-format
+msgid "Address"
+msgstr "Endereço"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_pay_installments
+msgid "Allow payment in installments"
+msgstr "Permitir Pagamento Parcelado"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_bank_statement_amount_declared
+msgid "Amount Declared"
+msgstr "Quantidade declarada"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_line_pos_amount_total
+msgid "Amount Total"
+msgstr "Valor Total"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Aprovador"
+msgstr "Aprovador"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1817
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1957
+#: model:ir.model.fields,field_description:pos_ext.field_account_bank_statement_line_authorization_number
+#: model:ir.model.fields,field_description:pos_ext.field_account_move_authorization_number
+#: model:ir.model.fields,field_description:pos_ext.field_account_move_line_authorization_number_rel
+#, python-format
+msgid "Authorization Number"
+msgstr "Número de Autorização"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1821
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1961
+#, python-format
+msgid "Authorization Number not found!"
+msgstr "Número de Autorização não encontrado!"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_authorizer_user_id
+msgid "Authorizer User"
+msgstr "Usuário Autorizador"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2127
+#, python-format
+msgid "Autorizar crédito para cliente com saldo devedor."
+msgstr "Consultar Gerência"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1752
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1785
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1898
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1910
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1925
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2038
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2050
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2162
+#, python-format
+msgid "Aviso!"
+msgstr "Aviso!"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:186
+#, python-format
+msgid "Back"
+msgstr "Voltar"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_is_password_backspace
+msgid "Backspace"
+msgstr "Backspace"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_account_bank_statement
+msgid "Bank Statement"
+msgstr "Extrato Bancário"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Linha de Extrato Bancário"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_banner_name
+msgid "Banner Name"
+msgstr "Nome da Bandeira"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_bank_statement_value_difference_box
+msgid "Box with Difference"
+msgstr "Caixa com Diferença"
+
+#. module: pos_ext
+#: selection:account.journal,sat_payment_mode:0
+msgid "CARTAO CREDITO"
+msgstr "CARTAO CREDITO"
+
+#. module: pos_ext
+#: selection:account.journal,sat_payment_mode:0
+msgid "CARTAO DEBITO"
+msgstr "CARTAO DEBITO"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.view_pos_pos_form_inherit
+msgid "CFe SAT"
+msgstr "CFe SAT"
+
+#. module: pos_ext
+#: selection:account.journal,sat_payment_mode:0
+msgid "CHEQUE"
+msgstr "CHEQUE"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_company_cnpj_software_house
+msgid "CNPJ Software House"
+msgstr "CNPJ Software House"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1126
+#, python-format
+msgid "CNPJ do cliente"
+msgstr "CNPJ do cliente"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1131
+#, python-format
+msgid "CNPJ inválido!"
+msgstr "CNPJ inválido!"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:60
+#, python-format
+msgid "CNPJ:"
+msgstr "CNPJ:"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:271
+#: code:addons/pos_ext/static/src/xml/pos.xml:284
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_cpf_nfse
+#, python-format
+msgid "CPF"
+msgstr "CPF"
+
+#. module: pos_ext
+#: model:ir.model.fields,help:pos_ext.field_pos_order_cpf_nfse
+msgid "CPF do cliente"
+msgstr "CPF do cliente"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:832
+#: code:addons/pos_ext/static/src/js/pos_ext.js:859
+#: code:addons/pos_ext/static/src/js/pos_ext.js:876
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1106
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2269
+#, python-format
+msgid "CPF inválido!"
+msgstr "CPF inválido!"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:827
+#: code:addons/pos_ext/static/src/js/pos_ext.js:854
+#: code:addons/pos_ext/static/src/js/pos_ext.js:871
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1101
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2263
+#, python-format
+msgid "CPF na Nota Paulista"
+msgstr "CPF na Nota Paulista"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1168
+#, python-format
+msgid "CPF/CNPJ inválido!"
+msgstr "CPF/CNPJ inválido!"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1147
+#, python-format
+msgid "CPF/CNPJ na Nota Paulista"
+msgstr "CPF/CNPJ na Nota Paulista"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:57
+#, python-format
+msgid "CPF:"
+msgstr "CPF:"
+
+#. module: pos_ext
+#: selection:account.journal,sat_payment_mode:0
+msgid "CREDITO LOJA"
+msgstr "CREDITO LOJA"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/cliente_pos.xml:10
+#: model:ir.ui.view,arch_db:pos_ext.report_discount_allowed_wizard
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:27
+#, python-format
+msgid "Cancelar Cupom"
+msgstr "Cancelar Cupom"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_card_banner_ids
+msgid "Card Banner"
+msgstr "Bandeira do Cartão"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:166
+#, python-format
+msgid "Change"
+msgstr "Troco"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.view_pos_session_form_ext
+msgid "Change Values Declared"
+msgstr "Trocar valores declarados"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:141
+#, python-format
+msgid "Change:"
+msgstr "Troco:"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_chave_cfe
+msgid "Chave CFe"
+msgstr "Chave CFe"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:912
+#: code:addons/pos_ext/static/src/js/pos_ext.js:949
+#, python-format
+msgid "Chave de Cupom"
+msgstr "Chave de Cupom"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:899
+#: code:addons/pos_ext/static/src/js/pos_ext.js:936
+#, python-format
+msgid "Chave inválido!"
+msgstr "Chave inválido!"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1586
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1640
+#, python-format
+msgid "Check your internet connection and try again."
+msgstr "Verifique sua conexão com a internet e tente novamente."
+
+#. module: pos_ext
+#: model:ir.actions.act_window,help:pos_ext.action_installments_form
+msgid "Click to configure your monthly installments."
+msgstr "Clique para configurar suas parcelas mensais."
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:52
+#, python-format
+msgid "Cliente:"
+msgstr "Cliente:"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_pos_session_id
+msgid "Config POS"
+msgstr "Config PDV"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.view_pos_company_form
+msgid "Conta de Transferencia"
+msgstr "Conta de Transferencia"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_contact_method
+msgid "Contact Method"
+msgstr "Melhor Meio de Contato"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_contact_method_obs
+msgid "Contact Method Observation"
+msgstr "Observação"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_card_banner_create_uid
+#: model:ir.model.fields,field_description:pos_ext.field_hw_sat_create_uid
+#: model:ir.model.fields,field_description:pos_ext.field_monthly_installments_create_uid
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_line_pos_create_uid
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_pos_create_uid
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_log_create_uid
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_report_create_uid
+#: model:ir.model.fields,field_description:pos_ext.field_res_holiday_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_card_banner_create_date
+#: model:ir.model.fields,field_description:pos_ext.field_hw_sat_create_date
+#: model:ir.model.fields,field_description:pos_ext.field_monthly_installments_create_date
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_line_pos_create_date
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_pos_create_date
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_log_create_date
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_report_create_date
+#: model:ir.model.fields,field_description:pos_ext.field_res_holiday_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: pos_ext
+#: selection:account.bank.statement.line,type_collection:0
+msgid "Credit"
+msgstr "Crédito"
+
+#. module: pos_ext
+#: selection:account.bank.statement.line,type_collection:0
+msgid "Credit Installment"
+msgstr "Prestação de Crédito"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:902
+#, python-format
+msgid "Cupom Cancelado com sucesso!"
+msgstr "Cupom Cancelado com sucesso!"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:939
+#, python-format
+msgid "Cupom Reimpressão com sucesso!"
+msgstr "Cupom Reimpressão com sucesso!"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:221
+#: code:addons/pos_ext/static/src/xml/pos.xml:256
+#, python-format
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/account_payment.py:33
+#, python-format
+msgid "Customer Payment"
+msgstr "Pagamento de Cliente"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/account_payment.py:35
+#, python-format
+msgid "Customer Refund"
+msgstr "Reembolso de Cliente"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:711
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_default_account_id
+#, python-format
+msgid "Customer Transitory Account"
+msgstr "Conta Transitória de Cliente"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2120
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2144
+#, python-format
+msgid "Customer doesn't has wallet payment authorization."
+msgstr "Cliente não tem autorização para pagamento com carteira."
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2119
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2143
+#, python-format
+msgid "Customer not allowed!"
+msgstr "Bloqueado"
+
+#. module: pos_ext
+#: selection:account.journal,sat_payment_mode:0
+msgid "DINHEIRO"
+msgstr "DINHEIRO"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "Data"
+msgstr "Data"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Data do Pedido"
+msgstr "Data do Pedido"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_holiday_date
+msgid "Date"
+msgstr "Data"
+
+#. module: pos_ext
+#: selection:account.bank.statement.line,type_collection:0
+msgid "Debit"
+msgstr "Débito"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_session_declared_value
+#: model:ir.model.fields,field_description:pos_ext.field_pos_session_user_pos_manager
+msgid "Declared Value"
+msgstr "Valor Declarado"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_payment_mode_id
+msgid "Default Payment Mode"
+msgstr "Modo de Pagamento Padrão"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:142
+#, python-format
+msgid "Desconto"
+msgstr "Desconto"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Desconto (%)"
+msgstr "Desconto (%)"
+
+#. module: pos_ext
+#: model:ir.actions.act_window,name:pos_ext.action_report_discount
+#: model:ir.ui.menu,name:pos_ext.menu_report_discount
+msgid "Desconto Concedido"
+msgstr "Desconto Concedido"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Desconto Total(%)"
+msgstr "Desconto Total(%)"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Desconto Total(R$)"
+msgstr "Desconto Total(R$)"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Desconto Valor"
+msgstr "Desconto Valor"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Descontos Concedidos"
+msgstr "Descontos Concedidos"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_holiday_description
+msgid "Description"
+msgstr "Descrição"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "Diferença"
+msgstr "Diferença"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:59
+#, python-format
+msgid "Diferença no valor de (%s) - Não é possivel fechar caixa com alguma diferença!"
+msgstr "Diferença no valor de (%s) - Não é possivel fechar caixa com alguma diferença!"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_is_password_discount
+msgid "Discount"
+msgstr "Desconto"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.res_users_form_view_pos_ext
+msgid "Discount Permission"
+msgstr "Permitir desconto"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:146
+#, python-format
+msgid "Discount:"
+msgstr "Desconto:"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_card_banner_display_name
+#: model:ir.model.fields,field_description:pos_ext.field_hw_sat_display_name
+#: model:ir.model.fields,field_description:pos_ext.field_monthly_installments_display_name
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_line_pos_display_name
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_pos_display_name
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_log_display_name
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_report_display_name
+#: model:ir.model.fields,field_description:pos_ext.field_res_holiday_display_name
+msgid "Display Name"
+msgstr "Nome para Mostrar"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "Diário"
+msgstr "Diário"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_is_doctor
+msgid "Doctor"
+msgstr "Veterinário"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_domiciliary_id
+msgid "Domiciliary id"
+msgstr "Domiciliary id"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:164
+#, python-format
+msgid "Due"
+msgstr "Total"
+
+#. module: pos_ext
+#: model:ir.model.fields,help:pos_ext.field_pos_config_library_path_sat
+msgid "EX: /usr/lib/libbemasat.so"
+msgstr "EX: /usr/lib/libbemasat.so"
+
+#. module: pos_ext
+#: model:ir.model.fields,help:pos_ext.field_pos_config_active_code_sat
+msgid "EX: 123456789"
+msgstr "EX: 123456789"
+
+#. module: pos_ext
+#: model:ir.model.fields,help:pos_ext.field_account_journal_sat_payment_mode
+msgid "EX: DINHEIRO = '01'                                                                CHEQUE = '02'                                                                CARTAO_CREDITO = '03'                                                                CARTAO_DEBITO = '04'                                                                CREDITO_LOJA = '05'                                                                VALE_ALIMENTACAO = '10'                                                                VALE_REFEICAO = '11'                                                                VALE_PRESENTE = '12'                                                                VALE_COMBUSTIVEL = '13'                                                                OUTROS = '99'"
+msgstr "EX: DINHEIRO = '01'                                                                CHEQUE = '02'                                                                CARTAO_CREDITO = '03'                                                                CARTAO_DEBITO = '04'                                                                CREDITO_LOJA = '05'                                                                VALE_ALIMENTACAO = '10'                                                                VALE_REFEICAO = '11'                                                                VALE_PRESENTE = '12'                                                                VALE_COMBUSTIVEL = '13'                                                                OUTROS = '99'"
+
+#. module: pos_ext
+#: model:ir.model.fields,help:pos_ext.field_pos_config_model_printer_sat
+msgid "EX: Models=(epson-tm-t20, bematech-mp4200th, daruma-dr700, elgin-i9)"
+msgstr "EX: Models=(epson-tm-t20, bematech-mp4200th, daruma-dr700, elgin-i9)"
+
+#. module: pos_ext
+#: model:ir.model.fields,help:pos_ext.field_pos_config_parameters_print_sat
+msgid "EX: Serial:(/dev/ttyS42:4200,8,1,N) ou Rede(192.168.0.165:9100)"
+msgstr "EX: Serial:(/dev/ttyS42:4200,8,1,N) ou Rede(192.168.0.165:9100)"
+
+#. module: pos_ext
+#: model:ir.model.fields,help:pos_ext.field_pos_config_info_sat
+msgid "EX: Tributos Aprox R$ Fonte IBPT Fed: @federal Est: @estadual Mun: @municial - Valores serão colocado no lugar as variveis (@federal,@estadual,@municipal)"
+msgstr "EX: Tributos Aprox R$ Fonte IBPT Fed: @federal Est: @estadual Mun: @municial - Valores serão colocado no lugar as variveis (@federal,@estadual,@municipal)"
+
+#. module: pos_ext
+#: model:ir.model.fields,help:pos_ext.field_pos_config_sign_ac_sat
+msgid "EX: dZXFmGq2V0W5C2muk2E6U1CI8mMzcThNKZoAVhknRPR5BvQtMFAo8cUQOJZA5DFil5fkb6XqhZNszms6/KvZTh+NJ1ZvdYnRMBxJ19WRheMNyMxtzZz72b1IbVNGPedU46lWuXDd83kb+O4GOU6l0DSTQE1Nv2jNSLCQQtYY2LMN7yqCL3IRYSaA2UuDmezk/szP02+nB3sccKECV05QCbVc42qxzsgD5xN8IH202m5np51Cocg+rDm1LdytrJpBbetIyUUHaeponC1bnDBMKn/AvvkF4mgD+3rseHqd7S0oOdDqFOnQ8J+ZvAG1WA+7Q1mdnXyWjgsbbJsOxXefAA=="
+msgstr "EX: dZXFmGq2V0W5C2muk2E6U1CI8mMzcThNKZoAVhknRPR5BvQtMFAo8cUQOJZA5DFil5fkb6XqhZNszms6/KvZTh+NJ1ZvdYnRMBxJ19WRheMNyMxtzZz72b1IbVNGPedU46lWuXDd83kb+O4GOU6l0DSTQE1Nv2jNSLCQQtYY2LMN7yqCL3IRYSaA2UuDmezk/szP02+nB3sccKECV05QCbVc42qxzsgD5xN8IH202m5np51Cocg+rDm1LdytrJpBbetIyUUHaeponC1bnDBMKn/AvvkF4mgD+3rseHqd7S0oOdDqFOnQ8J+ZvAG1WA+7Q1mdnXyWjgsbbJsOxXefAA=="
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1190
+#, python-format
+msgid "Empty Serial/Lot Number"
+msgstr "Número de Serial/Lote Vazio"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_report_end_date
+msgid "End Date"
+msgstr "Data Final"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:643
+#, python-format
+msgid "Escolher Vendedor"
+msgstr "Escolher Vendedor"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:194
+#, python-format
+msgid "Fiscal Coupom"
+msgstr "Cupom Fiscal"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_bank_statement_line_flag_card
+msgid "Flag Card"
+msgstr "Bandeira do Cartão"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_discount_ranking_wizard
+msgid "Gerar relatório de Ranking de Descontos."
+msgstr "Gerar relatório de Ranking de Descontos."
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_discount_allowed_wizard
+msgid "Gerar relatório de desconto concedido."
+msgstr "Gerar Relatório de Desconto Concedido."
+
+#. module: pos_ext
+#: model:ir.actions.act_window,name:pos_ext.action_res_holiday
+#: model:ir.ui.menu,name:pos_ext.res_holiday_menu
+#: model:ir.ui.view,arch_db:pos_ext.res_holiday_form
+#: model:ir.ui.view,arch_db:pos_ext.res_holiday_tree
+msgid "Holidays"
+msgstr "Feriados"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_how_did_find
+msgid "How did you find us?"
+msgstr "Como você nos encontrou?"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_card_banner_id
+#: model:ir.model.fields,field_description:pos_ext.field_hw_sat_id
+#: model:ir.model.fields,field_description:pos_ext.field_monthly_installments_id
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_line_pos_id
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_pos_id
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_log_id
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_report_id
+#: model:ir.model.fields,field_description:pos_ext.field_res_holiday_id
+msgid "ID"
+msgstr "Identificação"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2126
+#, python-format
+msgid "Blocked"
+msgstr "Bloqueado"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2309
+#, python-format
+msgid "Incorrect Password"
+msgstr "Senha Incorreta"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_info_sat
+msgid "Info Sat"
+msgstr "Info SAT"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_monthly_installments_name
+msgid "Installment"
+msgstr "Parcela"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_is_institution
+msgid "Institution"
+msgstr "Clínica"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_insurance
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_insurance_ids
+msgid "Insurance"
+msgstr "Plano de Saúde"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_is_insurance_company
+msgid "Insurance Company"
+msgstr "Seguro Compania"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:229
+#, python-format
+msgid "Invoice"
+msgstr "Fatura"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_is_contingency
+msgid "Is Contingency"
+msgstr "É Contingência"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_is_tef
+msgid "Is Tef"
+msgstr "É TEF"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_account_journal
+#: model:ir.model.fields,field_description:pos_ext.field_card_banner_journal_id
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_line_pos_journal_id
+msgid "Journal"
+msgstr "Diário"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_account_move_line
+msgid "Journal Item"
+msgstr "Item de Diário"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_card_banner___last_update
+#: model:ir.model.fields,field_description:pos_ext.field_hw_sat___last_update
+#: model:ir.model.fields,field_description:pos_ext.field_monthly_installments___last_update
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_line_pos___last_update
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_pos___last_update
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_log___last_update
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_report___last_update
+#: model:ir.model.fields,field_description:pos_ext.field_res_holiday___last_update
+msgid "Last Modified on"
+msgstr "Última atualização em"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_card_banner_write_uid
+#: model:ir.model.fields,field_description:pos_ext.field_hw_sat_write_uid
+#: model:ir.model.fields,field_description:pos_ext.field_monthly_installments_write_uid
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_line_pos_write_uid
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_pos_write_uid
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_log_write_uid
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_report_write_uid
+#: model:ir.model.fields,field_description:pos_ext.field_res_holiday_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_card_banner_write_date
+#: model:ir.model.fields,field_description:pos_ext.field_hw_sat_write_date
+#: model:ir.model.fields,field_description:pos_ext.field_monthly_installments_write_date
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_line_pos_write_date
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_pos_write_date
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_log_write_date
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_report_write_date
+#: model:ir.model.fields,field_description:pos_ext.field_res_holiday_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1753
+#, python-format
+msgid "Linha não pode ser alterada, Pagamento já efetuado!"
+msgstr "Linha não pode ser alterada, pagamento já efetuado!"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2163
+#, python-format
+msgid "Linha não pode ser deletada, Pagamento já efetuado!"
+msgstr "Linha não pode ser deletada, Pagamento já efetuado!"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_log_log
+msgid "Log"
+msgstr "Histórico"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_log_sat
+#: model:ir.ui.view,arch_db:pos_ext.view_pos_pos_form_inherit
+msgid "Log Sat"
+msgstr "Log SAT"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_purchase_warn_msg
+msgid "Message for Purchase Order"
+msgstr "Mensagem para Pedido de Compra"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:168
+#, python-format
+msgid "Method"
+msgstr "Método"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_model_printer_sat
+msgid "Model Printer Sat"
+msgstr "Modelo de impressora SAT"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "Montante"
+msgstr "Montante"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.view_monthly_installment_form
+msgid "Monthly Installment"
+msgstr "Parcela Mensal"
+
+#. module: pos_ext
+#: model:ir.actions.act_window,name:pos_ext.action_installments_form
+#: model:ir.ui.menu,name:pos_ext.menu_pos_monthly_installment
+#: model:ir.ui.view,arch_db:pos_ext.view_monthly_installment_tree
+msgid "Monthly Installments"
+msgstr "Parcelas Mensais"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:289
+#, python-format
+msgid "N/A"
+msgstr "N/A"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/cliente_pos.xml:41
+#: model:ir.model.fields,field_description:pos_ext.field_card_banner_name
+#: model:ir.model.fields,field_description:pos_ext.field_res_holiday_name
+#, python-format
+msgid "Name"
+msgstr "Nome"
+
+#. module: pos_ext
+#: selection:pos.config,print_connection:0
+msgid "Network"
+msgstr "Rede"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_print_connection
+msgid "Network Connection"
+msgstr "Conexão de Rede"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:233
+#, python-format
+msgid "No Printer Connection!"
+msgstr "Sem Conexão com Impressora!"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1858
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1998
+#, python-format
+msgid "No operation code registered for this journal! Please configure a operation code."
+msgstr "Nenhum código de operação para este diário! Por favor configure um código de operação."
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1469
+#, python-format
+msgid "No printer connection!"
+msgstr "Sem Conexão com Impressora!"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:612
+#, python-format
+msgid "None"
+msgstr "Nenhum"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_session_note
+#: model:ir.ui.view,arch_db:pos_ext.view_pos_session_form_ext
+msgid "Note"
+msgstr "Nota"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1857
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1874
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1887
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1997
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2014
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2027
+#, python-format
+msgid "Notice!"
+msgstr "Aviso!"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_bank_statement_line_number_card
+msgid "Number Card"
+msgstr "Número do Cartão"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_bank_statement_line_number_installments
+msgid "Number of Installments"
+msgstr "Número de Parcelas"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_num_sessao_cfe
+msgid "Número de Sessão"
+msgstr "Número de Sessão"
+
+#. module: pos_ext
+#: selection:account.journal,sat_payment_mode:0
+msgid "OUTROS"
+msgstr "OUTROS"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_how_did_find_obs
+msgid "Observation"
+msgstr "Observação"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1191
+#, python-format
+msgid "One or more product(s) required serial/lot number."
+msgstr "Um ou mais produto(s) necessitam de número de serial/lote."
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:240
+#, python-format
+msgid "Open Cashbox"
+msgstr "Abrir caixa registradora"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_pos_details_wizard
+msgid "Open Sale Details Report"
+msgstr "Relatório de Detalhes de Venda Aberta"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_operation_code
+msgid "Operation Code"
+msgstr "Código da Operação"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/account_bank_statement.py:318
+#, python-format
+msgid "Operation not allowed. Since your statement line already received a number, you cannot reconcile it entirely with existing journal entries otherwise it would make a gap in the numbering. You should book an entry and make a regular revert of it in case you want to cancel it."
+msgstr "Operação não permitida. Como a sua linha de extrato já recebeu um número, você não pode reconciliá-lo inteiramente com entradas de diário existentes, caso contrário faria uma lacuna na numeração. Você deve reservar uma entrada e fazer um retorno regular caso queira cancelá-la."
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_is_owner
+msgid "Owner"
+msgstr "Proprietário"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_pos_manager
+msgid "POS Manager"
+msgstr "Gerente do PDV"
+
+
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_pos_pricelist_id
+msgid "POS Pricelist"
+msgstr "POS Pricelist"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1837
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1870
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1977
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2010
+#, python-format
+msgid "Pagamento Efetuado"
+msgstr "Pagamento Efetuado"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_parameters_print_sat
+msgid "Parameter Printer Sat"
+msgstr "Parâmetro de impressora SAT"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "Parceiro"
+msgstr "Parceiro"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:167
+#, python-format
+msgid "Parcelas"
+msgstr "Parcelas"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_res_partner
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_password_backspace
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_password_price
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_password_quantity
+msgid "Password"
+msgstr "Senha"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2300
+#, python-format
+msgid "Password ?"
+msgstr "Senha ?"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_password_discount
+msgid "Password Discount"
+msgstr "Senha de Desconto"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.view_pos_custom_config_form
+msgid "Password Protection"
+msgstr "Proteção por Senha"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_password_wallet
+msgid "Password Wallet"
+msgstr "Senha de Carteira"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2329
+#, python-format
+msgid "Password error!"
+msgstr "Erro de Senha!"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_library_path_sat
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_sign_ac_sat
+msgid "Path Sat"
+msgstr "Caminho do SAT"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_is_patient
+msgid "Patient"
+msgstr "Pet"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:189
+#: code:addons/pos_ext/static/src/xml/pos.xml:261
+#, python-format
+msgid "Payment"
+msgstr "Pagamento"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_line_pos_payment_validate
+#: model:ir.ui.view,arch_db:pos_ext.payment_validate_form
+msgid "Payment Validate"
+msgstr "Validade de pagamento"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_is_password_wallet
+msgid "Payment Wallet"
+msgstr "Pagamento de Carteira"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1875
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1888
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2015
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2028
+#, python-format
+msgid "Payment line already paid!"
+msgstr "Linha de pagamento já está paga!"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_payment_wallet
+msgid "Payment with Wallet"
+msgstr "Pagamento com Carteira"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_account_payment
+msgid "Payments"
+msgstr "Pagamentos"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_is_person
+msgid "Person"
+msgstr "Pessoa"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_patient_ids
+msgid "Pets"
+msgstr "Pets"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_is_pharmacy
+msgid "Pharmacy"
+msgstr "Farmacia"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/cliente_pos.xml:43
+#, python-format
+msgid "Phone"
+msgstr "Telefone"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:47
+#, python-format
+msgid "Phone:"
+msgstr "Telefone:"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:435
+#, python-format
+msgid "Please define income account for this product: \"%s\" (id:%d)."
+msgstr "Por favor defina uma conta de recebimento para este produto: \"%s\" (id:%d)."
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1577
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1631
+#, python-format
+msgid "Please select the Customer"
+msgstr "Por favor selecione um Cliente"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_pos_order
+msgid "Point of Sale"
+msgstr "Ponto de Venda"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1786
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1926
+#, python-format
+msgid "Por favor Escolha uma Forma de Pagamento!"
+msgstr "Por favor Escolha uma Forma de Pagamento!"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1899
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1911
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2039
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2051
+#, python-format
+msgid "Por favor inserir valor pago correto!"
+msgstr "Por favor inserir valor pago correto!"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_log_pos_order_id
+msgid "Pos Order"
+msgstr "Ordem do PDV"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:82
+#, python-format
+msgid "Preço"
+msgstr "Preço"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_is_password_price
+msgid "Price"
+msgstr "Preço"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_report_product_id
+msgid "Product"
+msgstr "Produto"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1088
+#, python-format
+msgid "Products with quantity or price equal to 0 can't be sold."
+msgstr "Produtos com quantidade ou preço iguais a 0 não podem ser vendidos."
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:79
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+#, python-format
+msgid "Produto"
+msgstr "Produto"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_purchase_warn
+msgid "Purchase Order"
+msgstr "Pedido de Compra"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:81
+#, python-format
+msgid "Qtd"
+msgstr "Qtd"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Quantidade"
+msgstr "Quantidade"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_config_is_password_quantity
+msgid "Quantity"
+msgstr "Quantidade"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:537
+#, python-format
+msgid "Quantity can't be equal to 0."
+msgstr "Quantidade não pode ser igual a 0."
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_range_days_maturity_date_credit_instalments
+msgid "Range of Days to Maturity Date of Credit Instalments"
+msgstr "Intervalo de Dias para Datas de Vencimento de Crédito Parcelado"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_range_days_maturity_date_credit
+msgid "Range of Days to Maturity Date of Instalments Credit"
+msgstr "Intervalo de Dias para Datas de Vencimento de Crédito"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_range_days_maturity_date_debit
+msgid "Range of Days to Maturity Date of Instalments Debit"
+msgstr "Intervalo de Dias para Datas de Vencimento de Débito"
+
+#. module: pos_ext
+#: model:ir.actions.act_window,name:pos_ext.action_report_discount_ranking
+#: model:ir.ui.menu,name:pos_ext.menu_report_discount_ranking
+msgid "Ranking de Descontos"
+msgstr "Ranking de Descontos"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:189
+#, python-format
+msgid "Receipt"
+msgstr "Recibo"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Ref. do Recibo"
+msgstr "Ref. do Recibo"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Referência do Pedido"
+msgstr "Referência do Pedido"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:33
+#, python-format
+msgid "Reimpressão Cupom"
+msgstr "Reimpressão Cupom"
+
+#. module: pos_ext
+#: model:ir.actions.report.xml,name:pos_ext.report_posdiscount
+msgid "Relatorio de Desconto Concedido"
+msgstr "Relatorio de Desconto Concedido"
+
+#. module: pos_ext
+#: model:ir.actions.report.xml,name:pos_ext.report_posdiscount_ranking
+msgid "Relatorio de Ranking de Descontos"
+msgstr "Relatorio de Ranking de Descontos"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_discount_allowed_wizard
+msgid "Relatório"
+msgstr "Relatório"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_discount_allowed_wizard
+msgid "Relatório Desconto Concedido"
+msgstr "Relatório Desconto Concedido"
+
+#. module: pos_ext
+#: model:ir.actions.report.xml,name:pos_ext.report_posclosing
+msgid "Relatório Fechamento"
+msgstr "Relatório Fechamento"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_discount_ranking_wizard
+msgid "Relatório Ranking Desconto"
+msgstr "Relatório Ranking Desconto"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Relatório de Descontos Concedidos"
+msgstr "Relatório de Descontos Concedidos"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "Relatório de Fechamento do PDV"
+msgstr "Relatório de Fechamento do PDV"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount_ranking
+msgid "Relatório de Ranking de Descontos - De"
+msgstr "Relatório de Ranking de Descontos - De"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.view_pos_pos_form_inherit
+msgid "Reprint Received TEF"
+msgstr "Reimpressão do Recibo TEF"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_bank_statement_line_return_tef_client
+msgid "Return TEF Client"
+msgstr "Retorno do TEF de Cliente"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_bank_statement_line_return_tef_establishment
+msgid "Return TEF Establishment"
+msgstr "Retorno do TEF de Estabelecimento"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_bank_statement_line_return_tef_reduced
+msgid "Return TEF Reduced"
+msgstr "Retorno do TEF Reduzido"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "Rótulo"
+msgstr "Rótulo"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.view_pos_custom_config_form
+msgid "SAT Configuration"
+msgstr "Configuração SAT"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "Saldo final"
+msgstr "Saldo final"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "Saldo inicial"
+msgstr "Saldo inicial"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "Saldo por Métodos de Pagamento"
+msgstr "Saldo por Métodos de Pagamento"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_report_user_id
+msgid "Salesman"
+msgstr "Vendedor"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_sat_payment_mode
+msgid "Sat Payment Mode"
+msgstr "Tipo de Pagamento do SAT"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/cliente_pos.xml:14
+#, python-format
+msgid "Search Customers"
+msgstr "Pesquisar Clientes"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:167
+#: code:addons/pos_ext/static/src/js/pos_ext.js:187
+#: code:addons/pos_ext/static/src/js/pos_ext.js:246
+#: code:addons/pos_ext/static/src/js/pos_ext.js:270
+#: code:addons/pos_ext/static/src/js/pos_ext.js:390
+#: code:addons/pos_ext/static/src/js/pos_ext.js:410
+#: code:addons/pos_ext/static/src/js/pos_ext.js:441
+#: code:addons/pos_ext/static/src/js/pos_ext.js:461
+#: code:addons/pos_ext/static/src/js/pos_ext.js:492
+#: code:addons/pos_ext/static/src/js/pos_ext.js:512
+#: code:addons/pos_ext/static/src/js/pos_ext.js:545
+#, python-format
+msgid "Select Authorizer"
+msgstr "Selecionar Autorizador"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/cliente_pos.xml:22
+#, python-format
+msgid "Select Customer"
+msgstr "Selecionar Clientes"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:2094
+#, python-format
+msgid "Select Installments"
+msgstr "Selecionar Parcelas"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:629
+#, python-format
+msgid "Select User"
+msgstr "Selecionar Usuário"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:371
+#, python-format
+msgid "Selected orders do not have the same session!"
+msgstr "Pedidos selecionados não tem a mesma sessão!"
+
+#. module: pos_ext
+#: model:ir.model.fields,help:pos_ext.field_res_users_purchase_warn
+msgid "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
+msgstr "Selecionando a opção de \"Aviso\" irá notificar o usuário com a mensagem, marcar \"Mensagem de Bloqueio\" irá lançar uma exceção com a mensagem e bloquear o fluxo. A mensagem tem de ser escrita no campo a seguir."
+
+#. module: pos_ext
+#: selection:pos.config,print_connection:0
+msgid "Serial"
+msgstr "Serial"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1590
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1644
+#, python-format
+msgid "Server Error"
+msgstr "Erro de Servidor"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:105
+#: code:addons/pos_ext/models/pos_order.py:755
+#: code:addons/pos_ext/models/pos_order.py:784
+#: code:addons/pos_ext/models/pos_order.py:810
+#, python-format
+msgid "Session"
+msgstr "Sessão"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.view_pos_company_form
+msgid "Software House"
+msgstr "Software House"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_spending_point_loyalty
+msgid "Spending Points"
+msgstr "Pontos Gastos"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_report_start_date
+msgid "Start Date"
+msgstr "Data de Início"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_bank_statement_line_state_pos
+msgid "State POS"
+msgstr "State POS"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.view_pos_pos_form_inherit
+msgid "Statement lines"
+msgstr "Linhas do demonstrativo"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_amount_untaxed
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:105
+#, python-format
+msgid "Subtotal:"
+msgstr "Subtotal:"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_property_purchase_currency_id
+msgid "Supplier Currency"
+msgstr "Moeda do Fornecedor"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_supplier_id
+msgid "Supplier id"
+msgstr "Fornecedor id"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_move_return_tef
+#: model:ir.ui.view,arch_db:pos_ext.view_move_form_ext
+msgid "TEF Return"
+msgstr "Retorno da TEF"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:463
+#, python-format
+msgid "Tax"
+msgstr "Imposto"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:53
+#, python-format
+msgid "Telefone:"
+msgstr "Telefone:"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:165
+#, python-format
+msgid "Tendered"
+msgstr "Valor Pago"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:423
+#, python-format
+msgid "The POS order must have lines when calling this method"
+msgstr "O pedido do PDV deve ter linhas quando é chamado este método"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/account_journal.py:64
+#, python-format
+msgid "The journal cannot have IS TEF and IS CONTIGENCY checked, choose only one."
+msgstr "O diário não pode ter É TEF e É CONTINGÊNCIA marcados, por favor escolha apenas um."
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1585
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1639
+#, python-format
+msgid "The order could not be sent"
+msgstr "O pedido não pode ser enviado"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1596
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1650
+#, python-format
+msgid "The order could not be sent to the server due to an unknown error"
+msgstr "O pedido não pode ser enviado ao servidor devido a um erro desconhecido."
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1591
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1645
+#, python-format
+msgid "The server encountered an error while receiving your order."
+msgstr "O servidor encontrou um erro durante o recebimento do seu pedido."
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:84
+#, python-format
+msgid "The type of the journal for your payment method should be bank or cash "
+msgstr "O tipo de diário para seu método de pagamento deve ser banco ou dinheiro "
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:306
+#, python-format
+msgid "There is no receivable account defined to make payment for the partner: \"%s\" (id:%d)."
+msgstr "Não há conta de recebimento definida para fazer o pagamento para o cliente : \"%s\" (id:%d)."
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:304
+#, python-format
+msgid "There is no receivable account defined to make payment."
+msgstr "Não há conta de recebimento definida na conta para fazer o pagamento."
+
+#. module: pos_ext
+#: model:ir.model.fields,help:pos_ext.field_res_users_property_purchase_currency_id
+msgid "This currency will be used, instead of the default one, for purchases from the current partner"
+msgstr "Esta moeda será utilizada, em vez da padrão, para as compras do parceiro atual"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:235
+#, python-format
+msgid "Tip"
+msgstr "Gorgeta"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_total_discount
+msgid "Total Discount"
+msgstr "Desconto Total"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:120
+#, python-format
+msgid "Total:"
+msgstr "Total:"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:475
+#, python-format
+msgid "Trade Receivables"
+msgstr "Contas a Receber"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_closing
+msgid "Transações por Métodos de Pagamento"
+msgstr "Transações por Métodos de Pagamento"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_bank_statement_line_type_collection
+msgid "Type of Collection"
+msgstr "Tipo de Cobrança"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1595
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1649
+#, python-format
+msgid "Unknown Error"
+msgstr "Erro Desconhecido"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_installments
+msgid "Up To Installments"
+msgstr "Quantidade de Parcelas"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_session_user_closed
+msgid "User Closed Session"
+msgstr "User Closed Session"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_res_users
+msgid "Users"
+msgstr "Usuários"
+
+#. module: pos_ext
+#: selection:account.journal,sat_payment_mode:0
+msgid "VALE ALIMENTACAO"
+msgstr "VALE ALIMENTACAO"
+
+#. module: pos_ext
+#: selection:account.journal,sat_payment_mode:0
+msgid "VALE COMBUSTIVEL"
+msgstr "VALE COMBUSTIVEL"
+
+#. module: pos_ext
+#: selection:account.journal,sat_payment_mode:0
+msgid "VALE PRESENTE"
+msgstr "VALE PRESENTE"
+
+#. module: pos_ext
+#: selection:account.journal,sat_payment_mode:0
+msgid "VALE REFEICAO"
+msgstr "VALE REFEICAO"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.payment_validate_form
+msgid "Validate"
+msgstr "Validar"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_payment_validate_pos_line_ids
+msgid "Validate Lines"
+msgstr "Validar Linhas"
+
+#. module: pos_ext
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+msgid "Valor Unitário (R$)"
+msgstr "Valor Unitário (R$)"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:8
+#: code:addons/pos_ext/static/src/xml/pos.xml:16
+#: code:addons/pos_ext/static/src/xml/pos.xml:20
+#: model:ir.ui.view,arch_db:pos_ext.report_pos_discount
+#, python-format
+msgid "Vendedor"
+msgstr "Vendedor"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:48
+#, python-format
+msgid "Vendedor:"
+msgstr "Vendedor:"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/account_payment.py:40
+#, python-format
+msgid "Vendor Payment"
+msgstr "Pagamento de Fornecedor"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/account_payment.py:38
+#, python-format
+msgid "Vendor Refund"
+msgstr "Reembolso de Fornecedor"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_partner_wallet_partner
+msgid "Wallet Customer"
+msgstr "Cliente Carteira"
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/xml/pos.xml:89
+#, python-format
+msgid "With a"
+msgstr "Com um"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_xml_cfe_cancel
+msgid "XML Cancel"
+msgstr "Cancelar XML"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_xml_cfe_retorn
+msgid "XML Retorno"
+msgstr "XML Retorno"
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:320
+#, python-format
+msgid "You have to open at least one cashbox."
+msgstr "Você deve abrir ao menos uma caixa registradora."
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:152
+#, python-format
+msgid "You must insert only numbers."
+msgstr "Você deve inserir apenas números."
+
+#. module: pos_ext
+#. openerp-web
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1578
+#: code:addons/pos_ext/static/src/js/pos_ext.js:1632
+#, python-format
+msgid "You need to select the customer before you can invoice an order."
+msgstr "Você precisa selecionar um cliente antes de poder faturar um pedido."
+
+#. module: pos_ext
+#: code:addons/pos_ext/models/pos_order.py:82
+#, python-format
+msgid "Your ending balance is too different from the theoretical cash closing (%.2f), the maximum allowed is: %.2f. You can contact your manager to force it."
+msgstr "Seu saldo final é muito diferente do fechamento teórico de caixa (% .2f), o máximo permitido é:% .2f. Você pode entrar em contato com seu gerente para forçá-lo."
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_card_banner
+msgid "card.banner"
+msgstr "card.banner"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_hw_sat
+msgid "hw.sat"
+msgstr "hw.sat"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_monthly_installments
+msgid "monthly.installments"
+msgstr "monthly.installments"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_pos_order_number_installments
+msgid "number_installments"
+msgstr "number_installments"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_payment_validate_line_pos
+msgid "payment.validate.line.pos"
+msgstr "payment.validate.line.pos"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_payment_validate_pos
+msgid "payment.validate.pos"
+msgstr "payment.validate.pos"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_pos_config
+msgid "pos.config"
+msgstr "pos.config"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_pos_order_log
+msgid "pos.order.log"
+msgstr "pos.order.log"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_pos_order_report
+msgid "pos.order.report"
+msgstr "pos.order.report"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_pos_session
+msgid "pos.session"
+msgstr "pos.session"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_report_point_of_sale_report_saledetails
+msgid "report.point_of_sale.report_saledetails"
+msgstr "report.point_of_sale.report_saledetails"
+
+#. module: pos_ext
+#: model:ir.model,name:pos_ext.model_res_holiday
+msgid "res.holiday"
+msgstr "res.holiday"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:57
+#, python-format
+msgid "Points Spent"
+msgstr "Pontos gastos"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:111
+#, python-format
+msgid "Points Spent:"
+msgstr "Pontos gastos:"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:54
+#, python-format
+msgid "Points Won"
+msgstr "Pontos ganhos"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:100
+#, python-format
+msgid "Points Won:"
+msgstr "Pontos ganhos:"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:60
+#, python-format
+msgid "Total Points"
+msgstr "Total de Pontos"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:122
+#, python-format
+msgid "Total Points:"
+msgstr "Total de Pontos:"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_res_users_pos_salesperson
+msgid "POS Salesperson"
+msgstr "Vendedor PDV"
+
+#. module: pos_ext
+#: model:ir.model.fields,field_description:pos_ext.field_account_journal_accepts_return
+msgid "Accepts Return"
+msgstr "Aceita Devolução"
+
+

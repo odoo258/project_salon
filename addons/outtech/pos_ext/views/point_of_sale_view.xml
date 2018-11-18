@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_custom_config_form">
+            <field name="name">pos.config.custom.form.view</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <field name="fiscal_position_ids" position="after">
+                    <field name="default_account_id" />
+                    <!--<field name="discount_account_id" />-->
+                </field>
+                <xpath expr="//group[@name='features']" position="before">
+                    <group colspan="4" col="4">
+                        <separator string="Password Protection" colspan="4"/>
+                        <!--<group colspan="2">-->
+                            <!--<field name="is_password_quantity" />-->
+                            <!--<field name="password_quantity" password="True" attrs="{'invisible': [('is_password_quantity','=', False)], 'required': [('is_password_quantity','=', True)]}" />-->
+                        <!--</group>-->
+                        <group colspan="2">
+                            <field name="is_password_price" />
+                            <field name="password_price" password="True" attrs="{'invisible': [('is_password_price','=', False)], 'required': [('is_password_price','=', True)]}" />
+                        </group>
+                        <group colspan="2">
+                            <field name="is_password_discount" />
+                            <field name="password_discount" password="True" attrs="{'invisible': [('is_password_discount','=', False)], 'required': [('is_password_discount','=', True)]}" />
+                        </group>
+                        <group colspan="2">
+                            <field name="is_password_wallet" />
+                            <field name="password_wallet" password="True" attrs="{'invisible': [('is_password_wallet','=', False)], 'required': [('is_password_wallet','=', True)]}" />
+                        </group>
+                        <separator string="SAT Configuration" colspan="4"/>
+                        <group colspan="4">
+                            <field name="active_code_sat"/>
+                            <field name="library_path_sat"/>
+                            <field name="model_printer_sat"/>
+                            <field name="parameters_print_sat"/>
+                            <field name="print_connection"/>
+                            <field name="sign_ac_sat"/>
+                            <field name="info_sat"/>
+                            <field name="active_sat"/>
+                        </group>
+                        <!--<group colspan="2">-->
+                            <!--<field name="is_password_backspace" />-->
+                            <!--<field name="password_backspace" password="True" attrs="{'invisible': [('is_password_backspace','=', False)], 'required': [('is_password_backspace','=', True)]}" />-->
+                        <!--</group>-->
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

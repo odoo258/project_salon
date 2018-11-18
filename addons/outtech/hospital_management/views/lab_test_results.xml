@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_medical_lab" model="ir.ui.view">
+            <field name="name">view.medical.lab</field>
+            <field name="model">medical.lab</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="test_id"/>
+                    <field name="patient_id"/>
+                    <field name="date_analysis"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_medical_lab_form" model="ir.ui.view">
+            <field name="name">view.medical.lab</field>
+            <field name="model">medical.lab</field>
+            <field name="arch" type="xml">
+                <form string="Laboratory Test">
+                    <sheet>
+                        <group string="Main Info">
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="date_analysis"/>
+                                <field name="pathologist_id"/>
+                                <field name="requestor_id" required="1"/>
+                            </group>
+                            <group>
+                                <field name="test_id" required="1"/>
+                                <field name="patient_id" required="1"/>
+                                <field name="date_requested"/>
+                            </group>
+                        </group>
+                        <group string="Total Cases">
+                            <field name="critearea" colspan="4" nolabel="1">
+                                <tree editable="top" string="Test Cases">
+                                    <field name="seq"/>
+                                    <field name="test_name"/>
+                                    <field name="result_text"/>
+                                    <field name="normal_range"/>
+                                    <field name="units_id"/>
+                                </tree>
+                                <form string="Test Cases">
+
+                                    <field name="test_name"/>
+                                    <field name="seq"/>
+                                    <field name="result_text"/>
+                                    <field name="units_id"/>
+                                    <field name="normal_range"/>
+                                </form>
+                            </field>
+                        </group>
+                        <group string="Extra Info">
+                            <field name="results"/>
+                            <field name="diagnosis"/>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="action_view_lab_results1" model="ir.actions.act_window">
+            <field name="name">Lab Tests Results</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.lab</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_view_lab_results_tree" model="ir.actions.act_window">
+            <field name="name">Lab Tests Results</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.lab</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree</field>
+        </record>
+        <!--
+        Mapa/Resultados dos Exames
+        -->
+        <!--menuitem name="Lab Tests Results"
+                  id="menu_lab_test_result"
+                  parent="hospital_management.main_menu_laboratory"
+                  action="action_view_lab_results1"
+                  sequence="2"/-->
+    </data>
+</openerp>

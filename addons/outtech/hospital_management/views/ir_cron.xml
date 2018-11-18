@@ -1,0 +1,14 @@
+<odoo>
+    <data noupdate="1">
+        <record model="ir.cron" id="ir_check_admission">
+            <field name="name">Check Admission</field>
+            <field name="interval_number">10</field>
+            <field name="interval_type">minutes</field><!-- it s every day -->
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model" eval="'medical.inpatient.registration'"/>
+            <field name="function" eval="'check_admission'"/>
+            <field name="args" eval="'()'"/>
+        </record>
+    </data>
+</odoo>

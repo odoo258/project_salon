@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <act_window
+                id="action_create_lab_result2"
+                name="Create Lab Result"
+                res_model="medical.lab.test.create"
+                src_model="medical.patient.lab.test"
+                view_mode="form"
+                view_type="form"
+                target="new"
+                key2="client_action_multi"/>
+
+        <act_window
+                key2="client_action_multi"
+                id="action_create_lab_invoice2"
+                name="Create Lab Invoice"
+                res_model="medical.lab.test.invoice"
+                src_model="medical.patient.lab.test"
+                view_mode="form"
+                view_type="form"
+                target="new"/>
+
+        <record id="view_medical_tree_lab_req" model="ir.ui.view">
+            <field name="name">view.tree.medical.lab.request</field>
+            <field name="model">medical.patient.lab.test</field>
+            <field name="arch" type="xml">
+                <tree string="Test Requests">
+                    <field name="request" readonly="1"/>
+                    <field name="name" required="1"/>
+                    <field name="date"/>
+                    <field name="patient_id" required="1"/>
+                    <field name="doctor_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_medical_lab_test_create" model="ir.ui.view">
+            <field name="name">view.medical.lab.test.create</field>
+            <field name="model">medical.lab.test.create</field>
+            <field name="arch" type="xml">
+                <form string="Create Lab Test">
+                    <separator colspan="4" string="Do you want to generate the test(s) ?"/>
+                    <newline/>
+                    <separator string="Create Tests" colspan="6"/>
+                    <button special="cancel" string="Cancel" class="oe_highlight"/>
+                    or
+                    <button name="create_lab_test" string="Create Lab Test" type="object" class="oe_highlight"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_lab_test_invoice_form" model="ir.ui.view">
+            <field name="name">medical.lab.test.invoice.form</field>
+            <field name="model">medical.lab.test.invoice</field>
+            <field name="arch" type="xml">
+                <form string="Create Lab Test">
+                    <separator colspan="4" string="Do you want to generate the invoice(s)?"/>
+                    <newline/>
+                    <separator string="Create Invoice" colspan="6"/>
+                    <button special="cancel" string="Cancel" class="oe_highlight"/>
+                    or
+                    <button name="create_lab_invoice" string="Create Lab Invoice" type="object" class="oe_highlight"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_medical_lab_req" model="ir.ui.view">
+            <field name="name">view.medical.lab.request</field>
+            <field name="model">medical.patient.lab.test</field>
+            <field name="arch" type="xml">
+                <form string="Test Requests">
+                    <header>
+                        <button name="%(action_create_lab_result2)d" string="Create Lab Test" type="action"
+                                class="oe_highlight"/>
+                        <button name="%(action_create_lab_invoice2)d" string="Create Lab Invoice" type="action"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,tested,cancel"
+                               statusbar_colors="{&quot;confirmed&quot;:&quot;red&quot;,&quot;hospitalized&quot;:&quot;red&quot;,&quot;free&quot;:&quot;blue&quot;}"
+                               readonly="1"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="date"/>
+                                <field name="invoice_to_insurer"/>
+                            </group>
+                            <group>
+                                <field name="patient_id" required="1" options="{&quot;always_reload&quot;: True}"/>
+                                <field name="doctor_id"/>
+                                <!--field name="insurer_id" attrs="{'invisible': [('invoice_to_insurer','=', False)]}"/-->
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="action_tree_view_lab_requests" model="ir.actions.act_window">
+            <field name="name">Lab Requests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.patient.lab.test</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record id="action_view_lab_requests" model="ir.actions.act_window">
+            <field name="name">Draft Lab Requests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.patient.lab.test</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','=','draft')]</field>
+        </record>
+
+        <record id="action_view_today_lab_requests" model="ir.actions.act_window">
+            <field name="name">Today's Draft Lab Requests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.patient.lab.test</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','=','draft'),('date','>=',time.strftime('%Y-%m-%d'))]</field>
+        </record>
+
+        <menuitem name="Laboratory"
+                  id="main_menu_laboratory"
+                  parent="main_menu_health_care"
+                  sequence='7'/>
+
+        <!--menuitem name="Lab Requests"
+                  id="menu_lab_requests"
+                  parent="hospital_management.main_menu_laboratory"
+                  sequence="1"/-->
+        <!--
+        Mapa/Exames Solicitados
+        -->
+        <!--menuitem name="Draft Lab Requests"
+                  id="sub_menu_draft_req"
+                  parent="hospital_management.main_menu_laboratory"
+                  action="action_view_lab_requests"
+                  sequence="2"/>
+
+        Exames Solicitados para Hoje
+        <menuitem name="Today's Draft Lab Requests"
+                  id="sub_menu_today_draft_req"
+                  parent="menu_lab_requests"
+                  action="action_view_today_lab_requests"/-->
+    </data>
+</openerp>

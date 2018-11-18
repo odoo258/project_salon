@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+		<record id="installation_schedule_wizard_form" model="ir.ui.view">
+		    <field name="name">Installation Schedule</field>
+		    <field name="model">installation.schedule</field>
+		    <field name="arch" type="xml">
+				<form string="Installation Schedule">
+					<header>
+						<field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+						<h1>
+							<field name="name" readonly="1"/>
+						</h1>
+                        <group>
+			                <group>
+								<field name="partner_id" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+								<field name="type_search" attrs="{'readonly': [('state','not in',('draft'))]}" widget="radio"/>
+								<field name="zip" attrs="{'invisible':[('type_search', '!=', 'zip')],'readonly': [('state','not in',('draft'))]}"/>
+								<field name="state_id" attrs="{'invisible':[('type_search', '!=', 'city')],'readonly': [('state','not in',('draft'))]}"/>
+								<field name="city_id" attrs="{'invisible':[('type_search', '!=', 'city')],'readonly': [('state','not in',('draft'))]}"/>
+				                <field name="reseller_id" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+				                <field name="sale_order_id" attrs="{'readonly': True}"/>
+				                <field name="contract_id" attrs="{'readonly': True}"/>
+								<field name="type_id" attrs="{'readonly': True}"/>
+				                <field name="date_start" invisible="1"/>
+				            </group>
+				            <group>
+								<field name="date_scheduler" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+								<field name="period" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+				                <field name="equipment_id"/>
+				                <field name="date_end" invisible="1"/>
+				            </group>
+			            </group>
+						<separator string="Vehicle" colspan="4"/>
+						<group>
+							<group>
+								<field name="manufacturer_id"/>
+								<field name="model_id"/>
+								<field name="vehicle_id" invisible="1"/>
+							</group>
+							<group>
+								<field name="year_id"/>
+								<field name="plate"/>
+							</group>
+						</group>
+                        <separator string="Observation" colspan="4"/>
+                        <group>
+                            <field name="observation" nolabel="1" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                        </group>
+                    </sheet>
+					<footer>
+						<button name="schedule_button" string="Schedule" type="object" states="draft" class="oe_highlight"/>
+					</footer>
+				</form>
+		    </field>
+		</record>
+
+        <record id="installation_schedule_form" model="ir.ui.view">
+		    <field name="name">Installation Schedule</field>
+		    <field name="model">installation.schedule</field>
+		    <field name="arch" type="xml">
+				<form string="Installation Schedule">
+					<header>
+						<button name="activate_button" string="Activate" type="object" states="confirmed" class="oe_highlight"/>
+						<button name="remove_equipament_button" string="Retirada de Equipamento" type="object" states="activated" class="oe_highlight" confirm="Deseja retirar o equipamento?"/>
+						<button name="confirm_button" string="Confirm" type="object" states="draft" class="oe_highlight"/>
+						<button name="return_draft_button" string="Return to Draft" type="object" states="confirmed"/>
+						<button name="cancel_button" string="Cancel" type="object" states="confirmed"/>
+						<field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+						<h1>
+							<field name="name"/>
+						</h1>
+						<field name="name_aux" invisible="1"/>
+                        <group>
+			                <group>
+								<field name="partner_id" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+								<field name="type_search" attrs="{'readonly': [('state','not in',('draft'))]}" widget="radio"/>
+								<field name="zip" attrs="{'invisible':[('type_search', '!=', 'zip')],'readonly': [('state','not in',('draft'))]}"/>
+								<field name="state_id" attrs="{'invisible':[('type_search', '!=', 'city')],'readonly': [('state','not in',('draft'))]}"/>
+								<field name="city_id" attrs="{'invisible':[('type_search', '!=', 'city')],'readonly': [('state','not in',('draft'))]}"/>
+				                <field name="reseller_id" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+				                <field name="sale_order_id" attrs="{'readonly': True}"/>
+				                <field name="contract_id" attrs="{'readonly': True}"/>
+				                <field name="type_id" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+								<field name="vehicle_id"  attrs="{'invisible': [('option_vehicle','=',False)],'readonly': [('state','not in',('draft'))]}"/>
+								<field name="date_start" invisible="1"/>
+								<field name="option_vehicle" invisible="1"/>
+				            </group>
+				            <group>
+								<field name="date_scheduler" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+								<field name="period" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+				                <field name="equipment_id"/>
+								<field name="date_end" invisible="1"/>
+				            </group>
+			            </group>
+                        <separator string="Vehicle" colspan="4"/>
+						<group>
+							<group>
+								<field name="manufacturer_id"/>
+								<field name="model_id"/>
+							</group>
+							<group>
+								<field name="year_id"/>
+								<field name="plate"/>
+							</group>
+						</group>
+                        <separator string="Observation" colspan="4"/>
+                        <group>
+                            <field name="observation" nolabel="1" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                        </group>
+                    </sheet>
+				</form>
+		    </field>
+		</record>
+
+		<record id="installation_schedule_calendar" model="ir.ui.view">
+			<field name="name">Installation Schedule</field>
+			<field name="model">installation.schedule</field>
+			<field name="priority" eval="2"/>
+			<field name="arch" type="xml">
+			  <calendar string="Installation Schedule" date_start="date_start" date_stop="date_end" color="reseller_id" mode="month">
+			    <field name="name"/>
+			    <field name="partner_id"/>
+			  </calendar>
+			</field>
+		</record>
+
+        <record id="installation_schedule_tree" model="ir.ui.view">
+		    <field name="name">Installation Schedule</field>
+		    <field name="model">installation.schedule</field>
+		    <field name="arch" type="xml">
+		        <tree string="Installation Schedule">
+					<field name="name"/>
+					<field name="type_id"/>
+					<field name="reseller_id"/>
+                    <field name="date_scheduler"/>
+                    <field name="period"/>
+                    <field name="partner_id"/>
+					<field name="manufacturer_id"/>
+					<field name="model_id"/>
+					<field name="plate"/>
+                    <field name="state"/>
+		        </tree>
+		    </field>
+		</record>
+
+		<record model="ir.ui.view" id="view_activate_contract_dialog_form">
+            <field name="name">activate.contract.dialog.form</field>
+            <field name="model">installation.active</field>
+            <field name="arch" type="xml">
+                <form string="Ativação">
+                    <div id="activate_content">
+                        <i class="fa fa-refresh"></i> Carregando...
+                    </div>
+
+					<script type="text/javascript">
+                        $(document).ready(function () {
+                            fillContent()
+                        });
+
+                        function fillContent() {
+                            $.ajax({
+                              type: 'GET',
+                              url: '/tracknme/device-control/',
+                              data: { },
+                              success: function(data) {
+                                $("#activate_content").fadeOut('fast', function() {
+                                    $(this).html(data);
+                                    $(this).slideDown('slow');
+                                });
+                              }
+                            });
+                        }
+                    </script>
+					<footer position="replace">
+                        <button name='process_active' string="Active" type="object" class="btn btn-primary"/>
+						or
+						<button string="Cancel" class="btn btn-danger oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+		<record id="installation_schedule_search" model="ir.ui.view">
+    	    <field name="name">Installation Schedule</field>
+    	    <field name="model">installation.schedule</field>
+    	    <field name="arch" type="xml">
+    	        <search string="Installation Schedule">
+    	            <field name="plate"/>
+    	        </search>
+    	    </field>
+    	</record>
+
+        <record id="installation_schedule_action" model="ir.actions.act_window">
+		    <field name="name">Installation Schedule</field>
+			<field name="type">ir.actions.act_window</field>
+		    <field name="res_model">installation.schedule</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,calendar,form</field>
+			<field name="view_id" ref="installation_schedule_tree"/>
+            <field name="context">{}</field>
+        </record>
+
+		<record model="ir.actions.act_window.view" id="act_installation_schedule_tree_view">
+		    <field eval="1" name="sequence"/>
+		    <field name="view_mode">tree</field>
+		    <field name="view_id" ref="installation_schedule_tree"/>
+		    <field name="act_window_id" ref="installation_schedule_action"/>
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_installation_schedule_form_view">
+		    <field eval="2" name="sequence"/>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="installation_schedule_form"/>
+		    <field name="act_window_id" ref="installation_schedule_action"/>
+		</record>
+
+
+        <menuitem id="service_root_menu" name="Service" sequence="20"/>
+        <menuitem id="installation_group_menu" name="Installation" parent="service_root_menu" sequence="1" />
+        <menuitem id="scheduling_menu" name="Scheduling" parent="installation_group_menu" sequence="1" action="installation_schedule_action"/>
+    </data>
+</odoo>

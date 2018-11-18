@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="import_layout_line_form" model="ir.ui.view">
+        	<field name="name">Import Layout Line</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.import.layout.line</field>
+        	<field name="arch" type="xml">
+   				<form string="Import Layout Line">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="sequence"/>
+                            <field name="length"/>
+                            <field name="fixed_value"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                            <field name="field_identifier"/>
+                            <field name="break_line"/>
+                            <field name="parent_id" domain="[('file_import_layout_detail_id','=',parent.id)]"/>
+                        </group>
+                    </group>
+                </form>
+			</field>
+    	</record>
+
+        <record id="import_layout_header_form" model="ir.ui.view">
+        	<field name="name">Import Layout Header</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.import.layout.header</field>
+        	<field name="arch" type="xml">
+                <form string="Import Layout Header">
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence"/>
+                    </group>
+                    <group>
+                        <field name="active"/>
+                    </group>
+                    <separator string="File Import Layout Lines" colspan="4"/>
+                    <group colspan="4">
+                        <field name="file_import_layout_line_ids" nolabel="1">
+                            <tree>
+                                <field name="sequence"/>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="parent_id"/>
+                                <field name="length" sum="Total"/>
+                                <field name="active"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+    	</record>
+
+        <record id="import_layout_detail_form" model="ir.ui.view">
+        	<field name="name">Import Layout Detail</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.import.layout.detail</field>
+        	<field name="arch" type="xml">
+                <form string="Import Layout Detail">
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence"/>
+                    </group>
+                    <group>
+                        <field name="active"/>
+                    </group>
+                    <separator string="File Import Layout Lines" colspan="4"/>
+                    <group colspan="4">
+                        <field name="file_import_layout_line_ids" nolabel="1">
+                            <tree>
+                                <field name="sequence"/>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="parent_id"/>
+                                <field name="length" sum="Total"/>
+                                <field name="active"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+    	</record>
+
+        <record id="import_layout_footer_form" model="ir.ui.view">
+        	<field name="name">Import Layout Footer</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.import.layout.footer</field>
+        	<field name="arch" type="xml">
+                <form string="Import Layout Footer">
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence"/>
+                    </group>
+                    <group>
+                        <field name="active"/>
+                    </group>
+                    <separator string="File Import Layout Lines" colspan="4"/>
+                    <group colspan="4">
+                        <field name="file_import_layout_line_ids" nolabel="1">
+                            <tree>
+                                <field name="sequence"/>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="parent_id"/>
+                                <field name="length" sum="Total"/>
+                                <field name="active"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+    	</record>
+
+        <record id="import_layout_form" model="ir.ui.view">
+        	<field name="name">Import Layout</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.import.layout</field>
+        	<field name="arch" type="xml">
+   				<form string="Import Layout" version="7.0">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="record_separator"/>
+                            </group>
+                            <group>
+                                <field name="active"/>
+                                <field name="file_import_type"/>
+                            </group>
+                        </group>
+                        <group colspan="4">
+                            <field name="description"/>
+                        </group>
+                        <separator string="Header" colspan="4"/>
+                        <group>
+                            <field name="file_import_layout_header_ids" nolabel="1">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <separator string="Detail" colspan="4"/>
+                        <group>
+                            <field name="file_import_layout_detail_ids" nolabel="1">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <separator string="Footer" colspan="4"/>
+                        <group>
+                            <field name="file_import_layout_footer_ids" nolabel="1">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+			</field>
+    	</record>
+
+        <record id="import_layout_tree" model="ir.ui.view">
+            <field name="name">Import Layout</field>
+            <field name="view_type">tree</field>
+            <field name="model">file.import.layout</field>
+            <field name="arch" type="xml">
+                <tree string="Import Layout">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="file_import_type"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_import_layout" model="ir.actions.act_window">
+            <field name="name">Import Layout</field>
+            <field name="res_model">file.import.layout</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+			<field name="view_id" ref="import_layout_tree"/>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem
+                id="menu_import_layout"
+                name="Import Layout"
+                action="action_import_layout"
+                parent="menu_import_export_file"
+                sequence="2"/>
+
+    </data>
+</openerp>

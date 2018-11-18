@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="lot_payment_create_form" model="ir.ui.view">
+        <field name="name">Create Lot of Payments</field>
+        <field name="model">lot.payment.create</field>
+        <field name="arch" type="xml">
+            <form string="Create Lot of Payments" version="7.0">
+                <p>Create New Lot of Payment</p>
+
+                <!--<p>Note. For that uses the feature to unite installments in a single bank payment,-->
+                   <!--it is necessary that the installments have the same payment type, date maturity,-->
+                   <!--partner and in cases of multi-company the same company.</p>-->
+                <!--<group>-->
+                    <!--<field name="join_installment"/>-->
+                <!--</group>-->
+                <footer>
+                    <button type="object" name="create_lot_payment" string="Create New Lot of Payment" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lot_payment_create" model="ir.actions.act_window">
+        <field name="name">Create Lot of Payments</field>
+        <field name="res_model">lot.payment.create</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <act_window id="act_window_lot_payment"
+    	        key2="client_action_multi"
+                name="Create Lot of Payments"
+                res_model="lot.payment.create"
+                src_model="account.move.line"
+                view_id="lot_payment_create_form"
+                view_mode="form"
+                target="new"
+                multi="False"
+                view_type="form"/>
+
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_res_partner_filter_base_ext" model="ir.ui.view">
+        <field name="name">res.partner.base.search.ext</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter name="supplier" position="before">
+                <filter string="Manufacturer" name="manufacturer" domain="[('manufacturer','=',1), ('parent_id', '=', False)]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="view_partner_base_form_ext" model="ir.ui.view">
+        <field name="name">res.partner.base.form.ext</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <group name="purchase" position="inside">
+                <field name="manufacturer"/>
+            </group>
+            <field name="company_type" position="after">
+                <group>
+                    <field name="foreign"/>
+                </group>
+            </field>
+            <field name="email" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
+            <field name="zip" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="export_layout_line_form" model="ir.ui.view">
+        	<field name="name">Export Layout Line</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.export.layout.line</field>
+        	<field name="arch" type="xml">
+   				<form string="Export Layout Line">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="sequence"/>
+                            <field name="data_type"/>
+                            <field name="fixed_value"/>
+                            <field name="length"/>
+                            <field name="prefix"/>
+                            <field name="suffix"/>
+                            <field name="hide_if_empty"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                            <field name="break_line"/>
+                            <field name="decimal_separator"/>
+                            <field name="decimal_precision"/>
+                            <field name="left_padding"/>
+                            <field name="right_padding"/>
+                            <field name="letter_case"/>
+                            <field name="accent_marks"/>
+                            <field name="special_character"/>
+                            <field name="date_format"/>
+
+                        </group>
+                        <group string="XML">
+                            <field name="parent_id" domain="[('file_export_layout_detail_id','=',parent.id)]"/>
+                            <field name="xml_tag"/>
+                            <field name="xml_field_type"/>
+                        </group>
+                        <group string="CSV">
+                            <field name="csv_separator"/>
+                        </group>
+                        <!--</group>-->
+                    <!--</group>-->
+                        <!--<separator string="XML Attributes" colspan="4"/>-->
+                        <!--<group colspan="4">-->
+                            <!--<field name="xml_attributes_ids" nolabel="1">-->
+                                <!--<tree editable="bottom">-->
+                                    <!--<field name="name"/>-->
+                                    <!--<field name="value"/>-->
+                                    <!--<field name="fixed_value"/>-->
+                                <!--</tree>-->
+                            <!--</field>-->
+                        <!--</group>-->
+                    </group>
+                </form>
+			</field>
+    	</record>
+
+        <record id="export_layout_header_form" model="ir.ui.view">
+        	<field name="name">Export Layout Header</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.export.layout.header</field>
+        	<field name="arch" type="xml">
+                <form string="Export Layout Header">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                            <field name="condition"/>
+                        </group>
+                    </group>
+                    <separator string="File Export Layout Lines" colspan="4"/>
+                    <group colspan="4">
+                        <field name="file_export_layout_line_ids" nolabel="1">
+                            <tree>
+                                <field name="sequence"/>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="parent_id"/>
+                                <field name="data_type"/>
+                                <field name="length" sum="Total"/>
+                                <field name="active"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+    	</record>
+
+        <record id="export_layout_lot_header_form" model="ir.ui.view">
+        	<field name="name">Export Layout Lot of Header</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.export.layout.lot.header</field>
+        	<field name="arch" type="xml">
+                <form string="Export Layout Lot of Header">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                            <field name="condition"/>
+                        </group>
+                    </group>
+                    <separator string="File Export Layout Lines" colspan="4"/>
+                    <group colspan="4">
+                        <field name="file_export_layout_line_ids" nolabel="1">
+                            <tree>
+                                <field name="sequence"/>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="parent_id"/>
+                                <field name="data_type"/>
+                                <field name="length" sum="Total"/>
+                                <field name="active"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+    	</record>
+
+        <record id="export_layout_detail_form" model="ir.ui.view">
+        	<field name="name">Export Layout Detail</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.export.layout.detail</field>
+        	<field name="arch" type="xml">
+                <form string="Export Layout Detail">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                            <field name="condition"/>
+                        </group>
+                    </group>
+                    <separator string="File Export Layout Lines" colspan="4"/>
+                    <group colspan="4">
+                        <field name="file_export_layout_line_ids" nolabel="1">
+                            <tree>
+                                <field name="sequence"/>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="parent_id"/>
+                                <field name="data_type"/>
+                                <field name="length" sum="Total"/>
+                                <field name="active"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+    	</record>
+
+        <record id="export_layout_lot_footer_form" model="ir.ui.view">
+        	<field name="name">Export Layout Lot of Footer</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.export.layout.lot.footer</field>
+        	<field name="arch" type="xml">
+                <form string="Export Layout Lot of Footer">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                            <field name="condition"/>
+                        </group>
+                    </group>
+                    <separator string="File Export Layout Lines" colspan="4"/>
+                    <group colspan="4">
+                        <field name="file_export_layout_line_ids" nolabel="1">
+                            <tree>
+                                <field name="sequence"/>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="parent_id"/>
+                                <field name="data_type"/>
+                                <field name="length" sum="Total"/>
+                                <field name="active"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+    	</record>
+
+        <record id="export_layout_footer_form" model="ir.ui.view">
+        	<field name="name">Export Layout Footer</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.export.layout.footer</field>
+        	<field name="arch" type="xml">
+                <form string="Export Layout Footer">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                            <field name="condition"/>
+                        </group>
+                    </group>
+                    <separator string="File Export Layout Lines" colspan="4"/>
+                    <group colspan="4">
+                        <field name="file_export_layout_line_ids" nolabel="1">
+                            <tree>
+                                <field name="sequence"/>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="parent_id"/>
+                                <field name="data_type"/>
+                                <field name="length" sum="Total"/>
+                                <field name="active"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+    	</record>
+
+        <record id="export_layout_form" model="ir.ui.view">
+        	<field name="name">Export Layout</field>
+            <field name="view_type">form</field>
+        	<field name="model">file.export.layout</field>
+        	<field name="arch" type="xml">
+   				<form string="Export Layout" version="7.0">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="code"/>
+                            </group>
+                            <group>
+                                <field name="active"/>
+                                <field name="file_export_type"/>
+                                <field name="txt_type" attrs="{'invisible':[('file_export_type','!=','txt')]}"/>
+                            </group>
+                        </group>
+                        <group colspan="4">
+                            <field name="description"/>
+                        </group>
+                        <separator string="Header" colspan="4"/>
+                        <group>
+                            <field name="file_export_layout_header_ids" nolabel="1">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="condition"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <separator string="Lot of Header" colspan="4" attrs="{'invisible':['|',('txt_type','=','hdf'),('file_export_type','!=','txt')]}"/>
+                        <group attrs="{'invisible':['|',('txt_type','=','hdf'),('file_export_type','!=','txt')]}">
+                            <field name="file_export_layout_lot_header_ids" nolabel="1">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="condition"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <separator string="Detail" colspan="4"/>
+                        <group>
+                            <field name="file_export_layout_detail_ids" nolabel="1">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="condition"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <separator string="Lot of Footer" colspan="4" attrs="{'invisible':['|',('txt_type','=','hdf'),('file_export_type','!=','txt')]}"/>
+                        <group attrs="{'invisible':['|',('txt_type','=','hdf'),('file_export_type','!=','txt')]}">
+                            <field name="file_export_layout_lot_footer_ids" nolabel="1">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="condition"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <separator string="Footer" colspan="4"/>
+                        <group>
+                            <field name="file_export_layout_footer_ids" nolabel="1">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="condition"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+			</field>
+    	</record>
+
+        <record id="export_layout_tree" model="ir.ui.view">
+            <field name="name">Export Layout</field>
+            <field name="view_type">tree</field>
+            <field name="model">file.export.layout</field>
+            <field name="arch" type="xml">
+                <tree string="Export Layout">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="file_export_type"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_export_layout" model="ir.actions.act_window">
+            <field name="name">Export Layout</field>
+            <field name="res_model">file.export.layout</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+			<field name="view_id" ref="export_layout_tree"/>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem
+                id="menu_import_export_file"
+                name="Import/Export File"
+                parent="account.menu_finance_configuration"
+                sequence="20"/>
+
+        <menuitem
+                id="menu_export_layout"
+                name="Export Layout"
+                action="action_export_layout"
+                parent="menu_import_export_file"
+                sequence="1"/>
+    </data>
+</openerp>

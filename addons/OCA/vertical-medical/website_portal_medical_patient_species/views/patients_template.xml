@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <template id="patient_detail" inherit_id="website_portal_medical_patient.patient_detail">
+        <xpath expr="//div[div[label[@for='gender']]]" position="after">
+            <div class="form-group">
+                <div t-attf-class="form-field col-xs-12 #{error.get('species_id') and 'has-error' or ''} o_website_form_required_custom">
+                    <label class="control-label label-optional" for="species_id">
+                        Species
+                    </label>
+                    <select name="species_id" class="form-control o_website_form_input" required="">
+                        <option value="">Species...</option>
+                        <t t-foreach="species" t-as="species">
+                            <option t-att-value="species.id" t-att-selected="species.id == patient.species_id.id">
+                                <t t-esc="species.name" />
+                            </option>
+                        </t>
+                    </select>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

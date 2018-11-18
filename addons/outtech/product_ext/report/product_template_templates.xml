@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_productbarcode">
+    <t t-call="report.html_container">
+        <div class="page">
+            <t t-foreach="docs" t-as="template">
+                <t t-foreach="template.product_variant_ids" t-as="product">
+                    <t t-call="product_ext.report_barcode_label">
+                        <t t-set="product" t-value="product"/>
+                    </t>
+                </t>
+            </t>
+        </div>
+    </t>
+</template>
+
+<template id="report_productdiscount">
+    <t t-call="report.html_container">
+        <div class="page">
+            <t t-foreach="docs" t-as="template">
+                <t t-foreach="template.product_variant_ids" t-as="product">
+                    <t t-call="product_ext.report_label_discount_inherit">
+                        <t t-set="product" t-value="product"/>
+                    </t>
+                </t>
+            </t>
+        </div>
+    </t>
+</template>
+</odoo>

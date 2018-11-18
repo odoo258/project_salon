@@ -1,0 +1,644 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-10 17:14+0000\n"
+"PO-Revision-Date: 2018-01-10 17:14+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "1st Count"
+msgstr "1ª Contagem"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "2nd Count"
+msgstr "2ª Contagem"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "3rd Count"
+msgstr "3ª Contagem"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.report_inventory_verification
+msgid "<br/>\n"
+"                            <strong>Company: </strong>"
+msgstr "<br/>\n"
+"                            <strong>Empresa: </strong>"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.report_inventory_verification
+msgid "<br/>\n"
+"                            <strong>Date Inventory: </strong>"
+msgstr "<br/>\n"
+"                            <strong>Data do Inventário: </strong>"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.report_inventory_verification
+msgid "<br/>\n"
+"                            <strong>Date Report: </strong>"
+msgstr "<br/>\n"
+"                            <strong>Data do Relatório: </strong>"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.report_inventory_verification
+msgid "<br/>\n"
+"                            <strong>Location: </strong>"
+msgstr "<br/>\n"
+"                            <strong>Local: </strong>"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.report_inventory_verification
+msgid "<br/>\n"
+"                            <strong>State: </strong>"
+msgstr "<br/>\n"
+"                            <strong>Status: </strong>"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.report_inventory_verification
+msgid "<strong>Barcode</strong>"
+msgstr "<strong>Código de Barras</strong>"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.report_inventory_verification
+msgid "<strong>Inventory: </strong>"
+msgstr "<strong>Inventário: </strong>"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.report_inventory_verification
+msgid "<strong>Product</strong>"
+msgstr "<strong>Produto</strong>"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.report_inventory_verification
+msgid "<strong>Production Lot</strong>"
+msgstr "<strong>Lote de Produção</strong>"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.report_inventory_verification
+msgid "<strong>Stock Inventory with Verification</strong>"
+msgstr "<strong>Inventário de Estoque com Verificação</strong>"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.generate_demand_wizard
+msgid "Adjust the maximum and minimum stock for all products."
+msgstr "Ajusta a quantidade máxima e mínima em todas as Regras de Reordenação existentes."
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:223
+#, python-format
+msgid "At the first count there are not all products that should be accounted! Add the products, even if the quantity 0.00."
+msgstr "Na primeira contagem, não há todos os produtos que devem ser contabilizados! Adicione os produtos, mesmo que a quantidade seja 0,00."
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:287
+#, python-format
+msgid "At the second count there are not all products that should be accounted! Add the products, even if the quantity 0.00."
+msgstr "Na segunda contagem, não há todos os produtos que devem ser contabilizados! Adicione os produtos, mesmo que a quantidade seja 0,00."
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:352
+#, python-format
+msgid "At the third count there are not all products that should be accounted! Add the products, even if the quantity 0.00."
+msgstr "Na terceira contagem, não há todos os produtos que devem ser contabilizados! Adicione os produtos, mesmo que a quantidade seja 0,00."
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_product_barcode
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_product_barcode
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_product_barcode
+msgid "Barcode"
+msgstr "Código de barras"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.generate_demand_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Cancel Inventory"
+msgstr "Cancelar Inventário"
+
+#. module: stock_ext
+#: model:ir.actions.act_window,help:stock_ext.action_inventory_verification
+msgid "Click to start an inventory."
+msgstr "Clique para iniciar um inventário."
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_generate_demand_warehouse_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock.py:86
+#, python-format
+msgid "Configuration error. Please configure the price difference account on the product or its category to process this operation."
+msgstr "Erro de configuração. Por favor configure a conta de diferença de preço no produto ou sua categoria para processar esta operação."
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_company_form_inherit_2
+msgid "Configuração de Gerar Demanda"
+msgstr "Configuração de Gerar Demanda"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_generate_demand_create_uid
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_create_uid
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_create_uid
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_generate_demand_create_date
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_create_date
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_create_date
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_res_company_default_picking_type
+msgid "Default Picking Type"
+msgstr "Tipo de Separação Padrão"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_generate_demand_display_name
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_display_name
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_display_name
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_display_name
+msgid "Display Name"
+msgstr "Nome para Mostrar"
+
+#. module: stock_ext
+#: code:addons/stock_ext/wizard/stock_return_picking.py:65
+#, python-format
+msgid "Error!"
+msgstr "Erro!"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:203
+#, python-format
+msgid "Exist product(s) with quantity less than 0.00, please check first count products!"
+msgstr "Existe produto(s) com quantidade menor do que 0.00, por favor revise os produtos da primeira contagem!"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:266
+#, python-format
+msgid "Exist product(s) with quantity less than 0.00, please check second count products!"
+msgstr "Existe produto(s) com quantidade menor do que 0.00, por favor revise os produtos da segunda contagem!"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:329
+#, python-format
+msgid "Exist product(s) with quantity less than 0.00, please check third count products!"
+msgstr "Existe produto(s) com quantidade menor do que 0.00, por favor revise os produtos da terceira contagem!"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_line_qty_first_count
+msgid "First Count Quantity"
+msgstr "Qtd. Primeira Contagem"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_ids
+msgid "First Counts"
+msgstr "Primeira Contagem"
+
+#. module: stock_ext
+#: model:ir.actions.act_window,name:stock_ext.action_generate_demand
+#: model:ir.ui.menu,name:stock_ext.menu_action_generate_demand
+#: model:ir.ui.view,arch_db:stock_ext.generate_demand_wizard
+msgid "Generate Demand"
+msgstr "Gerar Demanda"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_res_company_generate_demand_date
+msgid "Generate Demand Date"
+msgstr "Data de Gerar Demanda"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.generate_demand_wizard
+msgid "Generate Demands"
+msgstr "Gerar Demandas"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_filter_ext
+msgid "Group By"
+msgstr "Agrupar Por"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_generate_demand_id
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_id
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_id
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_id
+msgid "ID"
+msgstr "ID"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "If a product is not at the right place, set the checked quantity to 0 and create a new line with correct location."
+msgstr "Se um produto não está no lugar correto, defina a quantidade verificada para 0 e crie uma nova linha com a localização correta."
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_filter_ext
+msgid "Inventories Month"
+msgstr "Inventários do Mês"
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_stock_inventory
+msgid "Inventory"
+msgstr "Inventário"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Inventory Adjustment"
+msgstr "Ajuste de Estoque"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Inventory Adjustments"
+msgstr "Ajustes de Estoque"
+
+#. module: stock_ext
+#: model:ir.actions.act_window,name:stock_ext.action_inventory_verification
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_inventory_adjustments_verification
+#: model:ir.ui.menu,name:stock_ext.menu_action_inventory_verification_form
+msgid "Inventory Adjustments with Verification"
+msgstr "Ajustes de Estoque com Verificação"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Inventory Details"
+msgstr "Detalhes de Inventário"
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_stock_inventory_line
+msgid "Inventory Line"
+msgstr "Linha do Inventário"
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_stock_location
+msgid "Inventory Locations"
+msgstr "Locais de Inventário"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_filter_ext
+msgid "Inventory Reference"
+msgstr "Referência de Inventário"
+
+#. module: stock_ext
+#: model:ir.actions.report.xml,name:stock_ext.action_report_inventory_verification
+msgid "Inventory With Verification"
+msgstr "Inventário com Verificação"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Inventory adjustments will be made by comparing the theoretical and the checked quantities."
+msgstr "Ajustes de inventário serão feitos através da comparação do teórico e das quantidades verificadas."
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Inventory of"
+msgstr "Inventário de"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_location_is_store
+msgid "Is Store"
+msgstr "É Loja"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_generate_demand___last_update
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count___last_update
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count___last_update
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_generate_demand_write_uid
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_write_uid
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_write_uid
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_generate_demand_write_date
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_write_date
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_write_date
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_generate_demand_location_ids
+msgid "Locais"
+msgstr "Locais"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_generate_demand_stock_location_id
+msgid "Local"
+msgstr "Local"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/generate_demand.py:49
+#, python-format
+msgid "Location"
+msgstr "Local"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/generate_demand.py:52
+#, python-format
+msgid "Locations"
+msgstr "Locais"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_tree_ext
+msgid "Lot/Serial Number Inventory"
+msgstr "Inventário de Lote / Número de Série"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_picking_form_inherit
+msgid "Mark as Todo"
+msgstr "Marcar Para Fazer"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_warehouse_orderpoint_months_divided
+msgid "Meses Divididos"
+msgstr "Meses Divididos"
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_stock_warehouse_orderpoint
+msgid "Minimum Inventory Rule"
+msgstr "Regra de Estoque Mínimo"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:195
+#, python-format
+msgid "No products for validate first count, please include at least one product!"
+msgstr "Nenhum produto para ser validado na primeira contagem, por favor inclua pelo menos um produto!"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:258
+#, python-format
+msgid "No products for validate second count, please include at least one product!"
+msgstr "Nenhum produto para ser validado na segunda contagem, por favor inclua pelo menos um produto!"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:321
+#, python-format
+msgid "No products for validate third count, please include at least one product!"
+msgstr "Nenhum produto para ser validado na terceira contagem, por favor inclua pelo menos um produto!"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:192
+#, python-format
+msgid "No responsible for validate first count, please include a responsible!"
+msgstr "Nenhum responsável para ser validado na primeira contagem, por favor inclua um responsável!"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:255
+#, python-format
+msgid "No responsible for validate second count, please include a responsible!"
+msgstr "Nenhum responsável para ser validado na segunda contagem, por favor inclua um responsável!"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:318
+#, python-format
+msgid "No responsible for validate third count, please include a responsible!"
+msgstr "Nenhum responsável para ser validado na terceira contagem, por favor inclua um responsável!"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Notes"
+msgstr "Observações"
+
+#. module: stock_ext
+#: model:ir.actions.act_window,help:stock_ext.action_inventory_verification
+msgid "Periodical Inventories are used to count the number of products\n"
+"            available per location. You can use it once a year when you do\n"
+"            the general inventory or whenever you need it, to adapt the\n"
+"            current inventory level of a product."
+msgstr "Inventários periódicos são usados para contar o número de produtos\n"
+"            disponível por local. Você pode usá-lo uma vez por ano, quando você fizer\n"
+"            o inventário geral ou sempre que você precisar, para adaptar o\n"
+"            nível de estoque atual de um produto."
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_filter_ext
+msgid "Physical Inventories by Month"
+msgstr "Os inventários físicos por mês"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/generate_demand.py:50
+#, python-format
+msgid "Picking Type"
+msgstr "Tipo de Separação"
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_procurement_order
+msgid "Procurement"
+msgstr "Aquisição"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_product_id
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_product_id
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_product_id
+msgid "Product"
+msgstr "Produto"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_quantity
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_quantity
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_quantity
+msgid "Quantity"
+msgstr "Quantidade"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Real Quantity"
+msgstr "Quantidade real"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_line_reconciled
+msgid "Reconciled"
+msgstr "Reconciliado"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_picking_form_inherit
+msgid "Reserve"
+msgstr "Reserva"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_responsible_first_count
+msgid "Responsible for the 1st Count"
+msgstr "Responsável pela 1ª Contagem"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_responsible_second_count
+msgid "Responsible for the 2nd Count"
+msgstr "Responsável pela 2ª Contagem"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_responsible_third_count
+msgid "Responsible for the 3rd Count"
+msgstr "Responsável pela 3ª Contagem"
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_stock_return_picking
+msgid "Return Picking"
+msgstr "Separação Devolvida"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_filter_ext
+msgid "Search Inventory"
+msgstr "Pesquisar Inventário"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_line_qty_second_count
+msgid "Second Count Quantity"
+msgstr "Qtd. Segunda Contagem"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_ids
+msgid "Second Counts"
+msgstr "Segunda Contagem"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Start Inventory"
+msgstr "Comerçar inventário"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_filter_ext
+msgid "Status"
+msgstr "Situação"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Stock Count"
+msgstr "Contagem de Estoque"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_stock_inventory_id
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_stock_inventory_id
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_stock_inventory_id
+msgid "Stock Inventory"
+msgstr "Inventário de Estoque"
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_stock_move
+msgid "Stock Move"
+msgstr "Movimento de Estoque"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Stock Moves"
+msgstr "Movimentos de Estoque"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock.py:40
+#, python-format
+msgid "The found valuation amount for product %s is zero. Which means there is probably a configuration error. Check the costing method and the standard price"
+msgstr "The found valuation amount for product %s is zero. Which means there is probably a configuration error. Check the costing method and the standard price"
+
+#. module: stock_ext
+#: code:addons/stock_ext/models/stock_inventory_count.py:189
+#, python-format
+msgid "There is more than one product on the checklist, check again and choose only once each product!"
+msgstr "Há repetição de produtos na lista de verificação, verifique novamente e escolha apenas uma vez cada produto!"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_line_qty_third_count
+msgid "Third Count Quantity"
+msgstr "Qtd. Terceira Contagem"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_ids
+msgid "Third Counts"
+msgstr "Terceira Contagem"
+
+#. module: stock_ext
+#: code:addons/stock_ext/wizard/stock_return_picking.py:66
+#, python-format
+msgid "This Fiscal Operation does not has Fiscal Operation for Returns!"
+msgstr "Esta Operação Fiscal não tem uma Operação Fiscal para Retornos!"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_generate_demand_picking_type_select
+msgid "Tipo de Separação"
+msgstr "Tipo de Separação"
+
+#. module: stock_ext
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_first_count_product_uom_id
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_second_count_product_uom_id
+#: model:ir.model.fields,field_description:stock_ext.field_stock_inventory_third_count_product_uom_id
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Unit of Measure"
+msgstr "Unidade de Medida"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "UoM"
+msgstr "UoM"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Validate First Count"
+msgstr "Validar Primeira Contagem"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Validate Second Count"
+msgstr "Validar Segunda Contagem"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "Validate Third Count"
+msgstr "Validar Terceira Contagem"
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "You can delete lines to ignore some products."
+msgstr "Você pode excluir linhas e ignorar alguns produtos."
+
+#. module: stock_ext
+#: model:ir.ui.view,arch_db:stock_ext.view_inventory_form_ext
+msgid "e.g. Annual inventory"
+msgstr "ex. Inventário Anual"
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_generate_demand
+msgid "generate.demand"
+msgstr "generate.demand"
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_stock_inventory_first_count
+msgid "stock.inventory.first.count"
+msgstr "stock.inventory.first.count"
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_stock_inventory_second_count
+msgid "stock.inventory.second.count"
+msgstr "stock.inventory.second.count"
+
+#. module: stock_ext
+#: model:ir.model,name:stock_ext.model_stock_inventory_third_count
+msgid "stock.inventory.third.count"
+msgstr "stock.inventory.third.count"
+

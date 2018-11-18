@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_pos_discount">
+        <t t-call="report.external_layout">
+        <t t-set="cont" t-value="0"/>
+        <t t-set="cont2" t-value="0"/>
+
+            <div class="page">
+
+                    <div id="informations" class="oe_structure">
+                        <t t-foreach="docs" t-as="doc">
+                            <t t-if="cont != 1"><t t-set="cont" t-value="1"/>
+                            <div class="row" style="border-bottom:1px solid black; padding-bottom: 4px;">
+                                <div class="col-xs-3">
+                                    <img t-if="doc.order_id.config_id.company_id.logo" t-att-src="'data:image/png;base64,%s' % doc.order_id.config_id.company_id.logo" style="max-height: 75px; padding-top: 2px; text-align:center"/>
+                                </div>
+                                <div class="col-xs-9">
+                                    <div class="row">
+                                        <div class="col-xs-6" style="text-align:center">
+                                            <p style="font-size: 18px; margin:0px;">
+                                            Relatório de Descontos Concedidos
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </t>
+                        </t>
+                    <br />
+
+                    <table class="table table-condensed" style="padding-top: 10px">
+                        <t t-if="cont2 != 1">
+                            <t t-set="cont2" t-value="1"/>
+                            <caption><p style="font-size: 18px; margin:0px;">Descontos Concedidos</p></caption>
+                            <thead>
+                                <tr style="font-size:11px">
+                                    <th class="text-left">Produto</th>
+                                    <th class="text-left">Ref. do Recibo</th>
+                                    <th class="text-left">Referência do Pedido</th>
+                                    <th class="text-left">Desconto (%)</th>
+                                    <th class="text-left">Desconto Valor</th>
+                                    <th class="text-left">Valor Unitário (R$)</th>
+                                    <th class="text-left">Quantidade</th>
+                                    <th class="text-left">Subtotal</th>
+                                    <th class="text-left">Vendedor</th>
+                                    <th class="text-left">Aprovador</th>
+                                    <th class="text-left">Data do Pedido</th>
+                                    <th class="text-left">Desconto Total(R$)</th>
+                                    <th class="text-left">Desconto Total(%)</th>
+                                </tr>
+                            </thead>
+                        </t>
+                        <tbody class="sale_tbody">
+                            <tr t-foreach="docs" t-as="statement" class="small">
+                                <t t-if="statement.discount or statement.discount_fixed or statement.order_id.discount_total or statement.order_id.discount_percent">
+                                    <td class="text-left">
+                                        <span t-field="statement.product_id" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.order_id.pos_reference" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.order_id.name" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.discount" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.discount_fixed" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.price_unit" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.qty" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.valor_bruto" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.order_id.user_id" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.order_id.authorizer_user_id" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.order_id.date_order" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.order_id.discount_total" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="statement.order_id.discount_percent" />
+                                    </td>
+                                </t>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

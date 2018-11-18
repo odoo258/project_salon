@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="admission_reactivate_wizard">
+        <field name="name">admission_reactivate_wizard</field>
+        <field name="model">admission.reactivate.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Reactivate Admission">
+                <group>
+                    <field name="reason"/>
+                </group>
+                <group string="Observation" colspan="4">
+                    <field name="observation" colspan="4" nolabel="1"/>
+                </group>
+                <footer>
+                    <button name="btn_reactivate" type="object" string="Reactivate" class="oe_highlight"/>
+                        or
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="admission_reactivate_wizard_action"
+        name="Admission Reactivate"
+        src_model="medical.inpatient.registration"
+        res_model="admission.reactivate.wizard"
+        view_mode="form"
+        target="new"
+        key2="client_action_multi"/>
+</odoo>

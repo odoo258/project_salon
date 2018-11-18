@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cnab_export_form" model="ir.ui.view">
+        <field name="name">Export CNAB</field>
+        <field name="model">cnab.export</field>
+        <field name="arch" type="xml">
+            <form string="Exportar CNAB">
+                <p>Generate Remessa File</p>
+                <footer>
+                    <button type="object" name="generate_open_bank_file" string="Export and View Bank Files" class="oe_highlight"/>
+                    <button type="object" name="generate_bank_remessa" string="Only Export"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cnab_export" model="ir.actions.act_window">
+        <field name="name">Export CNAB</field>
+        <field name="res_model">cnab.export</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <act_window id="act_window_cnab_export"
+                multi="True"
+    	        key2="client_action_multi"
+                name="Generation Bank Remessa"
+                res_model="cnab.export"
+                src_model="bank.payment"
+                view_id="cnab_export_form"
+                view_mode="form"
+                target="new"
+                view_type="form"/>
+</odoo>

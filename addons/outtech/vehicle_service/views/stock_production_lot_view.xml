@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_production_lot_form_inherit" model="ir.ui.view">
+            <field name="name">stock.production.lot.form.inherit</field>
+            <field name="model">stock.production.lot</field>
+            <field name="inherit_id" ref="stock.view_production_lot_form"/>
+            <field name="arch" type="xml">
+                <group name="main_group" position="replace">
+                    <group name="main_group">
+                        <group>
+                            <field name="product_id"/>
+                                <label for="product_qty"/>
+                                <div class="o_row">
+                                    <field name="product_qty"/>
+                                    <field name="product_uom_id" groups="product.group_uom"/>
+                                </div>
+                            <field name="ref"/>
+                            <field name="id_plataforma"/>
+                            <field name="identifier"/>
+                        </group>
+                        <group>
+                            <field name="imei"/>
+                            <field name="model"/>
+                            <field name="version"/>
+                            <field name="password"/>
+                        </group>
+                    </group>
+                    <separator string="SIM"/>
+                    <group name="sim">
+                        <group>
+                            <field name="sim_apn"/>
+                            <field name="sim_iccid"/>
+                            <field name="sim_imsi"/>
+                            <field name="sim_msisdn"/>
+                        </group>
+                        <group>
+                            <field name="sim_operator"/>
+                            <field name="sim_password"/>
+                            <field name="sim_length_plan"/>
+                            <field name="sim_user"/>
+                        </group>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <record id="view_picking_form_vehicle" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <button name="action_confirm" position="after">
+                    <button name="action_confirm_user" states="draft" string="Processar" type="object" class="oe_highlight"/>
+                </button>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="medical_appointment_code_seq" model="ir.sequence">
+            <field name="name">Appointment</field>
+            <field name="code">medical.appointment</field>
+            <field name="prefix"></field>
+            <field name="padding">0</field>
+        </record>
+
+    </data>
+</openerp>

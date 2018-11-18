@@ -1,0 +1,113 @@
+<odoo>
+    <data>
+        <template id="medical_exam_consultation">
+            <t t-call="website.layout">
+                <t t-set="title">Consulta de Exame</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h3 align="center" style="margin-top: 20px; margin-bottom: -20px;">Laudos</h3>
+                        <h2 align="center">Online</h2>
+                        <t t-if="not exams">
+                            <p>Não há exames deste tutor.</p>
+                        </t>
+                        <t t-if="exams">
+                            <table class="table table-hover o_my_status_table">
+                                <thead>
+                                    <tr class="active">
+                                        <th>Code #</th>
+                                        <th>Pet</th>
+                                        <th>Start Date</th>
+                                        <th>Final Date</th>
+                                        <th>State</th>
+                                    </tr>
+                                </thead>
+                                <t t-foreach="exams" t-as="exam">
+                                    <tr>
+                                        <td><a t-attf-href="/page/laudosonline/{{exam.id}}?{{keep_query()}}"><span t-esc="exam.code"/></a></td>
+                                        <td><span t-field="exam.patient_id.name"/></td>
+                                        <td><span t-field="exam.start_date"/></td>
+                                        <td><span t-field="exam.end_date"/></td>
+                                        <td><span t-field="exam.state"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="exams_followup" name="Exam">
+          <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                  <div class="container">
+                      <div class="panel panel-default" style="margin-top: 40px;">
+                        <div class="panel-heading">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <h4>Exame #<span t-esc="exam.code"/></h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel-body">
+                          <!-- <hr/> -->
+                          <div class="mb8">
+                              <strong>Data Inicial:</strong> <span t-field="exam.start_date" t-options='{"widget": "date"}'/> - <strong>Data Final:</strong> <span t-field="exam.end_date" t-options='{"widget": "date"}'/>
+                          </div>
+                          <div class='row'>
+                            <div class="col-md-6">
+                              <div>
+                                <strong>Informações Básicas</strong>
+                              </div>
+                              <div>
+                                <span><strong>Tutor: </strong><t t-esc="exam.owner_id.name" /></span><br />
+                                <span><strong>Pet: </strong><t t-esc="exam.patient_id.name" /></span><br />
+                                <span><strong>Veterinário: </strong><t t-esc="exam.doctor_id.name.name" /></span><br />
+                                <t t-if="exam.lab_requester_id">
+                                    <span><strong>Solicitante: </strong><t t-esc="exam.lab_requester_id.name.name" /></span><br />
+                                </t>
+                                <t t-if="not exam.lab_requester_id">
+                                    <span><strong>Solicitante: </strong>N/A</span><br />
+                                </t>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div>
+                                    <strong>Informações do Exame</strong>
+                                </div>
+                                <span><strong>Tipo do Teste: </strong><t t-esc="lab_tst_str" /></span><br />
+                                <span><strong>Status do Agendamento: </strong><t t-esc="schdl_state_str" /></span><br />
+                                <span><strong>Serviço: </strong><t t-esc="exam.service_id.name" /></span><br />
+                                <t t-if="exam.building_id">
+                                    <span><strong>Sala: </strong><t t-esc="exam.building_id.name" /></span>
+                                </t>
+                                <t t-if="not exam.building_id">
+                                    <span><strong>Sala: </strong>N/A</span>
+                                </t>
+                            </div>
+                          </div>
+
+                          <hr/>
+
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <t t-set="report_url" t-value="'/report/pdf/hospital_management.report_medical_exam_website/%s' % exam.id"/>
+                                  <a t-att-href="report_url" target="_blank">Baixar Exame <span class="fa fa-download"/></a>
+                              </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="row">
+                        <a class="btn btn-primary" t-attf-href="/page/laudosonline" style="margin-left: 15px;">Voltar</a>
+                      </div>
+                  </div>
+                  <div class="oe_structure mb32"/>
+              </div>
+            </div>
+          </t>
+        </template>
+    </data>
+</odoo>

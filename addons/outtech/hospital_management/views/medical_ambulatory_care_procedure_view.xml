@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>		
+		<record id="medical_ambulatory_care_procedure_view" model="ir.ui.view">
+            <field name="name">medical.ambulatory_care_procedure.form</field>
+            <field name="model">medical.ambulatory_care_procedure</field>
+            <field name="arch" type="xml">
+                <form string="Procedure">
+                	<field name="procedure_id">
+                	<field name="comments">
+			</form>
+            </field>
+        </record>
+        
+        </data>
+</openerp>

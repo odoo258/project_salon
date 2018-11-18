@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_pos_discount_ranking">
+        <t t-call="report.external_layout">
+        <t t-set="cont" t-value="0"/>
+        <t t-set="cont2" t-value="0"/>
+
+            <div class="page">
+
+                    <div id="informations" class="oe_structure">
+                            <t t-if="cont != 1"><t t-set="cont" t-value="1"/>
+                            <div class="row" style="border-bottom:1px solid black; padding-bottom: 4px;">
+                                <div class="col-xs-3">
+                                    <img t-if="logo" t-att-src="'data:image/png;base64,%s' % logo" style="max-height: 75px; padding-top: 2px; text-align:center"/>
+                                </div>
+                                <div class="col-xs-9">
+                                    <div class="row">
+                                        <div class="col-xs-6" style="text-align:center">
+                                            <p style="font-size: 18px; margin:0px;">
+                                            Relatório de Ranking de Descontos - De <span t-esc="start_date" t-options='{"widget": "date"}'/> À <span t-esc="end_date" t-options='{"widget": "date"}'/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </t>
+
+                    <table class="table table-condensed" style="padding-top: 10px">
+                        <t t-if="cont2 != 1">
+                            <t t-set="cont2" t-value="1"/>
+                            <!--<caption><p style="font-size: 18px; margin:0px;">Ranking de Desconto</p></caption>-->
+                            <thead>
+                                <tr style="font-size:18px">
+                                    <th class="text-left"><b>Vendedor</b></th>
+                                    <th class="text-left"><b>Total de Desconto em (%)</b></th>
+                                    <th class="text-left"><b>Total de Desconto em Valor</b></th>
+                                    <th class="text-left"><b>Total de Decontos</b></th>
+                                    <!--<th class="text-left">Total de Vendas</th>-->
+                                    <!--<th class="text-left">Total Recebido (R$)</th>-->
+                                </tr>
+                            </thead>
+                        </t>
+                        <tbody class="sale_tbody">
+                            <tr t-foreach="data" t-as="l">
+                                <td class="text-center">
+                                    <span t-esc="l['name_user']"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="l['total_percentual']" t-options="{'widget': 'float', 'decimal_precision': 'Product Price'}"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="l['total_valor']" t-options="{'widget': 'float', 'decimal_precision': 'Product Price'}"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="l['total']" t-options="{'widget': 'float', 'decimal_precision': 'Product Price'}"/>
+                                </td>
+                                <!--<td class="text-center">-->
+                                    <!--<span t-esc="l['total_vendas']" t-options="{'widget': 'float', 'decimal_precision': 'Product Price'}"/>-->
+                                <!--</td>-->
+                                <!--<td class="text-center">-->
+                                    <!--<span t-esc="l['total_recebido']" t-options="{'widget': 'float', 'decimal_precision': 'Product Price'}"/>-->
+                                <!--</td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

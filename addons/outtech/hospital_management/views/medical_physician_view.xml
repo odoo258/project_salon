@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="medical_physician_view" model="ir.ui.view">
+            <field name="name">medical.physician.view</field>
+            <field name="model">medical.physician</field>
+            <field name="arch" type="xml">
+                <form string="Physician">
+                    <sheet>
+                        <group>
+                            <field name="external"/>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="name" required="1" options="{'no_create': True}"
+                                   context="{'default_is_doctor': True, 'default_supplier': True, 'default_customer': False}"/>
+                            <field name="user_id" options="{'no_create': True}" attrs="{'required': [('external', '=', False)]}"/>
+                            <field name="institution_id" context="{'default_is_institution': 1}"/>
+                            <field name="building_id" attrs="{'readonly': [('institution_id', '=', False)]}" widget="many2many_tags" invisible="1"/>
+                            <field name="crmv"/>
+                            <field name="state_crm_id" domain="[('country_id','=', 32)]"/>
+                        </group>
+                        <notebook>
+                            <page string="Schedule Time">
+                                <field name="schedule_ids" widget="one2many_list" mode="tree" nolabel="1">
+                                    <tree editable="top">
+                                        <field name="weekday"/>
+                                        <field name="month"/>
+                                        <field name="year"/>
+                                        <field name="start_hour" widget="float_time"/>
+                                        <field name="end_hour" widget="float_time"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Schedule Canceled">
+                                <field name="schedule_canceled_ids" widget="one2many_list" mode="tree" nolabel="1">
+                                    <tree editable="top">
+                                        <field name="date_start"/>
+                                        <field name="date_end"/>
+                                        <field name="reason"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Especiality/Extra Info">
+                                <group colspan="4" col="8">
+                                    <field name="especiality_lab_test"/>
+                                    <field name="especiality_medicament"/>
+                                    <field name="especiality_medical_appointment"/>
+                                    <field name="especiality_vaccines"/>
+                                    <field name="especiality_intensive_veterinary_medicine"/>
+                                    <field name="especiality_surgery"/>
+                                    <field name="especiality_anesthesiology"/>
+                                    <field name="especiality_specialty"/>
+                                    <field name="especiality_esthetics"/>
+                                </group>
+                                <field name="info" colspan="4" placeholder="Extra info..."/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_physician_view_search" model="ir.ui.view">
+            <field name="name">medical.physician.view</field>
+            <field name="model">medical.physician</field>
+            <field name="arch" type="xml">
+                <search string="Search Physician">
+                    <separator orientation="vertical"/>
+                    <field name="name" select="1"/>
+                    <field name="crmv" select="1"/>
+                    <field name="institution_id" select="1"/>
+                    <newline/>
+                    <filter string="Doctor" icon="terp-personal" domain="[]" context="{'group_by':'doctor'}"/>
+                    <filter string="Date" icon="terp-go-month" domain="[]" context="{'group_by':'prescription_date'}"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="medical_physician_view_tree" model="ir.ui.view">
+            <field name="name">medical.physician.tree</field>
+            <field name="model">medical.physician</field>
+            <field name="arch" type="xml">
+                <tree string="Physician Information">
+                    <field name="name"/>
+                    <field name="crmv"/>
+                    <field name="institution_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_physician_action" model="ir.actions.act_window">
+            <field name="name">Physicians</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.physician</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_physician"
+                  string="Physicians"
+                  name='Physicians'
+                  parent="main_menu_configuration"
+                  sequence="7"/>
+
+        <menuitem id="menu_medical_physician"
+                  parent="menu_physician" action="medical_physician_action" sequence="6"/>
+
+    </data>
+</openerp>

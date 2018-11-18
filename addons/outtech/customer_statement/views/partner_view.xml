@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_partner_customer_statement" model="ir.ui.view">
+        <field name="name">res.partner.customer.statement</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Purchases">
+                    <field name="sale_lines"/>
+                    <field name="pos_lines"/>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

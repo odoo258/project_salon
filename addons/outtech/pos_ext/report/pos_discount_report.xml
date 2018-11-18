@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="report_posdiscount"
+            string="Relatorio de Desconto Concedido"
+            model="pos.order.line"
+            report_type="qweb-pdf"
+            file="pos_ext.report_pos_discount"
+            name="pos_ext.report_pos_discount"
+        />
+
+        <record id="paperformat_report_posdiscount" model="report.paperformat">
+            <field name="name">Relatorio de Desconto Concedido</field>
+            <field name="orientation">Landscape</field>
+        </record>
+
+        <record id="report_posdiscount" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="paperformat_report_posdiscount" />
+        </record>
+
+        <!-- Ranking de Descontos -->
+
+        <report
+                id="report_posdiscount_ranking"
+                string="Relatorio de Ranking de Descontos"
+                model="pos.order.report.ranking"
+                report_type="qweb-pdf"
+                file="pos_ext.report_pos_discount_ranking"
+                name="pos_ext.report_pos_discount_ranking"
+        />
+
+        <record id="paperformat_report_posdiscount_ranking" model="report.paperformat">
+            <field name="name">Relatorio de Ranking de Descontos</field>
+            <field name="orientation">Landscape</field>
+        </record>
+
+        <record id="report_posdiscount_ranking" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="paperformat_report_posdiscount_ranking" />
+        </record>
+        
+    </data>
+</odoo>

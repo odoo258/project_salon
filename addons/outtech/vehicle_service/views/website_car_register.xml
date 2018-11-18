@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <template id="page_registro_veiculo">
+            <t t-call="website.layout">
+                <script type="text/javascript" src="/vehicle_service/static/src/js/website-car-validate.js" />
+                <t t-set="title">Cadastro do Veículo</t>
+                <div class="oe_structure">
+                    <xpath expr="//div[@id='wrapwrap']/main/div" position="after">
+                        <div class="container">
+                            <t t-call="vehicle_service.wizard_checkout_inherit">
+                                <t t-set="step" t-value="22" />
+                            </t>
+
+                            <h1 class="mb32">Cadastro</h1>
+                            <div class="row">
+                                <div style="background-color: rgb(217, 217, 217); width: 50%; padding: 20px 20px 60px; margin-bottom: 20px; border-radius: 20px;">
+                                    <form class="checkout_autoformat center" action="/page/vehicle_register_submit" id="car_submit_id" method="POST" role="form" enctype="multipart/form-data">
+                                        <h4>Dados do Veículo</h4>
+                                        <div class="form-group center">
+                                            <label class="control-label" for="nome_proprietario" align="left">Nome do Proprietário</label>
+                                            <div id="nome_proprietario" class="input-append">
+                                                <input type="text" name="nome_proprietario" required="required"/>
+                                            </div>
+
+                                            <label class="control-label" for="placa" align="left">Placa</label>
+                                            <div id="placa" class="input-append">
+                                                <input type="text" name="placa" required="required" id="placa" maxlength="7"/>
+                                            </div>
+
+                                            <label class="control-label" for="renavam" align="left">Renavam</label>
+                                            <div id="renavam" class="input-append">
+                                                <input type="text" name="renavam" required="required" maxlength="11"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button id="btn_submit_register" width="100px" class="btn btn-default btn-primary pull-left mb32 a-submit">Confirmar</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </xpath>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

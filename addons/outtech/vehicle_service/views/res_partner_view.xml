@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="lang" position="after">
+                    <field name="resale"/>
+                    <field name="user_plataforma" readonly="1"/>
+                    <!--<field name="transactionKey" readonly="1"/>-->
+                    <!--<field name="orderKey" readonly="1"/>-->
+                    <field name="instantBuyKey" readonly="1"/>
+                    <field name="password" password="True" readonly="1"/>
+                    <field name="gender"/>
+                    <field name="birthdate"/>
+                </field>
+
+                <notebook position="inside">
+                    <page string="Resale" attrs="{'invisible': [('resale', '=', False)]}">
+                        <group>
+                            <group>
+                                <field name="qty_installers" attrs="{'required': [('resale', '=', True)]}"/>
+                            </group>
+                            <group>
+                                <field name="resale_location" attrs="{'required': [('resale', '=', True)]}"/>
+                            </group>
+                            <group>
+                                <field name="sale_team" attrs="{'required': [('resale', '=', True)]}"/>
+                            </group>
+                        </group>
+                    </page>
+                    <!-- Deixar invisivel para nao aparecer para usuario -->
+                    <page string="Credit Card" invisible="1">
+                        <separator string="Credit Card"/>
+                        <group>
+                            <group>
+                                <field name="credit_card_payment_acquirer"/>
+                                <field name="credit_card_display_number"/>
+                                <field name="credit_card_name"/>
+                                <field name="credit_card_number" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="credit_card_security_code" password="True"/>
+                                <field name="credit_card_month_expiration"/>
+                                <field name="credit_card_year_expiration"/>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+    </data>
+</odoo>

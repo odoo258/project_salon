@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="medical_product_inherit" model="ir.ui.view">
+            <field name="name">medical.product.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="type" position="before">
+                    <field name="medical_type"/>
+                </field>
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page string="Materials" attrs="{'invisible': [('type', '!=', 'service')]}">
+                        <field name="sur_material_ids" nolabel="1" colspan="4">
+                            <tree editable="bottom">
+                                <field name="product_id"/>
+                                <field name="quantity" sum="quantity"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

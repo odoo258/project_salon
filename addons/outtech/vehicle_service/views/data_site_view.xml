@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_data_site_form">
+            <field name="name">data.site.form</field>
+            <field name="model">data.site</field>
+            <field name="view_type">form</field>
+            <field name="arch" type="xml">
+                <form string="Data Site">
+                    <sheet>
+                        <separator string="Term Add User"/>
+                            <field name="term_user" colspan="4" required="1"/>
+                            <field name="active"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_data_site_tree">
+            <field name="name">data.site.tree</field>
+            <field name="model">data.site</field>
+            <field name="arch" type="xml">
+                <tree string="Data Site">
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="act_data_site_view">
+            <field name="name">Data Site</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">data.site</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="data_site_menu" parent="website.menu_website_global_configuration" name="Termos de Uso" action="act_data_site_view"/>
+
+    </data>
+</odoo>

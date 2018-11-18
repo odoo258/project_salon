@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="installation_schedule_sequence" model="ir.sequence">
+            <field name="name">Installation Schedule</field>
+            <field name="code">installation.schedule</field>
+            <field name="prefix">SV/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <record id="quick_sale_sequence" model="ir.sequence">
+            <field name="name">Quick Sale</field>
+            <field name="code">quick.sale</field>
+            <field name="prefix">QS/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+   </data>
+</odoo>

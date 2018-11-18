@@ -1,0 +1,187 @@
+<odoo>
+    <data>
+        <template id="wizard_checkout_inherit" name="Wizard Checkout" inherit_id="website_sale.wizard_checkout">
+            <xpath expr="//ul[@class='wizard pull-right']" position="replace">
+                <ul class="wizard pull-right">
+                    <li t-att-class="step==5 and 'text-primary' or 'text-muted'" id="step5">
+                        <t t-if="step&gt;5 and step&lt;50">
+                            <a href="/page/choose_plan" class="text-success">
+                                Procurar Plano<span class="chevron"></span>
+                            </a>
+                        </t>
+                        <t t-if="not (step&gt;5 and step&lt;50)">
+                            Procurar Plano<span class="chevron"></span>
+                        </t>
+                    </li>
+                    <li t-att-class="step==10 and 'text-primary' or 'text-muted'" id="step10">
+                        <t t-if="step&gt;10 and step&lt;50">
+                            <a href="/shop/cart" class="text-success">
+                                Revisar Pedido<span class="chevron"></span>
+                            </a>
+                        </t>
+                        <t t-if="not (step&gt;10 and step&lt;50)">
+                            Revisar Pedido<span class="chevron"></span>
+                        </t>
+                    </li>
+
+                    <li t-att-class="(step==20 and 'text-primary') or 'text-muted'" id="step20">
+                        <t t-if="step&gt;20 and step&lt;50">
+                            <a href="/shop/checkout" class="text-success">
+                                Cobrança<span class="chevron"/>
+                            </a>
+                        </t>
+                        <t t-if="not (step&gt;20 and step&lt;50)">
+                            Cobrança<span class="chevron"/>
+                        </t>
+                    </li>
+
+                    <li t-att-class="step==22 and 'text-primary' or 'text-muted'" id="step22">
+                        <t t-if="step&gt;22 and step&lt;50">
+                            <a href="/page/vehicle_register" class="text-success">
+                                Dados Veículo<span class="chevron"></span>
+                            </a>
+                        </t>
+                        <t t-if="not (step&gt;22 and step&lt;50)">
+                            Dados Veículo<span class="chevron"></span>
+                        </t>
+                    </li>
+
+                    <li t-att-class="step==25 and 'text-primary' or 'text-muted'" id="step25">
+                        <t t-if="step&gt;25 and step&lt;50">
+                            <a href="/shop/edit_credit_card" class="text-success">
+                                Cartão de Crédito<span class="chevron"></span>
+                            </a>
+                        </t>
+                        <t t-if="not (step&gt;25 and step&lt;50)">
+                            Cartão de Crédito<span class="chevron"></span>
+                        </t>
+                    </li>
+
+                    <li t-att-class="(step==40 and 'text-primary') or 'text-muted'" id="step40">
+                        <t t-if="step&gt;40 and step&lt;50">
+                            <a href="/shop/payment" class="text-success">
+                                Pagamento<span class="chevron"></span>
+                            </a>
+                        </t>
+                        <t t-if="not (step&gt;40 and step&lt;50)">
+                            Pagamento<span class="chevron"></span>
+                        </t>
+                    </li>
+
+                    <li t-att-class="(step==45 and 'text-primary') or 'text-muted'" id="step45">
+                        <t t-if="step&gt;45 and step&lt;50">
+                            <a href="/shop/payment" class="text-success">
+                                Agendamento<span class="chevron"></span>
+                            </a>
+                        </t>
+                        <t t-if="not (step&gt;45 and step&lt;50)">
+                            Agendamento<span class="chevron"></span>
+                        </t>
+                    </li>
+
+                    <li t-att-class="(step==50 and 'text-primary') or 'text-muted'" id="step50">
+                        Confirmação<span class="chevron"></span>
+                    </li>
+
+                </ul>
+            </xpath>
+        </template>
+
+        <template id="shipping_address_replace" name="Shipping Address Replace" inherit_id="website_portal_sale.orders_followup">
+            <xpath expr="//div[@id='shipping_address']" position="replace">
+
+            </xpath>
+        </template>
+
+        <template id="search_box_replace1" name="Search Box Replace" inherit_id="website_sale.search">
+            <form position="replace"/>
+        </template>
+
+        <template id="search_box_replace2" name="Search Box Replace" inherit_id="website_sale.sort">
+            <div class="dropdown btn-group dropdown_sorty_by" position="replace"/>
+        </template>
+
+        <template id="terms_of_use_link"
+          inherit_id="website.layout_footer_copyright"
+          name="Powered By Remove">
+            <div class="pull-right" position="replace"/>
+        </template>
+
+        <template id="remove_product_price" name="Product Price Replace" inherit_id="website_sale.products_item">
+            <div class="product_price" position="before">
+                <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" t-if="product.product_variant_ids">
+                    <t t-if="price_instalation">
+                        <b>
+                            Instalação: R$
+                            <span t-esc="price_instalation" />
+                        </b>
+                    </t>
+                </div>
+            </div>
+
+            <xpath expr="//div[@class='product_price']/b/span[@itemprop='priceCurrency']/.." position="before">
+                <b>
+                    <span>Mensalidade:</span>
+                </b>
+            </xpath>
+        </template>
+
+        <template id="remove_product_price_cart" name="Cart Product Price Replace" inherit_id="website_sale.product_price">
+            <div class="product_price mt16" position="before">
+                <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" t-if="product.product_variant_ids">
+                    <t t-if="price_instalation">
+                        <h4>
+                            <b>
+                                Instalação: R$
+                                <span t-esc="price_instalation" />
+                            </b>
+                        </h4>
+                    </t>
+                </div>
+            </div>
+
+            <xpath expr="//div[@class='product_price mt16']/h4/b" position="before">
+                <b><span>Mensalidade: </span></b>
+            </xpath>
+        </template>
+
+        <template id="price_quantity_readonly" name="Price Quantity Readonly" inherit_id="website_sale.product_quantity">
+            <input type="text" class="form-control" position="replace">
+                <span class="form-control" style="text-align:center;">1</span>
+            </input>
+        </template>
+
+        <template id="cart_quantity_readonly" name="Cart Quantity Readonly" inherit_id="website_sale.cart_lines">
+            <th width="130" position="replace">
+                <td width="130" />
+            </th>
+
+            <a class="mb8 input-group-addon js_add_cart_json" position="replace" />
+            <a class="mb8 input-group-addon float_left js_add_cart_json" position="replace" />
+            <input class="js_quantity form-control" position="replace">
+                <input type="hidden" class="js_quantity form-control" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_qty)"/>
+            </input>
+        </template>
+
+        <template id="remove_product_price_cart_box" name="Cart Box Product Price Replace" inherit_id="website_sale_options.modal">
+            <th width="100" position="replace" />
+            <span class="oe_price" position="replace" />
+            <xpath expr="//tr[@id='product_confirmation']/td/span[@t-field='product.lst_price']/.." position="replace" />
+
+            <input type="text" class="js_quantity form-control" position="replace">
+                <span class="form-control" style="text-align:center;">1</span>
+            </input>
+        </template>
+
+        <template id="total_contract_replace" name="Total Contract Replace" inherit_id="website_contract.contract">
+            <p t-field="account.recurring_amount_tax" position="replace">
+                <p>R$ 0,00</p>
+            </p>
+
+            <p t-field="account.recurring_amount_total" position="replace">
+                <p class="mb0" t-field="account.recurring_total" t-field-options='{"widget": "monetary", "display_currency": pricelist.currency_id}'/>
+            </p>
+        </template>
+
+    </data>
+</odoo>

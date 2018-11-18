@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Action-->
+    <record id="action_extrato_do_cliente" model="ir.actions.act_window">
+        <field name="name">Extrato do Cliente</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('supplier','=',False), ('customer','=',True)]</field>
+        <!--<field name="context">{'default_customer':1, 'search_default_customer':1}</field>-->
+        <!--<field name="filter" eval="True"/>-->
+    </record>
+
+    <!--Menu-->
+    <menuitem
+        id="extrato_do_cliente"
+        name="Extrato do Cliente"
+        parent="br_account_payment.menu_br_payments"
+        sequence="23"
+        action="action_extrato_do_cliente"
+        />
+
+</odoo>

@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <template name="Agendamento" id="schedule_service" page="True">
+            <t t-call="website.layout">
+                <div class="container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Protocolo</th>
+                                <th>Data do Agendamento</th>
+                                <th>Período</th>
+                                <th>Modelo</th>
+                                <th>Placa</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <t t-foreach="scheduler" t-as="partner">
+                        <div id="course_id">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><p><t t-esc="partner.name"/></p></td>
+                                        <td><p><span t-field="partner.date_scheduler" t-field-options='{"format": "d MMMM y"}'/></p></td>
+                                        <td>
+                                            <t t-if="partner.period == 'morning'"><p>Manhã</p></t>
+                                            <t t-if="partner.period == 'afternoon'"><p>Tarde</p></t>
+                                            <t t-if="partner.period == 'night'"><p>Noite</p></t>
+                                        </td>
+                                        <td><p><t t-esc="partner.model_id.name"/></p></td>
+                                        <td><p><t t-esc="partner.plate"/></p></td>
+                                    </tr>
+                               </tbody>
+
+                            </table>
+                        </div>
+                    </t>
+                    <div style="float: right; margin-left: 495px; height: auto; width: auto;">
+                        <a class="btn btn-default btn-primary pull-right mb32" href="/my/home"><span class="fa fa-long-arrow-left" /> Voltar</a>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

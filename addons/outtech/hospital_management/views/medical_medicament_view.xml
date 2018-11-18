@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>		
+		<record id="medical_medicament_view" model="ir.ui.view">
+            <field name="name">medical.medicament.form</field>
+            <field name="model">medical.medicament</field>
+            <field name="arch" type="xml">
+                <form string="medicaments">
+					<notebook>
+						<page string="Main Info">
+						<group colspan="4" col="4">
+                                        		<field name="product_id" required="1" context="{'default_is_medicament': 1, 'search_default_is_medicament': 1,'search_default_type': 'service','default_type': 'service'}"/>
+                                        		<field name="category_id"/>
+                                        		<field name="therapeutic_action"/>
+							<field name="active_component"/>
+							<field name="price" readonly="1"/>
+							<field name="qty_available" readonly="1"/>
+							<newline/>
+                                        		<field name="indications" colspan="4"/>
+                                        		</group>
+                                        	</page>
+						<page string="Presentation">
+							<field name="presentation"/>
+						</page>
+						<page string="Composition">
+							<field name="composition"/>
+						</page>
+
+						<page string="Dosage">
+							<group colspan="4" col="4">
+							<field name="dosage"/>
+							<field name="overdosage"/>
+							</group>
+						</page>
+
+						<page string="Pregnancy / Lactancy">
+						<group colspan="4" col="4">
+							<field name="pregnancy_warning"/>
+							<field name="pregnancy_category"/>
+							<field name="pregnancy"/>
+							</group>
+						</page>
+
+						<page string="Adverse Reactions">
+							<field name="adverse_reaction"/>
+						</page>
+
+						<page string="Storage Conditions">
+							<field name="storage"/>
+						</page>
+
+						<page string="Extra Info">
+							<field name="notes"/>
+						</page>
+					</notebook>
+
+                                </form>
+            </field>
+        </record>
+        
+        <record id="medical_medicament_tree" model="ir.ui.view">
+            <field name="name">medical.medicament.tree</field>
+            <field name="model">medical.medicament</field>
+            <field name="arch" type="xml">
+                <tree string="medicament">
+                                <field name="product_id"/>
+                                <field name="active_component"/>
+								<field name="category_id"/>
+								<field name="qty_available" readonly="1"/>
+								<field name="therapeutic_action"/>
+                                <field name="pregnancy_warning"/>
+                                <field name="price"/>
+                                </tree>
+            </field>
+        </record>
+        
+        <record id="medical_action_tree_medicament" model="ir.actions.act_window">
+            <field name="name">Medicaments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.medicament</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_medicament" name="Medicaments" parent="main_menu_configuration" sequence="8"/>
+		<menuitem id="menu_sub_medicament" action="medical_action_tree_medicament" sequence="0" parent="menu_misc"/>
+
+        </data>
+</openerp>

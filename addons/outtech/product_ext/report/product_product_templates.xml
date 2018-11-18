@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_barcode_label">
+            <div class="col-xs-4" style="padding:0;">
+                <table style="border-spacing:0; table-layout: fixed; width: 48mm; page-break-inside: avoid;" class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <td style="border: 1px solid black;" colspan="2">
+                                <t t-if="product.default_code">
+                                    <t t-if="len(product.name) + len(product.default_code)&lt;=39">
+                                        <div style="height: 13px; overflow: visible; font-family: Microsoft Sans Serif, Arial">
+                                            <t t-if="product.default_code">
+                                                <b style="font-size: 7px;">[<span t-esc="product.default_code"/>]</b>
+                                            </t>
+                                            <b style="font-size: 7px;"><span t-esc="product.name"/></b>
+                                        </div>
+                                    </t>
+                                    <t t-if="len(product.name) + len(product.default_code)&gt;39">
+                                        <div style="height: 20px; overflow: visible; margin-top: -7px; padding-bottom: 15px; font-family: Microsoft Sans Serif, Arial">
+                                            <t t-if="product.default_code">
+                                                <b style="font-size: 7px;">[<span t-esc="product.default_code"/>]</b>
+                                            </t>
+                                            <b style="font-size: 7px;"><span t-esc="product.name"/></b>
+                                        </div>
+                                    </t>
+                                </t>
+                                <t t-if="not product.default_code">
+                                    <t t-if="len(product.name)&lt;=39">
+                                        <div style="height: 13px; overflow: visible; font-family: Microsoft Sans Serif, Arial">
+                                            <b style="font-size: 7px;"><span t-esc="product.name"/></b>
+                                        </div>
+                                    </t>
+                                    <t t-if="len(product.name)&gt;39">
+                                        <div style="height: 20px; overflow: visible; margin-top: -7px; padding-bottom: 15px; font-family: Microsoft Sans Serif, Arial">
+                                            <b style="font-size: 7px;"><span t-esc="product.name"/></b>
+                                        </div>
+                                    </t>
+                                </t>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center; overflow: hidden;" colspan="2">
+                                <div style="height: 58px;overflow: hidden; font-family: Arial; font-weight: bold;">
+                                    <h2>
+                                        <img t-if="product.barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', product.barcode, 170, 45)" style="margin-top: -16px; margin-bottom: -10px;"/>
+
+                                        <p><b><span style="font-size: 6px;" t-field="product.barcode"/></b></p>
+                                    </h2>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+
+
+        <template id="report_simple_label_inherit" inherit_id="product.report_simple_label">
+            <xpath expr="//div[@class='col-xs-4']" position="replace">
+                <div class="col-xs-8" style="padding:0;">
+                <table style="border-spacing:0;margin-bottom:0; width: 426px; height: 167px; page-break-inside: avoid;" class="table">
+                    <thead>
+                        <tr>
+                            <td style="border: 2px solid black;" colspan="2" class="col-xs-8 danger">
+                                <div style="height: 40px; overflow: visible; font-family: Arial; font-weight: bold;">
+                                    <t t-if="product.default_code">
+                                        <t t-if="len(product.name) + len(product.default_code)&lt;=39">
+                                            <div style="padding-top: 10px;">
+                                                <t t-if="product.default_code">
+                                                    <strong style="font-size: 16px;">[<span t-field="product.default_code" style="font-size: 16px"/>]</strong>
+                                                </t>
+                                                <strong t-field="product.name" style="font-size: 16px"/>
+                                            </div>
+                                        </t>
+                                        <t t-if="len(product.name) + len(product.default_code)&gt;39">
+                                            <t t-if="product.default_code">
+                                                <strong style="font-size: 16px;">[<span t-field="product.default_code" style="font-size: 16px"/>]</strong>
+                                            </t>
+                                            <strong t-field="product.name" style="font-size: 16px"/>
+                                        </t>
+                                    </t>
+                                    <t t-if="not product.default_code">
+                                        <t t-if="len(product.name)&lt;=39">
+                                            <div style="padding-top: 10px;">
+                                                <t t-if="product.default_code">
+                                                    <strong style="font-size: 16px;">[<span t-field="product.default_code" style="font-size: 16px"/>]</strong>
+                                                </t>
+                                                <strong t-field="product.name" style="font-size: 16px"/>
+                                            </div>
+                                        </t>
+                                        <t t-if="len(product.name)&gt;39">
+                                            <strong t-field="product.name" style="font-size: 16px"/>
+                                        </t>
+                                    </t>
+                                </div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 2px solid black;text-align: center; vertical-align: middle; width: 30%;" class="col-xs-5">
+                                <div style="height: 48px; overflow: visible; font-family: Arial; font-weight: bold;">
+                                    <img class="image" t-att-src="'data:image/png;base64,%s' % res_company.logo" style="margin-top: -20px; width: 70%;"/>
+                                </div>
+                            </td>
+                            <td style="border: 2px solid black; text-align: center; width: 90%;" class="col-xs-7">
+                                <div style="height: 48px; font-family: Arial; font-weight: bold;">
+                                    <h1 style="font-size: 50px;">
+                                        <strong t-field="res_company.currency_id.symbol" />
+                                        <strong t-field="product.list_price" />
+                                    </h1>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </xpath>
+        </template>
+
+        <template id="report_label_discount_inherit">
+                <div class="col-xs-8" style="padding:0;">
+                <table style="border-spacing:0;margin-bottom:0; width: 426px; height: 167px; page-break-inside: avoid;" class="table">
+                    <thead>
+                        <tr>
+                            <td style="border: 2px solid black;" colspan="2" class="col-xs-8 danger">
+                                <div style="height: 40px; overflow: visible; font-family: Arial; font-weight: bold;">
+                                    <t t-if="product.default_code">
+                                        <t t-if="len(product.name) + len(product.default_code)&lt;=39">
+                                            <div style="padding-top: 10px;">
+                                                <t t-if="product.default_code">
+                                                    <strong style="font-size: 16px;">[<span t-field="product.default_code" style="font-size: 16px"/>]</strong>
+                                                </t>
+                                                <strong t-field="product.name" style="font-size: 16px"/>
+                                            </div>
+                                        </t>
+                                        <t t-if="len(product.name) + len(product.default_code)&gt;39">
+                                            <t t-if="product.default_code">
+                                                <strong style="font-size: 16px;">[<span t-field="product.default_code" style="font-size: 16px"/>]</strong>
+                                            </t>
+                                            <strong t-field="product.name" style="font-size: 16px"/>
+                                        </t>
+                                    </t>
+                                    <t t-if="not product.default_code">
+                                        <t t-if="len(product.name)&lt;=39">
+                                            <div style="padding-top: 10px;">
+                                                <strong t-field="product.name" style="font-size: 16px"/>
+                                            </div>
+                                        </t>
+                                        <t t-if="len(product.name)&gt;39">
+                                            <strong t-field="product.name" style="font-size: 16px"/>
+                                        </t>
+                                    </t>
+                                </div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 2px solid black;text-align: center; vertical-align: middle; width: 30%;" class="col-xs-5">
+                                <div style="height: 48px; overflow: visible; font-family: Arial; font-weight: bold;">
+                                    <img class="image" t-att-src="'data:image/png;base64,%s' % res_company.logo" style="margin-top: -20px; width: 70%;"/>
+                                </div>
+                            </td>
+                            <td style="border: 2px solid black; text-align: center; width: 90%;" class="col-xs-7">
+                                <div style="height: 48px; font-family: Arial; font-weight: bold;">
+                                    <div style="text-align: left; overflow: hidden; margin-right: 10px; margin-top: -30px;">
+                                        <p style="font-size: 18px;margin-top: 30px; text-decoration: line-through; color: #e60000;">
+                                            <strong t-field="res_company.currency_id.symbol" />
+                                            <strong t-field="product.list_price" />
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h1 style="font-size: 50px; margin-top: -15px;">
+                                            <strong t-field="res_company.currency_id.symbol" />
+                                            <strong><span t-field="product.promotional_price" /></strong>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+
+    </data>
+</odoo>

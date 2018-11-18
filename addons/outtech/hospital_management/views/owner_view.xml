@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_br_base_partner_owner_tree" model="ir.ui.view">
+            <field name="name">medical.partner.filter</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
+            <field name="arch" type="xml">
+                    <filter name="type_company" position="after">
+                        <separator />
+                        <filter string="Is Owner"
+                                name='is_owner' domain="[('is_owner', '=', 1)]"/>
+                    </filter>
+            </field>
+        </record>
+        <record id="action_partner_owner_form" model="ir.actions.act_window">
+            <field name="name">Owners</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="domain">[]</field>
+            <field name="context">{'default_is_owner':1, 'search_default_is_owner':1}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a owner.
+                </p>
+            </field>
+        </record>
+        <!-- PETS / PROPRIETÁRIO -->
+        <menuitem id="menu_owner2"
+                  action="action_partner_owner_form"
+                  name="Owner"
+                  parent="menu_patients"
+                  sequence="3"/>
+    </data>
+</openerp>

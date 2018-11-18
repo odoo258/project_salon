@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+        <template id="select_accept_terms" name="select_accept_terms" inherit_id="auth_signup.fields">
+            <xpath expr="//div[@class='form-group field-confirm_password']" position="after">
+                <div class="checkbox">
+                    <label><input type="checkbox" value="" required="True">Eu li e concordo com estes <a href="/page/terms_render">termos e condições.</a></input></label>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="remove_title_terms" name="remove_title_terms" inherit_id="website.terms">
+            <xpath expr="//div[@id='wrap']" position="replace">
+                <t t-set="title">Termos de Uso</t>
+                <div id="wrap">
+                  <div class="oe_structure">
+                    <section data-snippet-id="title">
+                      <h1 class="text-center">
+                        Termos de Uso
+                      </h1>
+                    </section>
+                  </div>
+                  <div class="oe_structure">
+                    <section class="s_text_block">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-12 mb16 mt16">
+                            <h2>Termos de Uso</h2>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12 mb16 mt16">
+                              <t t-if="data_site">
+                                <t t-raw="data_site.term_user" />
+                              </t>
+
+                              <t t-if="not data_site">
+                                <p>Este é apenas um modelo de Termo de Uso. Para preencher o texto dos termos de acordo com a sua necessidade, abra o sistema, vá em Administrador de Site, vá em Configurações e entre em Termos de Uso.</p>
+
+                                <p>Os termos de uso são necessários para informar ao usuários os termos de contrato da sua empresa, para evitar qualquer tipo de problema legal</p>
+                              </t>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+
+                <div class="oe_structure">
+                    <section class="s_text_block">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-12 mb16 mt16">
+                            <a class="btn btn-default btn-primary pull-right mb32 " href="/web/signup"><span class="fa fa-long-arrow-left" /> Voltar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

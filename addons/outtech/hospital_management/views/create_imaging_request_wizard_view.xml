@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="medical_imaging_test_request_wizard_view" model="ir.ui.view">
+            <field name="name">Create Request</field>
+            <field name="model">medical.imaging.test.request.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Invoice Sales Order">
+                    <header>
+                        <button name="cancel" string="cancel" type="object" />
+                        <button name="create_lab_imaging_request" string="Create Request" type="object"/>
+            		 </header>
+                    <group colspan="4" col="4">
+                        <field name="test_date"/>
+                        <field name="patient_id"/>
+                        <field name="phy_id"/>
+                        <field name="urgent"/>
+                    </group>
+                    <field name="test_ids"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_medical_imaging_test_request_wizard" model="ir.actions.act_window">
+            <field name="name">Create Imaging Request</field>
+            <field name="res_model">medical.imaging.test.request.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+	<menuitem id="menu_main_imaging"
+                  string="Imaging"
+                  name ='imaging'
+                  parent="main_menu_health_care"
+                  sequence="5"/>
+                  
+	<menuitem id="menu_medical_imaging_test_request_wizard"
+                  action="action_medical_imaging_test_request_wizard"
+                  string="Create Imaging Request"
+                  parent="health_care.menu_main_imaging"
+                  sequence="1"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,91 @@
+<odoo>
+    <data>
+        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Choose Plan">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/vehicle_service/static/src/js/website-choose-plan.js" />
+            </xpath>
+        </template>
+
+        <!--<template id="outtech_menu_secondary" name="" inherit_id="br_base.trust_menu_secondary">-->
+             <!--<div class="oe_footer" position="replace" />-->
+        <!--</template>-->
+
+        <template id="page_choose_plan">
+            <t t-call="website.layout">
+                <t t-set="title">Choose Your Plan</t>
+                <div class="oe_structure">
+                    <xpath expr="//div[@id='wrapwrap']/main/div" position="after">
+                        <div class="container">
+                            <t t-call="vehicle_service.wizard_checkout_inherit">
+                                <t t-set="step" t-value="5" />
+                            </t>
+
+                            <h1 class="mb32">Para Iniciar</h1>
+                            <div class="row">
+
+                            <form class="checkout_autoformat center" action="/shop/search_plan" id="search_plans_id" method="POST" role="form" enctype="multipart/form-data" style="width: 50%; margin-left: 20px;">
+                            <div class="form-group center">
+                                <label class="control-label" for="categ_id" align="left">Categoria</label>
+                                <select id="select_categ_ids" name="categ_id" class="form-control" required="True">
+                                    <option value="">Categoria...</option>
+                                    <t t-foreach="categ_ids or []" t-as="categ">
+                                        <option>
+                                            <t t-esc="categ.name" name="category_final"/>
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="manufacturer_id" style="text-align:left;">Marca</label>
+                                <input id="input_manufacturer_id" type="hidden"/>
+                                <select id="select_manufacturer_ids" name="manufacturer_id" class="form-control" required="True">
+                                    <option value="">Marca...</option>
+                                    <t t-foreach="categ or []" t-as="manufacturer">
+                                        <option t-att-value="manufacturer.id" t-att-selected="manufacturer.id">
+                                            <t t-esc="manufacturer.name" name="manufactorer_final"/>
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="model_id" style="text-align:left;">Modelo</label>
+                                <input id="input_model_id" type="hidden"/>
+                                <select id="select_model_ids" name="model_id" class="form-control" required="True" >
+                                    <option value="">Modelo...</option>
+                                    <t t-foreach="manufac or []" t-as="modelo">
+                                        <option t-att-value="modelo.id" t-att-selected="modelo.id">
+                                            <t t-esc="modelo.name" name="modelo_final"/>
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="year_id" align="left">Ano</label>
+                                <input id="input_year_id" type="hidden"/>
+                                <select id="select_year_ids" name="year_id" class="form-control" required="True" >
+                                    <option value="">Ano...</option>
+                                    <t t-foreach="modelo or []" t-as="year">
+                                        <option t-att-value="year.id" t-att-selected="year.id">
+                                            <t t-esc="year.name" name="year_final"/>
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+
+                            <div>
+                                <button id="btn_search_plan" width="100px" class="btn btn-default btn-primary pull-left mb32 a-submit">Buscar</button>
+                            </div>
+
+                            </form>
+                        </div>
+                        </div>
+                    </xpath>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+        <record id="medical_family_disease_tree_view" model="ir.ui.view">
+            <field name="name">medical_family_disease_tree_view_1</field>
+            <field name="model">medical.family.disease</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="medial_pathology_id"/>
+                    <field name="relative"/>
+                    <field name="metrnal"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="medical_medical_preinatal_tree" model="ir.ui.view">
+            <field name="name">medical.preinatal.tree.view</field>
+            <field name="model">medical.preinatal</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="gestational_weeks"/>
+                    <field name="admission_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_medical_preinatal_tree" model="ir.ui.view">
+            <field name="name">medical.preinatal.form.view</field>
+            <field name="model">medical.preinatal</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="gestational_weeks"/>
+                    <field name="admission_date"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="medical_patient_prental_evoultion_tree" model="ir.ui.view">
+            <field name="name">medical.patient.prental.evoultion.tree.view</field>
+            <field name="model">medical.patient.prental.evoultion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="evoultion_date"/>
+                    <field name="gestational_weeks"/>
+                    <field name="hypertansion"/>
+                    <field name="preclampsia"/>
+                    <field name="overwieght"/>
+                    <field name="diabetes"/>
+                    <field name="placenta_previa"/>
+                    <field name="invasive_placentation"/>
+                    <field name="vasa_previa"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="medical_puerperium_monitor_tree" model="ir.ui.view">
+            <field name="name">medical.puerperium.monitor.tree</field>
+            <field name="model">medical.puerperium.monitor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date"/>
+                    <field name="systolic_pressure"/>
+                    <field name="diastolic_pressure"/>
+                    <field name="heart_freq"/>
+                    <field name="temprature"/>
+                    <field name="fundal_height"/>
+                    <field name="lochia_amount"/>
+                    <field name="lochia_color"/>
+                    <field name="loicha_order"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="medical_patient_pregnancy_view" model="ir.ui.view">
+            <field name="name">medical.patients.pregnancy.form</field>
+            <field name="model">medical.patient.pregnency</field>
+            <field name="arch" type="xml">
+                <form string="Pregnancies" version="7.0">
+                    <group id="group_pregnancy_header" colspan="4" col="8">
+                        <field name="gravida"/>
+                        <field name="lmp"/>
+                        <field name="pdd"/>
+                        <field name="current_pregnency"/>
+                    </group>
+                    <group colspan="3" string="Prenatal Evaluations">
+                        <field name="medical_patient_evolution_prental_ids"/>
+                    </group>
+                    <group colspan="3" string="Prenatal Info">
+                        <field name="medical_perinatal_ids"/>
+                    </group>
+                    <group colspan="3" string="Puerperium Monitor">
+                        <field name="puerperium_perental_ids"/>
+                    </group>
+                    <group id="group_pregnancy_footer1" colspan="4" col="8">
+                        <field name="fetuses"/>
+                        <field name="monozygotic"/>
+                        <field name="igur"/>
+                        <field name="warn"/>
+                    </group>
+
+                    <group id="group_pregnancy_footer2" colspan="4" col="4">
+                        <field name="pregnancy_end_date"
+                               attrs="{'invisible': [('current_pregnency', '=', True)], 'required' : [('current_pregnency', '!=', True)]}"/>
+                        <field name="pregnancy_end_result"
+                               attrs="{'invisible': [('current_pregnency', '=', True)], 'required' : [('current_pregnency', '!=', True)]}"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="medical_patients_view_form" model="ir.ui.view">
+            <field name="name">medical.patients.view.form</field>
+            <field name="model">medical.patient</field>
+            <field name="arch" type="xml">
+                <form string="Patient">
+                    <header>
+                        <button name="print_report" type="object" string="Print Patient Card" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <field name="photo" nolabel="1" class="oe_left oe_avatar" img_width="120" img_height="120"
+                               width="120" height="120" widget="image"/>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name"/>
+                            </div>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Patient Name"/>
+                            </h1>
+                            <label for="owner_id"/>
+                            <field name="owner_id" domain="[('is_owner','=', True)]" context="{'default_is_owner': True}"/>
+                            <field name="blood_type" style="width: 30%" invisible="1"/>
+                            <field name="id" invisible="1"/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="is_salon" invisible="1"/>
+                                <field name="dob" required="1"/>
+                                <field name="sex" required="1"/>
+                                <field name="color_id" required="1"/>
+                                <field name="hair_id" required="1"/>
+                            </group>
+                            <group>
+                                <field name="age" readonly="1"/>
+                                <field name="especie_id" required="1"/>
+                                <field name="ethnic_group" domain="[('especie_id','=', especie_id)]" required="1"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <separator colspan="4" string="Patient Critical Information"/>
+                            <newline/>
+                            <field colspan="6" name="critical_info" nolabel="1"/>
+                        </group>
+                        <notebook>
+                            <page string="General Information">
+                                <group string="Patient General Information">
+                                    <group>
+                                        <!--field name="current_insurance"/-->
+                                        <field name="microchip_code"/>
+                                    </group>
+                                </group>
+
+                                <group colspan="4" string="Patient Extra Information">
+                                    <field colspan="4" name="general_info" nolabel="1"/>
+                                    <newline/>
+                                    <group>
+                                        <field name="deceased"/>
+                                        <field name="dod"
+                                               attrs="{'invisible':[('deceased','=',False)],'required':[('deceased','=',True)]}"/>
+                                        <field name="cod" attrs="{'invisible':[('deceased','=',False)]}"/>
+                                    </group>
+                                </group>
+                            </page>
+
+                            <page string="Diseases">
+                                <field name="diseases" nolabel="1" widget="one2many_list"/>
+                            </page>
+                            <page string="Genetic Risks" invisible="1">
+                                <group>
+                                    <field name="genetic_risks" widget="many2many_tags"/>
+                                </group>
+                                <group>
+                                    <field name="family_history" colspan="4" widget="one2many_list"/>
+                                </group>
+                            </page>
+                            <page string="Gyneco / Obs" invisible="1"><!-- attrs="{'invisible':[('sex','=','m')]}" > -->
+                                <group string="Gyneco">
+                                    <group string="General">
+                                        <field name="fertile"/>
+                                        <field name="currently_pregnant"/>
+                                        <field name="menarche"/>
+                                        <field name="menopausal"/>
+                                        <field name="menopause"/>
+                                    </group>
+                                    <group string="Prevention and Screening">
+                                        <field name="breast_self_examination"/>
+                                        <newline/>
+                                        <field name="mammography"/>
+                                        <field name="mammography_last"/>
+                                        <field name="pap_test"/>
+                                        <field name="pap_test_last"/>
+                                        <field name="colposcopy"/>
+                                        <field name="colposcopy_last"/>
+
+                                    </group>
+                                </group>
+                                <group string="Obstetrics">
+                                    <group>
+                                        <group>
+                                            <field name="gpa"/>
+                                            <field name="full_term"/>
+                                            <field name="deaths_1st_week"/>
+                                            <field name="deaths_2nd_week"/>
+                                        </group>
+                                        <group>
+                                            <field name="gravida"/>
+                                            <field name="born_alive"/>
+                                            <field name="premature"/>
+                                            <field name="abortions"/>
+                                        </group>
+                                    </group>
+                                    <newline/>
+                                    <group string="Perinatal">
+                                        <field name="perinatal" nolabel="1" widget="one2many_list"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Admission">
+                                <field name="admission_ids" nolabel="1"  widget="one2many_list" readonly="1"
+                                       context="{'admission_view': True}"/>
+                            </page>
+                            <page string="Maps">
+                                <field name="map_ids" nolabel="1"  widget="one2many_list" readonly="1" context="{'admission_view': True}"/>
+                            </page>
+                            <page string="Salon Orders" attrs="{'invisible': [('is_salon', '=', False)]}">
+                                <field name="salon_order_ids" nolabel="1"  widget="one2many_list" readonly="1"
+                                       context="{'default_partner_id': owner_id, 'default_patient_id': id, 'admission_view': True}"/>
+                            </page>
+                            <page string="Prescription">
+                                <field name="prescription_ids" nolabel="1"  widget="one2many_list" readonly="1"
+                                       context="{'default_patient_id': id, 'admission_view': True}"/>
+                            </page>
+                            <page string="Hotel">
+                                <h1>Hotel - A ser implementado</h1>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="medical_patients_view_tree" model="ir.ui.view">
+            <field name="name">medical.patients.view.tree</field>
+            <field name="model">medical.patient</field>
+            <field name="arch" type="xml">
+                <tree string="Patient Information">
+                    <field name="name"/>
+                    <field name="owner_id"/>
+                    <field name="dob"/>
+                    <field name="deceased"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_medical_patients_code" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="res_model">medical.patient</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_medical_patient_code"
+                  action="action_medical_patients_code"
+                  name="Patients"
+                  parent="menu_patients"
+                  sequence="0"/>
+    </data>
+</openerp>
+

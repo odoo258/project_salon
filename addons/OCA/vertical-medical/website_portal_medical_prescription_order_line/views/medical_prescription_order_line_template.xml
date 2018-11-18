@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs [https://laslabs.com]
+    @license AGPL-3
+-->
+
+<odoo>
+
+    <template id="prescription_lines" name="Prescription Lines">
+        <h3 class="page-header">
+            Prescriptions
+        </h3>
+        <t t-if="not prescription_order_lines">
+            <p>There are currently no prescriptions associated with your account.</p>
+        </t>
+        <t t-if="prescription_order_lines">
+            <h5>
+                If you would like to order a medication, please click the green
+                button to add to cart.
+            </h5>
+            <div class="container">
+                <div class="row">
+                <t t-foreach="prescription_order_lines" t-as="line">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <span t-field="line.patient_id.name" /> - <span t-field="line.medicament_id.display_name" />
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <label class="label label-info">Rx Number</label>
+                                    <span t-field="line.name" />
+                                </p>
+                                <p>
+                                    <t t-if="line.is_expired">
+                                        <label class="label label-danger">Expired</label>
+                                    </t>
+                                    <t t-if="line.can_dispense_qty &gt; 0 and not line.is_expired">
+                                        <label class="label label-info">Remain</label>
+                                        <span t-field="line.can_dispense_qty" />
+                                    </t>
+                                    <t t-if="line.can_dispense_qty &lt; 1 and not line.is_expired">
+                                        <label class="label label-danger">Out of Refills</label>
+                                    </t>
+                                </p>
+
+                                <t t-if="line.can_dispense_qty > 0 and not line.is_expired">
+                                    <t t-set="product" t-value="line.medicament_id.product_id" />
+                                    <form action="/shop/cart/update" method="POST">
+                                        <input type="hidden"
+                                                name="csrf_token"
+                                                t-att-value="request.csrf_token()"
+                                                />
+                                        <input type="hidden"
+                                                class="product_id"
+                                                name="product_id"
+                                                t-att-value="int(product.product_variant_ids[0]) if len(product.product_variant_ids) == 1 else '0'"
+                                                />
+                                        <input type="hidden" name="set_qty" t-att-value="line.qty" />
+                                        <t t-if="line.id in order_lines_filtered.ids or [line.id] == order_lines_filtered.ids">
+                                            <button type="submit"
+                                                    class="btn btn-success btn-xs mt8 pull-right"
+                                                    >
+                                                <i class="fa fa-2x fa-cart-plus" />
+                                            </button>
+                                        </t>
+                                    </form>
+                                </t>
+                                <t t-if="not line.can_dispense_qty">
+                                    <i class="fa fa-2x fa-times" />
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

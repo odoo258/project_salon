@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pagfor_export_form" model="ir.ui.view">
+        <field name="name">Export Pagfor</field>
+        <field name="model">pagfor.export</field>
+        <field name="arch" type="xml">
+            <form string="Exportar Pagfor">
+                <p>Generate Remessa File</p>
+                <footer>
+                    <button type="object" name="generate_open_bank_file" string="Export and View Bank Files" class="oe_highlight"/>
+                    <button type="object" name="generate_pagfor_remessa" string="Only Export"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pagfor_export" model="ir.actions.act_window">
+        <field name="name">Export Pagfor</field>
+        <field name="res_model">pagfor.export</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <act_window id="act_window_pagfor_export"
+                name="Generation Pagfor Remessa"
+                res_model="pagfor.export"
+                src_model="lot.payment"
+                view_id="pagfor_export_form"
+                view_mode="form"
+                target="new"
+                view_type="form"/>
+</odoo>

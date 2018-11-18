@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="email_template_quick_sale_mail" model="mail.template">
+        <field name="name">Quick Sale Mail</field>
+        <field name="model_id" ref="vehicle_service.model_quick_sale"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="email_from">${(object.product_id_product.company_id and object.product_id_product.company_id.email)|safe}</field>
+        <field name="email_to">${(object.email_partner or '')|safe}</field>
+        <field name="subject">Email confirm</field>
+        <field name="body_html"><![CDATA[
+            <div style="width: 800px; padding: 5px; border: 1px solid silver">
+<table width="100%">
+	<tr>
+		<th colspan="2" width="100%">
+			<img src="/web/image/2034" class="pull-left" style="width: 100%;" data-original-title="" title="">
+		</th>
+	</tr>
+	<tr>
+		<th width="50%">
+			<img src="/web/image/2033" class="pull-left" style="width: 100%;">
+		</th>
+		<th width="50%">
+			<img src="/web/image/2032" class="pull-left" style="width: 100%;">
+		</th>
+	</tr>
+</table>
+<div>
+    <br>
+    <p style="font-weight: bold; color: #4169E1">Olá ${object.name_partner},<br><br></p>
+    <p>Parabéns! Você acaba de adquirir os serviços de rastreamento e monitoramento veicular da Empresa <b>Telefônica Inteligência e Segurança Brasil Ltda</b>.</p>
+    <br>
+    <p>Abaixo segue o Contrato de Serviços, que logo após o seu aceite, você terá a maior cobertura de rastreabilidade veicular do Brasil, com atendimento e suporte de 24 horas por dia, em todo território nacional.</p>
+    <br>
+    <p>Para maiores informações acesse: <a href="http://ingenieriadeseguridad.telefonica.com">http://ingenieriadeseguridad.telefonica.com</a>.</p>
+    <br>
+    <br>
+</div>
+<table border="1" cellspacing="0" cellpadding="0" width="100%">
+	<tbody><tr>
+		<td>
+			<table width="100%">
+				<tbody><tr>
+					<td width="40%">
+						<img src="/web/image/2019" width="150px" data-original-title="" title="" class="">
+					</td>
+					<td width="60%">
+						<table width="100%">
+							<tbody>
+							<tr>
+								<th align="right" width="50%">Representante de Vendas:
+								</th><td align="left" width="50%">${object.resale_id.commercial_company_name}</td></tr>
+							<tr>
+								<th align="right"></th>
+								<td align="left"></td>
+							</tr>
+							<tr>
+								<th align="right">Número do Pedido:
+								</th><td align="left">${object.name or ""}</td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><th style="color: red; padding: 5px">PEDIDO DE ATIVAÇÃO
+	</th></tr><tr>
+		<td>
+			<table width="100%">
+				<tbody><tr>
+					<th align="left" colspan="8">Qualificação do Contratante
+				</th></tr><tr>
+					<th colspan="8"></th>
+				</tr>
+				<tr>
+					<th align="right" colspan="2">Nome:
+					</th><td align="left" colspan="6">${object.name_partner}
+				</td></tr><tr>
+					<th align="right" colspan="2">CPF/CNPJ:
+					</th><td align="left" colspan="2">${object.cnpj_cpf_partner}
+					</td><th align="right" colspan="2">RG:
+					</th><td align="left" colspan="2"><br></td>
+				</tr><tr>
+					<th align="right" colspan="2">Endereço:
+					</th><td align="left" colspan="2">${object.street_partner}
+					</td><th align="right" colspan="2">Bairro:
+					</th><td align="left" colspan="2">${object.district_partner}
+				</td></tr><tr>
+					<th align="right" colspan="2">Complemento:
+					</th><td align="left" colspan="2">${object.street2_partner or ""}
+					</td><th align="right" colspan="2">E-mail:
+					</th><td align="left" colspan="2">${object.email_partner}
+				</td></tr><tr>
+					<th align="right" colspan="2" width="20%">CEP:
+					</th><td align="left" colspan="2" width="40%">${object.zip_code_partner}
+					</td><th align="right" colspan="2" width="10%">Cidade:
+					</th><td align="left" width="10%">${object.city_id_partner.display_name} </td><th align="right" width="10%">UF:
+					</th><td align="left" width="10%">${object.state_id_partner.display_name} </td></tr><tr>
+					<th align="right" colspan="2">Telefones:
+					</th><td align="left" colspan="6">${object.phone_partner or ""} - ${object.mobile_partner or ""}
+	</td></tr></tbody></table></td></tr><tr><th align="left" style="padding: 5px">Dados do Veículo
+	</th></tr><tr>
+		<td>
+			<table border="1" cellspacing="0" width="100%">
+				<tbody><tr>
+					<th>Placa
+					</th><th>Renavam
+					</th><th>Tipo
+					</th><th>Ano
+					</th><th>Marca/Modelo
+					</th>
+				</tr><tr>
+					<td align="center">${object.plate_vehicle}</td>
+					<td>${object.renavam_vehicle}</td>
+					<td>${object.category_id_vehicle.display_name}</td>
+					<td>${object.year_id_vehicle.name}</td>
+					<td>${object.manufacturer_id_vehicle.name}/${object.model_id_vehicle.name}</td>
+				</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<h1>1.	DESCRIÇÃO DOS PRODUTOS
+
+</h1><h2>Rastreador Veicular:
+</h2><ul>
+<li>Serviço de Monitoramento de veículo com utilização de equipamento Rastreador GPS/GPRS.
+</li><li>Acesso ao monitoramento do veículo pela Plataforma Web e Aplicativo para Smartphone.
+</li><li>Central de monitoramento e equipe de pronta resposta disponível 24 horas.
+
+
+</li></ul><p>Neste Pacote estarão disponibilizados os seguintes elementos:
+</p><ul>
+
+<li>
+	<h3><b><u>Rastreador GPS/GPRS:
+	</u></b></h3><p>
+	Equipamento instalado no veículo que tem a função de coletar e armazenar a localização do veículo através da tecnologia GPS. Estas informações são enviadas para a Plataforma Web através de conectividade móvel GPRS.
+
+
+</p></li><li>
+	<h3><b><u>Plataforma Web
+	</u></b></h3><p>
+	Pela Internet o cliente poderá acessar a Plataforma Web, com seu login e senha, onde poderá ter acesso ao monitoramento de seu veículo. As funcionalidades disponibilizadas neste pacote são:
+
+	</p><ul>
+	<li>Localização do Veículo: Última localização do veículo
+	</li><li>Histórico de Localização do Veículo: Registros de localizações, com respectivas datas e horários, do veículo monitorado pelo Serviço que estarão disponíveis em formato mapa, timeline ou relatório.
+	</li><li>Cerca Eletrônica: Facilidade de configurar a delimitação de regiões ou rotas onde o veículo monitorado pode transitar. Um alerta será gerado na Plataforma quando o veículo sair destas regiões ou rotas.
+
+
+</li></ul></li><li>
+	<h3><b><u>Aplicativo para Smartphone
+	</u></b></h3><p>Cliente terá disponível um aplicativo, compatível com Sistemas Operacionais Android e IOS, que poderá ser instalado em seu Smartphone.
+	</p><p>As funcionalidades no aplicativo neste pacote são:
+	</p><ul>
+	<li>Localização do Veículo: Última localização do veículo
+	</li><li>Cerca Eletrônica Provisória: Facilidade de ativar/ desativar uma determinada Cerca Eletrônica Provisória com o objetivo de gerar alerta no aplicativo avisando o cliente caso o veículo sair desta Cerca Eletrônica Provisória.
+
+
+</li></ul></li><li>
+	<h3><b><u>Equipe de Pronta Resposta
+	</u></b></h3></li><p>Equipe profissional com a responsabilidade, nos casos de sinistro de roubo ou furto do veículo monitorado, deslocar-se até a última localização do veículo registrado na Plataforma Web com o objetivo na possível localização do veículo.
+	</p><p>Está incluso neste pacote a execução do serviço em no máximo 3 horas a partir do acionamento da equipe de Pronta Resposta, caso seja necessária sua extensão, será cobrado a hora adicional, conforme tabela de preços descrito neste documento, com a respectiva aprovação do cliente.
+
+
+
+
+</p></ul><h1>2.	PREÇOS
+</h1><table width="100%" border="1" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+		<th align="left">Produtos
+	</th></tr><tr>
+		<td>
+			<table width="100%" border="1" cellspacing="0">
+				<tbody><tr>
+					<th>Produto
+					</th><th>Opção
+					</th><th>Descrição/Periodicidade
+					</th><th>Unidade
+					</th><th>Valor
+				</th></tr><tr>
+					<th align="left">${object.product_id_product.name} </th><td align="center">X
+					</td><td>${object.product_id_product.name}
+					</td>
+					<td>Instalação
+					</td><td>R$ ${str('%.2f' % object.price_product).replace('.',',')}
+				</td></tr><tr>
+					<th align="left">${object.plan_id_product.name} </th><td align="center">X
+					</td><td>${object.plan_id_product.name}
+					</td><td>Por Mês
+					</td><td>R$ ${str('%.2f' % object.monthly_payment).replace('.',',')}
+				</td></tr>
+				</tbody>
+			</table>
+		</td></tr><tr>
+		<td>
+			<table border="0">
+				<tbody><tr>
+					<th>Período do Contrato:
+					</th><td>12 Meses
+	</td></tr></tbody>
+	</table>
+	</td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0">
+				<tbody>
+					<tr>
+						<th colspan="2" align="left"><br>Habilitação e Pagamento</th>
+					</tr>
+					<tr>
+						<td>Cartão de Crédito ${object.payment_acquirer_credit_card.display_name}</td>
+						<td>Nº Cartão: ${object.display_number_credit_card}</td>
+					</tr>
+					<tr>
+						<th align="right"><br>Instalação</th>
+						<td align="left"><br>1x de R$ ${str('%.2f' % object.price_product).replace('.',',')}</td>
+					</tr>
+					<tr>
+						<th align="right">Plano Mensal</th>
+						<td align="left">12x de R$ ${str('%.2f' % object.monthly_payment).replace('.',',')}</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<h2 style="text-decoration: underline;">Instalação
+</h2><p>Serviço de instalação do equipamento rastreador no veículo a ser monitorado e ativação do serviço contratado. Este serviço deverá ser agendado e executado nas nossas credenciadas.
+
+</p><h2 style="text-decoration: underline;">Mensalidade
+</h2><p>Valor mensal pela prestação do serviço.
+
+</p><h2 style="text-decoration: underline;">Troca de Veículo
+</h2><p>Serviço de retirada e instalação do equipamento rastreador quando o cliente solicitar a troca de veículo a ser monitorado pelo serviço. Este serviço deverá ser agendado e executado nas nossas credenciadas.
+
+</p><h2 style="text-decoration: underline;">Manutenção (Mau uso)
+</h2><p>Serviço de manutenção quando o técnico detecta que houve violação no rastreador e/ou chicote e/ou nos fios e/ou conectores e/ou antena, no entanto, não houve extravio do equipamento e dos demais acessórios.
+
+</p><h2 style="text-decoration: underline;">Pronta Resposta (Hora adicional)
+</h2><p>Valor da hora adicional, além das 3 horas inclusas no pacote, pela prestação do serviço de Pronta Resposta.
+
+</p><h2 style="text-decoration: underline;">Taxa de Reagendamento Comercial (fora do prazo)
+</h2><p>Taxa pelo reagendamento de execução de qualquer serviço a ser executado na rede de credenciada de prestadores quando o cliente solicite o reagendamento fora do prazo mínimo de antecedência.
+
+</p><h2 style="text-decoration: underline;">Taxa de Troca de Titularidade
+</h2><p>Taxa referente à solicitação pelo cliente atual da troca de titularidade do serviço.
+
+</p><h2 style="text-decoration: underline;">Taxa Falsa Notificação de Sinistro
+</h2><p>Taxa referente à comunicação de notificação de sinistro pelo cliente e que após a sua análise se detecta que não existiu nenhum sinistro.
+
+</p><h1>3.	PRAZOS
+</h1><p>3.1. O presente contrato vigorará pelo prazo de 12 (doze) meses contados da data de assinatura do presente contrato (prazo inicial de vigência), prorrogando-se automaticamente por prazo indeterminado a partir do término do referido prazo inicial de vigência, considerando o disposto na Proposta e neste instrumento.
+</p><p>3.1.1. A partir do momento que o presente contrato passe a vigorar por prazo indeterminado, o CONTRATANTE poderá denunciar o Contrato (parcial ou totalmente), de forma imotivada, mediante notificação por escrito à TIS com, pelo menos, 90 (noventa) dias de antecedência, sem qualquer ônus.
+</p><p>3.2.  O presente contrato poderá ser rescindido a qualquer tempo pela TIS em caso de atraso superior a 30 (trinta) dias no pagamento de qualquer valor devido pela CONTRATANTE nos termos deste contrato, sem prejuízo de outros valores e/ou multas devidos conforme definido neste contrato e na Proposta.
+</p><p>3.3. Na hipótese de devolução dos equipamentos, por qualquer motivo, em especial na hipótese de extinção do contrato, a CONTRATANTE deverá agendar junto a Central de Monitoramento, no prazo máximo de 15 dias corridos, uma data para a desinstalação e retirada dos equipamentos cedidos em comodato, sob pena de arcar com o pagamento mensal do correspondente a 30% do valor da mensalidade, a título de aluguel, até a data da devolução.
+
+</p><h1>4. PENALIDADE
+</h1><p>4.1. A hipótese de denúncia antecipada do presente contrato pela CONTRATANTE ensejará o pagamento à TIS, a título de indenização, de multa equivalente ao percentual de 10% (dez por cento) sobre todos os valores que seriam devidos à CONTRATANTE até o encerramento da vigência deste contrato, além da taxa de desinstalação dos equipamentos cedidos em comodato no valor de R$ 100,00 (cem reais).
+</p><p>4.1.1 A hipótese de denuncia antecipada do presente contrato por qualquer das partes ensejará o pagamento a parte inocente, taxa de cancelamento e retirada no valor de R$230,00 (Duzentos e Trinta Reais) se solicitado do 1º ao 12º mês de contrato e R$120,00 (Cento e Vinte Reais) se solicitado do 13º ao 23º mês de contrato. Para CONTRATANTE sem seguro.
+
+</p><p>Confirmo os dados acima, após a leitura e ciência das cláusulas contratuais e o recebimento do manual dos serviços de rastreamento veicular.
+
+</p><br>
+<br>
+<br>
+<p>
+_________________________________<br>
+${object.name_partner}<br>
+CPF/CNPJ: ${object.cnpj_cpf_partner}
+
+
+</p>
+<p style="text-align:right;">São Paulo, ${object.date}.</p>
+<br>
+<p align="center">
+	<a href="@link" style="border: 1px solid black; color: red; background-color: lime; text-align: center; font-size: 30px; font-weight: bold; width: 95%; display: block; padding: 5px">ACEITO</a>
+</p>
+</div>
+            ]]>
+        </field>
+    </record>
+
+    <record id="email_template_sale_order_mail" model="mail.template">
+        <field name="name">Sale Order Confirmation Mail</field>
+        <field name="model_id" ref="vehicle_service.model_sale_order"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="email_from">${(object.company_id and object.company_id.email)|safe}</field>
+        <field name="email_to">${(object.partner_id.email or '')|safe}</field>
+        <field name="subject">Email confirm</field>
+        <field name="body_html"><![CDATA[
+            <div style="width: 800px; padding: 5px; border: 1px solid silver">
+<table width="100%">
+	<tr>
+		<th colspan="2" width="100%">
+			<img src="/web/image/2034" class="pull-left" style="width: 100%;" data-original-title="" title="">
+		</th>
+	</tr>
+	<tr>
+		<th width="50%">
+			<img src="/web/image/2033" class="pull-left" style="width: 100%;">
+		</th>
+		<th width="50%">
+			<img src="/web/image/2032" class="pull-left" style="width: 100%;">
+		</th>
+	</tr>
+</table>
+<div>
+    <br>
+    <p style="font-weight: bold; color: #4169E1">Olá ${object.name_partner},<br><br></p>
+    <p>Parabéns! Você acaba de adquirir os serviços de rastreamento e monitoramento veicular da Empresa <b>Telefônica Inteligência e Segurança Brasil Ltda</b>.</p>
+    <br>
+    <p>Abaixo segue o Contrato de Serviços, que logo após o seu aceite, você terá a maior cobertura de rastreabilidade veicular do Brasil, com atendimento e suporte de 24 horas por dia, em todo território nacional.</p>
+    <br>
+    <p>Para maiores informações acesse: <a href="http://ingenieriadeseguridad.telefonica.com">http://ingenieriadeseguridad.telefonica.com</a>.</p>
+    <br>
+    <br>
+</div>
+<table border="1" cellspacing="0" cellpadding="0" width="100%">
+	<tbody><tr>
+		<td>
+			<table width="100%">
+				<tbody><tr>
+					<td width="40%">
+						<img src="/web/image/2019" width="150px" data-original-title="" title="" class="">
+					</td>
+					<td width="60%">
+						<table width="100%">
+							<tbody>
+							<tr>
+								<th align="right" width="50%">Representante de Vendas:
+								</th><td align="left" width="50%">${object.resale_id.commercial_company_name}</td></tr>
+							<tr>
+								<th align="right"></th>
+								<td align="left"></td>
+							</tr>
+							<tr>
+								<th align="right">Número do Pedido:
+								</th><td align="left">${object.name or ""}</td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><th style="color: red; padding: 5px">PEDIDO DE ATIVAÇÃO
+	</th></tr><tr>
+		<td>
+			<table width="100%">
+				<tbody><tr>
+					<th align="left" colspan="8">Qualificação do Contratante
+				</th></tr><tr>
+					<th colspan="8"></th>
+				</tr>
+				<tr>
+					<th align="right" colspan="2">Nome:
+					</th><td align="left" colspan="6">${object.name_partner}
+				</td></tr><tr>
+					<th align="right" colspan="2">CPF/CNPJ:
+					</th><td align="left" colspan="2">${object.cnpj_cpf_partner}
+					</td><th align="right" colspan="2">RG:
+					</th><td align="left" colspan="2"><br></td>
+				</tr><tr>
+					<th align="right" colspan="2">Endereço:
+					</th><td align="left" colspan="2">${object.street_partner}
+					</td><th align="right" colspan="2">Bairro:
+					</th><td align="left" colspan="2">${object.district_partner}
+				</td></tr><tr>
+					<th align="right" colspan="2">Complemento:
+					</th><td align="left" colspan="2">${object.street2_partner or ""}
+					</td><th align="right" colspan="2">E-mail:
+					</th><td align="left" colspan="2">${object.email_partner}
+				</td></tr><tr>
+					<th align="right" colspan="2" width="20%">CEP:
+					</th><td align="left" colspan="2" width="40%">${object.zip_code_partner}
+					</td><th align="right" colspan="2" width="10%">Cidade:
+					</th><td align="left" width="10%">${object.city_id_partner.display_name} </td><th align="right" width="10%">UF:
+					</th><td align="left" width="10%">${object.state_id_partner.display_name} </td></tr><tr>
+					<th align="right" colspan="2">Telefones:
+					</th><td align="left" colspan="6">${object.phone_partner or ""} - ${object.mobile_partner or ""}
+	</td></tr></tbody></table></td></tr><tr><th align="left" style="padding: 5px">Dados do Veículo
+	</th></tr><tr>
+		<td>
+			<table border="1" cellspacing="0" width="100%">
+				<tbody><tr>
+					<th>Placa
+					</th><th>Renavam
+					</th><th>Tipo
+					</th><th>Ano
+					</th><th>Marca/Modelo
+					</th>
+				</tr><tr>
+					<td align="center">${object.plate_vehicle}</td>
+					<td>${object.renavam_vehicle}</td>
+					<td>${object.category_id_vehicle.display_name}</td>
+					<td>${object.year_id_vehicle.name}</td>
+					<td>${object.manufacturer_id_vehicle.name}/${object.model_id_vehicle.name}</td>
+				</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<h1>1.	DESCRIÇÃO DOS PRODUTOS
+
+</h1><h2>Rastreador Veicular:
+</h2><ul>
+<li>Serviço de Monitoramento de veículo com utilização de equipamento Rastreador GPS/GPRS.
+</li><li>Acesso ao monitoramento do veículo pela Plataforma Web e Aplicativo para Smartphone.
+</li><li>Central de monitoramento e equipe de pronta resposta disponível 24 horas.
+
+
+</li></ul><p>Neste Pacote estarão disponibilizados os seguintes elementos:
+</p><ul>
+
+<li>
+	<h3><b><u>Rastreador GPS/GPRS:
+	</u></b></h3><p>
+	Equipamento instalado no veículo que tem a função de coletar e armazenar a localização do veículo através da tecnologia GPS. Estas informações são enviadas para a Plataforma Web através de conectividade móvel GPRS.
+
+
+</p></li><li>
+	<h3><b><u>Plataforma Web
+	</u></b></h3><p>
+	Pela Internet o cliente poderá acessar a Plataforma Web, com seu login e senha, onde poderá ter acesso ao monitoramento de seu veículo. As funcionalidades disponibilizadas neste pacote são:
+
+	</p><ul>
+	<li>Localização do Veículo: Última localização do veículo
+	</li><li>Histórico de Localização do Veículo: Registros de localizações, com respectivas datas e horários, do veículo monitorado pelo Serviço que estarão disponíveis em formato mapa, timeline ou relatório.
+	</li><li>Cerca Eletrônica: Facilidade de configurar a delimitação de regiões ou rotas onde o veículo monitorado pode transitar. Um alerta será gerado na Plataforma quando o veículo sair destas regiões ou rotas.
+
+
+</li></ul></li><li>
+	<h3><b><u>Aplicativo para Smartphone
+	</u></b></h3><p>Cliente terá disponível um aplicativo, compatível com Sistemas Operacionais Android e IOS, que poderá ser instalado em seu Smartphone.
+	</p><p>As funcionalidades no aplicativo neste pacote são:
+	</p><ul>
+	<li>Localização do Veículo: Última localização do veículo
+	</li><li>Cerca Eletrônica Provisória: Facilidade de ativar/ desativar uma determinada Cerca Eletrônica Provisória com o objetivo de gerar alerta no aplicativo avisando o cliente caso o veículo sair desta Cerca Eletrônica Provisória.
+
+
+</li></ul></li><li>
+	<h3><b><u>Equipe de Pronta Resposta
+	</u></b></h3></li><p>Equipe profissional com a responsabilidade, nos casos de sinistro de roubo ou furto do veículo monitorado, deslocar-se até a última localização do veículo registrado na Plataforma Web com o objetivo na possível localização do veículo.
+	</p><p>Está incluso neste pacote a execução do serviço em no máximo 3 horas a partir do acionamento da equipe de Pronta Resposta, caso seja necessária sua extensão, será cobrado a hora adicional, conforme tabela de preços descrito neste documento, com a respectiva aprovação do cliente.
+
+
+
+
+</p></ul><h1>2.	PREÇOS
+</h1><table width="100%" border="1" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+		<th align="left">Produtos
+	</th></tr><tr>
+		<td>
+			<table width="100%" border="1" cellspacing="0">
+				<tbody><tr>
+					<th>Produto
+					</th><th>Opção
+					</th><th>Descrição/Periodicidade
+					</th><th>Unidade
+					</th><th>Valor
+				</th></tr><tr>
+					<th align="left">${object.product_id_product.name} </th><td align="center">X
+					</td><td>${object.product_id_product.name}
+					</td>
+					<td>Instalação
+					</td><td>R$ ${str('%.2f' % object.price_product).replace('.',',')}
+				</td></tr><tr>
+					<th align="left">${object.plan_id_product.name} </th><td align="center">X
+					</td><td>${object.plan_id_product.name}
+					</td><td>Por Mês
+					</td><td>R$ ${str('%.2f' % object.monthly_payment).replace('.',',')}
+				</td></tr>
+				</tbody>
+			</table>
+		</td></tr><tr>
+		<td>
+			<table border="0">
+				<tbody><tr>
+					<th>Período do Contrato:
+					</th><td>12 Meses
+	</td></tr></tbody>
+	</table>
+	</td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0">
+				<tbody>
+					<tr>
+						<th colspan="2" align="left"><br>Habilitação e Pagamento</th>
+					</tr>
+					<tr>
+						<td>Cartão de Crédito ${object.payment_acquirer_credit_card.display_name}</td>
+						<td>Nº Cartão: ${object.display_number_credit_card}</td>
+					</tr>
+					<tr>
+						<th align="right"><br>Instalação</th>
+						<td align="left"><br>1x de R$ ${str('%.2f' % object.price_product).replace('.',',')}</td>
+					</tr>
+					<tr>
+						<th align="right">Plano Mensal</th>
+						<td align="left">12x de R$ ${str('%.2f' % object.monthly_payment).replace('.',',')}</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<h2 style="text-decoration: underline;">Instalação
+</h2><p>Serviço de instalação do equipamento rastreador no veículo a ser monitorado e ativação do serviço contratado. Este serviço deverá ser agendado e executado nas nossas credenciadas.
+
+</p><h2 style="text-decoration: underline;">Mensalidade
+</h2><p>Valor mensal pela prestação do serviço.
+
+</p><h2 style="text-decoration: underline;">Troca de Veículo
+</h2><p>Serviço de retirada e instalação do equipamento rastreador quando o cliente solicitar a troca de veículo a ser monitorado pelo serviço. Este serviço deverá ser agendado e executado nas nossas credenciadas.
+
+</p><h2 style="text-decoration: underline;">Manutenção (Mau uso)
+</h2><p>Serviço de manutenção quando o técnico detecta que houve violação no rastreador e/ou chicote e/ou nos fios e/ou conectores e/ou antena, no entanto, não houve extravio do equipamento e dos demais acessórios.
+
+</p><h2 style="text-decoration: underline;">Pronta Resposta (Hora adicional)
+</h2><p>Valor da hora adicional, além das 3 horas inclusas no pacote, pela prestação do serviço de Pronta Resposta.
+
+</p><h2 style="text-decoration: underline;">Taxa de Reagendamento Comercial (fora do prazo)
+</h2><p>Taxa pelo reagendamento de execução de qualquer serviço a ser executado na rede de credenciada de prestadores quando o cliente solicite o reagendamento fora do prazo mínimo de antecedência.
+
+</p><h2 style="text-decoration: underline;">Taxa de Troca de Titularidade
+</h2><p>Taxa referente à solicitação pelo cliente atual da troca de titularidade do serviço.
+
+</p><h2 style="text-decoration: underline;">Taxa Falsa Notificação de Sinistro
+</h2><p>Taxa referente à comunicação de notificação de sinistro pelo cliente e que após a sua análise se detecta que não existiu nenhum sinistro.
+
+</p><h1>3.	PRAZOS
+</h1><p>3.1. O presente contrato vigorará pelo prazo de 12 (doze) meses contados da data de assinatura do presente contrato (prazo inicial de vigência), prorrogando-se automaticamente por prazo indeterminado a partir do término do referido prazo inicial de vigência, considerando o disposto na Proposta e neste instrumento.
+</p><p>3.1.1. A partir do momento que o presente contrato passe a vigorar por prazo indeterminado, o CONTRATANTE poderá denunciar o Contrato (parcial ou totalmente), de forma imotivada, mediante notificação por escrito à TIS com, pelo menos, 90 (noventa) dias de antecedência, sem qualquer ônus.
+</p><p>3.2.  O presente contrato poderá ser rescindido a qualquer tempo pela TIS em caso de atraso superior a 30 (trinta) dias no pagamento de qualquer valor devido pela CONTRATANTE nos termos deste contrato, sem prejuízo de outros valores e/ou multas devidos conforme definido neste contrato e na Proposta.
+</p><p>3.3. Na hipótese de devolução dos equipamentos, por qualquer motivo, em especial na hipótese de extinção do contrato, a CONTRATANTE deverá agendar junto a Central de Monitoramento, no prazo máximo de 15 dias corridos, uma data para a desinstalação e retirada dos equipamentos cedidos em comodato, sob pena de arcar com o pagamento mensal do correspondente a 30% do valor da mensalidade, a título de aluguel, até a data da devolução.
+
+</p><h1>4. PENALIDADE
+</h1><p>4.1. A hipótese de denúncia antecipada do presente contrato pela CONTRATANTE ensejará o pagamento à TIS, a título de indenização, de multa equivalente ao percentual de 10% (dez por cento) sobre todos os valores que seriam devidos à CONTRATANTE até o encerramento da vigência deste contrato, além da taxa de desinstalação dos equipamentos cedidos em comodato no valor de R$ 100,00 (cem reais).
+</p><p>4.1.1 A hipótese de denuncia antecipada do presente contrato por qualquer das partes ensejará o pagamento a parte inocente, taxa de cancelamento e retirada no valor de R$230,00 (Duzentos e Trinta Reais) se solicitado do 1º ao 12º mês de contrato e R$120,00 (Cento e Vinte Reais) se solicitado do 13º ao 23º mês de contrato. Para CONTRATANTE sem seguro.
+
+</p><p>Confirmo os dados acima, após a leitura e ciência das cláusulas contratuais e o recebimento do manual dos serviços de rastreamento veicular.
+
+</p><br>
+<br>
+<br>
+<p>
+_________________________________<br>
+${object.name_partner}<br>
+CPF/CNPJ: ${object.cnpj_cpf_partner}
+
+
+</p>
+<p style="text-align:right;">São Paulo, ${object.date}.</p>
+<br>
+<p align="center">
+	<a href="@link" style="border: 1px solid black; color: red; background-color: lime; text-align: center; font-size: 30px; font-weight: bold; width: 95%; display: block; padding: 5px">ACEITO</a>
+</p>
+</div>
+            ]]>
+        </field>
+    </record>
+</odoo>

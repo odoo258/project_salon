@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_medical_office_template_form" model="ir.ui.view">
+            <field name="name">view.medical.office.template.form</field>
+            <field name="model">medical.office.template</field>
+            <field name="arch" type="xml">
+                <form string="Office Templates">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="type"/>
+                            </group>
+                            <group>
+                                <field name="mail_template_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_medical_office_template_tree" model="ir.ui.view">
+            <field name="name">view.medical.office.template.tree</field>
+            <field name="model">medical.office.template</field>
+            <field name="arch" type="xml">
+                <tree string="Map">
+                    <field name="name"/>
+                    <field name="mail_template_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTION/MENU -->
+        <record id="action_medical_office_template" model="ir.actions.act_window">
+            <field name="name">Office Templates</field>
+            <field name="res_model">medical.office.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_medical_office_template_tree"/>
+            <field name="context">{}</field>
+        </record>
+
+
+        <menuitem id="menu_template_forms"
+                  name="Forms"
+                  string="Forms"
+                  parent="hospital_management.main_menu_configuration"
+                  sequence="1"/>
+
+        <menuitem id="menu_medical_office_template"
+                  action="action_medical_office_template"
+                  string="Office Templates"
+                  parent="menu_template_forms"
+                  sequence="0"/>
+
+    </data>
+</odoo>
+
